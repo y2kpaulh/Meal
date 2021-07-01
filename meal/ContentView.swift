@@ -16,7 +16,28 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Text("\(bibleStore.books[0].chapters[0].description)")
+        ScrollView{
+            VStack {
+                Text("오늘의 끼니")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+                    Text(bibleStore.books[0].abbrev)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Text("\(Date().description)")
+                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
+                }
+                .padding()
+                
+                Text("\(bibleStore.books[0].chapters[0].description)")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .padding()
+            }
+        }
     }
 }
 
