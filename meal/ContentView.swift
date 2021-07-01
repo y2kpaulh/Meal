@@ -27,13 +27,13 @@ struct ContentView: View {
                     Text(bibleStore.books[0].abbrev)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    Text("\(Date().description)")
+                    Text("\(Date())")
                         .foregroundColor(.gray)
                         .fontWeight(.bold)
                 }
                 .padding()
                 
-                Text("\(bibleStore.books[0].chapters[0].description)")
+                Text("\(bibleStore.books[0].chapters[0][0])")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .padding()
             }
