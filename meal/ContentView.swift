@@ -8,23 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var gradeStore: GradeStore
+    @ObservedObject var bibleStore: BibleStore
 
     init() {
-        let gradeData: [Grade] = loadJson("gradeData.json")
-        gradeStore = GradeStore(grades: gradeData)
+        let books: [BibleBook] = loadJson("bible.json")
+        bibleStore = BibleStore(books: books)
     }
     
     var body: some View {
-        List(gradeStore.grades) { grade in
-            HStack {
-                Text(grade.subject)
-                    .font(.largeTitle)
-                Text(grade.grade)
-                    .font(.headline)
-                
-            }
-        }
+        Text("\(bibleStore.books[0].chapters[0].description)")
     }
 }
 

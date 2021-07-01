@@ -12,10 +12,8 @@
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
 		2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */; };
 		2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FA268DBBFF00EA6BB2 /* bible.json */; };
-		2EBBD5FF268DBD3400EA6BB2 /* Bible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* Bible.swift */; };
-		2EBBD601268DBF4F00EA6BB2 /* gradeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD600268DBF4F00EA6BB2 /* gradeData.json */; };
+		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
-		2EBBD605268DBFB400EA6BB2 /* GradeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD604268DBFB400EA6BB2 /* GradeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +24,8 @@
 		2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2EBBD5F3268DBB6000EA6BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBBD5FA268DBBFF00EA6BB2 /* bible.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bible.json; sourceTree = "<group>"; };
-		2EBBD5FE268DBD3400EA6BB2 /* Bible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible.swift; sourceTree = "<group>"; };
-		2EBBD600268DBF4F00EA6BB2 /* gradeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gradeData.json; sourceTree = "<group>"; };
+		2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStore.swift; sourceTree = "<group>"; };
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		2EBBD604268DBFB400EA6BB2 /* GradeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5FA268DBBFF00EA6BB2 /* bible.json */,
-				2EBBD600268DBF4F00EA6BB2 /* gradeData.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -94,8 +89,7 @@
 		2EBBD5FC268DBC5E00EA6BB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EBBD5FE268DBD3400EA6BB2 /* Bible.swift */,
-				2EBBD604268DBFB400EA6BB2 /* GradeStore.swift */,
+				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +162,6 @@
 				2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
-				2EBBD601268DBF4F00EA6BB2 /* gradeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +175,7 @@
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* mealApp.swift in Sources */,
-				2EBBD605268DBFB400EA6BB2 /* GradeStore.swift in Sources */,
-				2EBBD5FF268DBD3400EA6BB2 /* Bible.swift in Sources */,
+				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
