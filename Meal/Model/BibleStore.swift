@@ -19,6 +19,5 @@ class BibleStore: ObservableObject {
     
     init (books: [BibleBook] = []) {
         self.books = books
-
     }
 }

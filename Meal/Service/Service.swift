@@ -21,7 +21,7 @@ func loadJson<T: Decodable>(_ filename: String) -> T {
         // 이는 데이터를 Json decoding 에 활용할 수 있도록 하는 작업이라고 볼 수 있다.
         data = try Data(contentsOf: file)
     } catch {
-        fatalError("Could not load \(filename): (error)")
+        fatalError("Could not load \(filename): \(error)")
     }
     
     do {
