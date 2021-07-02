@@ -14,6 +14,7 @@ struct ContentView: View {
         let books: [BibleBook] = loadJson("bible.json")
         bibleStore = BibleStore(books: books)
         UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some View {
@@ -48,7 +49,6 @@ struct ContentView: View {
                         }
                     }
                     .listRowBackground(Color.yellow)
-                    .background(Color.yellow)
                 }
                 
             }
