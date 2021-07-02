@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct BibleBook: Codable, Identifiable {
-    var id: UUID
+struct BibleBook: Codable {
     let abbrev: String
     let chapters: [[String]]
     let name: String
