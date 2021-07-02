@@ -17,31 +17,33 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-//            background color
+            //background color
             Color.yellow
                 .edgesIgnoringSafeArea(.all)
             
-//            MainView
-            ScrollView {
-                VStack {
-                    Text("오늘의 끼니")
+            VStack {
+                Text("오늘의 끼니")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                
+                HStack(alignment: .center, spacing: 20) {
+                    Text(bibleStore.books[0].abbrev)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .padding()
-
-                    HStack(alignment: .center, spacing: 20) {
-                        Text(bibleStore.books[0].abbrev)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text("\(Date().description)")
-                            .foregroundColor(.gray)
-                            .fontWeight(.bold)
-                    }
-                    .padding()
-
-                    Text("\(bibleStore.books[0].chapters[0][0])")
-                        .font(.title)
-                        .padding()
+                    Text("\(Date().description)")
+                        .foregroundColor(.gray)
+                        .fontWeight(.bold)
+                }
+                
+                //MainView
+                ScrollView {
+                    ForEach(bibleStore.books, id: \.id) { book in
+                        Text(book.abbrev)
+                        Text("\(book.chapters[0][0])")
+                            .font(.title)
+                            .padding()
+                        }
                 }
             }
         }

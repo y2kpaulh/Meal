@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct BibleBook: Codable {
+struct BibleBook: Codable, Identifiable {
+    var id: String { abbrev }
     let abbrev: String
     let chapters: [[String]]
     let name: String
@@ -18,5 +19,6 @@ class BibleStore: ObservableObject {
     
     init (books: [BibleBook] = []) {
         self.books = books
+
     }
 }
