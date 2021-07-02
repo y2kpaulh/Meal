@@ -13,6 +13,7 @@ struct ContentView: View {
     init() {
         let books: [BibleBook] = loadJson("bible.json")
         bibleStore = BibleStore(books: books)
+        UITableView.appearance().backgroundColor = .clear
     }
     
     var body: some View {
@@ -37,14 +38,19 @@ struct ContentView: View {
                 }
                 
                 //MainView
-                ScrollView {
+                List {
                     ForEach(bibleStore.books, id: \.id) { book in
-                        Text(book.abbrev)
-                        Text("\(book.chapters[0][0])")
-                            .font(.title)
-                            .padding()
+                        HStack {
+                            Text(book.abbrev)
+                            Text("\(book.chapters[0][0])")
+                                .font(.headline)
+                                .padding()
                         }
+                    }
+                    .listRowBackground(Color.yellow)
+                    .background(Color.yellow)
                 }
+                
             }
         }
         
