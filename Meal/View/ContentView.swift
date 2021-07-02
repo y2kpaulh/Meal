@@ -41,17 +41,16 @@ struct ContentView: View {
                 //MainView
                 List {
                     ForEach(bibleStore.books) { book in
-                        HStack {
-                            Text(book.abbrev)
+                        Section(header: Text(book.abbrev)) {
                             Text("\(book.chapters[0][0])")
                                 .font(.headline)
-                                .padding()
                         }
                     }
                     .listRowBackground(Color.yellow)
                 }
                 
             }
+            
         }
         
     }
