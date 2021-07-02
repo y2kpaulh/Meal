@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EBBD5EB268DBB5F00EA6BB2 /* mealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* mealApp.swift */; };
+		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
 		2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2EBBD5E7268DBB5F00EA6BB2 /* meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EBBD5EA268DBB5F00EA6BB2 /* mealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mealApp.swift; sourceTree = "<group>"; };
+		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		2EBBD5DE268DBB5F00EA6BB2 = {
 			isa = PBXGroup;
 			children = (
-				2EBBD5E9268DBB5F00EA6BB2 /* meal */,
+				2EBBD5E9268DBB5F00EA6BB2 /* Meal */,
 				2EBBD5E8268DBB5F00EA6BB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,24 +50,24 @@
 		2EBBD5E8268DBB5F00EA6BB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2EBBD5E7268DBB5F00EA6BB2 /* meal.app */,
+				2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2EBBD5E9268DBB5F00EA6BB2 /* meal */ = {
+		2EBBD5E9268DBB5F00EA6BB2 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
-				2EBBD5FD268DBC6600EA6BB2 /* Service */,
 				2EBBD5FC268DBC5E00EA6BB2 /* Model */,
+				2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */,
+				2EBBD606268DD59A00EA6BB2 /* View */,
+				2EBBD5FD268DBC6600EA6BB2 /* Service */,
 				2EBBD5F9268DBBE900EA6BB2 /* Resource */,
-				2EBBD5EA268DBB5F00EA6BB2 /* mealApp.swift */,
-				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */,
 				2EBBD5F3268DBB6000EA6BB2 /* Info.plist */,
 				2EBBD5F0268DBB6000EA6BB2 /* Preview Content */,
 			);
-			path = meal;
+			path = Meal;
 			sourceTree = "<group>";
 		};
 		2EBBD5F0268DBB6000EA6BB2 /* Preview Content */ = {
@@ -102,12 +102,20 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		2EBBD606268DD59A00EA6BB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2EBBD5E6268DBB5F00EA6BB2 /* meal */ = {
+		2EBBD5E6268DBB5F00EA6BB2 /* Meal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "meal" */;
+			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */;
 			buildPhases = (
 				2EBBD5E3268DBB5F00EA6BB2 /* Sources */,
 				2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */,
@@ -117,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = meal;
+			name = Meal;
 			productName = meal;
-			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* meal.app */;
+			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2EBBD5E2268DBB5F00EA6BB2 /* Build configuration list for PBXProject "meal" */;
+			buildConfigurationList = 2EBBD5E2268DBB5F00EA6BB2 /* Build configuration list for PBXProject "Meal" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -149,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2EBBD5E6268DBB5F00EA6BB2 /* meal */,
+				2EBBD5E6268DBB5F00EA6BB2 /* Meal */,
 			);
 		};
 /* End PBXProject section */
@@ -174,7 +182,7 @@
 			files = (
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
-				2EBBD5EB268DBB5F00EA6BB2 /* mealApp.swift in Sources */,
+				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2EBBD5E2268DBB5F00EA6BB2 /* Build configuration list for PBXProject "meal" */ = {
+		2EBBD5E2268DBB5F00EA6BB2 /* Build configuration list for PBXProject "Meal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2EBBD5F4268DBB6000EA6BB2 /* Debug */,
@@ -354,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "meal" */ = {
+		2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2EBBD5F7268DBB6000EA6BB2 /* Debug */,
