@@ -39,7 +39,7 @@ struct ContentView: View {
                 
                 //MainView
                 List {
-                    ForEach(bibleStore.books, id: \.id) { book in
+                    ForEach(bibleStore.books) { book in
                         HStack {
                             Text(book.abbrev)
                             Text("\(book.chapters[0][0])")
