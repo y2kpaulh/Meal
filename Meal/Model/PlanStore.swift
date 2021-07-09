@@ -13,4 +13,15 @@ class PlanStore: ObservableObject {
     init (plan: [MealPlan] = []) {
         self.plan = plan
     }
+    
+    func todayPlan() -> MealPlan? {
+        let nowDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let today = dateFormatter.string(from: nowDate)
+
+        let todayPlan = self.plan.filter{ $0.day == today }
+        
+        return todayPlan[0]
+    }
 }

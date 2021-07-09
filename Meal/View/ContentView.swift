@@ -10,13 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var bibleStore: BibleStore
     @ObservedObject var planStore: PlanStore
-
+    var plan: MealPlan?
+    
     init() {
         bibleStore = BibleStore(books: loadJson("bible.json"))
         planStore = PlanStore(plan: loadJson("plan.json"))
         
-        print( planStore.plan[0])
-
+        if let todayPlan = planStore.todayPlan() {
+            print("todayPlan", todayPlan)
+            self.plan = todayPlan
+        }
+        
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
@@ -27,31 +31,40 @@ struct ContentView: View {
             Color.yellow
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                Text("오늘의 끼니")
+            if let plan = self.plan {
+                VStack {
+                    Text("오늘의 끼니")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    HStack(alignment: .center, spacing: 20) {
+                        Text(plan.book)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text(plan.day)
+                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
+                    }
+                    
+                    //MainView
+                    List {
+                        ForEach(bibleStore.books) { book in
+                            Section(header: Text(book.abbrev)) {
+                                Text("\(book.chapters[0][0])")
+                                    .font(.headline)
+                            }
+                        }
+                        .listRowBackground(Color.yellow)
+                    }
+                }
+            }
+            else{
+                Text("Today is not exist plan!")
+                    .foregroundColor(Color.red)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
-                
-                HStack(alignment: .center, spacing: 20) {
-                    Text(bibleStore.books[0].abbrev)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    Text("\(Date().description)")
-                        .foregroundColor(.gray)
-                        .fontWeight(.bold)
-                }
-                
-                //MainView
-                List {
-                    ForEach(bibleStore.books) { book in
-                        Section(header: Text(book.abbrev)) {
-                            Text("\(book.chapters[0][0])")
-                                .font(.headline)
-                        }
-                    }
-                    .listRowBackground(Color.yellow)
-                }
             }
         }
     }
