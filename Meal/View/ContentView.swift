@@ -17,7 +17,7 @@ struct ContentView: View {
         planStore = PlanStore(plan: loadJson("plan.json"))
         
         if let todayPlan = planStore.todayPlan() {
-            print("todayPlan", todayPlan)
+            print("Today Plan", todayPlan)
             self.plan = todayPlan
         }
         
