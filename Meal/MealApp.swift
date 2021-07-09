@@ -15,6 +15,9 @@ struct MealApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(store)
+                .onAppear {
+                  print(FileManager.documentURL ?? "")
+                }
         }
     }
 }

@@ -11,8 +11,7 @@ struct ContentView: View {
     @ObservedObject var bibleStore: BibleStore
     
     init() {
-        let books: [BibleBook] = BibleStore.loadJson("bible.json")
-        bibleStore = BibleStore(books: books)
+        bibleStore = BibleStore(books: loadJson("bible.json"))
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }

@@ -16,6 +16,7 @@
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
 		2EED48B62697DB520069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48B52697DB520069DD16 /* mealPlan.json */; };
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
+		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2EED48B52697DB520069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
+				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
+				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
