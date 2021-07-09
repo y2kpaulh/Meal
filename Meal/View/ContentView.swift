@@ -37,6 +37,7 @@ struct ContentView: View {
                                 Text(bibleStore.todayDateStr())
                                     .foregroundColor(.gray)
                             }
+                            .padding(.top, 10)
                             
                             HStack() {
                                 Text("\(plan["subject"] as! String)")
