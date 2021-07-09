@@ -18,7 +18,13 @@ struct MealApp: App {
                 .environmentObject(bibleStore)
                 .environmentObject(planStore)
                 .onAppear {
-                  print(FileManager.documentURL ?? "")
+//                  print(FileManager.documentURL ?? "")
+                    
+//                    for fontFamily in UIFont.familyNames {
+//                        for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
+//                            print(fontName)
+//                        }
+//                    }
                 }
         }
     }
