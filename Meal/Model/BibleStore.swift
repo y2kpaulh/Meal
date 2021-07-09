@@ -56,4 +56,21 @@ extension BibleStore {
         
         return ["subject": subject, "detail": plan, "verse": verse]
     }
+    
+    func todayDateStr() -> String {
+        let date = NSDate() // 현재 시간 가져오기
+        let monFormatter = DateFormatter()
+        monFormatter.dateFormat = "MM/dd"
+
+        let month = monFormatter.string(from: date as Date)
+
+        let dayFormatter = DateFormatter()
+        dayFormatter.locale = Locale(identifier: "ko") // 로케일 변경
+        dayFormatter.dateFormat = "EEEE"
+
+        let day = dayFormatter.string(from: date as Date)
+
+        print("\(month) \(day)")
+        return "\(month), \(day)"
+    }
 }
