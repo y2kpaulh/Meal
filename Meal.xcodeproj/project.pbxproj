@@ -14,6 +14,8 @@
 		2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FA268DBBFF00EA6BB2 /* bible.json */; };
 		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2EED48B62697DB520069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48B52697DB520069DD16 /* mealPlan.json */; };
+		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2EBBD5FA268DBBFF00EA6BB2 /* bible.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bible.json; sourceTree = "<group>"; };
 		2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStore.swift; sourceTree = "<group>"; };
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2EED48B52697DB520069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
+		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		2EBBD5E9268DBB5F00EA6BB2 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				2EED48B72697DDBD0069DD16 /* Extensions */,
 				2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */,
 				2EBBD5FC268DBC5E00EA6BB2 /* Model */,
 				2EBBD606268DD59A00EA6BB2 /* View */,
@@ -81,6 +86,7 @@
 		2EBBD5F9268DBBE900EA6BB2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2EED48B52697DB520069DD16 /* mealPlan.json */,
 				2EBBD5FA268DBBFF00EA6BB2 /* bible.json */,
 			);
 			path = Resource;
@@ -108,6 +114,14 @@
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2EED48B72697DDBD0069DD16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +184,7 @@
 				2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
+				2EED48B62697DB520069DD16 /* mealPlan.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +198,7 @@
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
+				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

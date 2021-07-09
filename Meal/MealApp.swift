@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct MealApp: App {
+    @StateObject var store = BibleStore()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(store)
         }
     }
 }
