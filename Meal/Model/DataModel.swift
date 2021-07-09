@@ -14,12 +14,12 @@ struct BibleBook: Codable, Identifiable {
     let name: String
 }
 
-struct mealPlan: Codable, Identifiable {
+struct MealPlan: Codable, Identifiable {
     var id: String { day }
     var day: String
     var book: String
-    var sChapter: String
-    var sVerse: String
-    var fChapter: String
-    var fVerse: String
+    var sChap: Int
+    var sVer: Int
+    var fChap: Int
+    var fVer: Int
 }

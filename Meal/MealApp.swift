@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct MealApp: App {
-    @StateObject var store = BibleStore()
-    
+    @StateObject var bibleStore = BibleStore()
+    @StateObject var planStore = PlanStore()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(store)
+                .environmentObject(bibleStore)
+                .environmentObject(planStore)
                 .onAppear {
                   print(FileManager.documentURL ?? "")
                 }

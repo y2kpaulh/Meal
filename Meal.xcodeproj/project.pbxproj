@@ -14,9 +14,10 @@
 		2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FA268DBBFF00EA6BB2 /* bible.json */; };
 		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
-		2EED48B62697DB520069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48B52697DB520069DD16 /* mealPlan.json */; };
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
+		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
+		2EED48BF2697EE600069DD16 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		2EBBD5FA268DBBFF00EA6BB2 /* bible.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bible.json; sourceTree = "<group>"; };
 		2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStore.swift; sourceTree = "<group>"; };
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		2EED48B52697DB520069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
+		2EED48BE2697EE600069DD16 /* plan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,8 @@
 		2EBBD5F9268DBBE900EA6BB2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2EED48B52697DB520069DD16 /* mealPlan.json */,
 				2EBBD5FA268DBBFF00EA6BB2 /* bible.json */,
+				2EED48BE2697EE600069DD16 /* plan.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -97,8 +99,9 @@
 		2EBBD5FC268DBC5E00EA6BB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
+				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
+				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,10 +187,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EED48BF2697EE600069DD16 /* plan.json in Resources */,
 				2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
-				2EED48B62697DB520069DD16 /* mealPlan.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +206,7 @@
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
+				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

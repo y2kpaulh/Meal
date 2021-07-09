@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var bibleStore: BibleStore
-    
+    @ObservedObject var planStore: PlanStore
+
     init() {
         bibleStore = BibleStore(books: loadJson("bible.json"))
+        planStore = PlanStore(plan: loadJson("plan.json"))
+        
+        print( planStore.plan[0])
+
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
