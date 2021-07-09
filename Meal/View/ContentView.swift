@@ -25,10 +25,9 @@ struct ContentView: View {
         if let plan = todayPlan,  let detail = plan["detail"] as? MealPlan, let verses = plan["verse"] as? [String] {
             ZStack {
                 GeometryReader { proxy in
-//                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-//                        .fill(Color.red)
-//                        .padding()
-//                        .shadow(radius: 10)
+                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .fill(Color.white)
+                        .shadow(radius: 10)
                     
                     
                     VStack(spacing: 10) {
@@ -39,8 +38,6 @@ struct ContentView: View {
                                 Text("\(plan["subject"] as! String)")
                                 Text("\(detail.sChap)")
                             }
-                            
-                            
                         }
                         
                         List {
@@ -54,11 +51,12 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        .padding(.bottom, proxy.size.width * 0.2 / 2)
                         .listStyle(GroupedListStyle())
                         
                     }
-//                    .frame(width: proxy.size.width * 0.8)
-//                    .padding(.leading, proxy.size.width * 0.2 / 2)
+                    .frame(width: proxy.size.width * 0.9)
+                    .padding(.leading, proxy.size.width * 0.1 / 2)
 
                     
                 }
