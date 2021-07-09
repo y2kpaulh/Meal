@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var bibleStore: BibleStore
-    @ObservedObject var planStore: PlanStore
-    var plan: MealPlan?
+    var todayPlan: [String: Any]?
     
     init() {
         bibleStore = BibleStore(books: loadJson("bible.json"))
-        planStore = PlanStore(plan: loadJson("plan.json"))
-        
-        if let todayPlan = planStore.todayPlan() {
-            print("Today Plan", todayPlan)
-            self.plan = todayPlan
+        todayPlan = bibleStore.todayPlan()
+           
+        if let plan = todayPlan, let verses = plan["verse"] as? [String] {
+            print(verses)
         }
         
         UITableView.appearance().backgroundColor = .clear
@@ -26,46 +24,17 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ZStack{
-            //background color
-            Color.yellow
-                .edgesIgnoringSafeArea(.all)
-            
-            if let plan = self.plan {
-                VStack {
-                    Text("오늘의 끼니")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding()
-                    
-                    HStack(alignment: .center, spacing: 20) {
-                        Text(plan.book)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text(plan.day)
-                            .foregroundColor(.gray)
-                            .fontWeight(.bold)
-                    }
-                    
-                    //MainView
-                    List {
-                        ForEach(bibleStore.books) { book in
-                            Section(header: Text(book.abbrev)) {
-                                Text("\(book.chapters[0][0])")
-                                    .font(.headline)
-                            }
-                        }
-                        .listRowBackground(Color.yellow)
-                    }
+        if let plan = todayPlan, let verses = plan["verse"] as? [String] {
+            VStack {
+                Text("끼니")
+                    .font(.largeTitle)
+                List(verses, id: \.self) { verse in
+                      Text(verse)
                 }
             }
-            else{
-                Text("Today is not exist plan!")
-                    .foregroundColor(Color.red)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-            }
+        }
+        else{
+            Text("Plain is not exist!")
         }
     }
 }

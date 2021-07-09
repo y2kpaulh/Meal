@@ -11,7 +11,7 @@ import SwiftUI
 struct MealApp: App {
     @StateObject var bibleStore = BibleStore()
     @StateObject var planStore = PlanStore()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

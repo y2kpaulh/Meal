@@ -9,9 +9,11 @@ import Foundation
 
 class BibleStore: ObservableObject {
     @Published var books: [BibleBook] = []
+    @Published var subjects: [String] = []
     
     init (books: [BibleBook] = []) {
         self.books = books
+        self.subjects = loadJson("biblebook-ko.json")
     }
 }
 
@@ -37,5 +39,21 @@ extension BibleStore {
         }
       }
       return cards
+    }
+    
+    func todayPlan() -> [String:Any]? {
+        let planStore = PlanStore(plan: loadJson("plan.json"))
+        guard let plan = planStore.todayPlan() else { return nil }
+
+        let book = self.books.filter { $0.abbrev == plan.book }
+        
+        guard book.count > 0, let planBook = book.first, let index = self.books.firstIndex(where: { $0.abbrev == plan.book })  else { return nil}
+        
+        let subject = self.subjects[index]
+        let chapter = planBook.chapters[plan.sChap-1]
+        let verseRange = chapter[plan.sVer+1..<plan.fVer+1]
+        let verse = Array(verseRange)
+        
+        return ["subject": subject, "plan": plan, "verse": verse]
     }
 }
