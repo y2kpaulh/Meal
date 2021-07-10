@@ -19,7 +19,6 @@ class PlanStore: ObservableObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let today = dateFormatter.string(from: nowDate)
-
         let todayPlan = self.plan.filter{ $0.day == today }
         
         return todayPlan[0]

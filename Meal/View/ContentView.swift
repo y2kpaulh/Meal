@@ -61,6 +61,7 @@ struct ContentView: View {
                                         .font(.custom("NanumBrushOTF", size: 24))
                                 }
                             }
+                            .listRowBackground(Color.white)
                         }
                         .cornerRadius(20.0)
                         .padding(.bottom, proxy.size.width * 0.2 / 2)
@@ -71,7 +72,6 @@ struct ContentView: View {
                 }
                 .padding()
             }
-
         }
         else{
             Text("Plain is not exist!")
@@ -82,6 +82,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
+            .preferredColorScheme(.dark)
     }
 }
