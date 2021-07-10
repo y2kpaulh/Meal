@@ -26,6 +26,7 @@ struct ContentView: View {
                 
                 GeometryReader { proxy in
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        .fill(Color.white)
                         .shadow(radius: 10)
                     
                     VStack(spacing: 10) {
@@ -43,10 +44,9 @@ struct ContentView: View {
                                 Text("\(plan["subject"] as! String)")
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
-                                Text("\(detail.sChap)")
+                                Text("\(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
-
                             }
                         }
                         
@@ -57,16 +57,15 @@ struct ContentView: View {
                                         .foregroundColor(.gray)
                                         
                                     Text(verse)
-                                        .foregroundColor(.secondary)
-                                        .font(.custom("NanumBrushOTF", size: 20))
+                                        .foregroundColor(.black)
+                                        .font(.custom("NanumBrushOTF", size: 24))
                                 }
                             }
                         }
                         .cornerRadius(20.0)
                         .padding(.bottom, proxy.size.width * 0.2 / 2)
-                        .listStyle(GroupedListStyle())
-                        
                     }
+                    .background(Color.white)
                     .frame(width: proxy.size.width * 0.9)
                     .padding(.leading, proxy.size.width * 0.1 / 2)
                 }
@@ -83,7 +82,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
             
     }
 }

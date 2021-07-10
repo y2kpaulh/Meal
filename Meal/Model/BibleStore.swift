@@ -51,7 +51,9 @@ extension BibleStore {
         
         let subject = self.subjects[index]
         let chapter = planBook.chapters[plan.sChap-1]
-        let verseRange = chapter[plan.sVer+1..<plan.fVer+1]
+        
+        print(plan.sVer, plan.fVer)
+        let verseRange = chapter[plan.sVer-1..<plan.fVer]
         let verse = Array(verseRange)
         
         return ["subject": subject, "detail": plan, "verse": verse]
