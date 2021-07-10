@@ -28,7 +28,7 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
                         .fill(Color.white)
                         .shadow(radius: 10)
-                    
+     
                     VStack(spacing: 10) {
                         VStack() {
                             HStack(alignment: .center) {
@@ -44,9 +44,12 @@ struct ContentView: View {
                                 Text("\(plan["subject"] as! String)")
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
+                                
                                 Text("\(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
+                                
+                               // Spacer()
                             }
                         }
                         
@@ -63,14 +66,17 @@ struct ContentView: View {
                             }
                             .listRowBackground(Color.white)
                         }
-                        .cornerRadius(20.0)
-                        .padding(.bottom, proxy.size.width * 0.2 / 2)
+                         .padding(.bottom, proxy.size.width * 0.2 / 2)
                     }
                     .background(Color.white)
                     .frame(width: proxy.size.width * 0.9)
                     .padding(.leading, proxy.size.width * 0.1 / 2)
                 }
                 .padding()
+
+//                Text("개역한글 성경")
+//                    .foregroundColor(Color.red)
+//                    .padding(.bottom)
             }
         }
         else{
