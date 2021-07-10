@@ -25,7 +25,7 @@ struct ContentView: View {
                 Color.white.edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { proxy in
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
                         .fill(Color.white)
                         .shadow(radius: 10)
      
@@ -42,15 +42,9 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(plan["subject"] as! String)")
+                                    Text("\(plan["subject"] as! String) \(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
                                         .foregroundColor(.black)
                                         .fontWeight(.bold)
-                                    
-                                    Text("\(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
-                                        .foregroundColor(.black)
-                                        .fontWeight(.bold)
-                                    
-                                    Spacer()
                                 }
                                 Rectangle()
                                     .fill(Color.black)
@@ -74,14 +68,11 @@ struct ContentView: View {
                          .padding(.bottom, proxy.size.width * 0.2 / 2)
                     }
                     .background(Color.white)
-                    .frame(width: proxy.size.width * 0.9)
-                    .padding(.leading, proxy.size.width * 0.1 / 2)
+                    .frame(width: proxy.size.width * 0.95,height: proxy.size.height * 0.95)
+                    .padding(.all, proxy.size.width * 0.05 / 2)
                 }
                 .padding()
 
-//                Text("개역한글 성경")
-//                    .foregroundColor(Color.red)
-//                    .padding(.bottom)
             }
         }
         else{
