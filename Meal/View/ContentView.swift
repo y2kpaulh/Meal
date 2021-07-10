@@ -40,16 +40,21 @@ struct ContentView: View {
                             }
                             .padding(.top, 10)
                             
-                            HStack() {
-                                Text("\(plan["subject"] as! String)")
-                                    .foregroundColor(.black)
-                                    .fontWeight(.bold)
-                                
-                                Text("\(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
-                                    .foregroundColor(.black)
-                                    .fontWeight(.bold)
-                                
-                               // Spacer()
+                            VStack {
+                                HStack() {
+                                    Text("\(plan["subject"] as! String)")
+                                        .foregroundColor(.black)
+                                        .fontWeight(.bold)
+                                    
+                                    Text("\(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
+                                        .foregroundColor(.black)
+                                        .fontWeight(.bold)
+                                    
+                                    Spacer()
+                                }
+                                Rectangle()
+                                    .fill(Color.black)
+                                    .frame(height: 0.5)
                             }
                         }
                         
