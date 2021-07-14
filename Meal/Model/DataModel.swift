@@ -9,9 +9,8 @@ import Foundation
 
 struct BibleBook: Codable, Identifiable {
     var id: String { abbrev }
-    let abbrev: String
+    let abbrev, name : String
     let chapters: [[String]]
-    let name: String
 }
 
 struct MealPlan: Codable, Identifiable {

@@ -12,7 +12,7 @@ struct ContentView: View {
     var todayPlan: [String: Any]?
     
     init() {
-        bibleStore = BibleStore(books: loadJson("bible.json"))
+        bibleStore = BibleStore(books: loadJson("NKRV.json"))
         todayPlan = bibleStore.todayPlan()
                 
         UITableView.appearance().backgroundColor = .clear
@@ -42,7 +42,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(plan["subject"] as! String) \(detail.sChap) : \(detail.sVer) - \(detail.fVer)")
+                                    Text("\(plan["subject"] as! String) \(detail.sChap):\(detail.sVer)-\(detail.fVer)")
                                         .foregroundColor(.black)
                                         .fontWeight(.bold)
                                 }

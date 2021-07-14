@@ -7,7 +7,7 @@
 
 import Foundation
 
-func loadJson<T: Decodable>(_ filename: String) -> T {
+func loadJson<BibleBook: Decodable>(_ filename: String) -> BibleBook {
     let data: Data
     
     // Bundle 에서 파일이름을 통하여 파일의 주소를 가져온다.
@@ -26,7 +26,7 @@ func loadJson<T: Decodable>(_ filename: String) -> T {
     
     do {
         // parse the data
-        return try JSONDecoder().decode(T.self, from: data)
+        return try JSONDecoder().decode(BibleBook.self, from: data)
     } catch {
         fatalError("Unable to parse \(filename): \(error)")
     }
