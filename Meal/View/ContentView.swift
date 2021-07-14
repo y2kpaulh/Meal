@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         if let plan = todayPlan,  let detail = plan["detail"] as? MealPlan, let verses = plan["verse"] as? [String] {
             ZStack {
-                Color.white.edgesIgnoringSafeArea(.all)
+                Color.gray.edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { proxy in
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
@@ -84,6 +84,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
     }
 }
