@@ -1,21 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "Meal-2.jpg",
       "idiom" : "universal"
     },
     {
-      "filename" : "Meal-1.jpg",
+      "filename" : "Meal-3.jpg",
       "height-class" : "compact",
       "idiom" : "universal"
-    },
-    {
-      "idiom" : "universal",
-      "width-class" : "compact"
-    },
-    {
-      "height-class" : "compact",
-      "idiom" : "universal",
-      "width-class" : "compact"
     }
   ],
   "info" : {
