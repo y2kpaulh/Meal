@@ -15,6 +15,7 @@
 		2EBBD5FB268DBBFF00EA6BB2 /* bible.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FA268DBBFF00EA6BB2 /* bible.json */; };
 		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC33E226A0208C00E5F25A /* InfoPlist.strings */; };
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
@@ -37,6 +38,7 @@
 		2EBBD5FA268DBBFF00EA6BB2 /* bible.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bible.json; sourceTree = "<group>"; };
 		2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStore.swift; sourceTree = "<group>"; };
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2ECC33E126A0208C00E5F25A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */,
 				2EBBD5F3268DBB6000EA6BB2 /* Info.plist */,
 				2EBBD5F0268DBB6000EA6BB2 /* Preview Content */,
+				2ECC33E226A0208C00E5F25A /* InfoPlist.strings */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 2EBBD5DE268DBB5F00EA6BB2;
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
@@ -214,6 +218,7 @@
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
 				2EED48CF269848600069DD16 /* NanumBarunpenR.otf in Resources */,
+				2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +241,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2ECC33E226A0208C00E5F25A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2ECC33E126A0208C00E5F25A /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2EBBD5F4268DBB6000EA6BB2 /* Debug */ = {
