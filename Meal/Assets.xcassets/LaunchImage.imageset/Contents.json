@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "Meal-1.jpg",
+      "height-class" : "compact",
+      "idiom" : "universal"
+    },
+    {
+      "idiom" : "universal",
+      "width-class" : "compact"
+    },
+    {
+      "height-class" : "compact",
+      "idiom" : "universal",
+      "width-class" : "compact"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
