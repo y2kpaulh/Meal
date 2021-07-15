@@ -13,8 +13,6 @@ struct ContentView: View {
     
     init() {
         bibleStore = BibleStore(books: loadJson("NKRV.json"))
-        todayPlan = bibleStore.todayPlan()
-                
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
@@ -73,6 +71,11 @@ struct ContentView: View {
                 }
                 .padding()
 
+            }
+            .onAppear{
+                let todayPlan = bibleStore.todayPlan()
+                
+                if let plan = todayPlan,  let detail = plan["detail"] as? MealPlan, let verses = plan["verse"] as? [String]{}
             }
         }
         else{
