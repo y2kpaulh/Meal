@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -21,14 +22,11 @@
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48BF2697EE600069DD16 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
-		2EED48CE269848600069DD16 /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48CC269848600069DD16 /* NanumBarunpenB.otf */; };
-		2EED48CF269848600069DD16 /* NanumBarunpenR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48CD269848600069DD16 /* NanumBarunpenR.otf */; };
-		2EED48D22698486B0069DD16 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48D02698486B0069DD16 /* NanumBrush.otf */; };
-		2EED48D32698486B0069DD16 /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48D12698486B0069DD16 /* NanumPen.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
+		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,10 +42,6 @@
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		2EED48BE2697EE600069DD16 /* plan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
-		2EED48CC269848600069DD16 /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
-		2EED48CD269848600069DD16 /* NanumBarunpenR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.otf; sourceTree = "<group>"; };
-		2EED48D02698486B0069DD16 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
-		2EED48D12698486B0069DD16 /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +100,7 @@
 		2EBBD5F9268DBBE900EA6BB2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2EED48D02698486B0069DD16 /* NanumBrush.otf */,
-				2EED48D12698486B0069DD16 /* NanumPen.otf */,
-				2EED48CC269848600069DD16 /* NanumBarunpenB.otf */,
-				2EED48CD269848600069DD16 /* NanumBarunpenR.otf */,
+				2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */,
 				2EED48C0269826700069DD16 /* biblebook-ko.json */,
 				2EED48BE2697EE600069DD16 /* plan.json */,
 				2E679EE6269F12B300CB470A /* NKRV.json */,
@@ -209,14 +200,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EED48D32698486B0069DD16 /* NanumPen.otf in Resources */,
-				2EED48D22698486B0069DD16 /* NanumBrush.otf in Resources */,
 				2EED48BF2697EE600069DD16 /* plan.json in Resources */,
-				2EED48CE269848600069DD16 /* NanumBarunpenB.otf in Resources */,
 				2E679EE7269F12B300CB470A /* NKRV.json in Resources */,
+				2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */,
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
-				2EED48CF269848600069DD16 /* NanumBarunpenR.otf in Resources */,
 				2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */,
 				2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
