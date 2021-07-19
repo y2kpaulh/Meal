@@ -19,7 +19,7 @@ struct Meal: Codable {
 }
 
 // MARK: - Plan
-struct Plan: Codable, Identifiable {
+struct Plan: Codable, Identifiable, Hashable {
     var id: String { day }
     let day: String
     let book: String

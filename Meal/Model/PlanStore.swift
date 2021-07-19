@@ -13,7 +13,7 @@ class PlanStore: ObservableObject {
     let url = URL(string: planUrl)!
     var cancelables = Set<AnyCancellable>()
 
-    @Published var planList: [Plan]?
+    @Published var planList: [Plan] = []
     @Published var todayPlan: Plan?
     @Published var todayPlanData: PlanData?
     @Published var planDataError: Bool = false

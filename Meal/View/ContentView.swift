@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var planStore: PlanStore
-    
+    @State private var isPresented = false
+
     init() {
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some View {
-        
+
         if let todayPlan = planStore.todayPlan, let planData = planStore.getTodayPlanData() {
             ZStack {
                 Color.gray.edgesIgnoringSafeArea(.all)
@@ -34,6 +35,10 @@ struct ContentView: View {
                                     .font(.custom("NanumBrushOTF", size: 80))
                                 Text(planStore.todayDateStr())
                                     .foregroundColor(.gray)
+                                Button("Present!") {
+                                           isPresented.toggle()
+                                       }
+                                       .fullScreenCover(isPresented: $isPresented, content: MealPlanList.init)
                             }
                             .padding(.top, 10)
                             
