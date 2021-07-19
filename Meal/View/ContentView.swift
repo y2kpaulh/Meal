@@ -16,8 +16,8 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         if let todayPlan = planStore.todayPlan, let planData = planStore.getTodayPlanData() {
-            
             ZStack {
                 Color.gray.edgesIgnoringSafeArea(.all)
                 
