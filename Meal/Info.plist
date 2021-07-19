@@ -23,9 +23,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumBrush.otf</string>
-		<string>NanumPen.otf</string>
-		<string>NanumBarunpenB.otf</string>
-		<string>NanumBarunpenR.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

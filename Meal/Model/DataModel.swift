@@ -13,25 +13,24 @@ struct BibleBook: Codable, Identifiable {
     let chapters: [[String]]
 }
 
-struct MealPlan: Codable, Identifiable {
-    var id: String { day }
-    var day: String
-    var book: String
-    var sChap: Int
-    var sVer: Int
-    var fChap: Int
-    var fVer: Int
-}
-
+// MARK: - Meal
 struct Meal: Codable {
     let plan: [Plan]
 }
 
 // MARK: - Plan
-struct Plan: Codable {
+struct Plan: Codable, Identifiable {
+    var id: String { day }
     let day: String
-    let book: Book
+    let book: String
+    //let book: Book
     let sChap, sVer, fChap, fVer: Int
+}
+
+struct TodayPlanData: Codable {
+    let book: String
+    let plan: Plan
+    let verses: [String]
 }
 
 enum Book: String, Codable {
