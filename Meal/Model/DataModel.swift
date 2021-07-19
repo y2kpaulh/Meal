@@ -27,9 +27,8 @@ struct Plan: Codable, Identifiable {
     let sChap, sVer, fChap, fVer: Int
 }
 
-struct TodayPlanData: Codable {
+struct PlanData: Codable {
     let book: String
-    let plan: Plan
     let verses: [String]
 }
 

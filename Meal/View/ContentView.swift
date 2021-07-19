@@ -16,7 +16,8 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if let planData = planStore.getTodayPlanData() {
+        if let todayPlan = planStore.todayPlan, let planData = planStore.getTodayPlanData() {
+            
             ZStack {
                 Color.gray.edgesIgnoringSafeArea(.all)
                 
@@ -38,7 +39,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(planData.book) \(planData.plan.sChap):\(planData.plan.sVer)-\(planData.plan.fVer)")
+                                    Text("\(planData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
                                         .foregroundColor(.black)
                                         .fontWeight(.bold)
                                 }
@@ -51,7 +52,7 @@ struct ContentView: View {
                         List {
                             ForEach(Array(planData.verses.enumerated()), id: \.1) { index, verse in
                                 HStack(alignment: .top) {
-                                    Text("\(index + planData.plan.sVer)")
+                                    Text("\(index + todayPlan.sVer)")
                                         .foregroundColor(.gray)
                                         
                                     Text(verse)

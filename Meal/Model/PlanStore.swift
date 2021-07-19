@@ -15,7 +15,7 @@ class PlanStore: ObservableObject {
 
     @Published var planList: [Plan]?
     @Published var todayPlan: Plan?
-    @Published var todayPlanData: TodayPlanData?
+    @Published var todayPlanData: PlanData?
     @Published var planDataError: Bool = false
     
     var todayStr: String {
@@ -67,7 +67,7 @@ extension PlanStore {
 //        return output.data
 //    }
     
-    func getTodayPlanData() -> TodayPlanData? {
+    func getTodayPlanData() -> PlanData? {
         guard let todayPlan = self.todayPlan else { return nil }
         
         let book = BibleStore.books.filter { $0.abbrev == todayPlan.book }
@@ -84,7 +84,7 @@ extension PlanStore {
         let verseRange = chapter[todayPlan.sVer-1..<todayPlan.fVer]
         let verse = Array(verseRange)
         
-        return TodayPlanData(book: title, plan: todayPlan, verses: verse)
+        return PlanData(book: title, verses: verse)
     }
     
     func todayDateStr() -> String {
