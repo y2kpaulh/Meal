@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct MealApp: App {
-    @StateObject var bibleStore = BibleStore()
     @StateObject var planStore = PlanStore()
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(bibleStore)
                 .environmentObject(planStore)
                 .onAppear {
 //                  print(FileManager.documentURL ?? "")

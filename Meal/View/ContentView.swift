@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var bibleStore: BibleStore
-    var todayPlan: [String: Any]?
+    @EnvironmentObject var planStore: PlanStore
     
     init() {
-        bibleStore = BibleStore(books: loadJson("NKRV.json"))
-        todayPlan = bibleStore.todayPlan()
-                
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some View {
-        if let plan = todayPlan,  let detail = plan["detail"] as? MealPlan, let verses = plan["verse"] as? [String] {
+        
+        if let todayPlan = planStore.todayPlan, let planData = planStore.getTodayPlanData() {
             ZStack {
                 Color.gray.edgesIgnoringSafeArea(.all)
                 
@@ -35,14 +32,14 @@ struct ContentView: View {
                                 Text("끼니")
                                     .foregroundColor(.black)
                                     .font(.custom("NanumBrushOTF", size: 80))
-                                Text(bibleStore.todayDateStr())
+                                Text(planStore.todayDateStr())
                                     .foregroundColor(.gray)
                             }
                             .padding(.top, 10)
                             
                             VStack {
                                 HStack() {
-                                    Text("\(plan["subject"] as! String) \(detail.sChap):\(detail.sVer)-\(detail.fVer)")
+                                    Text("\(planData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
                                         .foregroundColor(.black)
                                         .fontWeight(.bold)
                                 }
@@ -53,14 +50,14 @@ struct ContentView: View {
                         }
                         
                         List {
-                            ForEach(Array(verses.enumerated()), id: \.1) { index, verse in
+                            ForEach(Array(planData.verses.enumerated()), id: \.1) { index, verse in
                                 HStack(alignment: .top) {
-                                    Text("\(index + detail.sVer)")
+                                    Text("\(index + todayPlan.sVer)")
                                         .foregroundColor(.gray)
                                         
                                     Text(verse)
                                         .foregroundColor(.black)
-                                        .font(.custom("NanumBrushOTF", size: 24))
+                                    //.font(.custom("NanumPenOTF", size: 24))
                                 }
                             }
                             .listRowBackground(Color.white)
@@ -72,11 +69,11 @@ struct ContentView: View {
                     .padding(.all, proxy.size.width * 0.05 / 2)
                 }
                 .padding()
-
             }
         }
-        else{
-            Text("Plain is not exist!")
+        
+        if planStore.planDataError {
+            Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
         }
     }
 }

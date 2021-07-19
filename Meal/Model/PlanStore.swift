@@ -6,21 +6,100 @@
 //
 
 import Foundation
+import Combine
 
 class PlanStore: ObservableObject {
-    @Published var plan: [MealPlan] = []
+    static let planUrl = "https://api.jsonbin.io/b/60f298aa0cd33f7437ca62e2/1"
+    let url = URL(string: planUrl)!
+    var cancelables = Set<AnyCancellable>()
+
+    @Published var planList: [Plan]?
+    @Published var todayPlan: Plan?
+    @Published var todayPlanData: PlanData?
+    @Published var planDataError: Bool = false
     
-    init (plan: [MealPlan] = []) {
-        self.plan = plan
-    }
-    
-    func todayPlan() -> MealPlan? {
+    var todayStr: String {
         let nowDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let today = dateFormatter.string(from: nowDate)
-        let todayPlan = self.plan.filter{ $0.day == today }
+        return dateFormatter.string(from: nowDate)
+    }
+    
+    init() {
+       getTodayPlan()
+    }
+    
+    func mealPlan() -> AnyPublisher<Meal, Never> {
+        URLSession.shared
+            .dataTaskPublisher(for: self.url)
+            .receive(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .map(\.data)
+            .decode(type: Meal.self, decoder: JSONDecoder())
+            .replaceError(with: Meal(plan: []))
+            .eraseToAnyPublisher()
+    }
+    
+    func getTodayPlan() {
+        mealPlan()
+            .sink(receiveCompletion: { completion in
+                if case .failure(let err) = completion {
+                    print("Retrieving data failed with error \(err)")
+                    self.planDataError = true
+                }
+            }, receiveValue: { object in
+                //print("Retrieved object \(object)")
+                self.planList = object.plan
+                let todayPlan = object.plan.filter{ $0.day == self.todayStr }
+                self.todayPlan = todayPlan[0]
+            })
+            .store(in: &cancelables)
+      }
+}
+
+extension PlanStore {
+//    func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
+//        guard
+//            let response = output.response as? HTTPURLResponse,
+//            response.statusCode >= 200 && response.statusCode < 300 else {
+//                throw URLError(.badServerResponse)
+//            }
+//        return output.data
+//    }
+    
+    func getTodayPlanData() -> PlanData? {
+        guard let todayPlan = self.todayPlan else { return nil }
         
-        return todayPlan[0]
+        let book = BibleStore.books.filter { $0.abbrev == todayPlan.book }
+
+        guard book.count > 0,
+              let planBook = book.first,
+              let index = BibleStore.books.firstIndex(where: { $0.abbrev == todayPlan.book })
+              else { return nil}
+
+        let title = BibleStore.titles[index]
+        let chapter = planBook.chapters[todayPlan.sChap-1]
+
+        //print(todayPlan.sVer, todayPlan.fVer)
+        let verseRange = chapter[todayPlan.sVer-1..<todayPlan.fVer]
+        let verse = Array(verseRange)
+        
+        return PlanData(book: title, verses: verse)
+    }
+    
+    func todayDateStr() -> String {
+        let date = NSDate()
+        let monFormatter = DateFormatter()
+        monFormatter.dateFormat = "MM/dd"
+        
+        let dateStr = monFormatter.string(from: date as Date)
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.locale = Locale(identifier: "ko") // 로케일 변경
+        dayFormatter.dateFormat = "EEEE"
+        
+        let day = dayFormatter.string(from: date as Date)
+        
+        return "\(dateStr), \(day)"
     }
 }
