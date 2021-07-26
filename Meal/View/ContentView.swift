@@ -70,7 +70,7 @@ struct ContentView: View {
                          .padding(.bottom, proxy.size.width * 0.2 / 2)
                     }
                     .background(Color.white)
-                    .frame(width: proxy.size.width * 0.95,height: proxy.size.height * 0.95)
+                    .frame(width: proxy.size.width * 0.95,height: proxy.size.height * 0.90)
                     .padding(.all, proxy.size.width * 0.05 / 2)
                 }
                 .padding()
