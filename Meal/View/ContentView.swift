@@ -17,21 +17,20 @@ struct ContentView: View {
     }
     
     var body: some View {
-
-        if let todayPlan = planStore.todayPlan, let planData = planStore.getTodayPlanData() {
+        if let todayPlan = planStore.todayPlan, let todayPlanData = planStore.todayPlanData {
             ZStack {
-                Color.gray.edgesIgnoringSafeArea(.all)
+                Color.appBkgd.edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { proxy in
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color.white)
+                   RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .fill(Color.appBkgd)
                         .shadow(radius: 10)
      
-                    VStack(spacing: 10) {
+                    VStack(spacing: 0) {
                         VStack() {
                             HStack(alignment: .center) {
                                 Text("끼니")
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.mealText)
                                     .font(.custom("NanumBrushOTF", size: 80))
                                 Text(planStore.todayDateStr())
                                     .foregroundColor(.gray)
@@ -44,33 +43,31 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(planData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
-                                        .foregroundColor(.black)
+                                    Text("\(todayPlanData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
+                                        .foregroundColor(.mealText)
                                         .fontWeight(.bold)
                                 }
                                 Rectangle()
-                                    .fill(Color.black)
+                                    .fill(Color.appBkgd)
                                     .frame(height: 0.5)
                             }
                         }
                         
                         List {
-                            ForEach(Array(planData.verses.enumerated()), id: \.1) { index, verse in
+                            ForEach(Array(todayPlanData.verses.enumerated()), id: \.1) { index, verse in
                                 HStack(alignment: .top) {
                                     Text("\(index + todayPlan.sVer)")
                                         .foregroundColor(.gray)
                                         
                                     Text(verse)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.mealText)
                                     //.font(.custom("NanumPenOTF", size: 24))
                                 }
                             }
-                            .listRowBackground(Color.white)
+                           .listRowBackground(Color.appBkgd)
                         }
-                         .padding(.bottom, proxy.size.width * 0.2 / 2)
+                      
                     }
-                    .background(Color.white)
-                    .frame(width: proxy.size.width * 0.95,height: proxy.size.height * 0.90)
                     .padding(.all, proxy.size.width * 0.05 / 2)
                 }
                 .padding()
@@ -86,5 +83,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .colorScheme(.dark)
     }
 }

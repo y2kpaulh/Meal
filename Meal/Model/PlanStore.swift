@@ -52,6 +52,7 @@ class PlanStore: ObservableObject {
                 self.planList = object.plan
                 let todayPlan = object.plan.filter{ $0.day == self.todayStr }
                 self.todayPlan = todayPlan[0]
+                self.todayPlanData = self.getTodayPlanData()
             })
             .store(in: &cancelables)
       }
