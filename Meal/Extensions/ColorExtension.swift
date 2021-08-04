@@ -40,7 +40,7 @@ extension Color {
 //  static let greenButton = Color("green-button")
 //  static let closeBkgd = Color("close-bkgd")
     static let appBkgd = Color("app-bkgd")
-  static let mealText = Color("meal-text")
+  static let mealTheme = Color("meal-theme")
   static let listBkgd = Color("list-bkgd")
 //  static let topBkgd = Color("top-bkgd")
 }

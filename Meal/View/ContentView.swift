@@ -19,36 +19,36 @@ struct ContentView: View {
     var body: some View {
         if let todayPlan = planStore.todayPlan, let todayPlanData = planStore.todayPlanData {
             ZStack {
-                Color.appBkgd.edgesIgnoringSafeArea(.all)
+                Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { proxy in
                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color.appBkgd)
-                        .shadow(radius: 10)
+                        .fill(Color(UIColor.systemBackground))
+                    .shadow(color: .mealTheme, radius: 10)
      
                     VStack(spacing: 0) {
                         VStack() {
                             HStack(alignment: .center) {
                                 Text("끼니")
-                                    .foregroundColor(.mealText)
+                                    .foregroundColor(Color(UIColor.label))
                                     .font(.custom("NanumBrushOTF", size: 80))
                                 Text(planStore.todayDateStr())
                                     .foregroundColor(.gray)
-                                Button("Present!") {
-                                           isPresented.toggle()
-                                       }
-                                       .fullScreenCover(isPresented: $isPresented, content: MealPlanList.init)
+//                                Button("Present!") {
+//                                           isPresented.toggle()
+//                                       }
+//                                       .fullScreenCover(isPresented: $isPresented, content: MealPlanList.init)
                             }
                             .padding(.top, 10)
                             
                             VStack {
                                 HStack() {
                                     Text("\(todayPlanData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
-                                        .foregroundColor(.mealText)
+                                        .foregroundColor(Color(UIColor.label))
                                         .fontWeight(.bold)
                                 }
                                 Rectangle()
-                                    .fill(Color.appBkgd)
+                                    .fill(Color(UIColor.systemBackground))
                                     .frame(height: 0.5)
                             }
                         }
@@ -60,11 +60,10 @@ struct ContentView: View {
                                         .foregroundColor(.gray)
                                         
                                     Text(verse)
-                                        .foregroundColor(.mealText)
+                                        .foregroundColor(.mealTheme)
                                     //.font(.custom("NanumPenOTF", size: 24))
                                 }
                             }
-                           .listRowBackground(Color.appBkgd)
                         }
                       
                     }
