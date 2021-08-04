@@ -33,14 +33,14 @@
 import SwiftUI
 
 extension Color {
-  // Add app colors to standard colors
-//  static let gradientDark = Color("gradient-dark")
-//  static let gradientLight = Color("gradient-light")
-//  static let grayButton = Color("gray-button")
-//  static let greenButton = Color("green-button")
-//  static let closeBkgd = Color("close-bkgd")
+    // Add app colors to standard colors
+    //  static let gradientDark = Color("gradient-dark")
+    //  static let gradientLight = Color("gradient-light")
+    //  static let grayButton = Color("gray-button")
+    //  static let greenButton = Color("green-button")
+    static let closeBkgd = Color("close-bkgd")
     static let appBkgd = Color("app-bkgd")
-  static let mealTheme = Color("meal-theme")
-  static let listBkgd = Color("list-bkgd")
-//  static let topBkgd = Color("top-bkgd")
+    static let mealTheme = Color("meal-theme")
+    static let listBkgd = Color("list-bkgd")
+    //  static let topBkgd = Color("top-bkgd")
 }

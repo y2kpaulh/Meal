@@ -8,42 +8,52 @@
 import SwiftUI
 
 struct MealPlanList: View {
-    @EnvironmentObject var planStore: PlanStore
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var planStore: PlanStore
+    
     init() {
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some View {
+        
+        VStack() {
             ZStack {
-                Color.gray.edgesIgnoringSafeArea(.all)
-
-                GeometryReader { proxy in
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(Color.white)
-                        .shadow(radius: 10)
-                    
-                    VStack(spacing: 10) {
-                        Button("Dismiss Modal") {
+                Text("끼니 일정표")
+                    .font(.custom("NanumBrushOTF", size: 40))
+                    .foregroundColor(Color(UIColor.label))
+                    .padding(.all, 20)
+                
+                HStack() {
+                    Spacer()
+                    Button(
+                        action: {
+                            //store.fetchContents()
                             presentationMode.wrappedValue.dismiss()
-                        }
-                        VStack() {
-                            List {
-                                ForEach(planStore.planList) {
-                                    Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
-                                }
-                                .listRowBackground(Color.white)
-                            }
-                            .padding(.bottom, proxy.size.width * 0.2 / 2)
-                        }
-                        .background(Color.white)
-                        .frame(width: proxy.size.width * 0.95,height: proxy.size.height * 0.90)
-                        .padding(.all, proxy.size.width * 0.05 / 2)
+                            // swiftlint:disable:next multiple_closures_with_trailing_closure
+                        }) {
+                        Image(systemName: "xmark")
+                            .font(.title3)
+                            .foregroundColor(Color(UIColor.label))
+                            .padding()
+                            .background(
+                                Circle().fill((Color.closeBkgd))
+                            )
                     }
-                    .padding()
+                    .padding([.top, .trailing])
                 }
+            }
+            
+            ScrollView {
+                ForEach(planStore.planList) {
+                    Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
+                        .font(.custom("NanumPenOTF", size: 20))
+                        .foregroundColor(Color(UIColor.label))
+                        .padding([.leading, .trailing], 20)
+                        .padding(.bottom, 10)
+                }
+            }
         }
     }
     
