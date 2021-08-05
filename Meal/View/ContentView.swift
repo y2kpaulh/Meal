@@ -54,7 +54,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer) - \(todayPlan.lChap):\(todayPlan.lVer)")
+                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer)-\(todayPlan.lChap):\(todayPlan.lVer)")
                                         .foregroundColor(Color(UIColor.label))
                                         .fontWeight(.bold)
                                         .font(.custom("NanumPenOTF", size: 20))
@@ -71,7 +71,7 @@ struct ContentView: View {
                             .padding(.bottom, 10)
                         
                         ScrollView {
-                            LazyVStack {
+                            LazyVStack(alignment: .leading) {
                                 ForEach(Array(todayPlanData.verses.enumerated()), id: \.1) { index, verse in
                                     HStack(alignment: .top) {
                                         if todayPlan.fChap == todayPlan.lChap {

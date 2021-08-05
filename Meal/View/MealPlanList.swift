@@ -44,19 +44,19 @@ struct MealPlanList: View {
                     .padding([.top, .trailing])
                 }
             }
-            
-            ScrollView {
-                LazyVStack{
-                    ForEach(Array(planStore.planList.enumerated()),id: \.1) { index, plan in
-                        PlanView(index: index, plan: plan)
-                            .environmentObject(planStore)
-                            .padding(10)
-                            .onTapGesture {
-    
-                            }
+            ScrollViewReader { scrollView in
+                ScrollView {
+                    LazyVStack{
+                        ForEach(Array(planStore.planList.enumerated()),id: \.1) { index, plan in
+                            PlanView(index: index, plan: plan)
+                                .environmentObject(planStore)
+                                .padding(10)
+                                .onTapGesture {
+        
+                                }
+                        }
                     }
                 }
- 
             }
             .mask(
                 VStack(spacing: 0) {
