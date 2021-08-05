@@ -46,12 +46,14 @@ struct MealPlanList: View {
             }
             
             ScrollView {
-                ForEach(planStore.planList) {
-                    Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
-                        .font(.custom("NanumBrushOTF", size: 20))
-                        .foregroundColor(Color(UIColor.label))
-                        .padding([.leading, .trailing], 20)
-                        .padding(.bottom, 10)
+                ForEach(planStore.planList) {_ in 
+//                    Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
+//                        .font(.custom("NanumBrushOTF", size: 20))
+//                        .foregroundColor(Color(UIColor.label))
+//                        .padding([.leading, .trailing], 20)
+//                        .padding(.bottom, 10)
+                    PlanView()
+                        .padding(10)
                 }
             }
         }
@@ -60,6 +62,7 @@ struct MealPlanList: View {
     struct MealPlanList_Previews: PreviewProvider {
         static var previews: some View {
             MealPlanList()
+                .environmentObject(PlanStore())
         }
     }
 }

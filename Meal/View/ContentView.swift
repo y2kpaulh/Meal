@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var networkReachability: NetworkReachability
+
     @StateObject var planStore = PlanStore()
     @State private var isPresented = false
     
@@ -19,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         if let todayPlan = planStore.todayPlan, let todayPlanData = planStore.todayPlanData {
             ZStack {
-                Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
+                //Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { proxy in
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
@@ -130,12 +132,19 @@ struct ContentView: View {
             }
         }
         
-        if planStore.loading && (planStore.todayPlanData == nil) {
+        if planStore.loading && (planStore.todayPlanData == nil) && networkReachability.reachable {
             ActivityIndicator()
         }
         
         if planStore.planDataError {
             Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
+        }
+        
+        if !networkReachability.reachable {
+            Text("서버 연결 오류가 발생했습니다.\n네트워크 연결 상태를 확인해주세요.")
+                .multilineTextAlignment(.center)
+                .foregroundColor(.gray)
+                .padding()
         }
     }
     

@@ -11,6 +11,9 @@
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
+		2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
+		2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FE26BBABD3008B6255 /* PlanView.swift */; };
+		2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
@@ -32,6 +35,9 @@
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		2E7CA8FE26BBABD3008B6255 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealButtonIcon.swift; sourceTree = "<group>"; };
 		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 				2ECC33FE26A0375000E5F25A /* LaunchScreen.storyboard */,
 				2EBBD5F0268DBB6000EA6BB2 /* Preview Content */,
 				2ECC33E226A0208C00E5F25A /* InfoPlist.strings */,
+				2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -135,7 +142,9 @@
 		2EBBD606268DD59A00EA6BB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */,
 				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
+				2E7CA8FE26BBABD3008B6255 /* PlanView.swift */,
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
 			);
@@ -227,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */,
 				2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
@@ -237,6 +247,8 @@
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
+				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
+				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

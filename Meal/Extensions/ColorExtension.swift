@@ -38,6 +38,8 @@ extension Color {
       static let gradientLight = Color("gradient-light")
     //  static let grayButton = Color("gray-button")
     //  static let greenButton = Color("green-button")
+    static let itemBkgd = Color("item-bkgd")
+
     static let closeBkgd = Color("close-bkgd")
     static let appBkgd = Color("app-bkgd")
     static let mealTheme = Color("meal-theme")

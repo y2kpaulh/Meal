@@ -11,10 +11,12 @@ import Combine
 @main
 struct MealApp: App {
 //    @StateObject var planStore = PlanStore()
+    @StateObject var networkReachability = NetworkReachability()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(networkReachability)
 //                .environmentObject(planStore)
                 .onAppear {
 //                  print(FileManager.documentURL ?? "")
