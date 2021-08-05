@@ -54,7 +54,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer)-\(todayPlan.lChap):\(todayPlan.lVer)")
+                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer)-\(todayPlan.fChap != todayPlan.lChap ? "\(todayPlan.lChap):" : "" )\(todayPlan.lVer)")
                                         .foregroundColor(Color(UIColor.label))
                                         .fontWeight(.bold)
                                         .font(.custom("NanumPenOTF", size: 20))
