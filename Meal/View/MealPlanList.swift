@@ -19,11 +19,11 @@ struct MealPlanList: View {
     var body: some View {
         
         VStack() {
-            ZStack {
+            ZStack(alignment: .center) {
                 Text("끼니 일정표")
                     .font(.custom("NanumBrushOTF", size: 40))
                     .foregroundColor(Color(UIColor.label))
-                    .padding(.all, 20)
+                    .padding(.top, 20)
                 
                 HStack() {
                     Spacer()
@@ -46,16 +46,40 @@ struct MealPlanList: View {
             }
             
             ScrollView {
-                ForEach(planStore.planList) {_ in 
-//                    Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
-//                        .font(.custom("NanumBrushOTF", size: 20))
-//                        .foregroundColor(Color(UIColor.label))
-//                        .padding([.leading, .trailing], 20)
-//                        .padding(.bottom, 10)
-                    PlanView()
-                        .padding(10)
+                LazyVStack{
+                    ForEach(Array(planStore.planList.enumerated()),id: \.1) { index, plan in
+                        PlanView(index: index, plan: plan)
+                            .environmentObject(planStore)
+                            .padding(10)
+                            .onTapGesture {
+    
+                            }
+                    }
                 }
+ 
             }
+            .mask(
+                VStack(spacing: 0) {
+                    // top gradient
+                    LinearGradient(gradient:
+                       Gradient(
+                        colors: [Color.black.opacity(0), Color.black]),
+                           startPoint: .top, endPoint: .bottom
+                       )
+                    .frame(height: 6)
+
+                    // Middle
+                    Rectangle().fill(Color.black)
+
+                    // bottom gradient
+                    LinearGradient(gradient:
+                       Gradient(
+                           colors: [Color.black, Color.black.opacity(0)]),
+                                   startPoint: .top, endPoint: .bottom
+                       )
+                    .frame(height: 6)
+                }
+             )
         }
     }
     

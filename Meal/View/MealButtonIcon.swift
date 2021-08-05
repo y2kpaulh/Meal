@@ -10,16 +10,16 @@ struct MealButtonIcon: View {
 
   var body: some View {
     ZStack {
-//      RoundedRectangle(cornerRadius: radius)
-//        .fill(
-//          LinearGradient(
-//            gradient: gradientColors,
-//            startPoint: .leading,
-//            endPoint: .trailing))
-//        .frame(width: width, height: height)
-      Image(uiImage: UIImage(named: "bible")!)
+      RoundedRectangle(cornerRadius: radius)
+        .fill(
+          LinearGradient(
+            gradient: gradientColors,
+            startPoint: .leading,
+            endPoint: .trailing))
+        .frame(width: width, height: height)
+      Image(uiImage: UIImage(named: "riceBowlIcon")!)
         .font(.title)
-        //.colorInvert()
+        .colorInvert()
     }
   }
 }

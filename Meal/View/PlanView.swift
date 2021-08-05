@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct PlanView: View {
+    let index: Int
+    let plan: Plan
+    
+    @EnvironmentObject var planStore: PlanStore
+   
     @Environment(\.verticalSizeClass) var
         verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var
@@ -19,40 +24,46 @@ struct PlanView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: -4) {
-            HStack(alignment: .center, spacing: -16) {
-                Image(uiImage: UIImage(named: "bible")!)
+            HStack(alignment: .center, spacing: -4) {
+                Image(uiImage: UIImage(named: "riceBowlIcon")!)
                     .renderingMode(.template)
                     .foregroundColor(Color(UIColor.label))
                     .padding([.leading, .trailing], 10)
                 
+//                MealButtonIcon(width: 40, height: 40, radius: 6)
+//                    .padding([.leading], 10)
                 
-                VStack(alignment: .leading, spacing: -10) {
+                VStack(alignment: .leading, spacing: -6) {
                     HStack{
                         Text("끼니")
-                            .font(.custom("NanumBrushOTF", size: 30))
+                            .font(.custom("NanumBrushOTF", size: 40))
                             .foregroundColor(Color(UIColor.label))
                             .bold()
                         
-                        Text("08.05, 목요일")
+                        Text("\(planStore.convertDateToStr(date: planStore.dateFormatter.date(from: plan.day)!))")
                             .font(.footnote)
-                            .foregroundColor(Color(UIColor.label))
+                            .foregroundColor(Color(.gray))
                             .bold()
                     }
-                    
-                    Text("마태복음 11:11 - 12:11")
+                                        
+                    Text("\(planStore.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.lChap): \(plan.lVer)")
                         .foregroundColor(Color(UIColor.label))
                         .bold()
                 }
                 .padding(.horizontal)
-                .font(.footnote)
                 .foregroundColor(Color(UIColor.systemGray))
             }
             
-            Text("Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.")
-                .lineLimit(3)
-                .font(.footnote)
-                .foregroundColor(Color(UIColor.label))
-                .padding(10)
+            if let planData = planStore.getDayPlanData(plan: plan) {
+                Text(planData.verses[0...3].joined(separator: " "))
+                    .lineLimit(3)
+                    //.font(.footnote)
+                    .foregroundColor(Color(UIColor.label))
+                    .padding([.top,.bottom], 20)
+                    .padding([.leading,.trailing], 10)
+
+            }
+          
         }
         .padding(10)
         .frame(width: isIPad ? 644 : nil)
@@ -62,16 +73,10 @@ struct PlanView: View {
     }
 }
 
-struct PlanView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlanView()
-            .previewLayout(.sizeThatFits)
-            .colorScheme(.dark)
-        
-        
-        PlanView()
-            .previewLayout(.sizeThatFits)
-            .colorScheme(.light)
-        
-    }
-}
+//struct PlanView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlanView(index: 0, plan: Plan())
+//            .previewLayout(.sizeThatFits)
+//            .colorScheme(.dark)
+//    }
+//}

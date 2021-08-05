@@ -35,7 +35,7 @@ struct ContentView: View {
                                     .foregroundColor(Color(UIColor.label))
                                     .font(.custom("NanumBrushOTF", size: 80))
                                 
-                                Text(planStore.todayDateStr())
+                                Text(planStore.convertDateToStr())
                                     .foregroundColor(.gray)
                                 
                                 Button(action: { isPresented.toggle() }) {
@@ -54,7 +54,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(todayPlanData.book) \(todayPlan.sChap):\(todayPlan.sVer) - \(todayPlan.fChap):\(todayPlan.fVer)")
+                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer) - \(todayPlan.lChap):\(todayPlan.lVer)")
                                         .foregroundColor(Color(UIColor.label))
                                         .fontWeight(.bold)
                                         .font(.custom("NanumPenOTF", size: 20))
@@ -74,17 +74,17 @@ struct ContentView: View {
                             LazyVStack {
                                 ForEach(Array(todayPlanData.verses.enumerated()), id: \.1) { index, verse in
                                     HStack(alignment: .top) {
-                                        if todayPlan.sChap == todayPlan.fChap {
-                                            Text("\(index + todayPlan.sVer)")
+                                        if todayPlan.fChap == todayPlan.lChap {
+                                            Text("\(index + todayPlan.fVer)")
                                                 .foregroundColor(.gray)
                                         }
                                         else {
                                             if let planBook = BibleStore.books.filter { $0.abbrev == todayPlan.book }.first {
-                                                let verseIndex = index + todayPlan.sVer
+                                                let verseIndex = index + todayPlan.fVer
                                                 
-                                                let sChapterCount = planBook.chapters[todayPlan.sChap - 1].count
+                                                let fChapterCount = planBook.chapters[todayPlan.fChap - 1].count
 
-                                                Text("\(verseIndex > sChapterCount ? verseIndex - sChapterCount : verseIndex)")
+                                                Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
                                                     .foregroundColor(.gray)
                                             }
                                         }

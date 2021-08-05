@@ -24,7 +24,7 @@ struct Plan: Codable, Identifiable, Hashable {
     let day: String
     let book: String
     //let book: Book
-    let sChap, sVer, fChap, fVer: Int
+    let fChap, fVer, lChap, lVer: Int
 }
 
 struct PlanData: Codable {
