@@ -76,14 +76,27 @@ extension PlanStore {
         guard book.count > 0,
               let planBook = book.first,
               let index = BibleStore.books.firstIndex(where: { $0.abbrev == todayPlan.book })
-              else { return nil}
+              else { return nil }
 
         let title = BibleStore.titles[index]
-        let chapter = planBook.chapters[todayPlan.sChap-1]
+        var verse = [String]()
+        
+        if todayPlan.sChap == todayPlan.fChap {
+            let chapter = planBook.chapters[todayPlan.sChap-1]
 
-        //print(todayPlan.sVer, todayPlan.fVer)
-        let verseRange = chapter[todayPlan.sVer-1..<todayPlan.fVer]
-        let verse = Array(verseRange)
+            let verseRange = chapter[todayPlan.sVer-1..<todayPlan.fVer]
+            
+            verse = Array(verseRange)
+        }
+        else{
+            let sChapter = planBook.chapters[todayPlan.sChap-1]
+            let fChapter = planBook.chapters[todayPlan.fChap-1]
+            
+            let sVerseRange = sChapter[todayPlan.sVer-1..<sChapter.count]
+            let fVerseRange = fChapter[0..<todayPlan.fVer]
+
+            verse = Array(sVerseRange + fVerseRange)
+        }
         
         return PlanData(book: title, verses: verse)
     }

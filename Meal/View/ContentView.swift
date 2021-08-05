@@ -46,24 +46,13 @@ struct ContentView: View {
                                        onDismiss: didDismiss) {
                                     MealPlanList()
                                         .environmentObject(planStore)
-//                                    VStack {
-//                                        Text("License Agreement")
-//                                            .font(.title)
-//                                            .padding(50)
-//                                        Text("""
-//                                                Terms and conditions go here.
-//                                            """)
-//                                            .padding(50)
-//                                        Button("Dismiss",
-//                                               action: { isPresented.toggle() })
-//                                    }
                                 }
                             }
                             .padding(.top, 10)
                             
                             VStack {
                                 HStack() {
-                                    Text("\(todayPlanData.book) \(todayPlan.sChap):\(todayPlan.sVer)-\(todayPlan.fVer)")
+                                    Text("\(todayPlanData.book) \(todayPlan.sChap):\(todayPlan.sVer) - \(todayPlan.fChap):\(todayPlan.fVer)")
                                         .foregroundColor(Color(UIColor.label))
                                         .fontWeight(.bold)
                                         .font(.custom("NanumPenOTF", size: 20))
@@ -83,8 +72,21 @@ struct ContentView: View {
                             LazyVStack {
                                 ForEach(Array(todayPlanData.verses.enumerated()), id: \.1) { index, verse in
                                     HStack(alignment: .top) {
-                                        Text("\(index + todayPlan.sVer)")
-                                            .foregroundColor(.gray)
+                                        if todayPlan.sChap == todayPlan.fChap {
+                                            Text("\(index + todayPlan.sVer)")
+                                                .foregroundColor(.gray)
+                                        }
+                                        else {
+                                            if let planBook = BibleStore.books.filter { $0.abbrev == todayPlan.book }.first {
+                                                let verseIndex = index + todayPlan.sVer
+                                                
+                                                let sChapterCount = planBook.chapters[todayPlan.sChap - 1].count
+
+                                                Text("\(verseIndex > sChapterCount ? verseIndex - sChapterCount : verseIndex)")
+                                                    .foregroundColor(.gray)
+                                            }
+                                        }
+                                        
                                         Text(verse)
                                             .foregroundColor(.mealTheme)
                                             .font(.custom("NanumPenOTF", size: 20))
@@ -96,7 +98,6 @@ struct ContentView: View {
                         }
                         .mask(
                             VStack(spacing: 0) {
-
                                 // top gradient
                                 LinearGradient(gradient:
                                    Gradient(
@@ -141,24 +142,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .colorScheme(.dark)
-    }
-}
-
-struct ListSeparatorStyle: ViewModifier {
-    
-    let style: UITableViewCell.SeparatorStyle
-    
-    func body(content: Content) -> some View {
-        content
-            .onAppear() {
-                UITableView.appearance().separatorStyle = self.style
-            }
-    }
-}
-
-extension View {
-    
-    func listSeparatorStyle(style: UITableViewCell.SeparatorStyle) -> some View {
-        ModifiedContent(content: self, modifier: ListSeparatorStyle(style: style))
     }
 }

@@ -48,7 +48,7 @@ struct MealPlanList: View {
             ScrollView {
                 ForEach(planStore.planList) {
                     Text("\($0.day) \($0.book) \($0.sChap):\($0.sVer)-\($0.fChap): \($0.fVer)")
-                        .font(.custom("NanumPenOTF", size: 20))
+                        .font(.custom("NanumBrushOTF", size: 20))
                         .foregroundColor(Color(UIColor.label))
                         .padding([.leading, .trailing], 20)
                         .padding(.bottom, 10)
