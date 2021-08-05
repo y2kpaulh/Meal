@@ -32,15 +32,32 @@
 
 import SwiftUI
 
-extension Color {
-    // Add app colors to standard colors
-      static let gradientDark = Color("gradient-dark")
-      static let gradientLight = Color("gradient-light")
-    //  static let grayButton = Color("gray-button")
-    //  static let greenButton = Color("green-button")
-    static let closeBkgd = Color("close-bkgd")
-    static let appBkgd = Color("app-bkgd")
-    static let mealTheme = Color("meal-theme")
-    static let listBkgd = Color("list-bkgd")
-    //  static let topBkgd = Color("top-bkgd")
+// https://bit.ly/3cVlzif
+struct ActivityIndicator: View {
+  let style = StrokeStyle(lineWidth: 6, lineCap: .round)
+  @State private var animate = false
+
+  let color1 = Color.gradientDark
+  let color2 = Color.gradientLight
+
+  var body: some View {
+    ZStack {
+      Circle()
+        .trim(from: 0, to: 0.7)
+        .stroke(
+          AngularGradient(
+            gradient: .init(colors: [color1, color2]),
+            center: .center
+        ),
+          style: style)
+        .frame(width: 100, height: 100, alignment: .center)
+        .rotationEffect(Angle(degrees: animate ? 360 : 0))
+        .animation(
+          Animation.linear(duration: 0.7)
+            .repeatForever(autoreverses: false))
+    }
+    .onAppear {
+      animate.toggle()
+    }
+  }
 }

@@ -10,6 +10,7 @@
 		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
@@ -30,6 +31,7 @@
 		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
+		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		2EBBD606268DD59A00EA6BB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
 			);
@@ -230,6 +233,7 @@
 				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
+				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,

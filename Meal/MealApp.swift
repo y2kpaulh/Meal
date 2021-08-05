@@ -10,12 +10,12 @@ import Combine
 
 @main
 struct MealApp: App {
-    @StateObject var planStore = PlanStore()
+//    @StateObject var planStore = PlanStore()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(planStore)
+//                .environmentObject(planStore)
                 .onAppear {
 //                  print(FileManager.documentURL ?? "")
                     

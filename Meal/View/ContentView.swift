@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var planStore: PlanStore
+    @StateObject var planStore = PlanStore()
     @State private var isPresented = false
     
     init() {
@@ -94,6 +94,8 @@ struct ContentView: View {
                                     .padding([.leading, .trailing], 20)
                                     .padding(.bottom, 10)
                                 }
+                                .redacted(reason: planStore.loading ? .placeholder : [])
+
                             }
                         }
                         .mask(
@@ -128,6 +130,10 @@ struct ContentView: View {
             }
         }
         
+        if planStore.loading && (planStore.todayPlanData == nil) {
+            ActivityIndicator()
+        }
+        
         if planStore.planDataError {
             Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
         }
@@ -141,6 +147,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .colorScheme(.dark)
+            .environmentObject(PlanStore())
     }
 }

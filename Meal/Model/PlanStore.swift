@@ -17,7 +17,8 @@ class PlanStore: ObservableObject {
     @Published var todayPlan: Plan?
     @Published var todayPlanData: PlanData?
     @Published var planDataError: Bool = false
-    
+    @Published var loading = false
+
     var todayStr: String {
         let nowDate = Date()
         let dateFormatter = DateFormatter()
@@ -41,18 +42,32 @@ class PlanStore: ObservableObject {
     }
     
     func getTodayPlan() {
+        loading = true
+        
         mealPlan()
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
+
                 if case .failure(let err) = completion {
                     print("Retrieving data failed with error \(err)")
                     self.planDataError = true
+                    
+                    DispatchQueue.main.async {
+                        self.loading = false
+                    }
                 }
-            }, receiveValue: { object in
+            }, receiveValue: { [weak self] object in
                 //print("Retrieved object \(object)")
+                guard let self = self else { return }
                 self.planList = object.plan
                 let todayPlan = object.plan.filter{ $0.day == self.todayStr }
+                guard todayPlan.count > 0 else { return }
                 self.todayPlan = todayPlan[0]
                 self.todayPlanData = self.getTodayPlanData()
+                
+                DispatchQueue.main.async {
+                    self.loading = false
+                }
             })
             .store(in: &cancelables)
       }
