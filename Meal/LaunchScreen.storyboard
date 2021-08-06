@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,18 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-zd-754">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riceBowl" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-zd-754">
+                                <rect key="frame" x="31" y="276" width="352" height="354"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KV1-zd-754" secondAttribute="height" multiplier="176:177" id="gfA-YW-H9x"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KV1-zd-754" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Bd-wu-6WA"/>
-                            <constraint firstAttribute="trailing" secondItem="KV1-zd-754" secondAttribute="trailing" id="1MO-qb-7md"/>
-                            <constraint firstItem="KV1-zd-754" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="HYr-9T-2nf"/>
-                            <constraint firstAttribute="bottom" secondItem="KV1-zd-754" secondAttribute="bottom" id="xQh-NP-WeN"/>
+                            <constraint firstItem="KV1-zd-754" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="c9i-ns-hcZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KV1-zd-754" secondAttribute="trailing" constant="31" id="hit-k1-oPz"/>
+                            <constraint firstItem="KV1-zd-754" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="uwl-LX-rc7"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +40,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="meal" width="640" height="640"/>
+        <image name="riceBowl" width="200" height="200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
