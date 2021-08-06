@@ -25,7 +25,7 @@ class PlanStore: ObservableObject {
     let url = URL(string: planUrl)!
     var cancelables = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
-    var widgetPlans: [WidgetPlan] = []
+    var widgetPlans: [NotiPlan] = []
     
     @Published var planList: [Plan] = []
     @Published var todayPlan: Plan?
@@ -71,13 +71,13 @@ class PlanStore: ObservableObject {
                     DispatchQueue.main.async {
                         self.registLocalNotification(plan: todayPlan, planData: todayPlanData)
                         
-                        self.widgetPlans.append(WidgetPlan(
+                        self.widgetPlans.append(NotiPlan(
                                                     day: todayPlan.day,
                                                     book: todayPlan.book,
                                                     fChap: todayPlan.fChap, fVer: todayPlan.fVer, lChap: todayPlan.lChap, lVer: todayPlan.lVer,
                                                     verses: todayPlanData.verses))
                         
-                        self.writeWidgetPlan()
+                        self.writeNotiPlan()
                         WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
                     }
                 }
@@ -97,7 +97,7 @@ class PlanStore: ObservableObject {
             .store(in: &cancelables)
     }
     
-    func writeWidgetPlan() {
+    func writeNotiPlan() {
         let archiveURL = FileManager.sharedContainerURL()
             .appendingPathComponent("widgetPlan.json")
         print(">>> \(archiveURL)")
@@ -190,13 +190,16 @@ extension PlanStore {
     }
     
     func registLocalNotification(plan: Plan, planData: PlanData){
-        let verses = planData.verses[0...2].joined(separator: " ")
-
-        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getDayMealPlanStr(plan: plan), body: verses)
+        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getDayMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
         self.manager.schedule()
     }
     
-   func getDayMealPlanStr(plan: Plan) -> String {
+    func getBibleSummary(verses: [String])-> String {
+        return verses[0...3].joined(separator: " ")
+
+    }
+    
+   func getDayMealPlanStr(plan: PlanProtocol) -> String {
         return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)"
     }
     

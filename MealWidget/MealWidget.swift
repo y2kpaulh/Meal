@@ -9,16 +9,16 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    let samplePlan = WidgetPlan(day: "2021-01-01",
+    let samplePlan = NotiPlan(day: "2021-01-01",
                                 book: "창",
                                 fChap: 1,
                                 fVer: 1,
                                 lChap: 1,
-                                lVer: 3,
+                                lVer: 5,
                                 verses: ["태초에 하나님이 천지를 창조하시니라","그 땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라","하나님이 이르시되 빛이 있으라 하시니 빛이 있었고 ", "그 빛이 하나님이 보시기에 좋았더라 하나님이 빛과 어둠을 나누사","하나님이 빛을 낮이라 부르시고 어둠을 밤이라 부르시니라 저녁이 되고 아침이 되니 이는 첫째 날이니라"])
     
-    func readWidgtPlan() -> [WidgetPlan] {
-        var widgetPlan: [WidgetPlan] = []
+    func readWidgtPlan() -> [NotiPlan] {
+        var widgetPlan: [NotiPlan] = []
         let archiveURL = FileManager.sharedContainerURL()
             .appendingPathComponent("widgetPlan.json")
         print(">>> \(archiveURL)")
@@ -26,7 +26,7 @@ struct Provider: TimelineProvider {
         if let codeData = try? Data(contentsOf: archiveURL) {
             do {
                 widgetPlan = try JSONDecoder().decode(
-                    [WidgetPlan].self,
+                    [NotiPlan].self,
                     from: codeData)
             } catch {
                 print("Error: Can't decode contents")
@@ -70,7 +70,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let plan: WidgetPlan
+    let plan: NotiPlan
 }
 
 struct MealWidgetEntryView : View {
@@ -105,7 +105,7 @@ struct MealWidgetEntryView : View {
                                         .unredacted()
                                     WidgetDateView(entry: entry,planStore: planStore)
                                 }
-                                WidgetPlanLabelView(entry: entry,planStore: planStore)
+                                NotiPlanLabelView(entry: entry,planStore: planStore)
                             }
                         }
                         else{
@@ -114,7 +114,7 @@ struct MealWidgetEntryView : View {
                                 WidgetDateView(entry: entry,planStore: planStore)
                             }
                             
-                            WidgetPlanLabelView(entry: entry,planStore: planStore)
+                            NotiPlanLabelView(entry: entry,planStore: planStore)
                         }
                     }
                     .padding(.horizontal)
@@ -122,7 +122,7 @@ struct MealWidgetEntryView : View {
                 }
                 
                 if family != .systemSmall {
-                    Text(entry.plan.verses[0...2].joined(separator: " "))
+                    Text(planStore.getBibleSummary(verses: entry.plan.verses))
                         .font(.custom("NanumMyeongjoOTF", size: 16))
                         .lineLimit(3)
                         //.font(.footnote)
@@ -158,12 +158,12 @@ struct WidgetDateView: View {
     }
 }
 
-struct WidgetPlanLabelView: View {
+struct NotiPlanLabelView: View {
     var entry: Provider.Entry
     var planStore: PlanStore
 
     var body: some View{
-        Text(planStore.getDayMealPlanStr(plan: Plan(day: entry.plan.day, book: entry.plan.book, fChap: entry.plan.fChap, fVer: entry.plan.fVer, lChap: entry.plan.lChap, lVer: entry.plan.lVer)))
+        Text(planStore.getDayMealPlanStr(plan: entry.plan))
             .foregroundColor(Color(UIColor.label))
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()

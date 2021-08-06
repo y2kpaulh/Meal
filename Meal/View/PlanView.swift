@@ -56,7 +56,7 @@ struct PlanView: View {
             }
             
             if let planData = planStore.getDayPlanData(plan: plan) {
-                Text(planData.verses[0...3].joined(separator: " "))
+                Text(planStore.getBibleSummary(verses: planData.verses))
                     .font(.custom("NanumMyeongjoOTF", size: 12))
                     .lineLimit(3)
                     //.font(.footnote)
