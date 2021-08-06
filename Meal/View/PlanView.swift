@@ -48,7 +48,8 @@ struct PlanView: View {
                                         
                     Text("\(planStore.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)")
                         .foregroundColor(Color(UIColor.label))
-                        .bold()
+                        .font(.custom("NanumMyeongjoOTFBold", size: 16))
+                        //.bold()
                 }
                 .padding(.horizontal)
                 .foregroundColor(Color(UIColor.systemGray))
@@ -56,14 +57,13 @@ struct PlanView: View {
             
             if let planData = planStore.getDayPlanData(plan: plan) {
                 Text(planData.verses[0...3].joined(separator: " "))
+                    .font(.custom("NanumMyeongjoOTF", size: 12))
                     .lineLimit(3)
                     //.font(.footnote)
                     .foregroundColor(Color(UIColor.label))
                     .padding([.top,.bottom], 20)
                     .padding([.leading,.trailing], 10)
-
-            }
-          
+            }          
         }
         .padding(10)
         .frame(width: isIPad ? 644 : nil)

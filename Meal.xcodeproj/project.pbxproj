@@ -12,6 +12,24 @@
 		2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2B7CB026BBF82900DAC920 /* MealWidget.swift */; };
 		2E2B7CB326BBF82C00DAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CB226BBF82C00DAC920 /* Assets.xcassets */; };
 		2E2B7CB726BBF82C00DAC920 /* MealWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E2B7CC126BCBC8B00DAC920 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E2B7CC226BCBC8B00DAC920 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E2B7CC326BCBC8B00DAC920 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E2B7CC426BCBC9500DAC920 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E2B7CC526BCBC9500DAC920 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E2B7CC726BCBC9800DAC920 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
+		2E2B7CC926BCC58C00DAC920 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
+		2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
+		2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
+		2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
+		2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
+		2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E32EF5B26BCD11700716A54 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
+		2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
 		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
@@ -68,6 +86,9 @@
 		2E2B7CB426BBF82C00DAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2B7CBC26BBF85500DAC920 /* Meal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Meal.entitlements; sourceTree = "<group>"; };
 		2E2B7CBD26BBF87600DAC920 /* MealWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealWidgetExtension.entitlements; sourceTree = "<group>"; };
+		2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoExtraBold.otf; sourceTree = "<group>"; };
+		2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
+		2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
@@ -183,6 +204,9 @@
 		2EBBD5F9268DBBE900EA6BB2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */,
+				2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */,
+				2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */,
 				2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */,
 				2EED48C0269826700069DD16 /* biblebook-ko.json */,
 				2EED48BE2697EE600069DD16 /* plan.json */,
@@ -212,10 +236,10 @@
 		2EBBD606268DD59A00EA6BB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */,
 				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
 				2E7CA8FE26BBABD3008B6255 /* PlanView.swift */,
-				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
 			);
 			path = View;
@@ -311,7 +335,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2B7CC426BCBC9500DAC920 /* NanumMyeongjoBold.otf in Resources */,
+				2E2B7CC526BCBC9500DAC920 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E2B7CC726BCBC9800DAC920 /* NanumBrush.otf in Resources */,
 				2E2B7CB326BBF82C00DAC920 /* Assets.xcassets in Resources */,
+				2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */,
+				2E32EF5B26BCD11700716A54 /* plan.json in Resources */,
+				2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */,
+				2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */,
+				2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +356,11 @@
 				2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */,
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
+				2E2B7CC326BCBC8B00DAC920 /* NanumMyeongjo.otf in Resources */,
 				2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */,
 				2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */,
+				2E2B7CC126BCBC8B00DAC920 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E2B7CC226BCBC8B00DAC920 /* NanumMyeongjoBold.otf in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +373,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */,
+				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
+				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
+				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
+				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
+				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
+				2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */,
+				2E2B7CC926BCC58C00DAC920 /* BibleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

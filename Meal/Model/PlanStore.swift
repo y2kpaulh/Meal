@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import WidgetKit
 
 class PlanStore: ObservableObject {
     static let planUrl = "https://api.jsonbin.io/b/610ba2cdf098011544ab9bd4/6"
@@ -63,6 +64,8 @@ class PlanStore: ObservableObject {
                 self.todayPlan = todayPlan[0]
                 self.todayPlanData = self.getTodayPlanData()
                 
+                WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
+
                 DispatchQueue.main.async {
                     self.loading = false
                 }

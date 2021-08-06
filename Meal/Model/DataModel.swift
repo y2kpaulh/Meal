@@ -27,6 +27,13 @@ struct Plan: Codable, Identifiable, Hashable {
     let fChap, fVer, lChap, lVer: Int
 }
 
+struct MiniPlan {
+    let day: String
+    let book: String
+    //let book: Book
+    let fChap, fVer, lChap, lVer: Int
+    let verses: [String]
+}
 struct PlanData: Codable {
     let book: String
     let verses: [String]

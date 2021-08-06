@@ -56,8 +56,7 @@ struct ContentView: View {
                                 HStack() {
                                     Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer)-\(todayPlan.fChap != todayPlan.lChap ? "\(todayPlan.lChap):" : "" )\(todayPlan.lVer)")
                                         .foregroundColor(Color(UIColor.label))
-                                        .fontWeight(.bold)
-                                        .font(.custom("NanumPenOTF", size: 20))
+                                        .font(.custom("NanumMyeongjoOTFBold", size: 20))
                                 }
                                 Rectangle()
                                     .fill(Color(UIColor.systemBackground))
@@ -91,7 +90,8 @@ struct ContentView: View {
                                         
                                         Text(verse)
                                             .foregroundColor(.mealTheme)
-                                            .font(.custom("NanumPenOTF", size: 20))
+                                            .font(.custom("NanumMyeongjoOTF", size: 20))
+                                            .padding(.top, 4)
                                     }
                                     .padding([.leading, .trailing], 20)
                                     .padding(.bottom, 10)

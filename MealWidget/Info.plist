@@ -25,5 +25,12 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widgetkit-extension</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumBrush.otf</string>
+		<string>NanumMyeongjo.otf</string>
+		<string>NanumMyeongjoBold.otf</string>
+		<string>NanumMyeongjoExtraBold.otf</string>
+	</array>
 </dict>
 </plist>
