@@ -85,22 +85,22 @@ struct MealWidgetEntryView : View {
                 HStack(alignment: .center, spacing: -14) {
                     Image(uiImage: UIImage(named: "riceBowlIcon")!)
                         .renderingMode(.template)
-                        .frame(width: 30, height: 30)
+                        .frame(width: 20, height: 20)
                         .foregroundColor(Color(UIColor.label))
                         .padding([.leading, .trailing], 20)
                         .unredacted()
                     
-                    VStack(alignment: .leading, spacing: -8) {
+                    VStack(alignment: .leading, spacing: -4) {
                         if family == .systemSmall {
                             Text("끼니")
-                                .font(.custom("NanumBrushOTF", size: 40))
+                                .font(.custom("NanumBrushOTF", size: 30))
                                 .foregroundColor(Color(UIColor.label))
                                 .font(.footnote)
                         }
                         else{
                             HStack{
                                 Text("끼니")
-                                    .font(.custom("NanumBrushOTF", size: 40))
+                                    .font(.custom("NanumBrushOTF", size: 30))
                                     .foregroundColor(Color(UIColor.label))
                                     .bold()
                                 
