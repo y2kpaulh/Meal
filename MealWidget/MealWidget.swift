@@ -81,40 +81,41 @@ struct MealWidgetEntryView : View {
     var body: some View {
         ZStack {
             Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
-            VStack(alignment: .leading, spacing: -10) {
+            VStack(alignment: .leading, spacing: -12) {
                 HStack(alignment: .center, spacing: -14) {
+                    
+                    if family != .systemSmall {
                     Image(uiImage: UIImage(named: "riceBowlIcon")!)
                         .renderingMode(.template)
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color(UIColor.label))
                         .padding([.leading, .trailing], 20)
                         .unredacted()
+                    }
                     
                     VStack(alignment: .leading, spacing: -4) {
-                        if family == .systemSmall {
-                            Text("끼니")
-                                .font(.custom("NanumBrushOTF", size: 30))
-                                .foregroundColor(Color(UIColor.label))
-                                .font(.footnote)
+                        if family == .systemSmall{
+                            VStack(alignment: .center, spacing: 10){
+                                VStack(spacing: 20) {
+                                    Image(uiImage: UIImage(named: "riceBowlIcon")!)
+                                        .renderingMode(.template)
+                                        .frame(width: 10, height: 10)
+                                        .foregroundColor(Color(UIColor.label))
+                                        .padding([.leading, .trailing], 20)
+                                        .unredacted()
+                                    WidgetDateView(entry: entry,planStore: planStore)
+                                }
+                                WidgetPlanLabelView(entry: entry,planStore: planStore)
+                            }
                         }
                         else{
                             HStack{
-                                Text("끼니")
-                                    .font(.custom("NanumBrushOTF", size: 30))
-                                    .foregroundColor(Color(UIColor.label))
-                                    .bold()
-                                
-                                Text("\(planStore.convertDateToStr(date: planStore.dateFormatter.date(from: entry.plan.day)!))")
-                                    .font(.footnote)
-                                    .foregroundColor(Color(.gray))
-                                    .bold()
+                                WidgetTilteView(size: 34)
+                                WidgetDateView(entry: entry,planStore: planStore)
                             }
+                            
+                            WidgetPlanLabelView(entry: entry,planStore: planStore)
                         }
-                        
-                        Text("\(planStore.getBookTitle(book: entry.plan.book) ?? entry.plan.book) \(entry.plan.fChap):\(entry.plan.fVer)-\(entry.plan.fChap != entry.plan.lChap ? "\(entry.plan.lChap):" : "" )\(entry.plan.lVer)")
-                            .foregroundColor(Color(UIColor.label))
-                            .font(.custom("NanumMyeongjoOTFBold", size: 16))
-                            .bold()
                     }
                     .padding(.horizontal)
                     .foregroundColor(Color(UIColor.systemGray))
@@ -133,6 +134,39 @@ struct MealWidgetEntryView : View {
             .padding(10)
             .background(Color.clear)
         }
+    }
+}
+
+struct WidgetTilteView: View {
+    var size: CGFloat
+    var body: some View{
+        Text("끼니")
+            .font(.custom("NanumBrushOTF", size: size))
+            .foregroundColor(Color(UIColor.label))
+    }
+}
+
+struct WidgetDateView: View {
+    var entry: Provider.Entry
+    var planStore: PlanStore
+    
+    var body: some View{
+        Text("\(planStore.convertDateToStr(date: planStore.dateFormatter.date(from: entry.plan.day)!))")
+            .font(.footnote)
+            .foregroundColor(Color(.gray))
+            .bold()
+    }
+}
+
+struct WidgetPlanLabelView: View {
+    var entry: Provider.Entry
+    var planStore: PlanStore
+
+    var body: some View{
+        Text("\(planStore.getBookTitle(book: entry.plan.book) ?? entry.plan.book) \(entry.plan.fChap):\(entry.plan.fVer)-\(entry.plan.fChap != entry.plan.lChap ? "\(entry.plan.lChap):" : "" )\(entry.plan.lVer)")
+            .foregroundColor(Color(UIColor.label))
+            .font(.custom("NanumMyeongjoOTFBold", size: 16))
+            .bold()
     }
 }
 
