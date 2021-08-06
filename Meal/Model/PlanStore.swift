@@ -19,6 +19,8 @@ extension FileManager {
 }
 
 class PlanStore: ObservableObject {
+    let manager = LocalNotificationManager()
+    
     static let planUrl = "https://api.jsonbin.io/b/610ca7a3e1b0604017a77e22"
     let url = URL(string: planUrl)!
     var cancelables = Set<AnyCancellable>()
@@ -67,6 +69,8 @@ class PlanStore: ObservableObject {
                 
                 if let todayPlan = self.todayPlan, let todayPlanData = self.todayPlanData {
                     DispatchQueue.main.async {
+                        self.registLocalNotification(plan: todayPlan, planData: todayPlanData)
+                        
                         self.widgetPlans.append(WidgetPlan(
                                                     day: todayPlan.day,
                                                     book: todayPlan.book,
@@ -85,7 +89,7 @@ class PlanStore: ObservableObject {
                 guard todayPlan.count > 0 else { return }
                 self.todayPlan = todayPlan[0]
                 self.todayPlanData = self.getTodayPlanData()
-                
+
                 DispatchQueue.main.async {
                     self.loading = false
                 }
@@ -184,4 +188,16 @@ extension PlanStore {
         
         return "\(dateStr), \(day)"
     }
+    
+    func registLocalNotification(plan: Plan, planData: PlanData){
+        let verses = planData.verses[0...2].joined(separator: " ")
+
+        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getDayMealPlanStr(plan: plan), body: verses)
+        self.manager.schedule()
+    }
+    
+   func getDayMealPlanStr(plan: Plan) -> String {
+        return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)"
+    }
+    
 }

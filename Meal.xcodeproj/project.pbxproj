@@ -32,6 +32,8 @@
 		2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
 		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
+		2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2E4235A626BD1EF900808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
 		2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
@@ -91,6 +93,7 @@
 		2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
+		2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 		2EBBD5FC268DBC5E00EA6BB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */,
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
@@ -378,6 +382,7 @@
 				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
 				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
+				2E4235A626BD1EF900808E85 /* LocalNotificationManager.swift in Sources */,
 				2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */,
 				2E2B7CC926BCC58C00DAC920 /* BibleStore.swift in Sources */,
 			);
@@ -387,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */,
 				2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */,
 				2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,

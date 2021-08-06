@@ -46,7 +46,7 @@ struct PlanView: View {
                             .bold()
                     }
                                         
-                    Text("\(planStore.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)")
+                    Text(planStore.getDayMealPlanStr(plan: plan))
                         .foregroundColor(Color(UIColor.label))
                         .font(.custom("NanumMyeongjoOTFBold", size: 16))
                         //.bold()

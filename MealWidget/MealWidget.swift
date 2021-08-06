@@ -163,7 +163,7 @@ struct WidgetPlanLabelView: View {
     var planStore: PlanStore
 
     var body: some View{
-        Text("\(planStore.getBookTitle(book: entry.plan.book) ?? entry.plan.book) \(entry.plan.fChap):\(entry.plan.fVer)-\(entry.plan.fChap != entry.plan.lChap ? "\(entry.plan.lChap):" : "" )\(entry.plan.lVer)")
+        Text(planStore.getDayMealPlanStr(plan: Plan(day: entry.plan.day, book: entry.plan.book, fChap: entry.plan.fChap, fVer: entry.plan.fVer, lChap: entry.plan.lChap, lVer: entry.plan.lVer)))
             .foregroundColor(Color(UIColor.label))
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()

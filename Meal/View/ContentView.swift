@@ -54,7 +54,7 @@ struct ContentView: View {
                             
                             VStack {
                                 HStack() {
-                                    Text("\(todayPlanData.book) \(todayPlan.fChap):\(todayPlan.fVer)-\(todayPlan.fChap != todayPlan.lChap ? "\(todayPlan.lChap):" : "" )\(todayPlan.lVer)")
+                                    Text(planStore.getDayMealPlanStr(plan: todayPlan))
                                         .foregroundColor(Color(UIColor.label))
                                         .font(.custom("NanumMyeongjoOTFBold", size: 20))
                                 }
