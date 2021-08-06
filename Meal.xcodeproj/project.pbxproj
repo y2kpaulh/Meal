@@ -34,6 +34,16 @@
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
 		2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2E4235A626BD1EF900808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2E4235D826BD366000808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235D726BD366000808E85 /* Assets.xcassets */; };
+		2E4235DF26BD366000808E85 /* MealWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E4235DE26BD366000808E85 /* MealWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E4235E426BD366000808E85 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E326BD366000808E85 /* MealApp.swift */; };
+		2E4235E626BD366000808E85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E526BD366000808E85 /* ContentView.swift */; };
+		2E4235E826BD366000808E85 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E726BD366000808E85 /* NotificationController.swift */; };
+		2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E926BD366000808E85 /* NotificationView.swift */; };
+		2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235EB26BD366000808E85 /* ComplicationController.swift */; };
+		2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235ED26BD366100808E85 /* Assets.xcassets */; };
+		2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235F026BD366100808E85 /* Preview Assets.xcassets */; };
+		2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2E4235D526BD365E00808E85 /* MealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
 		2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
@@ -63,6 +73,20 @@
 			remoteGlobalIDString = 2E2B7CA826BBF82900DAC920;
 			remoteInfo = MealWidgetExtension;
 		};
+		2E4235E026BD366000808E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBBD5DF268DBB5F00EA6BB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4235DD26BD366000808E85;
+			remoteInfo = "MealWatch Extension";
+		};
+		2E4235F426BD366100808E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBBD5DF268DBB5F00EA6BB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4235D426BD365E00808E85;
+			remoteInfo = MealWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +97,28 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2E2B7CB726BBF82C00DAC920 /* MealWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235F726BD366100808E85 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235FA26BD366100808E85 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E4235DF26BD366000808E85 /* MealWatch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +140,19 @@
 		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
 		2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		2E4235D526BD365E00808E85 /* MealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4235D726BD366000808E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E4235D926BD366000808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4235DE26BD366000808E85 /* MealWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MealWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4235E326BD366000808E85 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
+		2E4235E526BD366000808E85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E4235E726BD366000808E85 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2E4235E926BD366000808E85 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		2E4235EB26BD366000808E85 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		2E4235ED26BD366100808E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E4235F026BD366100808E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E4235F226BD366100808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4235F326BD366100808E85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -127,6 +186,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2E4235DB26BD366000808E85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,12 +222,47 @@
 			path = MealWidget;
 			sourceTree = "<group>";
 		};
+		2E4235D626BD365E00808E85 /* MealWatch */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235D726BD366000808E85 /* Assets.xcassets */,
+				2E4235D926BD366000808E85 /* Info.plist */,
+			);
+			path = MealWatch;
+			sourceTree = "<group>";
+		};
+		2E4235E226BD366000808E85 /* MealWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235E326BD366000808E85 /* MealApp.swift */,
+				2E4235E526BD366000808E85 /* ContentView.swift */,
+				2E4235E726BD366000808E85 /* NotificationController.swift */,
+				2E4235E926BD366000808E85 /* NotificationView.swift */,
+				2E4235EB26BD366000808E85 /* ComplicationController.swift */,
+				2E4235ED26BD366100808E85 /* Assets.xcassets */,
+				2E4235F226BD366100808E85 /* Info.plist */,
+				2E4235F326BD366100808E85 /* PushNotificationPayload.apns */,
+				2E4235EF26BD366100808E85 /* Preview Content */,
+			);
+			path = "MealWatch Extension";
+			sourceTree = "<group>";
+		};
+		2E4235EF26BD366100808E85 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235F026BD366100808E85 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		2EBBD5DE268DBB5F00EA6BB2 = {
 			isa = PBXGroup;
 			children = (
 				2E2B7CBD26BBF87600DAC920 /* MealWidgetExtension.entitlements */,
 				2EBBD5E9268DBB5F00EA6BB2 /* Meal */,
 				2E2B7CAF26BBF82900DAC920 /* MealWidget */,
+				2E4235D626BD365E00808E85 /* MealWatch */,
+				2E4235E226BD366000808E85 /* MealWatch Extension */,
 				2E2B7CAA26BBF82900DAC920 /* Frameworks */,
 				2EBBD5E8268DBB5F00EA6BB2 /* Products */,
 			);
@@ -172,6 +273,8 @@
 			children = (
 				2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */,
 				2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */,
+				2E4235D526BD365E00808E85 /* MealWatch.app */,
+				2E4235DE26BD366000808E85 /* MealWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,6 +381,40 @@
 			productReference = 2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		2E4235D426BD365E00808E85 /* MealWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E4235FE26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch" */;
+			buildPhases = (
+				2E4235D326BD365E00808E85 /* Resources */,
+				2E4235FA26BD366100808E85 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E4235E126BD366000808E85 /* PBXTargetDependency */,
+			);
+			name = MealWatch;
+			productName = MealWatch;
+			productReference = 2E4235D526BD365E00808E85 /* MealWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2E4235DD26BD366000808E85 /* MealWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E4235FD26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch Extension" */;
+			buildPhases = (
+				2E4235DA26BD366000808E85 /* Sources */,
+				2E4235DB26BD366000808E85 /* Frameworks */,
+				2E4235DC26BD366000808E85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MealWatch Extension";
+			productName = "MealWatch Extension";
+			productReference = 2E4235DE26BD366000808E85 /* MealWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		2EBBD5E6268DBB5F00EA6BB2 /* Meal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */;
@@ -286,11 +423,13 @@
 				2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */,
 				2EBBD5E5268DBB5F00EA6BB2 /* Resources */,
 				2E2B7CBB26BBF82C00DAC920 /* Embed App Extensions */,
+				2E4235F726BD366100808E85 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				2E2B7CB626BBF82C00DAC920 /* PBXTargetDependency */,
+				2E4235F526BD366100808E85 /* PBXTargetDependency */,
 			);
 			name = Meal;
 			productName = meal;
@@ -307,6 +446,12 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					2E2B7CA826BBF82900DAC920 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					2E4235D426BD365E00808E85 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					2E4235DD26BD366000808E85 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					2EBBD5E6268DBB5F00EA6BB2 = {
@@ -330,6 +475,8 @@
 			targets = (
 				2EBBD5E6268DBB5F00EA6BB2 /* Meal */,
 				2E2B7CA826BBF82900DAC920 /* MealWidgetExtension */,
+				2E4235D426BD365E00808E85 /* MealWatch */,
+				2E4235DD26BD366000808E85 /* MealWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -348,6 +495,23 @@
 				2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */,
 				2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */,
 				2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235D326BD365E00808E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4235D826BD366000808E85 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235DC26BD366000808E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */,
+				2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +552,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2E4235DA26BD366000808E85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
+				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
+				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
+				2E4235E426BD366000808E85 /* MealApp.swift in Sources */,
+				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EBBD5E3268DBB5F00EA6BB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +592,16 @@
 			isa = PBXTargetDependency;
 			target = 2E2B7CA826BBF82900DAC920 /* MealWidgetExtension */;
 			targetProxy = 2E2B7CB526BBF82C00DAC920 /* PBXContainerItemProxy */;
+		};
+		2E4235E126BD366000808E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E4235DD26BD366000808E85 /* MealWatch Extension */;
+			targetProxy = 2E4235E026BD366000808E85 /* PBXContainerItemProxy */;
+		};
+		2E4235F526BD366100808E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E4235D426BD365E00808E85 /* MealWatch */;
+			targetProxy = 2E4235F426BD366100808E85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +658,94 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E4235F826BD366100808E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				IBSC_MODULE = MealWatch_Extension;
+				INFOPLIST_FILE = MealWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		2E4235F926BD366100808E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				IBSC_MODULE = MealWatch_Extension;
+				INFOPLIST_FILE = MealWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		2E4235FB26BD366100808E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = UV36497CVB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		2E4235FC26BD366100808E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = UV36497CVB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -647,6 +921,24 @@
 			buildConfigurations = (
 				2E2B7CB926BBF82C00DAC920 /* Debug */,
 				2E2B7CBA26BBF82C00DAC920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E4235FD26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4235FB26BD366100808E85 /* Debug */,
+				2E4235FC26BD366100808E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E4235FE26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4235F826BD366100808E85 /* Debug */,
+				2E4235F926BD366100808E85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
