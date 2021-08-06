@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.epiens.meal</string>
+		<string>group.com.epiens.meal.plan</string>
 	</array>
 </dict>
 </plist>

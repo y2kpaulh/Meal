@@ -9,18 +9,28 @@ import Foundation
 import Combine
 import WidgetKit
 
+extension FileManager {
+    static func sharedContainerURL() -> URL {
+        return FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier:
+                "group.com.epiens.meal.plan"
+        )!
+    }
+}
+
 class PlanStore: ObservableObject {
-    static let planUrl = "https://api.jsonbin.io/b/610ba2cdf098011544ab9bd4/6"
+    static let planUrl = "https://api.jsonbin.io/b/610ca7a3e1b0604017a77e22"
     let url = URL(string: planUrl)!
     var cancelables = Set<AnyCancellable>()
     let dateFormatter = DateFormatter()
-
+    var widgetPlans: [WidgetPlan] = []
+    
     @Published var planList: [Plan] = []
     @Published var todayPlan: Plan?
     @Published var todayPlanData: PlanData?
     @Published var planDataError: Bool = false
     @Published var loading = false
-        
+    
     init() {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "ko") // 로케일 변경
@@ -35,14 +45,14 @@ class PlanStore: ObservableObject {
             .receive(on: DispatchQueue.main)
             .map(\.data)
             .decode(type: Meal.self, decoder: JSONDecoder())
-            .print("mealPlan")
+            //.print("mealPlan")
             .replaceError(with: Meal(plan: []))
             .eraseToAnyPublisher()
     }
-
+    
     func getTodayPlan() {
         loading = true
-                
+        
         mealPlan()
             .sink(receiveCompletion: { [weak self] completion in
                 guard let self = self else { return }
@@ -50,9 +60,21 @@ class PlanStore: ObservableObject {
                 if case .failure(let err) = completion {
                     print("Retrieving data failed with error \(err)")
                     self.planDataError = true
-                    
                     DispatchQueue.main.async {
                         self.loading = false
+                    }
+                }
+                
+                if let todayPlan = self.todayPlan, let todayPlanData = self.todayPlanData {
+                    DispatchQueue.main.async {
+                        self.widgetPlans.append(WidgetPlan(
+                                                    day: todayPlan.day,
+                                                    book: todayPlan.book,
+                                                    fChap: todayPlan.fChap, fVer: todayPlan.fVer, lChap: todayPlan.lChap, lVer: todayPlan.lVer,
+                                                    verses: todayPlanData.verses))
+                        
+                        self.writeWidgetPlan()
+                        WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
                     }
                 }
             }, receiveValue: { [weak self] object in
@@ -64,8 +86,6 @@ class PlanStore: ObservableObject {
                 self.todayPlan = todayPlan[0]
                 self.todayPlanData = self.getTodayPlanData()
                 
-                WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
-
                 DispatchQueue.main.async {
                     self.loading = false
                 }
@@ -73,10 +93,23 @@ class PlanStore: ObservableObject {
             .store(in: &cancelables)
     }
     
-    func getTodayPlanData() -> PlanData? {
-      guard let todayPlan = self.todayPlan else { return nil }
+    func writeWidgetPlan() {
+        let archiveURL = FileManager.sharedContainerURL()
+            .appendingPathComponent("widgetPlan.json")
+        print(">>> \(archiveURL)")
         
-      return self.getDayPlanData(plan: todayPlan)
+        if let dataToSave = try? JSONEncoder().encode(widgetPlans) {
+            do {
+                try dataToSave.write(to: archiveURL)
+            } catch {
+                print("Error: Can't write widget plan")
+            }
+        }
+    }
+    
+    func getTodayPlanData() -> PlanData? {
+        guard let todayPlan = self.todayPlan else { return nil }
+        return self.getDayPlanData(plan: todayPlan)
     }
     
     func getDayPlanData(plan: Plan)-> PlanData? {
