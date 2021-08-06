@@ -111,7 +111,7 @@ struct MealWidgetEntryView : View {
                             }
                         }
                         
-                        Text("\(planStore.getBookTitle(book: entry.plan.book) ?? entry.plan.book) \(entry.plan.fChap):\(entry.plan.fVer)-\(entry.plan.fChap != Provider().samplePlan.lChap ? "\(entry.plan.lChap):" : "" )\(entry.plan.lVer)")
+                        Text("\(planStore.getBookTitle(book: entry.plan.book) ?? entry.plan.book) \(entry.plan.fChap):\(entry.plan.fVer)-\(entry.plan.fChap != entry.plan.lChap ? "\(entry.plan.lChap):" : "" )\(entry.plan.lVer)")
                             .foregroundColor(Color(UIColor.label))
                             .font(.custom("NanumMyeongjoOTFBold", size: 16))
                             .bold()
