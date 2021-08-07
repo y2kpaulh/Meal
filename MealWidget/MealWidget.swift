@@ -47,22 +47,20 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
         
-        let currentDate = Date()
         let plans = readWidgtPlan()
-        
-        for index in 0 ..< plans.count {
-            let entryDate = Calendar.current.date(
+
+        let nextUpdate = Calendar
+            .autoupdatingCurrent
+            .date(
                 byAdding: .day,
-                value: index,
-                to: currentDate)!
-            
-            let entry = SimpleEntry(
-                date: entryDate,
-                plan: plans[index])
-            
-            entries.append(entry)
-        }
+                value: 1,
+                to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
+
+        let entry = SimpleEntry(
+            date: nextUpdate,
+            plan: plans[0])
         
+        entries = [entry]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
