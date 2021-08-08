@@ -25,13 +25,7 @@ struct PlanView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: -4) {
             HStack(alignment: .center, spacing: -4) {
-                Image(uiImage: UIImage(named: "riceBowlIcon")!)
-                    .renderingMode(.template)
-                    .foregroundColor(Color(UIColor.label))
-                    .padding([.leading, .trailing], 10)
-                
-//                MealButtonIcon(width: 40, height: 40, radius: 6)
-//                    .padding([.leading], 10)
+                PlanStore.MealIconView()
                 
                 VStack(alignment: .leading, spacing: -6) {
                     HStack{

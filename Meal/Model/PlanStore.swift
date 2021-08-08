@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import WidgetKit
+import SwiftUI
 
 extension FileManager {
     static func sharedContainerURL() -> URL {
@@ -205,4 +206,16 @@ extension PlanStore {
         return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)"
     }
     
+    struct MealIconView: View {
+        var body: some View
+        {
+            Image(uiImage: UIImage(named: "riceBowlIcon")!)
+                .resizable()
+                .renderingMode(.template)
+                .frame(width: 40, height: 40)
+                .foregroundColor(Color(UIColor.label))
+                .padding([.leading, .trailing], 20)
+                .unredacted()
+        }
+    }
 }

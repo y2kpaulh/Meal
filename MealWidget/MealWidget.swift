@@ -83,14 +83,14 @@ struct MealWidgetEntryView : View {
                 HStack(alignment: .center, spacing: -14) {
                     
                     if family != .systemSmall {
-                        MealIconView()
+                        PlanStore.MealIconView()
                     }
                     
                     VStack(alignment: .leading, spacing: -4) {
                         if family == .systemSmall{
                             VStack(alignment: .center, spacing: 10){
                                 VStack(spacing: 20) {
-                                    MealIconView()
+                                    PlanStore.MealIconView()
                                     WidgetDateView(entry: entry,planStore: planStore)
                                 }
                                 NotiPlanLabelView(entry: entry,planStore: planStore)
@@ -146,20 +146,6 @@ struct WidgetDateView: View {
     }
 }
 
-
-
-struct MealIconView: View {
-    var body: some View
-    {
-        Image(uiImage: UIImage(named: "riceBowlIcon")!)
-            .resizable()
-            .renderingMode(.template)
-            .frame(width: 40, height: 40)
-            .foregroundColor(Color(UIColor.label))
-            .padding([.leading, .trailing], 20)
-            .unredacted()
-    }
-}
 struct NotiPlanLabelView: View {
     var entry: Provider.Entry
     var planStore: PlanStore
