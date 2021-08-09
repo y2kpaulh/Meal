@@ -18,7 +18,7 @@ struct Meal: Codable {
     let plan: [Plan]
 }
 
-protocol PlanProtocol {
+protocol Planable {
     var day: String  { get }
     var book: String  { get }
     //let book: Book
@@ -28,7 +28,7 @@ protocol PlanProtocol {
     var lVer: Int  { get }
 }
 // MARK: - Plan
-struct Plan: PlanProtocol, Codable, Identifiable, Hashable {
+struct Plan: Planable, Codable, Identifiable, Hashable {
     var id: String { day }
     let day: String
     let book: String
@@ -36,7 +36,7 @@ struct Plan: PlanProtocol, Codable, Identifiable, Hashable {
     let fChap, fVer, lChap, lVer: Int
 }
 
-struct NotiPlan: PlanProtocol, Codable {
+struct NotiPlan: Planable, Codable {
     let day: String
     let book: String
     //let book: Book

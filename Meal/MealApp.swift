@@ -10,7 +10,9 @@ import Combine
 
 @main
 struct MealApp: App {
-//    @StateObject var planStore = PlanStore()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    //    @StateObject var planStore = PlanStore()
     @StateObject var networkReachability = NetworkReachability()
 
     var body: some Scene {
@@ -26,6 +28,9 @@ struct MealApp: App {
 //                            print(fontName)
 //                        }
 //                    }
+                }
+                .onOpenURL { url in // URL handling
+                    
                 }
         }
     }

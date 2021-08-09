@@ -202,7 +202,7 @@ extension PlanStore {
         return verses[0...3].joined(separator: " ")
     }
     
-   func getDayMealPlanStr(plan: PlanProtocol) -> String {
+   func getDayMealPlanStr(plan: Planable) -> String {
         return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)"
     }
     
