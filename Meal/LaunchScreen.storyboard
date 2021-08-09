@@ -17,20 +17,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riceBowl" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-zd-754">
-                                <rect key="frame" x="31" y="276" width="352" height="354"/>
+                                <rect key="frame" x="107" y="353" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="KV1-zd-754" secondAttribute="height" multiplier="176:177" id="gfA-YW-H9x"/>
+                                    <constraint firstAttribute="height" constant="200" id="YD8-ao-HPr"/>
+                                    <constraint firstAttribute="width" constant="200" id="hid-hk-SRh"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KV1-zd-754" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="c9i-ns-hcZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KV1-zd-754" secondAttribute="trailing" constant="31" id="hit-k1-oPz"/>
-                            <constraint firstItem="KV1-zd-754" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="uwl-LX-rc7"/>
+                            <constraint firstItem="KV1-zd-754" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="2bx-oM-9a8"/>
+                            <constraint firstItem="KV1-zd-754" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="r9q-aK-JDx"/>
                         </constraints>
                     </view>
                 </viewController>
