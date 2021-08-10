@@ -19,87 +19,18 @@ extension FileManager {
     }
 }
 
-class PlanStore: ObservableObject {
+public final class PlanStore: ObservableObject {
     let manager = LocalNotificationManager()
     
-    static let planUrl = "https://api.jsonbin.io/b/610ca7a3e1b0604017a77e22"
-    let url = URL(string: planUrl)!
-    var cancelables = Set<AnyCancellable>()
-    let dateFormatter = DateFormatter()
-    var widgetPlans: [NotiPlan] = []
-    
-    @Published var planList: [Plan] = []
-    @Published var todayPlan: Plan?
-    @Published var todayPlanData: PlanData?
-    @Published var planDataError: Bool = false
-    @Published var loading = false
-    
-    init() {
+    var dateFormatter: DateFormatter{
+        let dateFormatter  = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "ko") // 로케일 변경
         
-        getTodayPlan()
+        return dateFormatter
     }
     
-    func mealPlan() -> AnyPublisher<Meal, Never> {
-        URLSession.shared
-            .dataTaskPublisher(for: self.url)
-            .receive(on: DispatchQueue.global(qos: .background))
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: Meal.self, decoder: JSONDecoder())
-            //.print("mealPlan")
-            .replaceError(with: Meal(plan: []))
-            .eraseToAnyPublisher()
-    }
-    
-    func getTodayPlan() {
-        loading = true
-        
-        mealPlan()
-            .sink(receiveCompletion: { [weak self] completion in
-                guard let self = self else { return }
-                
-                if case .failure(let err) = completion {
-                    print("Retrieving data failed with error \(err)")
-                    self.planDataError = true
-                    DispatchQueue.main.async {
-                        self.loading = false
-                    }
-                }
-                
-                if let todayPlan = self.todayPlan, let todayPlanData = self.todayPlanData {
-                    DispatchQueue.main.async {
-                        self.registLocalNotification(plan: todayPlan, planData: todayPlanData)
-                        
-                        self.widgetPlans = [NotiPlan(
-                            day: todayPlan.day,
-                            book: todayPlan.book,
-                            fChap: todayPlan.fChap,
-                            fVer: todayPlan.fVer,
-                            lChap: todayPlan.lChap,
-                            lVer: todayPlan.lVer,
-                            verses: todayPlanData.verses)]
-                        
-                        self.writeNotiPlan()
-                        WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
-                    }
-                }
-            }, receiveValue: { [weak self] object in
-                //print("Retrieved object \(object)")
-                guard let self = self else { return }
-                self.planList = object.plan
-                let todayPlan = object.plan.filter{ $0.day == self.getTodayStr() }
-                guard todayPlan.count > 0 else { return }
-                self.todayPlan = todayPlan[0]
-                self.todayPlanData = self.getTodayPlanData()
-
-                DispatchQueue.main.async {
-                    self.loading = false
-                }
-            })
-            .store(in: &cancelables)
-    }
+    var widgetPlans: [NotiPlan] = []
     
     func writeNotiPlan() {
         let archiveURL = FileManager.sharedContainerURL()
@@ -115,25 +46,19 @@ class PlanStore: ObservableObject {
         }
     }
     
-    func getTodayPlanData() -> PlanData? {
-        guard let todayPlan = self.todayPlan else { return nil }
-        return self.getDayPlanData(plan: todayPlan)
-    }
-    
-    func getDayPlanData(plan: Plan)-> PlanData? {
+    func getPlanData(plan: Plan) -> PlanData {
         let book = BibleStore.books.filter { $0.abbrev == plan.book }
         
         guard book.count > 0,
               let planBook = book.first,
               let index = BibleStore.books.firstIndex(where: { $0.abbrev == plan.book })
-        else { return nil }
+        else { return PlanData(book: "", verses: []) }
         
         let title = BibleStore.titles[index]
         var verse = [String]()
         
         if plan.fChap == plan.lChap {
             let chapter = planBook.chapters[plan.fChap-1]
-            
             let verseRange = chapter[plan.fVer-1..<plan.lVer]
             
             verse = Array(verseRange)
@@ -150,6 +75,7 @@ class PlanStore: ObservableObject {
         
         return PlanData(book: title, verses: verse)
     }
+    
 }
 
 extension PlanStore {
@@ -161,11 +87,7 @@ extension PlanStore {
     //            }
     //        return output.data
     //    }
-    func getTodayStr() -> String {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
+    func getDateStr(date: Date = Date()) -> String {
         return dateFormatter.string(from: date)
     }
     
@@ -194,7 +116,7 @@ extension PlanStore {
     }
     
     func registLocalNotification(plan: Plan, planData: PlanData) {
-        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getDayMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
+        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
         self.manager.schedule()
     }
     
@@ -202,8 +124,8 @@ extension PlanStore {
         return verses[0...3].joined(separator: " ")
     }
     
-   func getDayMealPlanStr(plan: Planable) -> String {
-        return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap):\(plan.fVer)-\(plan.fChap != plan.lChap ? "\(plan.lChap):" : "" )\(plan.lVer)"
+    func getMealPlanStr(plan: Planable) -> String {
+        return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap > 0 ? "\(plan.fChap):" : "")\(plan.fVer > 0 ? "\(plan.fVer)-" : "")\(plan.fChap != plan.lChap ? "\(plan.lChap > 0 ? "\(plan.lChap)" : ""):" : "" )\(plan.lVer > 0 ? "\(plan.lVer)" : "")"
     }
     
     struct MealIconView: View {

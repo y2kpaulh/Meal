@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 func loadJson<BibleBook: Decodable>(_ filename: String) -> BibleBook {
     let data: Data
@@ -29,5 +30,29 @@ func loadJson<BibleBook: Decodable>(_ filename: String) -> BibleBook {
         return try JSONDecoder().decode(BibleBook.self, from: data)
     } catch {
         fatalError("Unable to parse \(filename): \(error)")
+    }
+}
+
+enum PlanService {
+    static let apiClient = APIClient()
+    static let baseUrl = URL(string: "https://api.jsonbin.io")!
+    
+    enum APIPath: String {
+        case planList = "/b/610ba2cdf098011544ab9bd4/7"
+    }
+}
+
+extension PlanService {
+    static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<[Plan], Error> {
+        // 3
+        guard let components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
+            else { fatalError("Couldn't create URLComponents") }
+//        components.queryItems = [URLQueryItem(name: "api_key", value: "dcecee71c76cbecc1c254aae96bea9a4")] // 4
+        
+        let request = URLRequest(url: components.url!)
+        
+        return apiClient.run(request)
+            .map(\.value)
+            .eraseToAnyPublisher()
     }
 }

@@ -13,10 +13,10 @@ struct BibleBook: Codable, Identifiable {
     let chapters: [[String]]
 }
 
-// MARK: - Meal
-struct Meal: Codable {
-    let plan: [Plan]
-}
+//// MARK: - Meal
+//struct Meal: Codable {
+//    let plan: [Plan]
+//}
 
 protocol Planable {
     var day: String  { get }
@@ -28,8 +28,8 @@ protocol Planable {
     var lVer: Int  { get }
 }
 // MARK: - Plan
-struct Plan: Planable, Codable, Identifiable, Hashable {
-    var id: String { day }
+public struct Plan: Planable, Codable, Identifiable, Hashable {
+    public var id: String { day }
     let day: String
     let book: String
     //let book: Book
@@ -44,7 +44,7 @@ struct NotiPlan: Planable, Codable {
     let verses: [String]
 }
 
-struct PlanData: Codable {
+public struct PlanData: Codable {
     let book: String
     let verses: [String]
 }

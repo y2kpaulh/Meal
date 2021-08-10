@@ -10,9 +10,7 @@ import SwiftUI
 struct PlanView: View {
     let index: Int
     let plan: Plan
-    
-    @EnvironmentObject var planStore: PlanStore
-   
+       
     @Environment(\.verticalSizeClass) var
         verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var
@@ -34,13 +32,13 @@ struct PlanView: View {
                             .foregroundColor(Color(UIColor.label))
                             .bold()
                         
-                        Text("\(planStore.convertDateToStr(date: planStore.dateFormatter.date(from: plan.day)!))")
+                        Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
                             .font(.footnote)
                             .foregroundColor(Color(.gray))
                             .bold()
                     }
                                         
-                    Text(planStore.getDayMealPlanStr(plan: plan))
+                    Text(PlanStore().getMealPlanStr(plan: plan))
                         .foregroundColor(Color(UIColor.label))
                         .font(.custom("NanumMyeongjoOTFBold", size: 16))
                         //.bold()
@@ -49,8 +47,8 @@ struct PlanView: View {
                 .foregroundColor(Color(UIColor.systemGray))
             }
             
-            if let planData = planStore.getDayPlanData(plan: plan) {
-                Text(planStore.getBibleSummary(verses: planData.verses))
+            if let planData = PlanStore().getPlanData(plan: plan) {
+                Text(PlanStore().getBibleSummary(verses: planData.verses))
                     .font(.custom("NanumMyeongjoOTF", size: 12))
                     .lineLimit(3)
                     //.font(.footnote)

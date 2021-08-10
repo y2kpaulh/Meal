@@ -10,16 +10,16 @@ import Combine
 
 @main
 struct MealApp: App {
+    @Environment(\.scenePhase) private var scenePhase
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-    //    @StateObject var planStore = PlanStore()
     @StateObject var networkReachability = NetworkReachability()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(networkReachability)
-//                .environmentObject(planStore)
                 .onAppear {
 //                  print(FileManager.documentURL ?? "")
                     
@@ -32,6 +32,29 @@ struct MealApp: App {
                 .onOpenURL { url in // URL handling
                     
                 }
+                .onChange(of: scenePhase) { phase in
+
+                       // change in this app's phase - composite of all scenes
+
+                       switch phase {
+
+                       case .active:
+//                           changedToActive()
+                        print("active")
+
+                       case .background:
+                           //changedToBackground()
+                        print("background")
+
+                       case .inactive:
+                           //changedToInactive()
+                        print("inactive")
+
+                       default:
+                           break
+                       }
+                   }
         }
     }
 }
+

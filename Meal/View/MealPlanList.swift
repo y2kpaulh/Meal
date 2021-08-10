@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MealPlanList: View {
+    @Binding var planList: [Plan]
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var planStore: PlanStore
     
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-    }
+    //    init() {
+    //        UITableView.appearance().backgroundColor = .clear
+    //        UITableViewCell.appearance().backgroundColor = .clear
+    //    }
     
     var body: some View {
         
@@ -47,12 +47,12 @@ struct MealPlanList: View {
             ScrollViewReader { scrollView in
                 ScrollView {
                     LazyVStack{
-                        ForEach(Array(planStore.planList.enumerated()),id: \.1) { index, plan in
+                        ForEach(Array(planList.enumerated()),id: \.1) { index, plan in
                             PlanView(index: index, plan: plan)
-                                .environmentObject(planStore)
+                                //                                .environmentObject(planStore)
                                 .padding(10)
                                 .onTapGesture {
-        
+                                    
                                 }
                         }
                     }
@@ -62,30 +62,34 @@ struct MealPlanList: View {
                 VStack(spacing: 0) {
                     // top gradient
                     LinearGradient(gradient:
-                       Gradient(
-                        colors: [Color.black.opacity(0), Color.black]),
-                           startPoint: .top, endPoint: .bottom
-                       )
+                                    Gradient(
+                                        colors: [Color.black.opacity(0), Color.black]),
+                                   startPoint: .top, endPoint: .bottom
+                    )
                     .frame(height: 6)
-
+                    
                     // Middle
                     Rectangle().fill(Color.black)
-
+                    
                     // bottom gradient
                     LinearGradient(gradient:
-                       Gradient(
-                           colors: [Color.black, Color.black.opacity(0)]),
+                                    Gradient(
+                                        colors: [Color.black, Color.black.opacity(0)]),
                                    startPoint: .top, endPoint: .bottom
-                       )
+                    )
                     .frame(height: 6)
                 }
-             )
+            )
+        }
+        .onAppear{
+            UITableView.appearance().backgroundColor = .clear
+            UITableViewCell.appearance().backgroundColor = .clear
         }
     }
     
     struct MealPlanList_Previews: PreviewProvider {
         static var previews: some View {
-            MealPlanList()
+            MealPlanList(planList: .constant([Plan]()))
                 .environmentObject(PlanStore())
         }
     }

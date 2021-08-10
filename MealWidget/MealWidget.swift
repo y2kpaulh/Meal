@@ -46,21 +46,18 @@ struct Provider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
+//        let plans = readWidgtPlan()
+//        
+//        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+//        let currentDate = Date()
+//        for hourOffset in 0 ..< 5 {
+//            let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset * 3, to: currentDate)!
+//            
+////            var planStore = PlanStore().getTodayPlan()
+////            let entry = SimpleEntry(date: entryDate, plan: )
+//            entries.append(entry)
+//        }
         
-        let plans = readWidgtPlan()
-
-        let nextUpdate = Calendar
-            .autoupdatingCurrent
-            .date(
-                byAdding: .day,
-                value: 1,
-                to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
-
-        let entry = SimpleEntry(
-            date: nextUpdate,
-            plan: plans[0])
-        
-        entries = [entry]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -151,7 +148,7 @@ struct NotiPlanLabelView: View {
     var planStore: PlanStore
 
     var body: some View{
-        Text(planStore.getDayMealPlanStr(plan: entry.plan))
+        Text(planStore.getMealPlanStr(plan: entry.plan))
             .foregroundColor(Color(UIColor.label))
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()
@@ -169,6 +166,9 @@ struct MealWidget: Widget {
         .configurationDisplayName("끼니")
         .description("오늘 날짜의 끼니 말씀을 확인할 수 있어요.")
         .supportedFamilies([.systemMedium])
+        .onBackgroundURLSessionEvents { identifier, completion in
+            print("onBackgroundURLSessionEvents", identifier, completion)
+        }
     }
 }
 

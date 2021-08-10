@@ -51,6 +51,10 @@
 		2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FE26BBABD3008B6255 /* PlanView.swift */; };
 		2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCD26C25C5400107840 /* TodayMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -161,6 +165,8 @@
 		2E7CA8FE26BBABD3008B6255 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealButtonIcon.swift; sourceTree = "<group>"; };
 		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
+		2EABCDC826C252FE00107840 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealViewModel.swift; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -328,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */,
+				2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */,
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
@@ -338,6 +345,7 @@
 		2EBBD5FD268DBC6600EA6BB2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2EABCDC826C252FE00107840 /* APIClient.swift */,
 				2EBBD602268DBF7E00EA6BB2 /* Service.swift */,
 			);
 			path = Service;
@@ -546,6 +554,7 @@
 				2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */,
 				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
 				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
+				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
 				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
 				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
@@ -564,6 +573,7 @@
 				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
 				2E4235E426BD366000808E85 /* MealApp.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
+				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,10 +584,12 @@
 				2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */,
 				2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */,
 				2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */,
+				2EABCDC926C252FE00107840 /* APIClient.swift in Sources */,
 				2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
 				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
+				2EABCDCD26C25C5400107840 /* TodayMealViewModel.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
