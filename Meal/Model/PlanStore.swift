@@ -20,7 +20,7 @@ extension FileManager {
 }
 
 public final class PlanStore: ObservableObject {
-    let manager = LocalNotificationManager()
+//    let manager = LocalNotificationManager()
     
     var dateFormatter: DateFormatter{
         let dateFormatter  = DateFormatter()
@@ -75,7 +75,6 @@ public final class PlanStore: ObservableObject {
         
         return PlanData(book: title, verses: verse)
     }
-    
 }
 
 extension PlanStore {
@@ -87,7 +86,8 @@ extension PlanStore {
     //            }
     //        return output.data
     //    }
-    func getDateStr(date: Date = Date()) -> String {
+    
+    func getFormattedDateStr(date: Date = Date()) -> String {
         return dateFormatter.string(from: date)
     }
     
@@ -115,10 +115,10 @@ extension PlanStore {
         return "\(dateStr), \(day)"
     }
     
-    func registLocalNotification(plan: Plan, planData: PlanData) {
-        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
-        self.manager.schedule()
-    }
+//    func registLocalNotification(plan: Plan, planData: PlanData) {
+//        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
+//        self.manager.schedule()
+//    }
     
     func getBibleSummary(verses: [String])-> String {
         return verses[0...3].joined(separator: " ")

@@ -28,7 +28,7 @@ extension TodayMealViewModel {
         
         PlanService.requestPlan(.planList)
 //            .map{
-//                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
+//                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getFormattedDateStr() }[0])
 //            }
             .mapError(
                 { (error) -> Error in
@@ -49,7 +49,7 @@ extension TodayMealViewModel {
             },
             receiveValue: {
                 self.plans = $0
-                self.todayPlan = $0.filter{ $0.day == PlanStore().getDateStr() }[0]
+                self.todayPlan = $0.filter{ $0.day == PlanStore().getFormattedDateStr() }[0]
                 self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
                 DispatchQueue.main.async {
                     self.loading = false
