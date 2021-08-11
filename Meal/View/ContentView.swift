@@ -30,9 +30,7 @@ struct ContentView: View {
         VStack(spacing: 0) {
           VStack {
             HStack(alignment: .center) {
-              Text("끼니")
-                .foregroundColor(Color(UIColor.label))
-                .font(.custom("NanumBrushOTF", size: 80))
+              MealTitleLabel(size: 80, textColor: Color(UIColor.label))
 
               Text(PlanStore().convertDateToStr())
                 .foregroundColor(.gray)

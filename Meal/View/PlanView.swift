@@ -27,10 +27,8 @@ struct PlanView: View {
 
         VStack(alignment: .leading, spacing: -6) {
           HStack {
-            Text("끼니")
-              .font(.custom("NanumBrushOTF", size: 40))
-              .foregroundColor(Color(UIColor.label))
-              .bold()
+            MealTitleLabel(size: 40,
+                           textColor: Color(UIColor.label))
 
             Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
               .font(.footnote)

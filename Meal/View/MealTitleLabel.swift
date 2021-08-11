@@ -1,24 +1,26 @@
 //
-//  MealTitleLabelView.swift
+//  MealTitleLabel.swift
 //  Meal
 //
 //  Created by Inpyo Hong on 2021/08/11.
 //
 
 import SwiftUI
+import UIKit
 
-struct MealTitleLabelView: View {
+struct MealTitleLabel: View {
   var size: CGFloat
+  var textColor: Color
 
   var body: some View {
     Text("끼니")
-      .foregroundColor(.white)
+      .foregroundColor(textColor)
       .font(.custom("NanumBrushOTF", size: size))
   }
 }
 
-struct MealTitleLabelView_Previews: PreviewProvider {
+struct MealTitleLabel_Previews: PreviewProvider {
   static var previews: some View {
-    MealTitleLabelView(size: 40)
+    MealTitleLabel(size: 40, textColor: .white)
   }
 }
