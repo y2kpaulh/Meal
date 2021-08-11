@@ -13,7 +13,7 @@ struct ContentView: View {
 
   var body: some View {
     NavigationView {
-      VStack {
+      VStack(spacing: -4) {
         MealTitleLabel(size: 60, textColor: .white)
 
         List {
