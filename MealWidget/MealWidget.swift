@@ -50,7 +50,7 @@ struct Provider: TimelineProvider {
   func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
     var entries: [PlanEntry] = []
 
-    planNotiService.fetchPlanListData {
+    planNotiService.fetchPlanList {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
       let planData = PlanStore().getPlanData(plan: plan)
       let nextPlan = NotiPlan(day: plan.day,

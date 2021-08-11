@@ -11,7 +11,7 @@ import WidgetKit
 #endif
 
 class PlanNotiService {
-  func fetchPlanListData(completion: @escaping ([Plan]) -> Void) {
+  func fetchPlanList(completion: @escaping ([Plan]) -> Void) {
     guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
     else { fatalError("Couldn't create URLComponents") }
 
