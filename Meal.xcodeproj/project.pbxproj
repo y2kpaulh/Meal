@@ -61,6 +61,7 @@
 		2E6651B026C3B44C00A083C6 /* WatchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */; };
 		2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
 		2E6651B626C3BB4200A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
+		2E6651BD26C3CEDE00A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
@@ -785,6 +786,7 @@
 				2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */,
 				2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */,
 				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
+				2E6651BD26C3CEDE00A083C6 /* MealTitleLabel.swift in Sources */,
 				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
 				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
 				2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */,

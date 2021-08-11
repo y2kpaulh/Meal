@@ -13,9 +13,7 @@ struct WatchHeaderView: View {
   var body: some View {
     VStack {
       HStack(alignment: .center) {
-        Text("끼니")
-          .foregroundColor(.white)
-          .font(.custom("NanumBrushOTF", size: 40))
+        MealTitleLabel(size: 40, textColor: Color.white)
 
         Text(PlanStore().convertDateToStr())
           .foregroundColor(.gray)

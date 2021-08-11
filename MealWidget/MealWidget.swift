@@ -110,7 +110,7 @@ struct MealWidgetEntryView: View {
               }
             } else {
               HStack {
-                WidgetTilteView(size: 34)
+                MealTitleLabel(size: 34, textColor: Color(UIColor.label))
                 WidgetDateView(entry: entry, plan: entry.plan)
               }
 
@@ -134,15 +134,6 @@ struct MealWidgetEntryView: View {
       .padding(10)
       .background(Color.clear)
     }
-  }
-}
-
-struct WidgetTilteView: View {
-  var size: CGFloat
-  var body: some View {
-    Text("끼니")
-      .font(.custom("NanumBrushOTF", size: size))
-      .foregroundColor(Color(UIColor.label))
   }
 }
 
