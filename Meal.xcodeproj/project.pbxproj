@@ -47,6 +47,7 @@
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
@@ -356,7 +357,6 @@
 				2ECC33FE26A0375000E5F25A /* LaunchScreen.storyboard */,
 				2EBBD5F0268DBB6000EA6BB2 /* Preview Content */,
 				2ECC33E226A0208C00E5F25A /* InfoPlist.strings */,
-				2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -400,6 +400,7 @@
 				2EABCDC826C252FE00107840 /* APIClient.swift */,
 				2EBBD602268DBF7E00EA6BB2 /* Service.swift */,
 				2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */,
+				2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -744,6 +745,7 @@
 				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,
 				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
+				2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */,
 				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
 				2E4235A626BD1EF900808E85 /* LocalNotificationManager.swift in Sources */,
 				2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */,

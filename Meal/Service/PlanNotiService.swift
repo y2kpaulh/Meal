@@ -29,7 +29,7 @@ class PlanNotiService {
         }
         do {
           let plan = try JSONDecoder().decode([Plan].self, from: data)
-            
+
           DispatchQueue.main.async {
             #if !os(watchOS)
             WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
