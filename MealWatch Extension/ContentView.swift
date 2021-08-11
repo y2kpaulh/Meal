@@ -13,19 +13,7 @@ struct ContentView: View {
 
   var body: some View {
     VStack {
-      VStack {
-        HStack(alignment: .center) {
-          Text("끼니")
-            .foregroundColor(.white)
-            .font(.custom("NanumBrushOTF", size: 40))
-
-          Text(PlanStore().convertDateToStr())
-            .foregroundColor(.gray)
-        }
-        .padding(.top, 10)
-
-        Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
-      }
+      WatchHeaderView(todayPlan: $viewModel.todayPlan)
 
       Divider()
         .foregroundColor(Color.white)
@@ -51,11 +39,11 @@ struct ContentView: View {
               }
 
               Text(verse)
-                .font(.custom("NanumMyeongjoOTF", size: 14))
+                .font(.custom("NanumMyeongjoOTF", size: 16))
                 .foregroundColor(.white)
                 .padding(.top, 4)
             }
-            .padding([.leading, .trailing], 20)
+            .padding([.leading, .trailing], 8)
             .padding(.bottom, 10)
           }
           .redacted(reason: viewModel.loading ? .placeholder : [])
