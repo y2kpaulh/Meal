@@ -8,61 +8,61 @@
 import SwiftUI
 
 struct PlanView: View {
-    let index: Int
-    let plan: Plan
-       
-    @Environment(\.verticalSizeClass) var
-        verticalSizeClass: UserInterfaceSizeClass?
-    @Environment(\.horizontalSizeClass) var
-        horizontalSizeClass: UserInterfaceSizeClass?
-    var isIPad: Bool {
-        horizontalSizeClass == .regular &&
-            verticalSizeClass == .regular
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: -4) {
-            HStack(alignment: .center, spacing: -4) {
-                PlanStore.MealIconView()
-                
-                VStack(alignment: .leading, spacing: -6) {
-                    HStack{
-                        Text("끼니")
-                            .font(.custom("NanumBrushOTF", size: 40))
-                            .foregroundColor(Color(UIColor.label))
-                            .bold()
-                        
-                        Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
-                            .font(.footnote)
-                            .foregroundColor(Color(.gray))
-                            .bold()
-                    }
-                                        
-                    Text(PlanStore().getMealPlanStr(plan: plan))
-                        .foregroundColor(Color(UIColor.label))
-                        .font(.custom("NanumMyeongjoOTFBold", size: 16))
-                        //.bold()
-                }
-                .padding(.horizontal)
-                .foregroundColor(Color(UIColor.systemGray))
-            }
-            
-            if let planData = PlanStore().getPlanData(plan: plan) {
-                Text(PlanStore().getBibleSummary(verses: planData.verses))
-                    .font(.custom("NanumMyeongjoOTF", size: 12))
-                    .lineLimit(3)
-                    //.font(.footnote)
-                    .foregroundColor(Color(UIColor.label))
-                    .padding([.top,.bottom], 20)
-                    .padding([.leading,.trailing], 10)
-            }          
+  let index: Int
+  let plan: Plan
+
+  @Environment(\.verticalSizeClass) var
+    verticalSizeClass: UserInterfaceSizeClass?
+  @Environment(\.horizontalSizeClass) var
+    horizontalSizeClass: UserInterfaceSizeClass?
+  var isIPad: Bool {
+    horizontalSizeClass == .regular &&
+      verticalSizeClass == .regular
+  }
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: -4) {
+      HStack(alignment: .center, spacing: -4) {
+        MealIconView()
+
+        VStack(alignment: .leading, spacing: -6) {
+          HStack {
+            Text("끼니")
+              .font(.custom("NanumBrushOTF", size: 40))
+              .foregroundColor(Color(UIColor.label))
+              .bold()
+
+            Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
+              .font(.footnote)
+              .foregroundColor(Color(.gray))
+              .bold()
+          }
+
+          Text(PlanStore().getMealPlanStr(plan: plan))
+            .foregroundColor(Color(UIColor.label))
+            .font(.custom("NanumMyeongjoOTFBold", size: 16))
+          //.bold()
         }
-        .padding(10)
-        .frame(width: isIPad ? 644 : nil)
-        .background(Color.itemBkgd)
-        .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.1), radius: 10)
+        .padding(.horizontal)
+        .foregroundColor(Color(UIColor.systemGray))
+      }
+
+      if let planData = PlanStore().getPlanData(plan: plan) {
+        Text(PlanStore().getBibleSummary(verses: planData.verses))
+          .font(.custom("NanumMyeongjoOTF", size: 12))
+          .lineLimit(3)
+          //.font(.footnote)
+          .foregroundColor(Color(UIColor.label))
+          .padding([.top, .bottom], 20)
+          .padding([.leading, .trailing], 10)
+      }
     }
+    .padding(10)
+    .frame(width: isIPad ? 644 : nil)
+    .background(Color.itemBkgd)
+    .cornerRadius(15)
+    .shadow(color: Color.black.opacity(0.1), radius: 10)
+  }
 }
 
 //struct PlanView_Previews: PreviewProvider {

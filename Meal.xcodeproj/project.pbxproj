@@ -54,7 +54,14 @@
 		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
 		2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
 		2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
-		2EABCDCD26C25C5400107840 /* TodayMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */; };
+		2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
+		2EABCDD326C35EE500107840 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
+		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
+		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
+		2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -68,6 +75,10 @@
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48BF2697EE600069DD16 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
+		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
+		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
+		D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +142,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
 		2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -166,7 +179,8 @@
 		2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealButtonIcon.swift; sourceTree = "<group>"; };
 		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		2EABCDC826C252FE00107840 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealViewModel.swift; sourceTree = "<group>"; };
+		2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewModel.swift; sourceTree = "<group>"; };
+		2EABCDD826C35FC400107840 /* MealIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealIconView.swift; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,15 +196,34 @@
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		2EED48BE2697EE600069DD16 /* plan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
+		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.release.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.release.xcconfig"; sourceTree = "<group>"; };
+		A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.release.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1FC9796DE3D419295F5B2743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2E2B7CA626BBF82900DAC920 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2E2B7CAE26BBF82900DAC920 /* SwiftUI.framework in Frameworks */,
 				2E2B7CAC26BBF82900DAC920 /* WidgetKit.framework in Frameworks */,
+				D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +251,10 @@
 			children = (
 				2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */,
 				2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */,
+				A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */,
+				FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */,
+				5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */,
+				E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +302,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2EABCDCF26C35D9E00107840 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2EBBD5DE268DBB5F00EA6BB2 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +320,7 @@
 				2E4235E226BD366000808E85 /* MealWatch Extension */,
 				2E2B7CAA26BBF82900DAC920 /* Frameworks */,
 				2EBBD5E8268DBB5F00EA6BB2 /* Products */,
+				4C2150D8024A2CFBCC595EBD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +342,7 @@
 				2E68701526C0E892007AC732 /* AppDelegate.swift */,
 				2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */,
 				2EBBD5FC268DBC5E00EA6BB2 /* Model */,
+				2EABCDCF26C35D9E00107840 /* ViewModel */,
 				2EBBD606268DD59A00EA6BB2 /* View */,
 				2EBBD5FD268DBC6600EA6BB2 /* Service */,
 				2EBBD5F9268DBBE900EA6BB2 /* Resource */,
@@ -334,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */,
-				2EABCDCC26C25C5400107840 /* TodayMealViewModel.swift */,
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
@@ -355,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
+				2EABCDD826C35FC400107840 /* MealIconView.swift */,
 				2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */,
 				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
 				2E7CA8FE26BBABD3008B6255 /* PlanView.swift */,
@@ -372,6 +421,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4C2150D8024A2CFBCC595EBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */,
+				2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */,
+				02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */,
+				9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */,
+				7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */,
+				F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */,
+				F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */,
+				80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +443,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E2B7CB826BBF82C00DAC920 /* Build configuration list for PBXNativeTarget "MealWidgetExtension" */;
 			buildPhases = (
+				16AE1AFF57B12967F700142F /* [CP] Check Pods Manifest.lock */,
 				2E2B7CA526BBF82900DAC920 /* Sources */,
 				2E2B7CA626BBF82900DAC920 /* Frameworks */,
 				2E2B7CA726BBF82900DAC920 /* Resources */,
@@ -396,8 +461,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4235FE26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch" */;
 			buildPhases = (
+				1028584AB2810FDF2DDE3190 /* [CP] Check Pods Manifest.lock */,
 				2E4235D326BD365E00808E85 /* Resources */,
 				2E4235FA26BD366100808E85 /* Embed App Extensions */,
+				1FC9796DE3D419295F5B2743 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,6 +480,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4235FD26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch Extension" */;
 			buildPhases = (
+				D3E45D3C6B353E8B1996C4C3 /* [CP] Check Pods Manifest.lock */,
 				2E4235DA26BD366000808E85 /* Sources */,
 				2E4235DB26BD366000808E85 /* Frameworks */,
 				2E4235DC26BD366000808E85 /* Resources */,
@@ -430,11 +498,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */;
 			buildPhases = (
+				9113518BB9B54A5A884799AB /* [CP] Check Pods Manifest.lock */,
 				2EBBD5E3268DBB5F00EA6BB2 /* Sources */,
 				2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */,
 				2EBBD5E5268DBB5F00EA6BB2 /* Resources */,
 				2E2B7CBB26BBF82C00DAC920 /* Embed App Extensions */,
 				2E4235F726BD366100808E85 /* Embed Watch Content */,
+				2EABCDCE26C3587900107840 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -546,6 +616,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1028584AB2810FDF2DDE3190 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16AE1AFF57B12967F700142F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EABCDCE26C3587900107840 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect --format\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		9113518BB9B54A5A884799AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E45D3C6B353E8B1996C4C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWatch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E2B7CA526BBF82900DAC920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -555,6 +734,8 @@
 				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
 				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
 				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
+				2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */,
+				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,
 				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
 				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
@@ -568,12 +749,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */,
 				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
 				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
 				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
 				2E4235E426BD366000808E85 /* MealApp.swift in Sources */,
+				2EABCDD326C35EE500107840 /* Service.swift in Sources */,
+				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
 				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
+				2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,11 +770,12 @@
 				2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */,
 				2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */,
 				2EABCDC926C252FE00107840 /* APIClient.swift in Sources */,
+				2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */,
 				2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
 				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
-				2EABCDCD26C25C5400107840 /* TodayMealViewModel.swift in Sources */,
+				2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
@@ -635,6 +821,7 @@
 /* Begin XCBuildConfiguration section */
 		2E2B7CB926BBF82C00DAC920 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -657,6 +844,7 @@
 		};
 		2E2B7CBA26BBF82C00DAC920 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -679,6 +867,7 @@
 		};
 		2E4235F826BD366100808E85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -699,6 +888,7 @@
 		};
 		2E4235F926BD366100808E85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -719,6 +909,7 @@
 		};
 		2E4235FB26BD366100808E85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -743,6 +934,7 @@
 		};
 		2E4235FC26BD366100808E85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -883,6 +1075,7 @@
 		};
 		2EBBD5F7268DBB6000EA6BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -907,6 +1100,7 @@
 		};
 		2EBBD5F8268DBB6000EA6BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
