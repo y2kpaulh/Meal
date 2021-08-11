@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct Provider: TimelineProvider {
-  var networkManager = NetworkManager()
+  var planNotiService = PlanNotiService()
 
   let samplePlan = NotiPlan(day: "2021-01-01",
                             book: "창",
@@ -50,7 +50,7 @@ struct Provider: TimelineProvider {
   func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
     var entries: [PlanEntry] = []
 
-    networkManager.fetchData {
+    planNotiService.fetchPlanListData {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
       let planData = PlanStore().getPlanData(plan: plan)
       let nextPlan = NotiPlan(day: plan.day,
@@ -198,8 +198,8 @@ struct MealWidget_Previews: PreviewProvider {
   }
 }
 
-class NetworkManager {
-  func fetchData(completion: @escaping ([Plan]) -> Void) {
+class PlanNotiService {
+  func fetchPlanListData(completion: @escaping ([Plan]) -> Void) {
     guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
     else { fatalError("Couldn't create URLComponents") }
 
