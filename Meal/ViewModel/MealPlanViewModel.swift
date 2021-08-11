@@ -24,7 +24,7 @@ class MealPlanViewModel: ObservableObject {
   @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
   @Published var loading = false
   @Published var planDataError: Bool = false
-  //  var widgetPlans: [NotiPlan] = []
+  var widgetPlans: [NotiPlan] = []
 
   var cancelBag = Set<AnyCancellable>()
 
@@ -32,19 +32,19 @@ class MealPlanViewModel: ObservableObject {
     //fetchPlanData()
   }
 
-  //  func writeNotiPlan() {
-  //    let archiveURL = FileManager.sharedContainerURL()
-  //      .appendingPathComponent("widgetPlan.json")
-  //    print(">>> \(archiveURL)")
-  //
-  //    if let dataToSave = try? JSONEncoder().encode(widgetPlans) {
-  //      do {
-  //        try dataToSave.write(to: archiveURL)
-  //      } catch {
-  //        print("Error: Can't write widget plan")
-  //      }
-  //    }
-  //  }
+  func writeNotiPlan() {
+    let archiveURL = FileManager.sharedContainerURL()
+      .appendingPathComponent("widgetPlan.json")
+    print(">>> \(archiveURL)")
+
+    if let dataToSave = try? JSONEncoder().encode(widgetPlans) {
+      do {
+        try dataToSave.write(to: archiveURL)
+      } catch {
+        print("Error: Can't write widget plan")
+      }
+    }
+  }
 }
 
 extension MealPlanViewModel {
@@ -79,6 +79,7 @@ extension MealPlanViewModel {
           self.loading = false
         }
 
+        // 앱 시작시 위젯 업데이트 루틴
         //        DispatchQueue.main.async {
         //          self.widgetPlans = [NotiPlan(
         //                                day: self.todayPlan.day,
