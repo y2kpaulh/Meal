@@ -64,7 +64,7 @@ struct Provider: TimelineProvider {
       let nextUpdate = Calendar
         .autoupdatingCurrent
         .date(
-          byAdding: .second,
+          byAdding: .day,
           value: 1,
           to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
 
