@@ -10,8 +10,7 @@ import SwiftUI
 import Combine
 
 struct Provider: TimelineProvider {
-  var viewModel = MealPlanViewModel()
-  var cancellable = Set<AnyCancellable>()
+  var networkManager = NetworkManager()
 
   let samplePlan = NotiPlan(day: "2021-01-01",
                             book: "창",
@@ -50,45 +49,34 @@ struct Provider: TimelineProvider {
 
   func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
     var entries: [PlanEntry] = []
-    //    let currentDate = Date()
-    //    var cancellable = Set<AnyCancellable>()
 
-    let plans = readWidgtPlan()
+    networkManager.fetchData {
+      let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
+      let planData = PlanStore().getPlanData(plan: plan)
+      let nextPlan = NotiPlan(day: plan.day,
+                              book: plan.book,
+                              fChap: plan.fChap,
+                              fVer: plan.fVer,
+                              lChap: plan.lChap,
+                              lVer: plan.lVer,
+                              verses: planData.verses)
 
-    //    PlanService.requestPlan(.planList)
-    //      .sink(receiveCompletion: { completion in
-    //        print(completion)
-    //      }, receiveValue: {
-    //        let plan = $0.filter { $0.day == PlanStore().getDateStr(date: currentDate) }[0]
-    //        let planData = PlanStore().getPlanData(plan: plan)
-    //
-    //        let nextUpdate = Calendar
-    //          .autoupdatingCurrent
-    //          .date(
-    //            byAdding: .day,
-    //            value: 1,
-    //            to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
-    //
-    //        let entry = PlanEntry(
-    //          date: nextUpdate,
-    //          plan: NotiPlan(day: plan.day, book: plan.book, fChap: plan.fChap, fVer: plan.fVer, lChap: plan.lChap, lVer: plan.lVer, verses: planData.verses))
-    //      })
-    //      .store(in: &cancellable)
+      let nextUpdate = Calendar
+        .autoupdatingCurrent
+        .date(
+          byAdding: .second,
+          value: 1,
+          to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
 
-    let nextUpdate = Calendar
-      .autoupdatingCurrent
-      .date(
-        byAdding: .second,
-        value: 1,
-        to: Calendar.autoupdatingCurrent.startOfDay(for: Date()))!
+      let entry = PlanEntry(
+        date: nextUpdate,
+        plan: nextPlan)
 
-    let entry = PlanEntry(
-      date: nextUpdate,
-      plan: plans[0])
-    entries = [entry]
+      entries = [entry]
 
-    let timeline = Timeline(entries: entries, policy: .atEnd)
-    completion(timeline)
+      let timeline = Timeline(entries: entries, policy: .atEnd)
+      completion(timeline)
+    }
   }
 }
 
@@ -207,5 +195,37 @@ struct MealWidget_Previews: PreviewProvider {
     // .colorScheme(.dark)
     view.previewContext(WidgetPreviewContext(family: .systemSmall))
     view.previewContext(WidgetPreviewContext(family: .systemMedium))
+  }
+}
+
+class NetworkManager {
+  func fetchData(completion: @escaping ([Plan]) -> Void) {
+    guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
+    else { fatalError("Couldn't create URLComponents") }
+
+    let request = URLRequest(url: components.url!)
+
+    URLSession(configuration: .default)
+      .dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+        guard error == nil else {
+          print("Error occur: \(String(describing: error))")
+          return
+        }
+
+        guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+          return
+        }
+        do {
+          let plan = try JSONDecoder().decode([Plan].self, from: data)
+          DispatchQueue.main.async {
+            WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
+          }
+
+          completion(plan)
+        } catch {
+          print(error.localizedDescription)
+        }
+      }
+      .resume()
   }
 }
