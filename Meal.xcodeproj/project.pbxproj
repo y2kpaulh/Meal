@@ -44,6 +44,9 @@
 		2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235ED26BD366100808E85 /* Assets.xcassets */; };
 		2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235F026BD366100808E85 /* Preview Assets.xcassets */; };
 		2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2E4235D526BD365E00808E85 /* MealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
@@ -171,6 +174,7 @@
 		2E4235F026BD366100808E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E4235F226BD366100808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4235F326BD366100808E85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E68701526C0E892007AC732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 			children = (
 				2EABCDC826C252FE00107840 /* APIClient.swift */,
 				2EBBD602268DBF7E00EA6BB2 /* Service.swift */,
+				2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -734,6 +739,7 @@
 				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
 				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
 				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
+				2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */,
 				2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */,
 				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,
 				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
@@ -753,6 +759,7 @@
 				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
 				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
 				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
+				2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */,
 				2E4235E426BD366000808E85 /* MealApp.swift in Sources */,
 				2EABCDD326C35EE500107840 /* Service.swift in Sources */,
 				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
@@ -779,6 +786,7 @@
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
 				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
+				2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,

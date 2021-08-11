@@ -197,35 +197,3 @@ struct MealWidget_Previews: PreviewProvider {
     view.previewContext(WidgetPreviewContext(family: .systemMedium))
   }
 }
-
-class PlanNotiService {
-  func fetchPlanListData(completion: @escaping ([Plan]) -> Void) {
-    guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
-    else { fatalError("Couldn't create URLComponents") }
-
-    let request = URLRequest(url: components.url!)
-
-    URLSession(configuration: .default)
-      .dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-        guard error == nil else {
-          print("Error occur: \(String(describing: error))")
-          return
-        }
-
-        guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-          return
-        }
-        do {
-          let plan = try JSONDecoder().decode([Plan].self, from: data)
-          DispatchQueue.main.async {
-            WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
-          }
-
-          completion(plan)
-        } catch {
-          print(error.localizedDescription)
-        }
-      }
-      .resume()
-  }
-}
