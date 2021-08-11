@@ -36,7 +36,6 @@
 		2E4235A626BD1EF900808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2E4235D826BD366000808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235D726BD366000808E85 /* Assets.xcassets */; };
 		2E4235DF26BD366000808E85 /* MealWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E4235DE26BD366000808E85 /* MealWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2E4235E426BD366000808E85 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E326BD366000808E85 /* MealApp.swift */; };
 		2E4235E626BD366000808E85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E526BD366000808E85 /* ContentView.swift */; };
 		2E4235E826BD366000808E85 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E726BD366000808E85 /* NotificationController.swift */; };
 		2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E926BD366000808E85 /* NotificationView.swift */; };
@@ -48,6 +47,16 @@
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
+		2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
+		2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2E6651A326C3A3EF00A083C6 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
+		2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E6651A526C3A45100A083C6 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
+		2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E6651A926C3A45100A083C6 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
@@ -166,7 +175,6 @@
 		2E4235D726BD366000808E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E4235D926BD366000808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4235DE26BD366000808E85 /* MealWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MealWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E4235E326BD366000808E85 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2E4235E526BD366000808E85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E4235E726BD366000808E85 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		2E4235E926BD366000808E85 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -286,7 +294,6 @@
 		2E4235E226BD366000808E85 /* MealWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2E4235E326BD366000808E85 /* MealApp.swift */,
 				2E4235E526BD366000808E85 /* ContentView.swift */,
 				2E4235E726BD366000808E85 /* NotificationController.swift */,
 				2E4235E926BD366000808E85 /* NotificationView.swift */,
@@ -597,7 +604,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6651A526C3A45100A083C6 /* plan.json in Resources */,
+				2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */,
+				2E6651A926C3A45100A083C6 /* NKRV.json in Resources */,
+				2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */,
 				2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */,
+				2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */,
+				2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */,
 				2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,17 +771,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */,
 				2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */,
 				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
 				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
 				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
 				2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */,
-				2E4235E426BD366000808E85 /* MealApp.swift in Sources */,
 				2EABCDD326C35EE500107840 /* Service.swift in Sources */,
 				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
+				2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
 				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
 				2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */,
+				2E6651A326C3A3EF00A083C6 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,7 +908,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -913,7 +929,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -938,7 +954,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -963,7 +979,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};

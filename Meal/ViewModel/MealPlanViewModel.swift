@@ -7,7 +7,9 @@
 
 import Foundation
 import Combine
+#if !os(watchOS)
 import WidgetKit
+#endif
 
 extension FileManager {
   static func sharedContainerURL() -> URL {

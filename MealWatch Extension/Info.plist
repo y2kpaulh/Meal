@@ -32,5 +32,14 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumBrush.otf</string>
+		<string>NanumMyeongjo.otf</string>
+		<string>NanumMyeongjoBold.otf</string>
+		<string>NanumMyeongjoExtraBold.otf</string>
+	</array>
 </dict>
 </plist>

@@ -9,20 +9,16 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-  @StateObject var viewModel = MealPlanViewModel()
-  @EnvironmentObject var networkReachability: NetworkReachability
-  //    @EnvironmentObject var planStore: PlanStore
-
+  @EnvironmentObject var viewModel: MealPlanViewModel
+  @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
 
   init() {
-
     UITableView.appearance().backgroundColor = .clear
     UITableViewCell.appearance().backgroundColor = .clear
   }
 
   var body: some View {
-
     ZStack {
       //Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
 
@@ -157,6 +153,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
-      .environmentObject(PlanStore())
   }
 }

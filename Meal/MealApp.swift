@@ -10,14 +10,16 @@ import Combine
 
 @main
 struct MealApp: App {
+  #if !os(watchOS)
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  #endif
   @Environment(\.scenePhase) private var scenePhase
-  @StateObject var networkReachability = NetworkReachability()
+  @StateObject var viewModel = MealPlanViewModel()
 
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(networkReachability)
+        .environmentObject(viewModel)
         .onAppear {
           //          print(FileManager.documentURL ?? "")
           //          for fontFamily in UIFont.familyNames {
