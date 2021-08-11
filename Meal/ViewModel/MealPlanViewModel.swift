@@ -52,7 +52,7 @@ extension MealPlanViewModel {
     self.loading = true
 
     PlanService.requestPlan(.planList)
-      //            .map{
+      //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
       //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
       //            }
       .mapError({ (error) -> Error in
