@@ -57,6 +57,8 @@
 		2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
 		2E6651A926C3A45100A083C6 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */; };
+		2E6651AD26C3B10300A083C6 /* ListVerticalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
@@ -184,6 +186,7 @@
 		2E4235F226BD366100808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4235F326BD366100808E85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
+		2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVerticalShadow.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E68701526C0E892007AC732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
 				2E7CA8FE26BBABD3008B6255 /* PlanView.swift */,
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
+				2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -782,6 +786,7 @@
 				2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
 				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
+				2E6651AD26C3B10300A083C6 /* ListVerticalShadow.swift in Sources */,
 				2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */,
 				2E6651A326C3A3EF00A083C6 /* ColorExtension.swift in Sources */,
 			);
@@ -810,6 +815,7 @@
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
 				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
+				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
