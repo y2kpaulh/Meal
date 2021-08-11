@@ -43,7 +43,7 @@ struct ContentView: View {
               }
               .sheet(isPresented: $isPresented,
                      onDismiss: didDismiss) {
-                MealPlanList(planList: $viewModel.plans)
+                MealPlanList(planList: $viewModel.planList)
               }
             }
             .padding(.top, 10)

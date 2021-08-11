@@ -58,28 +58,7 @@ struct MealPlanList: View {
           }
         }
       }
-      .mask(
-        VStack(spacing: 0) {
-          // top gradient
-          LinearGradient(gradient:
-                          Gradient(
-                            colors: [Color.black.opacity(0), Color.black]),
-                         startPoint: .top, endPoint: .bottom
-          )
-          .frame(height: 6)
-
-          // Middle
-          Rectangle().fill(Color.black)
-
-          // bottom gradient
-          LinearGradient(gradient:
-                          Gradient(
-                            colors: [Color.black, Color.black.opacity(0)]),
-                         startPoint: .top, endPoint: .bottom
-          )
-          .frame(height: 6)
-        }
-      )
+      .listVerticalShadow()
     }
     .onAppear {
       UITableView.appearance().backgroundColor = .clear

@@ -21,7 +21,7 @@ extension FileManager {
 }
 
 class MealPlanViewModel: ObservableObject {
-  @Published var plans: [Plan] = []
+  @Published var planList: [Plan] = []
   @Published var todayPlan: Plan = Plan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
   @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
   @Published var loading = false
@@ -74,7 +74,7 @@ extension MealPlanViewModel {
         }
       },
       receiveValue: {
-        self.plans = $0
+        self.planList = $0
         self.todayPlan = $0.filter { $0.day == PlanStore().getDateStr() }[0]
         self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
         DispatchQueue.main.async {
