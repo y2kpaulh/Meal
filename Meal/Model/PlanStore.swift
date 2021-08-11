@@ -75,6 +75,7 @@ public final class PlanStore: ObservableObject {
         
         return PlanData(book: title, verses: verse)
     }
+    
 }
 
 extension PlanStore {
@@ -86,8 +87,7 @@ extension PlanStore {
     //            }
     //        return output.data
     //    }
-    
-    func getFormattedDateStr(date: Date = Date()) -> String {
+    func getDateStr(date: Date = Date()) -> String {
         return dateFormatter.string(from: date)
     }
     

@@ -41,10 +41,8 @@ class LocalNotificationManager {
                   self.scheduleNotifications()
               default:
                   break
-                
             }
         }
-        
     }
     
     func scheduleNotifications() -> Void {
