@@ -17,7 +17,7 @@ struct ContentView: View {
         MealTitleLabel(size: 60, textColor: .white)
 
         List {
-          NavigationLink(destination: Text("Destination")) {
+          NavigationLink(destination: TodayPlan().environmentObject(viewModel)) {
             Text("오늘의 끼니")
           }
 
