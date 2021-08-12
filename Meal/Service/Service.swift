@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 enum PlanService {
-  static let isOffLine = true
+  static let isOffLineMode = true
   static let apiClient = APIClient()
   static let baseUrl = URL(string: "https://api.jsonbin.io")!
 
@@ -20,7 +20,7 @@ enum PlanService {
 
 extension PlanService {
   static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<[Plan], Error> {
-    guard !self.isOffLine else {
+    guard !self.isOffLineMode else {
       return Just(PlanStore().planList)
         .setFailureType(to: Error.self)
         .eraseToAnyPublisher()

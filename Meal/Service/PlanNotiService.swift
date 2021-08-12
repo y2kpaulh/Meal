@@ -12,7 +12,7 @@ import WidgetKit
 
 class PlanNotiService {
   func fetchPlanList(completion: @escaping ([Plan]) -> Void) {
-    guard !PlanService.isOffLine else {
+    guard !PlanService.isOffLineMode else {
       return completion(PlanStore().planList)
     }
     guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
