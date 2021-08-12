@@ -36,6 +36,14 @@ public struct Plan: Planable, Codable, Identifiable, Hashable {
   let fChap, fVer, lChap, lVer: Int
 }
 
+struct LocalPushPlan: Codable {
+  let title: String
+  let subTitle: String
+  let body: String
+  let month: Int
+  let day: Int
+}
+
 struct NotiPlan: Planable, Codable {
   let day: String
   let book: String

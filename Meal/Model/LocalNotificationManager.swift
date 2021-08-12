@@ -13,6 +13,8 @@ struct Notification {
   var title: String
   var subtitle: String
   var body: String
+  var month: Int
+  var day: Int
 }
 
 class LocalNotificationManager {
@@ -28,8 +30,13 @@ class LocalNotificationManager {
       }
   }
 
-  func addNotification(title: String, subtitle: String = "", body: String = "") {
-    notifications.append(Notification(id: UUID().uuidString, title: title, subtitle: subtitle, body: body))
+  func addNotification(title: String, subtitle: String = "", body: String = "", month: Int = 0, day: Int = 0) {
+    notifications.append(Notification(id: UUID().uuidString,
+                                      title: title,
+                                      subtitle: subtitle,
+                                      body: body,
+                                      month: month,
+                                      day: day))
   }
 
   func schedule() {
@@ -58,9 +65,11 @@ class LocalNotificationManager {
       content.body = notification.body
 
       var date = DateComponents()
+      date.month = notification.month
+      date.day = notification.day
       date.hour = 6
       date.minute = 0
-      let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+      let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
       let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
 
       UNUserNotificationCenter.current().add(request) { error in

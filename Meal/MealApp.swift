@@ -15,13 +15,13 @@ struct MealApp: App {
   #endif
   @Environment(\.scenePhase) private var scenePhase
   @StateObject var viewModel = MealPlanViewModel()
-  let localNotiManager = LocalNotificationManager()
 
   var body: some Scene {
     WindowGroup {
       ContentView()
         .environmentObject(viewModel)
         .onAppear {
+          PlanStore().registDailyPush()
           //          print(FileManager.documentURL ?? "")
           //          for fontFamily in UIFont.familyNames {
           //            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
@@ -56,10 +56,5 @@ struct MealApp: App {
     #if os(watchOS)
     WKNotificationScene(controller: NotificationController.self, category: "MealPlan")
     #endif
-  }
-
-  func registLocalNotification(plan: Plan, planData: PlanData) {
-    self.localNotiManager.addNotification(title: "오늘의 끼니", subtitle: PlanStore().getMealPlanStr(plan: plan), body: PlanStore().getBibleSummary(verses: planData.verses))
-    self.localNotiManager.schedule()
   }
 }

@@ -73,6 +73,7 @@
 		2E972C1726C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
 		2E972C1826C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
 		2E972C1926C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
+		2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2E9D9D6326C4C81100195A22 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
@@ -781,6 +782,7 @@
 				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
 				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
 				2E6651B626C3BB4200A083C6 /* MealTitleLabel.swift in Sources */,
+				2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */,
 				2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */,
 				2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */,
 				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,

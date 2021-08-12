@@ -14,10 +14,12 @@ import SwiftUI
 import UIKit
 
 public final class PlanStore: ObservableObject {
+  let localNotiManager = LocalNotificationManager()
+
   var planList: [Plan] = load("mealPlan.json")
 
   var dateFormatter: DateFormatter {
-    let dateFormatter  = DateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
     dateFormatter.locale = Locale(identifier: "ko") // 로케일 변경
 
@@ -56,14 +58,6 @@ public final class PlanStore: ObservableObject {
 }
 
 extension PlanStore {
-  //    func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
-  //        guard
-  //            let response = output.response as? HTTPURLResponse,
-  //            response.statusCode >= 200 && response.statusCode < 300 else {
-  //                throw URLError(.badServerResponse)
-  //            }
-  //        return output.data
-  //    }
   func getDateStr(date: Date = Date()) -> String {
     return dateFormatter.string(from: date)
   }
@@ -98,5 +92,53 @@ extension PlanStore {
 
   func getMealPlanStr(plan: Planable) -> String {
     return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap > 0 ? "\(plan.fChap):" : "")\(plan.fVer > 0 ? "\(plan.fVer)-" : "")\(plan.fChap != plan.lChap ? "\(plan.lChap > 0 ? "\(plan.lChap)" : ""):" : "" )\(plan.lVer > 0 ? "\(plan.lVer)" : "")"
+  }
+
+  static var dailyPushList: [LocalPushPlan] {
+    get {
+      var notiPlans: [LocalPushPlan]?
+      if let data = UserDefaults.standard.value(forKey: "notiPlans") as? Data {
+        notiPlans = try? PropertyListDecoder().decode([LocalPushPlan].self, from: data)
+      }
+      return notiPlans ?? []
+    }
+    set {
+      UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "notiPlans")
+    }
+  }
+
+  func registDailyPush(clear: Bool = true) {
+    print(#function, "pending push count", PlanStore.dailyPushList.count)
+
+    if clear {
+      self.localNotiManager.removeSchedule()
+      PlanStore.dailyPushList = []
+    }
+
+    guard !(PlanStore.dailyPushList.count > 0) else { return }
+
+    PlanStore.dailyPushList = PlanStore().planList
+      .filter { plan in
+        PlanStore().dateFormatter.date(from: plan.day)! > Date()
+      }
+      .map { plan in
+        let targetDay = plan.day.split(separator: "-")
+        print(targetDay)
+
+        return LocalPushPlan(title: "오늘의 끼니",
+                             subTitle: PlanStore().getMealPlanStr(plan: plan),
+                             body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan: plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
+
+      }
+
+    for plan in PlanStore.dailyPushList {
+      self.localNotiManager.addNotification(title: plan.title,
+                                            subtitle: plan.subTitle,
+                                            body: plan.body,
+                                            month: plan.month,
+                                            day: plan.day)
+    }
+
+    self.localNotiManager.schedule()
   }
 }
