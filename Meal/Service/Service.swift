@@ -38,7 +38,7 @@ enum PlanService {
   static let baseUrl = URL(string: "https://api.jsonbin.io")!
 
   enum APIPath: String {
-    case planList = "/b/61139e3cd5667e403a3fc291"
+    case planList = "/b/6113a4a9d5667e403a3fcb69"
   }
 }
 

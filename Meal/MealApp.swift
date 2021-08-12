@@ -51,5 +51,9 @@ struct MealApp: App {
           }
         }
     }
+
+    #if os(watchOS)
+    WKNotificationScene(controller: NotificationController.self, category: "MealPlan")
+    #endif
   }
 }
