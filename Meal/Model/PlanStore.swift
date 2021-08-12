@@ -14,7 +14,7 @@ import SwiftUI
 import UIKit
 
 public final class PlanStore: ObservableObject {
-  //    let manager = LocalNotificationManager()
+  var planList: [Plan] = load("mealPlan.json")
 
   var dateFormatter: DateFormatter {
     let dateFormatter  = DateFormatter()
@@ -91,11 +91,6 @@ extension PlanStore {
 
     return "\(dateStr), \(day)"
   }
-
-  //    func registLocalNotification(plan: Plan, planData: PlanData) {
-  //        self.manager.addNotification(title: "오늘의 끼니", subtitle: self.getMealPlanStr(plan: plan), body: self.getBibleSummary(verses: planData.verses))
-  //        self.manager.schedule()
-  //    }
 
   func getBibleSummary(verses: [String]) -> String {
     return verses[0...3].joined(separator: " ")

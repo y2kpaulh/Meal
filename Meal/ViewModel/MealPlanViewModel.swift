@@ -67,7 +67,9 @@ extension MealPlanViewModel {
       .sink(receiveCompletion: { completion in
         if case .failure(let err) = completion {
           print("Retrieving data failed with error \(err)")
+
           self.planDataError = true
+
           DispatchQueue.main.async {
             self.loading = false
           }

@@ -45,6 +45,10 @@ class LocalNotificationManager {
     }
   }
 
+  func removeSchedule() {
+    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+  }
+
   func scheduleNotifications() {
     for notification in notifications {
       let content = UNMutableNotificationContent()
@@ -52,8 +56,6 @@ class LocalNotificationManager {
       content.sound = UNNotificationSound.default
       content.subtitle = notification.subtitle
       content.body = notification.body
-      content.summaryArgument = "Inpyo Hong"
-      content.summaryArgumentCount = 40
 
       var date = DateComponents()
       date.hour = 6
