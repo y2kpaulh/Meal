@@ -115,12 +115,12 @@ extension PlanStore {
       PlanStore.dailyPushList = []
     }
 
-    guard !(PlanStore.dailyPushList.count > 0) else { return }
+    //guard !(PlanStore.dailyPushList.count > 0) else { return }
 
     PlanStore.dailyPushList = PlanStore().planList
-      .filter { plan in
-        PlanStore().dateFormatter.date(from: plan.day)! > Date()
-      }
+      //      .filter { plan in
+      //        PlanStore().dateFormatter.date(from: plan.day)! > Date()
+      //      }
       .map { plan in
         let targetDay = plan.day.split(separator: "-")
         print(targetDay)

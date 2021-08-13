@@ -552,6 +552,8 @@
 				2E4235F526BD366100808E85 /* PBXTargetDependency */,
 			);
 			name = Meal;
+			packageProductDependencies = (
+			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
 			productType = "com.apple.product-type.application";
@@ -589,6 +591,8 @@
 				ko,
 			);
 			mainGroup = 2EBBD5DE268DBB5F00EA6BB2;
+			packageReferences = (
+			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

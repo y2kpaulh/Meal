@@ -69,6 +69,7 @@ class LocalNotificationManager {
       date.day = notification.day
       date.hour = 6
       date.minute = 0
+
       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
       let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
 
