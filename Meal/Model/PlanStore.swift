@@ -123,7 +123,7 @@ extension PlanStore {
       //      }
       .map { plan in
         let targetDay = plan.day.split(separator: "-")
-        print(targetDay)
+        //        print(targetDay)
 
         return LocalPushPlan(title: "오늘의 끼니",
                              subTitle: PlanStore().getMealPlanStr(plan: plan),
