@@ -87,7 +87,7 @@ extension PlanStore {
   }
 
   func getBibleSummary(verses: [String]) -> String {
-    return verses[0...3].joined(separator: " ")
+    return verses[0...2].joined(separator: " ")
   }
 
   func getMealPlanStr(plan: Planable) -> String {
