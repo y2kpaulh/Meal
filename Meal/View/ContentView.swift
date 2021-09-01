@@ -27,37 +27,35 @@ struct ContentView: View {
           .fill(Color(UIColor.systemBackground))
           .shadow(color: .mealTheme, radius: 10)
 
-        VStack(spacing: 0) {
+        VStack {
+          HStack(alignment: .center) {
+            MealTitleLabel(size: 80, textColor: Color(UIColor.label))
+
+            Text(PlanStore().convertDateToStr())
+              .foregroundColor(.gray)
+
+            Button(action: { isPresented.toggle() }) {
+              Image(systemName: "line.horizontal.3.decrease.circle")
+                .renderingMode(.template)
+                .accessibilityLabel(Text("끼니 말씀 일정표"))
+                .foregroundColor(Color(UIColor.label))
+            }
+            .sheet(isPresented: $isPresented,
+                   onDismiss: didDismiss) {
+              MealPlanList(planList: $viewModel.planList)
+            }
+          }
+          .padding(.top, 10)
+
           VStack {
-            HStack(alignment: .center) {
-              MealTitleLabel(size: 80, textColor: Color(UIColor.label))
-
-              Text(PlanStore().convertDateToStr())
-                .foregroundColor(.gray)
-
-              Button(action: { isPresented.toggle() }) {
-                Image(systemName: "line.horizontal.3.decrease.circle")
-                  .renderingMode(.template)
-                  .accessibilityLabel(Text("끼니 말씀 일정표"))
-                  .foregroundColor(Color(UIColor.label))
-              }
-              .sheet(isPresented: $isPresented,
-                     onDismiss: didDismiss) {
-                MealPlanList(planList: $viewModel.planList)
-              }
+            HStack {
+              Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
+                .foregroundColor(Color(UIColor.label))
+                .font(.custom("NanumMyeongjoOTFBold", size: 20))
             }
-            .padding(.top, 10)
-
-            VStack {
-              HStack {
-                Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
-                  .foregroundColor(Color(UIColor.label))
-                  .font(.custom("NanumMyeongjoOTFBold", size: 20))
-              }
-              Rectangle()
-                .fill(Color(UIColor.systemBackground))
-                .frame(height: 0.5)
-            }
+            Rectangle()
+              .fill(Color(UIColor.systemBackground))
+              .frame(height: 0.5)
           }
 
           Divider()
