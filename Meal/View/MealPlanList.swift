@@ -10,6 +10,7 @@ import SwiftUI
 struct MealPlanList: View {
   @Binding var planList: [Plan]
   @Environment(\.presentationMode) var presentationMode
+  @State private var isPresented = false
 
   //    init() {
   //        UITableView.appearance().backgroundColor = .clear
@@ -48,12 +49,16 @@ struct MealPlanList: View {
         ScrollView {
           LazyVStack {
             ForEach(Array(planList.enumerated()), id: \.1) { index, plan in
-              PlanView(index: index, plan: plan)
-                //                                .environmentObject(planStore)
-                .padding(10)
-                .onTapGesture {
-
-                }
+              Button(action: {
+                isPresented.toggle()
+              }, label: {
+                PlanView(index: index, plan: plan)
+                  //.environmentObject(planStore)
+                  .padding(10)
+              })
+              .fullScreenCover(isPresented: $isPresented, content: {
+                TestView()
+              })
             }
           }
         }
