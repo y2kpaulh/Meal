@@ -1,0 +1,1086 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		19F95F61A674D7A84D17C12A56ABABBC /* SwiftLint-iOS14.0 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D13A86FD6C10D59F10EEB25314B7803B /* Build configuration list for PBXAggregateTarget "SwiftLint-iOS14.0" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "SwiftLint-iOS14.0";
+		};
+		AB27B1DC9612766243E31ACCE3EC1DE3 /* SwiftLint-iOS14.5 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BAC7585DDD0DABF241A50E7844ED37A1 /* Build configuration list for PBXAggregateTarget "SwiftLint-iOS14.5" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "SwiftLint-iOS14.5";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		06B4D88ADB1EA8451228CD9F700EC96E /* Pods-MealWidgetExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 591048496B6E804ACB256A06A57D4243 /* Pods-MealWidgetExtension-dummy.m */; };
+		18184FB0992BDA60006456E2BC22D545 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+		23E8786FAC3305CCCC9B91417B1185EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		25C981A2F3131865928EDEF2DEF34D68 /* Pods-MealWatch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF4E781A29F9DDF59DCA0FB5B5AD907 /* Pods-MealWatch-dummy.m */; };
+		449F69B35A90A40480F82BD9DDED9AA4 /* Pods-Meal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1F6564D602B46E86910F7E92EDF146 /* Pods-Meal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		503D31FD61F7B0B6D57EC9A071BF4E2B /* Pods-MealWatch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAD150A1B601B06ACF08C931B7E48 /* Pods-MealWatch Extension-dummy.m */; };
+		5A310B08D0C49D62317C98E27DB5C07B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		6E247F226B7E83F305AA7F347C4067B0 /* Pods-MealWatch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9EE9125B28168907BE1C37FCA44C365 /* Pods-MealWatch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		869D76649CC7C58188C90015C7064C85 /* Pods-Meal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6A388A54419AE15904573050FA2EA /* Pods-Meal-dummy.m */; };
+		B4A1368A9B82C5372B43989BBFC9FBAD /* Pods-MealWidgetExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58325167C5ACB507009FA03F592ABA38 /* Pods-MealWidgetExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C68FE23A739953137EE84AD1C130F0B0 /* Pods-MealWatch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D2DA799012E34C9B69C183D3BC5FAC /* Pods-MealWatch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFE1987C687BD028BE106270BF4D0F5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		425944E420C132CA8D2360DDC8F506C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB27B1DC9612766243E31ACCE3EC1DE3;
+			remoteInfo = "SwiftLint-iOS14.5";
+		};
+		4621F9EEE317ECFC249BE3ED98787EC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19F95F61A674D7A84D17C12A56ABABBC;
+			remoteInfo = "SwiftLint-iOS14.0";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03F1E0D85E4E8DD5916E6E26DA146781 /* SwiftLint-iOS14.5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-iOS14.5.debug.xcconfig"; path = "../SwiftLint-iOS14.5/SwiftLint-iOS14.5.debug.xcconfig"; sourceTree = "<group>"; };
+		05FF5EAF54C28C7ED5EF91CB22D0EC00 /* Pods-Meal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meal-Info.plist"; sourceTree = "<group>"; };
+		0A1F6564D602B46E86910F7E92EDF146 /* Pods-Meal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Meal-umbrella.h"; sourceTree = "<group>"; };
+		0C77F869EEEB09F2F51C8A527BE0766A /* SwiftLint-iOS14.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-iOS14.0.release.xcconfig"; sourceTree = "<group>"; };
+		0F57259CAB1AAED638F703B785345D85 /* Pods-MealWatch Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch Extension-Info.plist"; sourceTree = "<group>"; };
+		0F8BA46DF1C3C0F1B7A2D431DD617584 /* Pods-MealWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		1614CB313C196E3EFCDF23C448AFD231 /* Pods-MealWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWatch.release.xcconfig"; sourceTree = "<group>"; };
+		1BAB1D540996D115F517FC489FB5DCF7 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1BB3872C0CFB086B6DE796015C80BA11 /* Pods-Meal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meal-acknowledgements.plist"; sourceTree = "<group>"; };
+		1EA5D11F39F30980F16F452CA74E2911 /* Pods-Meal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Meal-acknowledgements.markdown"; sourceTree = "<group>"; };
+		33C61CA34D8A8741D595D948D7A2AE39 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWidgetExtension.framework; path = "Pods-MealWidgetExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E97123B7EDFF1EB4824A67154B3A334 /* Pods-MealWidgetExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWidgetExtension-Info.plist"; sourceTree = "<group>"; };
+		40D2DA799012E34C9B69C183D3BC5FAC /* Pods-MealWatch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWatch-umbrella.h"; sourceTree = "<group>"; };
+		4226ED1A49D01F858EEB2F140C8674F1 /* Pods-MealWatch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch-Info.plist"; sourceTree = "<group>"; };
+		4897509AB46C5143011F2704FD0F4DA5 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5201DC01131FABFCD0C471491C692468 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		528F8BBB6A961198B4454647B08B4ED0 /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWatch.framework; path = "Pods-MealWatch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58325167C5ACB507009FA03F592ABA38 /* Pods-MealWidgetExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWidgetExtension-umbrella.h"; sourceTree = "<group>"; };
+		591048496B6E804ACB256A06A57D4243 /* Pods-MealWidgetExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWidgetExtension-dummy.m"; sourceTree = "<group>"; };
+		5CB6A388A54419AE15904573050FA2EA /* Pods-Meal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Meal-dummy.m"; sourceTree = "<group>"; };
+		5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		61DA56E6B97E381993EAFD781ADE3E81 /* Pods-MealWatch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWatch.modulemap"; sourceTree = "<group>"; };
+		67A5D8576E0C778D86635C8AC1AE0219 /* Pods-MealWatch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWatch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		682AC2505AE1F746068AA5E4EA25FB1E /* Pods-MealWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6B6CE0501DAD33BF782C5992AB54220A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWatch_Extension.framework; path = "Pods-MealWatch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		719CABEC76A9DAE67A0B27F2C1E5953A /* Pods-MealWatch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch-acknowledgements.plist"; sourceTree = "<group>"; };
+		724B07B7CBFE268A96124F6930C2C673 /* SwiftLint-iOS14.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-iOS14.0.debug.xcconfig"; sourceTree = "<group>"; };
+		76EFCF079F568AA84587B1D81029E574 /* Pods-MealWidgetExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWidgetExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7CF4E781A29F9DDF59DCA0FB5B5AD907 /* Pods-MealWatch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWatch-dummy.m"; sourceTree = "<group>"; };
+		8644A8FC5FCFCDC3E1CF34FAF6117383 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Meal.framework; path = "Pods-Meal.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		884C8D433EE4752DD31BA1CA58FA4D9C /* Pods-MealWatch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWatch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B4BC8163551C3A3C1065AA275ECE2DAD /* Pods-MealWatch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		C9EE9125B28168907BE1C37FCA44C365 /* Pods-MealWatch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWatch Extension-umbrella.h"; sourceTree = "<group>"; };
+		CA92DF2E209DD7515C1FBC42F3423477 /* Pods-MealWidgetExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWidgetExtension.modulemap"; sourceTree = "<group>"; };
+		CF0CAD150A1B601B06ACF08C931B7E48 /* Pods-MealWatch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWatch Extension-dummy.m"; sourceTree = "<group>"; };
+		D0199013DDBA0AA08DC1FBB6AB3C354D /* Pods-Meal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Meal.modulemap"; sourceTree = "<group>"; };
+		E249A946127A64F69DAFE0D3B280140E /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
+		E86FD58F373F7A722D2779EA5FAA057C /* Pods-MealWatch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWatch Extension.modulemap"; sourceTree = "<group>"; };
+		EFBB0FDBB1E85470ADB23AC9E4864082 /* Pods-MealWidgetExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWidgetExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		F41E6BE04AF468085413649410A96DAA /* Pods-MealWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		FA7691C17CA19DB4C7351FB9E6E1C107 /* SwiftLint-iOS14.5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-iOS14.5.release.xcconfig"; path = "../SwiftLint-iOS14.5/SwiftLint-iOS14.5.release.xcconfig"; sourceTree = "<group>"; };
+		FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06224CD7D6BDE54D67BF2B8D82EC5D8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E8786FAC3305CCCC9B91417B1185EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18B2105AE9DE6A6E8C9049203C9314AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18184FB0992BDA60006456E2BC22D545 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212DEA0050B1BF892906334973F079FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFE1987C687BD028BE106270BF4D0F5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A985C32606B23548A7FC45617FB2B23E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A310B08D0C49D62317C98E27DB5C07B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00AD90B62C2638889942E6A5EB8C818F /* Pods-MealWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CA92DF2E209DD7515C1FBC42F3423477 /* Pods-MealWidgetExtension.modulemap */,
+				76EFCF079F568AA84587B1D81029E574 /* Pods-MealWidgetExtension-acknowledgements.markdown */,
+				EFBB0FDBB1E85470ADB23AC9E4864082 /* Pods-MealWidgetExtension-acknowledgements.plist */,
+				591048496B6E804ACB256A06A57D4243 /* Pods-MealWidgetExtension-dummy.m */,
+				3E97123B7EDFF1EB4824A67154B3A334 /* Pods-MealWidgetExtension-Info.plist */,
+				58325167C5ACB507009FA03F592ABA38 /* Pods-MealWidgetExtension-umbrella.h */,
+				682AC2505AE1F746068AA5E4EA25FB1E /* Pods-MealWidgetExtension.debug.xcconfig */,
+				4897509AB46C5143011F2704FD0F4DA5 /* Pods-MealWidgetExtension.release.xcconfig */,
+			);
+			name = "Pods-MealWidgetExtension";
+			path = "Target Support Files/Pods-MealWidgetExtension";
+			sourceTree = "<group>";
+		};
+		03FBABE5ACCBF0D21AB61D364299D310 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		326C72621ABE25830F0A8EB5061F367B /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				412DE1F8C9BF1D7A895164F312800661 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		412DE1F8C9BF1D7A895164F312800661 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				724B07B7CBFE268A96124F6930C2C673 /* SwiftLint-iOS14.0.debug.xcconfig */,
+				0C77F869EEEB09F2F51C8A527BE0766A /* SwiftLint-iOS14.0.release.xcconfig */,
+				03F1E0D85E4E8DD5916E6E26DA146781 /* SwiftLint-iOS14.5.debug.xcconfig */,
+				FA7691C17CA19DB4C7351FB9E6E1C107 /* SwiftLint-iOS14.5.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint-iOS14.0";
+			sourceTree = "<group>";
+		};
+		54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03FBABE5ACCBF0D21AB61D364299D310 /* iOS */,
+				8B063FB5829CC11F1F48DAAF9305FCB4 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77FE665C4BC7D3387FCE24F66D9B8F41 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91CBCF7638696985A691F1671DC08D9C /* Pods-Meal */,
+				B18E3CB04B7587EC0A8BF4822A52BF36 /* Pods-MealWatch */,
+				DADBD7F880C47FDA607A7E3E36CB1C8F /* Pods-MealWatch Extension */,
+				00AD90B62C2638889942E6A5EB8C818F /* Pods-MealWidgetExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8B063FB5829CC11F1F48DAAF9305FCB4 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		90A3B5D79FFAE185A41EE123829ED34A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8644A8FC5FCFCDC3E1CF34FAF6117383 /* Pods_Meal.framework */,
+				528F8BBB6A961198B4454647B08B4ED0 /* Pods_MealWatch.framework */,
+				6B6CE0501DAD33BF782C5992AB54220A /* Pods_MealWatch_Extension.framework */,
+				33C61CA34D8A8741D595D948D7A2AE39 /* Pods_MealWidgetExtension.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91CBCF7638696985A691F1671DC08D9C /* Pods-Meal */ = {
+			isa = PBXGroup;
+			children = (
+				D0199013DDBA0AA08DC1FBB6AB3C354D /* Pods-Meal.modulemap */,
+				1EA5D11F39F30980F16F452CA74E2911 /* Pods-Meal-acknowledgements.markdown */,
+				1BB3872C0CFB086B6DE796015C80BA11 /* Pods-Meal-acknowledgements.plist */,
+				5CB6A388A54419AE15904573050FA2EA /* Pods-Meal-dummy.m */,
+				05FF5EAF54C28C7ED5EF91CB22D0EC00 /* Pods-Meal-Info.plist */,
+				0A1F6564D602B46E86910F7E92EDF146 /* Pods-Meal-umbrella.h */,
+				5201DC01131FABFCD0C471491C692468 /* Pods-Meal.debug.xcconfig */,
+				E249A946127A64F69DAFE0D3B280140E /* Pods-Meal.release.xcconfig */,
+			);
+			name = "Pods-Meal";
+			path = "Target Support Files/Pods-Meal";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				326C72621ABE25830F0A8EB5061F367B /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B18E3CB04B7587EC0A8BF4822A52BF36 /* Pods-MealWatch */ = {
+			isa = PBXGroup;
+			children = (
+				61DA56E6B97E381993EAFD781ADE3E81 /* Pods-MealWatch.modulemap */,
+				884C8D433EE4752DD31BA1CA58FA4D9C /* Pods-MealWatch-acknowledgements.markdown */,
+				719CABEC76A9DAE67A0B27F2C1E5953A /* Pods-MealWatch-acknowledgements.plist */,
+				7CF4E781A29F9DDF59DCA0FB5B5AD907 /* Pods-MealWatch-dummy.m */,
+				4226ED1A49D01F858EEB2F140C8674F1 /* Pods-MealWatch-Info.plist */,
+				40D2DA799012E34C9B69C183D3BC5FAC /* Pods-MealWatch-umbrella.h */,
+				0F8BA46DF1C3C0F1B7A2D431DD617584 /* Pods-MealWatch.debug.xcconfig */,
+				1614CB313C196E3EFCDF23C448AFD231 /* Pods-MealWatch.release.xcconfig */,
+			);
+			name = "Pods-MealWatch";
+			path = "Target Support Files/Pods-MealWatch";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				90A3B5D79FFAE185A41EE123829ED34A /* Products */,
+				77FE665C4BC7D3387FCE24F66D9B8F41 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DADBD7F880C47FDA607A7E3E36CB1C8F /* Pods-MealWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E86FD58F373F7A722D2779EA5FAA057C /* Pods-MealWatch Extension.modulemap */,
+				67A5D8576E0C778D86635C8AC1AE0219 /* Pods-MealWatch Extension-acknowledgements.markdown */,
+				B4BC8163551C3A3C1065AA275ECE2DAD /* Pods-MealWatch Extension-acknowledgements.plist */,
+				CF0CAD150A1B601B06ACF08C931B7E48 /* Pods-MealWatch Extension-dummy.m */,
+				0F57259CAB1AAED638F703B785345D85 /* Pods-MealWatch Extension-Info.plist */,
+				C9EE9125B28168907BE1C37FCA44C365 /* Pods-MealWatch Extension-umbrella.h */,
+				1BAB1D540996D115F517FC489FB5DCF7 /* Pods-MealWatch Extension.debug.xcconfig */,
+				F41E6BE04AF468085413649410A96DAA /* Pods-MealWatch Extension.release.xcconfig */,
+			);
+			name = "Pods-MealWatch Extension";
+			path = "Target Support Files/Pods-MealWatch Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		130CF27D603D9429EDBA728498C33C03 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4A1368A9B82C5372B43989BBFC9FBAD /* Pods-MealWidgetExtension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D3DDE9CE760786FDDD069F9DAB4E7CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449F69B35A90A40480F82BD9DDED9AA4 /* Pods-Meal-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B10167F5DB5A9144C38F402F31E44D83 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E247F226B7E83F305AA7F347C4067B0 /* Pods-MealWatch Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC9FD44A736367645A6EA91DB9124232 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68FE23A739953137EE84AD1C130F0B0 /* Pods-MealWatch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		034962AF2E8D5A776C1C19FE141CE001 /* Pods-MealWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11D565AF4C7B8B89989D9228B89CF79D /* Build configuration list for PBXNativeTarget "Pods-MealWatch" */;
+			buildPhases = (
+				BC9FD44A736367645A6EA91DB9124232 /* Headers */,
+				EB0E4E005CCCE8188E24A5833A8D1C71 /* Sources */,
+				06224CD7D6BDE54D67BF2B8D82EC5D8A /* Frameworks */,
+				30132E5C803D9A3F5D144BAE035448A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MealWatch";
+			productName = "Pods-MealWatch";
+			productReference = 528F8BBB6A961198B4454647B08B4ED0 /* Pods_MealWatch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		913DA44AE338534CE58584E1383DD0E3 /* Pods-Meal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55AB6672C33C36AE11FA562C5C5E68E7 /* Build configuration list for PBXNativeTarget "Pods-Meal" */;
+			buildPhases = (
+				2D3DDE9CE760786FDDD069F9DAB4E7CD /* Headers */,
+				FAEC1D5F2619287055BE3C4F65A93724 /* Sources */,
+				18B2105AE9DE6A6E8C9049203C9314AA /* Frameworks */,
+				4133831CA41A4DA45D5FB563D7A2A5C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B03E3929B7E99696E1C936694626B24 /* PBXTargetDependency */,
+			);
+			name = "Pods-Meal";
+			productName = "Pods-Meal";
+			productReference = 8644A8FC5FCFCDC3E1CF34FAF6117383 /* Pods_Meal.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AB2D81B89E0F3222F1A4042B840768E9 /* Pods-MealWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ABD47FB3FBAE0F33C20ACFEEA37A921 /* Build configuration list for PBXNativeTarget "Pods-MealWatch Extension" */;
+			buildPhases = (
+				B10167F5DB5A9144C38F402F31E44D83 /* Headers */,
+				B6492EAD01CA19E02E2DC9B7413CD6E9 /* Sources */,
+				A985C32606B23548A7FC45617FB2B23E /* Frameworks */,
+				86E4C7D73E1E4743CE83C7DDCC2A73F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MealWatch Extension";
+			productName = "Pods-MealWatch Extension";
+			productReference = 6B6CE0501DAD33BF782C5992AB54220A /* Pods_MealWatch_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CC625D999EE7EB9C6BDEFE72FB89464D /* Pods-MealWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA8F7E4B3AA648CF78B50E0460DD1D6 /* Build configuration list for PBXNativeTarget "Pods-MealWidgetExtension" */;
+			buildPhases = (
+				130CF27D603D9429EDBA728498C33C03 /* Headers */,
+				D27368DF47C9CB6D822A18C24D9357C8 /* Sources */,
+				212DEA0050B1BF892906334973F079FF /* Frameworks */,
+				311D51DC93B6D2347E58FBDBAFF88D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BB2F81456E02E6DF3216DB62FADFBCC /* PBXTargetDependency */,
+			);
+			name = "Pods-MealWidgetExtension";
+			productName = "Pods-MealWidgetExtension";
+			productReference = 33C61CA34D8A8741D595D948D7A2AE39 /* Pods_MealWidgetExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 90A3B5D79FFAE185A41EE123829ED34A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				913DA44AE338534CE58584E1383DD0E3 /* Pods-Meal */,
+				034962AF2E8D5A776C1C19FE141CE001 /* Pods-MealWatch */,
+				AB2D81B89E0F3222F1A4042B840768E9 /* Pods-MealWatch Extension */,
+				CC625D999EE7EB9C6BDEFE72FB89464D /* Pods-MealWidgetExtension */,
+				19F95F61A674D7A84D17C12A56ABABBC /* SwiftLint-iOS14.0 */,
+				AB27B1DC9612766243E31ACCE3EC1DE3 /* SwiftLint-iOS14.5 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30132E5C803D9A3F5D144BAE035448A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311D51DC93B6D2347E58FBDBAFF88D81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4133831CA41A4DA45D5FB563D7A2A5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86E4C7D73E1E4743CE83C7DDCC2A73F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6492EAD01CA19E02E2DC9B7413CD6E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503D31FD61F7B0B6D57EC9A071BF4E2B /* Pods-MealWatch Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27368DF47C9CB6D822A18C24D9357C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B4D88ADB1EA8451228CD9F700EC96E /* Pods-MealWidgetExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB0E4E005CCCE8188E24A5833A8D1C71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C981A2F3131865928EDEF2DEF34D68 /* Pods-MealWatch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAEC1D5F2619287055BE3C4F65A93724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869D76649CC7C58188C90015C7064C85 /* Pods-Meal-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B03E3929B7E99696E1C936694626B24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftLint-iOS14.0";
+			target = 19F95F61A674D7A84D17C12A56ABABBC /* SwiftLint-iOS14.0 */;
+			targetProxy = 4621F9EEE317ECFC249BE3ED98787EC4 /* PBXContainerItemProxy */;
+		};
+		7BB2F81456E02E6DF3216DB62FADFBCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftLint-iOS14.5";
+			target = AB27B1DC9612766243E31ACCE3EC1DE3 /* SwiftLint-iOS14.5 */;
+			targetProxy = 425944E420C132CA8D2360DDC8F506C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		053C218890239E478F64F01845DB2583 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C77F869EEEB09F2F51C8A527BE0766A /* SwiftLint-iOS14.0.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FDBE47118B85BC322468F08B890F7AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682AC2505AE1F746068AA5E4EA25FB1E /* Pods-MealWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		163756194EB36A27FA838AE02FD87E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BAB1D540996D115F517FC489FB5DCF7 /* Pods-MealWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		22F5DADDAC4A7F07AD3B45FBD19DB1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E249A946127A64F69DAFE0D3B280140E /* Pods-Meal.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Meal/Pods-Meal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Meal/Pods-Meal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3592F40147C4EF23AA4A93077CE61E05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5201DC01131FABFCD0C471491C692468 /* Pods-Meal.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Meal/Pods-Meal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Meal/Pods-Meal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5965F99F99570805DCF5D4E94D46A2FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 724B07B7CBFE268A96124F6930C2C673 /* SwiftLint-iOS14.0.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71D2B518A55410820BDA15263299991F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		72BF7BD93A1ED3E3E3BF3BE74FB7F252 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		84D559FC152E7D7DC711916AABE2D389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1614CB313C196E3EFCDF23C448AFD231 /* Pods-MealWatch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWatch/Pods-MealWatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWatch/Pods-MealWatch.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		85B77C9873170688482BFD490BCBC180 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F1E0D85E4E8DD5916E6E26DA146781 /* SwiftLint-iOS14.5.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A17B4E2BCFF8DEEFF066A3C081966AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7691C17CA19DB4C7351FB9E6E1C107 /* SwiftLint-iOS14.5.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBB1E8056702418F574014D156426889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4897509AB46C5143011F2704FD0F4DA5 /* Pods-MealWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CE432A854388B96FF4B10739C8603046 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F8BA46DF1C3C0F1B7A2D431DD617584 /* Pods-MealWatch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWatch/Pods-MealWatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWatch/Pods-MealWatch.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		F57BE3B600454CF629F61CDB43C6629F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41E6BE04AF468085413649410A96DAA /* Pods-MealWatch Extension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11D565AF4C7B8B89989D9228B89CF79D /* Build configuration list for PBXNativeTarget "Pods-MealWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE432A854388B96FF4B10739C8603046 /* Debug */,
+				84D559FC152E7D7DC711916AABE2D389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BA8F7E4B3AA648CF78B50E0460DD1D6 /* Build configuration list for PBXNativeTarget "Pods-MealWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDBE47118B85BC322468F08B890F7AD /* Debug */,
+				CBB1E8056702418F574014D156426889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D2B518A55410820BDA15263299991F /* Debug */,
+				72BF7BD93A1ED3E3E3BF3BE74FB7F252 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55AB6672C33C36AE11FA562C5C5E68E7 /* Build configuration list for PBXNativeTarget "Pods-Meal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3592F40147C4EF23AA4A93077CE61E05 /* Debug */,
+				22F5DADDAC4A7F07AD3B45FBD19DB1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ABD47FB3FBAE0F33C20ACFEEA37A921 /* Build configuration list for PBXNativeTarget "Pods-MealWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163756194EB36A27FA838AE02FD87E07 /* Debug */,
+				F57BE3B600454CF629F61CDB43C6629F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC7585DDD0DABF241A50E7844ED37A1 /* Build configuration list for PBXAggregateTarget "SwiftLint-iOS14.5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B77C9873170688482BFD490BCBC180 /* Debug */,
+				A17B4E2BCFF8DEEFF066A3C081966AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D13A86FD6C10D59F10EEB25314B7803B /* Build configuration list for PBXAggregateTarget "SwiftLint-iOS14.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5965F99F99570805DCF5D4E94D46A2FE /* Debug */,
+				053C218890239E478F64F01845DB2583 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

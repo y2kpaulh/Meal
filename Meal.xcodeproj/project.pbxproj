@@ -7,7 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2B7CAC26BBF82900DAC920 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */; };
+		2E2B7CAE26BBF82900DAC920 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */; };
+		2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2B7CB026BBF82900DAC920 /* MealWidget.swift */; };
+		2E2B7CB326BBF82C00DAC920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CB226BBF82C00DAC920 /* Assets.xcassets */; };
+		2E2B7CB726BBF82C00DAC920 /* MealWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E2B7CC126BCBC8B00DAC920 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E2B7CC226BCBC8B00DAC920 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E2B7CC326BCBC8B00DAC920 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E2B7CC426BCBC9500DAC920 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E2B7CC526BCBC9500DAC920 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E2B7CC726BCBC9800DAC920 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
+		2E2B7CC926BCC58C00DAC920 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
+		2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
+		2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
+		2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
+		2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
+		2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E32EF5B26BCD11700716A54 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
+		2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
+		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
+		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
+		2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2E4235D826BD366000808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235D726BD366000808E85 /* Assets.xcassets */; };
+		2E4235DF26BD366000808E85 /* MealWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E4235DE26BD366000808E85 /* MealWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E4235E626BD366000808E85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E526BD366000808E85 /* ContentView.swift */; };
+		2E4235E826BD366000808E85 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E726BD366000808E85 /* NotificationController.swift */; };
+		2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235E926BD366000808E85 /* NotificationView.swift */; };
+		2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235EB26BD366000808E85 /* ComplicationController.swift */; };
+		2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235ED26BD366100808E85 /* Assets.xcassets */; };
+		2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235F026BD366100808E85 /* Preview Assets.xcassets */; };
+		2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2E4235D526BD365E00808E85 /* MealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
+		2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
+		2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
+		2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
+		2E6651A526C3A45100A083C6 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
+		2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
+		2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
+		2E6651A926C3A45100A083C6 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */; };
+		2E6651AD26C3B10300A083C6 /* ListVerticalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */; };
+		2E6651B026C3B44C00A083C6 /* WatchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */; };
+		2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
+		2E6651B626C3BB4200A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
+		2E6651BD26C3CEDE00A083C6 /* MealTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */; };
+		2E6651BF26C3D0E400A083C6 /* TodayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651BE26C3D0E400A083C6 /* TodayPlan.swift */; };
+		2E6651C126C3D17400A083C6 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651C026C3D17400A083C6 /* MealPlanList.swift */; };
+		2E6651C326C3D20200A083C6 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6651C226C3D20200A083C6 /* PlanView.swift */; };
 		2E679EE7269F12B300CB470A /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
+		2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E68701526C0E892007AC732 /* AppDelegate.swift */; };
+		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
+		2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
+		2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FE26BBABD3008B6255 /* PlanView.swift */; };
+		2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */; };
+		2E972C1726C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
+		2E972C1826C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
+		2E972C1926C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
+		2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2E9D9D6326C4C81100195A22 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
+		2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
+		2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
+		2EABCDD326C35EE500107840 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
+		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
+		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
+		2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -19,16 +98,121 @@
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
-		2EED48BF2697EE600069DD16 /* plan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* plan.json */; };
+		2EED48BF2697EE600069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
-		2EED48CE269848600069DD16 /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48CC269848600069DD16 /* NanumBarunpenB.otf */; };
-		2EED48CF269848600069DD16 /* NanumBarunpenR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48CD269848600069DD16 /* NanumBarunpenR.otf */; };
-		2EED48D22698486B0069DD16 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48D02698486B0069DD16 /* NanumBrush.otf */; };
-		2EED48D32698486B0069DD16 /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48D12698486B0069DD16 /* NanumPen.otf */; };
+		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
+		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
+		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
+		D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2E2B7CB526BBF82C00DAC920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBBD5DF268DBB5F00EA6BB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E2B7CA826BBF82900DAC920;
+			remoteInfo = MealWidgetExtension;
+		};
+		2E4235E026BD366000808E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBBD5DF268DBB5F00EA6BB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4235DD26BD366000808E85;
+			remoteInfo = "MealWatch Extension";
+		};
+		2E4235F426BD366100808E85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBBD5DF268DBB5F00EA6BB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4235D426BD365E00808E85;
+			remoteInfo = MealWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E2B7CBB26BBF82C00DAC920 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E2B7CB726BBF82C00DAC920 /* MealWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235F726BD366100808E85 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235FA26BD366100808E85 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E4235DF26BD366000808E85 /* MealWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
+		2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2E2B7CB026BBF82900DAC920 /* MealWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealWidget.swift; sourceTree = "<group>"; };
+		2E2B7CB226BBF82C00DAC920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E2B7CB426BBF82C00DAC920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E2B7CBC26BBF85500DAC920 /* Meal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Meal.entitlements; sourceTree = "<group>"; };
+		2E2B7CBD26BBF87600DAC920 /* MealWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealWidgetExtension.entitlements; sourceTree = "<group>"; };
+		2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoExtraBold.otf; sourceTree = "<group>"; };
+		2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
+		2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
+		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
+		2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		2E4235D526BD365E00808E85 /* MealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4235D726BD366000808E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E4235D926BD366000808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4235DE26BD366000808E85 /* MealWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MealWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4235E526BD366000808E85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E4235E726BD366000808E85 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2E4235E926BD366000808E85 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		2E4235EB26BD366000808E85 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		2E4235ED26BD366100808E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E4235F026BD366100808E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E4235F226BD366100808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4235F326BD366100808E85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
+		2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVerticalShadow.swift; sourceTree = "<group>"; };
+		2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeaderView.swift; sourceTree = "<group>"; };
+		2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTitleLabel.swift; sourceTree = "<group>"; };
+		2E6651BE26C3D0E400A083C6 /* TodayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPlan.swift; sourceTree = "<group>"; };
+		2E6651C026C3D17400A083C6 /* MealPlanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
+		2E6651C226C3D20200A083C6 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
+		2E68701526C0E892007AC732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		2E7CA8FE26BBABD3008B6255 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealButtonIcon.swift; sourceTree = "<group>"; };
+		2E972C1626C4DCCE000D6902 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
+		2EABCDC826C252FE00107840 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewModel.swift; sourceTree = "<group>"; };
+		2EABCDD826C35FC400107840 /* MealIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealIconView.swift; sourceTree = "<group>"; };
 		2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealApp.swift; sourceTree = "<group>"; };
 		2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,30 +226,136 @@
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
-		2EED48BE2697EE600069DD16 /* plan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plan.json; sourceTree = "<group>"; };
+		2EED48BE2697EE600069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
-		2EED48CC269848600069DD16 /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
-		2EED48CD269848600069DD16 /* NanumBarunpenR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.otf; sourceTree = "<group>"; };
-		2EED48D02698486B0069DD16 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
-		2EED48D12698486B0069DD16 /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
+		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.release.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.release.xcconfig"; sourceTree = "<group>"; };
+		A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.release.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1FC9796DE3D419295F5B2743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E2B7CA626BBF82900DAC920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2B7CAE26BBF82900DAC920 /* SwiftUI.framework in Frameworks */,
+				2E2B7CAC26BBF82900DAC920 /* WidgetKit.framework in Frameworks */,
+				D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235DB26BD366000808E85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2B7CAA26BBF82900DAC920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */,
+				2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */,
+				A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */,
+				FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */,
+				5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */,
+				E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E2B7CAF26BBF82900DAC920 /* MealWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2E2B7CB026BBF82900DAC920 /* MealWidget.swift */,
+				2E2B7CB226BBF82C00DAC920 /* Assets.xcassets */,
+				2E2B7CB426BBF82C00DAC920 /* Info.plist */,
+			);
+			path = MealWidget;
+			sourceTree = "<group>";
+		};
+		2E4235D626BD365E00808E85 /* MealWatch */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235D726BD366000808E85 /* Assets.xcassets */,
+				2E4235D926BD366000808E85 /* Info.plist */,
+			);
+			path = MealWatch;
+			sourceTree = "<group>";
+		};
+		2E4235E226BD366000808E85 /* MealWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235E526BD366000808E85 /* ContentView.swift */,
+				2E6651BE26C3D0E400A083C6 /* TodayPlan.swift */,
+				2E6651C026C3D17400A083C6 /* MealPlanList.swift */,
+				2E6651C226C3D20200A083C6 /* PlanView.swift */,
+				2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */,
+				2E4235E726BD366000808E85 /* NotificationController.swift */,
+				2E4235E926BD366000808E85 /* NotificationView.swift */,
+				2E4235EB26BD366000808E85 /* ComplicationController.swift */,
+				2E4235ED26BD366100808E85 /* Assets.xcassets */,
+				2E4235F226BD366100808E85 /* Info.plist */,
+				2E4235F326BD366100808E85 /* PushNotificationPayload.apns */,
+				2E4235EF26BD366100808E85 /* Preview Content */,
+			);
+			path = "MealWatch Extension";
+			sourceTree = "<group>";
+		};
+		2E4235EF26BD366100808E85 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2E4235F026BD366100808E85 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2EABCDCF26C35D9E00107840 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2EBBD5DE268DBB5F00EA6BB2 = {
 			isa = PBXGroup;
 			children = (
+				2E2B7CBD26BBF87600DAC920 /* MealWidgetExtension.entitlements */,
 				2EBBD5E9268DBB5F00EA6BB2 /* Meal */,
+				2E2B7CAF26BBF82900DAC920 /* MealWidget */,
+				2E4235D626BD365E00808E85 /* MealWatch */,
+				2E4235E226BD366000808E85 /* MealWatch Extension */,
+				2E2B7CAA26BBF82900DAC920 /* Frameworks */,
 				2EBBD5E8268DBB5F00EA6BB2 /* Products */,
+				4C2150D8024A2CFBCC595EBD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */,
+				2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */,
+				2E4235D526BD365E00808E85 /* MealWatch.app */,
+				2E4235DE26BD366000808E85 /* MealWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,8 +373,11 @@
 		2EBBD5E9268DBB5F00EA6BB2 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				2E2B7CBC26BBF85500DAC920 /* Meal.entitlements */,
+				2E68701526C0E892007AC732 /* AppDelegate.swift */,
 				2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */,
 				2EBBD5FC268DBC5E00EA6BB2 /* Model */,
+				2EABCDCF26C35D9E00107840 /* ViewModel */,
 				2EBBD606268DD59A00EA6BB2 /* View */,
 				2EBBD5FD268DBC6600EA6BB2 /* Service */,
 				2EBBD5F9268DBBE900EA6BB2 /* Resource */,
@@ -106,12 +402,12 @@
 		2EBBD5F9268DBBE900EA6BB2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2EED48D02698486B0069DD16 /* NanumBrush.otf */,
-				2EED48D12698486B0069DD16 /* NanumPen.otf */,
-				2EED48CC269848600069DD16 /* NanumBarunpenB.otf */,
-				2EED48CD269848600069DD16 /* NanumBarunpenR.otf */,
+				2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */,
+				2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */,
+				2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */,
+				2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */,
 				2EED48C0269826700069DD16 /* biblebook-ko.json */,
-				2EED48BE2697EE600069DD16 /* plan.json */,
+				2EED48BE2697EE600069DD16 /* mealPlan.json */,
 				2E679EE6269F12B300CB470A /* NKRV.json */,
 			);
 			path = Resource;
@@ -120,6 +416,8 @@
 		2EBBD5FC268DBC5E00EA6BB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E972C1626C4DCCE000D6902 /* ModelData.swift */,
+				2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */,
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
@@ -130,7 +428,10 @@
 		2EBBD5FD268DBC6600EA6BB2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2EABCDC826C252FE00107840 /* APIClient.swift */,
 				2EBBD602268DBF7E00EA6BB2 /* Service.swift */,
+				2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */,
+				2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -139,6 +440,13 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
+				2EABCDD826C35FC400107840 /* MealIconView.swift */,
+				2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */,
+				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
+				2E7CA8FE26BBABD3008B6255 /* PlanView.swift */,
+				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
+				2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */,
+				2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,27 +454,106 @@
 		2EED48B72697DDBD0069DD16 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2E34A47E26BA694600DFCD92 /* ColorExtension.swift */,
 				2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4C2150D8024A2CFBCC595EBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */,
+				2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */,
+				02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */,
+				9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */,
+				7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */,
+				F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */,
+				F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */,
+				80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2EBBD5E6268DBB5F00EA6BB2 /* Meal */ = {
+		2E2B7CA826BBF82900DAC920 /* MealWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */;
+			buildConfigurationList = 2E2B7CB826BBF82C00DAC920 /* Build configuration list for PBXNativeTarget "MealWidgetExtension" */;
 			buildPhases = (
-				2EBBD5E3268DBB5F00EA6BB2 /* Sources */,
-				2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */,
-				2EBBD5E5268DBB5F00EA6BB2 /* Resources */,
+				16AE1AFF57B12967F700142F /* [CP] Check Pods Manifest.lock */,
+				2E2B7CA526BBF82900DAC920 /* Sources */,
+				2E2B7CA626BBF82900DAC920 /* Frameworks */,
+				2E2B7CA726BBF82900DAC920 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = MealWidgetExtension;
+			productName = MealWidgetExtension;
+			productReference = 2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2E4235D426BD365E00808E85 /* MealWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E4235FE26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch" */;
+			buildPhases = (
+				1028584AB2810FDF2DDE3190 /* [CP] Check Pods Manifest.lock */,
+				2E4235D326BD365E00808E85 /* Resources */,
+				2E4235FA26BD366100808E85 /* Embed App Extensions */,
+				1FC9796DE3D419295F5B2743 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E4235E126BD366000808E85 /* PBXTargetDependency */,
+			);
+			name = MealWatch;
+			productName = MealWatch;
+			productReference = 2E4235D526BD365E00808E85 /* MealWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2E4235DD26BD366000808E85 /* MealWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E4235FD26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch Extension" */;
+			buildPhases = (
+				D3E45D3C6B353E8B1996C4C3 /* [CP] Check Pods Manifest.lock */,
+				2E4235DA26BD366000808E85 /* Sources */,
+				2E4235DB26BD366000808E85 /* Frameworks */,
+				2E4235DC26BD366000808E85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MealWatch Extension";
+			productName = "MealWatch Extension";
+			productReference = 2E4235DE26BD366000808E85 /* MealWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		2EBBD5E6268DBB5F00EA6BB2 /* Meal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBBD5F6268DBB6000EA6BB2 /* Build configuration list for PBXNativeTarget "Meal" */;
+			buildPhases = (
+				9113518BB9B54A5A884799AB /* [CP] Check Pods Manifest.lock */,
+				2EBBD5E3268DBB5F00EA6BB2 /* Sources */,
+				2EBBD5E4268DBB5F00EA6BB2 /* Frameworks */,
+				2EBBD5E5268DBB5F00EA6BB2 /* Resources */,
+				2E2B7CBB26BBF82C00DAC920 /* Embed App Extensions */,
+				2E4235F726BD366100808E85 /* Embed Watch Content */,
+				2EABCDCE26C3587900107840 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E2B7CB626BBF82C00DAC920 /* PBXTargetDependency */,
+				2E4235F526BD366100808E85 /* PBXTargetDependency */,
+			);
 			name = Meal;
+			packageProductDependencies = (
+			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +567,15 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					2E2B7CA826BBF82900DAC920 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					2E4235D426BD365E00808E85 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					2E4235DD26BD366000808E85 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					2EBBD5E6268DBB5F00EA6BB2 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -195,52 +591,289 @@
 				ko,
 			);
 			mainGroup = 2EBBD5DE268DBB5F00EA6BB2;
+			packageReferences = (
+			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2EBBD5E6268DBB5F00EA6BB2 /* Meal */,
+				2E2B7CA826BBF82900DAC920 /* MealWidgetExtension */,
+				2E4235D426BD365E00808E85 /* MealWatch */,
+				2E4235DD26BD366000808E85 /* MealWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E2B7CA726BBF82900DAC920 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2B7CC426BCBC9500DAC920 /* NanumMyeongjoBold.otf in Resources */,
+				2E2B7CC526BCBC9500DAC920 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E2B7CC726BCBC9800DAC920 /* NanumBrush.otf in Resources */,
+				2E2B7CB326BBF82C00DAC920 /* Assets.xcassets in Resources */,
+				2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */,
+				2E32EF5B26BCD11700716A54 /* mealPlan.json in Resources */,
+				2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */,
+				2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */,
+				2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235D326BD365E00808E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4235D826BD366000808E85 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235DC26BD366000808E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6651A526C3A45100A083C6 /* mealPlan.json in Resources */,
+				2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */,
+				2E6651A926C3A45100A083C6 /* NKRV.json in Resources */,
+				2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */,
+				2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */,
+				2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */,
+				2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */,
+				2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EBBD5E5268DBB5F00EA6BB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EED48D32698486B0069DD16 /* NanumPen.otf in Resources */,
-				2EED48D22698486B0069DD16 /* NanumBrush.otf in Resources */,
-				2EED48BF2697EE600069DD16 /* plan.json in Resources */,
-				2EED48CE269848600069DD16 /* NanumBarunpenB.otf in Resources */,
+				2EED48BF2697EE600069DD16 /* mealPlan.json in Resources */,
 				2E679EE7269F12B300CB470A /* NKRV.json in Resources */,
+				2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */,
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
-				2EED48CF269848600069DD16 /* NanumBarunpenR.otf in Resources */,
+				2E2B7CC326BCBC8B00DAC920 /* NanumMyeongjo.otf in Resources */,
 				2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */,
 				2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */,
+				2E2B7CC126BCBC8B00DAC920 /* NanumMyeongjoExtraBold.otf in Resources */,
+				2E2B7CC226BCBC8B00DAC920 /* NanumMyeongjoBold.otf in Resources */,
 				2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1028584AB2810FDF2DDE3190 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16AE1AFF57B12967F700142F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EABCDCE26C3587900107840 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect --format\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		9113518BB9B54A5A884799AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E45D3C6B353E8B1996C4C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealWatch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		2E2B7CA526BBF82900DAC920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */,
+				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
+				2E972C1826C4DCCE000D6902 /* ModelData.swift in Sources */,
+				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
+				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
+				2E6651B626C3BB4200A083C6 /* MealTitleLabel.swift in Sources */,
+				2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */,
+				2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */,
+				2EABCDDA26C35FE600107840 /* MealIconView.swift in Sources */,
+				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,
+				2E32EF5D26BCD12A00716A54 /* MealButtonIcon.swift in Sources */,
+				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
+				2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */,
+				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
+				2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */,
+				2E2B7CC926BCC58C00DAC920 /* BibleStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4235DA26BD366000808E85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */,
+				2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */,
+				2E4235E826BD366000808E85 /* NotificationController.swift in Sources */,
+				2E6651BD26C3CEDE00A083C6 /* MealTitleLabel.swift in Sources */,
+				2E4235E626BD366000808E85 /* ContentView.swift in Sources */,
+				2E4235EC26BD366000808E85 /* ComplicationController.swift in Sources */,
+				2E6651BF26C3D0E400A083C6 /* TodayPlan.swift in Sources */,
+				2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */,
+				2EABCDD326C35EE500107840 /* Service.swift in Sources */,
+				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
+				2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */,
+				2E6651C326C3D20200A083C6 /* PlanView.swift in Sources */,
+				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
+				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
+				2E6651B026C3B44C00A083C6 /* WatchHeaderView.swift in Sources */,
+				2E9D9D6326C4C81100195A22 /* LocalNotificationManager.swift in Sources */,
+				2E6651AD26C3B10300A083C6 /* ListVerticalShadow.swift in Sources */,
+				2E972C1926C4DCCE000D6902 /* ModelData.swift in Sources */,
+				2E6651C126C3D17400A083C6 /* MealPlanList.swift in Sources */,
+				2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EBBD5E3268DBB5F00EA6BB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4235A426BD1B8700808E85 /* LocalNotificationManager.swift in Sources */,
+				2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */,
+				2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */,
+				2EABCDC926C252FE00107840 /* APIClient.swift in Sources */,
+				2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */,
+				2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
+				2E972C1726C4DCCE000D6902 /* ModelData.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
+				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
+				2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */,
+				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
+				2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
+				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
+				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
+				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
+				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E2B7CB626BBF82C00DAC920 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E2B7CA826BBF82900DAC920 /* MealWidgetExtension */;
+			targetProxy = 2E2B7CB526BBF82C00DAC920 /* PBXContainerItemProxy */;
+		};
+		2E4235E126BD366000808E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E4235DD26BD366000808E85 /* MealWatch Extension */;
+			targetProxy = 2E4235E026BD366000808E85 /* PBXContainerItemProxy */;
+		};
+		2E4235F526BD366100808E85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E4235D426BD365E00808E85 /* MealWatch */;
+			targetProxy = 2E4235F426BD366100808E85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2ECC33E226A0208C00E5F25A /* InfoPlist.strings */ = {
@@ -254,6 +887,144 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2E2B7CB926BBF82C00DAC920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MealWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				INFOPLIST_FILE = MealWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.MealWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E2B7CBA26BBF82C00DAC920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MealWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				INFOPLIST_FILE = MealWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.MealWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E4235F826BD366100808E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				IBSC_MODULE = MealWatch_Extension;
+				INFOPLIST_FILE = MealWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		2E4235F926BD366100808E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UV36497CVB;
+				IBSC_MODULE = MealWatch_Extension;
+				INFOPLIST_FILE = MealWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		2E4235FB26BD366100808E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = UV36497CVB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		2E4235FC26BD366100808E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = UV36497CVB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 		2EBBD5F4268DBB6000EA6BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -372,9 +1143,12 @@
 		};
 		2EBBD5F7268DBB6000EA6BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Meal/Meal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"meal/Preview Content\"";
 				DEVELOPMENT_TEAM = UV36497CVB;
@@ -394,9 +1168,12 @@
 		};
 		2EBBD5F8268DBB6000EA6BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Meal/Meal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"meal/Preview Content\"";
 				DEVELOPMENT_TEAM = UV36497CVB;
@@ -417,6 +1194,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E2B7CB826BBF82C00DAC920 /* Build configuration list for PBXNativeTarget "MealWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E2B7CB926BBF82C00DAC920 /* Debug */,
+				2E2B7CBA26BBF82C00DAC920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E4235FD26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4235FB26BD366100808E85 /* Debug */,
+				2E4235FC26BD366100808E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E4235FE26BD366100808E85 /* Build configuration list for PBXNativeTarget "MealWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E4235F826BD366100808E85 /* Debug */,
+				2E4235F926BD366100808E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EBBD5E2268DBB5F00EA6BB2 /* Build configuration list for PBXProject "Meal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
