@@ -45,20 +45,20 @@ struct MealPlanList: View {
           .padding([.top, .trailing])
         }
       }
-      ScrollViewReader { _ in
+      ScrollViewReader { scrollView in
         ScrollView {
           LazyVStack {
-            ForEach(Array(planList.enumerated()), id: \.1) { index, plan in
-              Button(action: {
-                isPresented.toggle()
-              }, label: {
-                PlanView(index: index, plan: plan)
-                  //.environmentObject(planStore)
-                  .padding(10)
-              })
-              .fullScreenCover(isPresented: $isPresented, content: {
-                TestView()
-              })
+            ForEach(0..<self.planList.count, id: \.self) { index in
+              PlanView(index: index, plan: self.planList[index])
+                .id(index)
+                //.environmentObject(planStore)
+                .padding(10)
+            }
+          }
+          .onAppear {
+            withAnimation {
+              let todayIndex = self.planList.firstIndex { $0.day == PlanStore().getDateStr() }
+              scrollView.scrollTo(todayIndex, anchor: .top)
             }
           }
         }

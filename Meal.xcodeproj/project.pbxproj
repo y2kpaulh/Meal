@@ -100,7 +100,6 @@
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48BF2697EE600069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
-		2EFF9D9A26DF83E00081AD6A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFF9D9926DF83E00081AD6A /* TestView.swift */; };
 		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
 		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
 		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
@@ -229,7 +228,6 @@
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		2EED48BE2697EE600069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
-		2EFF9D9926DF83E00081AD6A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -449,7 +447,6 @@
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
 				2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */,
 				2E6651B326C3BB0F00A083C6 /* MealTitleLabel.swift */,
-				2EFF9D9926DF83E00081AD6A /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -852,7 +849,6 @@
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
-				2EFF9D9A26DF83E00081AD6A /* TestView.swift in Sources */,
 				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
 				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
 				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
