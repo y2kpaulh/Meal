@@ -11,16 +11,23 @@ struct MealPlanList: View {
   @EnvironmentObject var viewModel: MealPlanViewModel
 
   var body: some View {
-    ScrollViewReader { _ in
+    ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack {
-          ForEach(Array(viewModel.planList.enumerated()), id: \.1) { index, plan in
-            PlanView(index: index, plan: plan)
+          ForEach(0..<viewModel.planList.count, id: \.self) { index in
+            PlanView(index: index, plan: viewModel.planList[index])
+              .id(index)
               .padding([.leading, .trailing], 4)
               .padding([.bottom], -40)
               .onTapGesture {
 
               }
+          }
+        }
+        .onAppear {
+          withAnimation {
+            let todayIndex = viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
+            scrollView.scrollTo(todayIndex, anchor: .top)
           }
         }
       }
