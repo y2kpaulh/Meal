@@ -22,7 +22,7 @@ struct ContentView: View {
     ZStack {
       //Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
 
-      GeometryReader { _ in
+      GeometryReader { proxy in
         RoundedRectangle(cornerRadius: 24, style: .continuous)
           .fill(Color(UIColor.systemBackground))
           .shadow(color: .mealTheme, radius: 10)
@@ -93,17 +93,12 @@ struct ContentView: View {
               }
               .redacted(reason: viewModel.loading ? .placeholder : [])
             }
-            .onAppear {
-              viewModel.fetchPlanData()
-            }
           }
           .listVerticalShadow()
 
           Color.clear
             .frame(width: .infinity, height: 10, alignment: .center)
-        }
-
-        //.padding(.all, proxy.size.width * 0.05 / 2)
+        }.padding(.all, proxy.size.width * 0.05 / 2)
       }
       .padding()
 
@@ -119,6 +114,9 @@ struct ContentView: View {
       } else if viewModel.planDataError {
         Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
       }
+    }
+    .onAppear {
+      viewModel.fetchPlanData()
     }
   }
 
