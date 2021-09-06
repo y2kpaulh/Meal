@@ -65,7 +65,8 @@ struct ContentView: View {
 
           ScrollView {
             LazyVStack(alignment: .leading) {
-              ForEach(Array(viewModel.todayPlanData.verses.enumerated()), id: \.1) { index, verse in
+              ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+
                 HStack(alignment: .top) {
                   if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
                     Text("\(index + viewModel.todayPlan.fVer)")
@@ -81,10 +82,11 @@ struct ContentView: View {
                     }
                   }
 
-                  Text(verse)
+                  Text(viewModel.todayPlanData.verses[index])
                     .foregroundColor(.mealTheme)
                     .font(.custom("NanumMyeongjoOTF", size: 20))
                     .padding(.top, 4)
+                    .id(index)
                 }
                 .padding([.leading, .trailing], 20)
                 .padding(.bottom, 10)
@@ -98,7 +100,7 @@ struct ContentView: View {
           .listVerticalShadow()
 
           Color.clear
-            .frame(width: .infinity, height: 40, alignment: .center)
+            .frame(width: .infinity, height: 10, alignment: .center)
         }
 
         //.padding(.all, proxy.size.width * 0.05 / 2)
