@@ -47,6 +47,7 @@ struct ContentView: View {
           }
           .padding(.top, 10)
 
+          //today meal description
           VStack {
             HStack {
               Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
@@ -63,11 +64,13 @@ struct ContentView: View {
             .padding([.leading, .trailing], 20)
             .padding(.bottom, 10)
 
+          // words list
           ScrollView {
             LazyVStack(alignment: .leading) {
               ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
 
                 HStack(alignment: .top) {
+                  //verse number
                   if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
                     Text("\(index + viewModel.todayPlan.fVer)")
                       .foregroundColor(.gray)
@@ -82,6 +85,7 @@ struct ContentView: View {
                     }
                   }
 
+                  //verse text
                   Text(viewModel.todayPlanData.verses[index])
                     .foregroundColor(.mealTheme)
                     .font(.custom("NanumMyeongjoOTF", size: 20))
