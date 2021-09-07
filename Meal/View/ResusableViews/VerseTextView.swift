@@ -16,7 +16,6 @@ struct VerseTextView: View {
       .foregroundColor(.mealTheme)
       .font(.custom("NanumMyeongjoOTF", size: 20))
       .padding(.top, 4)
-      .id(index)
   }
 }
 
