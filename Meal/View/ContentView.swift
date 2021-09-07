@@ -28,21 +28,24 @@ extension ContentView {
     HStack(alignment: .center) {
       MealTitleLabel(size: 80, textColor: Color(UIColor.label))
 
-      Text(PlanStore().convertDateToStr())
-        .foregroundColor(.gray)
+      self.todayMealDateView
 
-      Button(action: { isPresented.toggle() }) {
-        Image(systemName: "line.horizontal.3.decrease.circle")
-          .renderingMode(.template)
-          .accessibilityLabel(Text("끼니 말씀 일정표"))
-          .foregroundColor(Color(UIColor.label))
-      }
-      .sheet(isPresented: $isPresented,
-             onDismiss: didDismiss) {
-        MealPlanList(planList: $viewModel.planList)
-      }
+      self.planListButton
     }
     .padding(.top, 10)
+  }
+
+  var planListButton: some View {
+    Button(action: { isPresented.toggle() }) {
+      Image(systemName: "line.horizontal.3.decrease.circle")
+        .renderingMode(.template)
+        .accessibilityLabel(Text("끼니 말씀 일정표"))
+        .foregroundColor(Color(UIColor.label))
+    }
+    .sheet(isPresented: $isPresented,
+           onDismiss: didDismiss) {
+      MealPlanList(planList: $viewModel.planList)
+    }
   }
 
   var headerDetailView: some View {
@@ -65,6 +68,10 @@ extension ContentView {
       self.headerTitleView
       self.headerDetailView
     }
+  }
+
+  var todayMealDateView: some View {
+    TodayMealDate(date: $viewModel.todayPlanDate)
   }
 
   var footerView: some View {
@@ -153,3 +160,4 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
+

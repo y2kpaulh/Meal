@@ -28,10 +28,17 @@ class MealPlanViewModel: ObservableObject {
   @Published var planDataError: Bool = false
   var widgetPlans: [NotiPlan] = []
 
+  @Published var todayPlanDate: String = ""
+
   var cancelBag = Set<AnyCancellable>()
 
   init() {
-    //fetchPlanData()
+
+  }
+
+  func configTodayDate() {
+    self.todayPlanDate = PlanStore().getMealPlanStr(plan: self.todayPlan)
+    print("todayPlanDate", self.todayPlanDate)
   }
 
   func writeNotiPlan() {
@@ -79,6 +86,8 @@ extension MealPlanViewModel {
         self.planList = $0
         self.todayPlan = $0.filter { $0.day == PlanStore().getDateStr() }[0]
         self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
+        self.todayPlanDate = PlanStore().getMealPlanStr(plan: self.todayPlan)
+
         DispatchQueue.main.async {
           self.loading = false
         }
