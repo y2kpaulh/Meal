@@ -94,19 +94,8 @@ extension TodayMealView {
 
           HStack(alignment: .top) {
             //verse number
-            if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
-              Text("\(index + viewModel.todayPlan.fVer)")
-                .foregroundColor(.gray)
-            } else {
-              if let planBook = BibleStore.books.filter { $0.abbrev == viewModel.todayPlan.book }.first {
-                let verseIndex = index + viewModel.todayPlan.fVer
 
-                let fChapterCount = planBook.chapters[viewModel.todayPlan.fChap - 1].count
-
-                Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
-                  .foregroundColor(.gray)
-              }
-            }
+            VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
 
             //verse text
             Text(viewModel.todayPlanData.verses[index])
