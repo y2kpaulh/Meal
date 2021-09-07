@@ -13,99 +13,22 @@ struct ContentView: View {
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
 
-  init() {
-    UITableView.appearance().backgroundColor = .clear
-    UITableViewCell.appearance().backgroundColor = .clear
-  }
-
   var body: some View {
     ZStack {
-      //Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
+      //bgView
+      roundedCornerBgView
 
-      GeometryReader { proxy in
-        RoundedRectangle(cornerRadius: 24, style: .continuous)
-          .fill(Color(UIColor.systemBackground))
-          .shadow(color: .mealTheme, radius: 10)
+      VStack {
+        //header view
+        headerTitleView
+        headerDetailView
 
-        VStack {
-          HStack(alignment: .center) {
-            MealTitleLabel(size: 80, textColor: Color(UIColor.label))
+        //today words
+        todayWordsView
 
-            Text(PlanStore().convertDateToStr())
-              .foregroundColor(.gray)
-
-            Button(action: { isPresented.toggle() }) {
-              Image(systemName: "line.horizontal.3.decrease.circle")
-                .renderingMode(.template)
-                .accessibilityLabel(Text("끼니 말씀 일정표"))
-                .foregroundColor(Color(UIColor.label))
-            }
-            .sheet(isPresented: $isPresented,
-                   onDismiss: didDismiss) {
-              MealPlanList(planList: $viewModel.planList)
-            }
-          }
-          .padding(.top, 10)
-
-          //today meal description
-          VStack {
-            HStack {
-              Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
-                .foregroundColor(Color(UIColor.label))
-                .font(.custom("NanumMyeongjoOTFBold", size: 20))
-            }
-            Rectangle()
-              .fill(Color(UIColor.systemBackground))
-              .frame(height: 0.5)
-          }
-
-          Divider()
-            .foregroundColor(Color(UIColor.label))
-            .padding([.leading, .trailing], 20)
-            .padding(.bottom, 10)
-
-          // words list
-          ScrollView {
-            LazyVStack(alignment: .leading) {
-              ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-
-                HStack(alignment: .top) {
-                  //verse number
-                  if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
-                    Text("\(index + viewModel.todayPlan.fVer)")
-                      .foregroundColor(.gray)
-                  } else {
-                    if let planBook = BibleStore.books.filter { $0.abbrev == viewModel.todayPlan.book }.first {
-                      let verseIndex = index + viewModel.todayPlan.fVer
-
-                      let fChapterCount = planBook.chapters[viewModel.todayPlan.fChap - 1].count
-
-                      Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
-                        .foregroundColor(.gray)
-                    }
-                  }
-
-                  //verse text
-                  Text(viewModel.todayPlanData.verses[index])
-                    .foregroundColor(.mealTheme)
-                    .font(.custom("NanumMyeongjoOTF", size: 20))
-                    .padding(.top, 4)
-                    .id(index)
-                }
-                .padding([.leading, .trailing], 20)
-                .padding(.bottom, 10)
-                .id(index)
-              }
-              .redacted(reason: viewModel.loading ? .placeholder : [])
-            }
-          }
-          .listVerticalShadow()
-
-          Color.clear
-            .frame(width: .infinity, height: 10, alignment: .center)
-        }.padding(.all, proxy.size.width * 0.05 / 2)
+        //footer view
+        footerView
       }
-      .padding()
 
       if viewModel.loading && networkReachability.reachable {
         ActivityIndicator()
@@ -120,6 +43,7 @@ struct ContentView: View {
         Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
       }
     }
+    .padding()
     .onAppear {
       viewModel.fetchPlanData()
     }
@@ -133,5 +57,93 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+  }
+}
+
+extension ContentView {
+  var roundedCornerBgView: some View {
+    RoundedRectangle(cornerRadius: 24, style: .continuous)
+      .fill(Color(UIColor.systemBackground))
+      .shadow(color: .mealTheme, radius: 10)
+  }
+
+  var headerTitleView: some View {
+    HStack(alignment: .center) {
+      MealTitleLabel(size: 80, textColor: Color(UIColor.label))
+
+      Text(PlanStore().convertDateToStr())
+        .foregroundColor(.gray)
+
+      Button(action: { isPresented.toggle() }) {
+        Image(systemName: "line.horizontal.3.decrease.circle")
+          .renderingMode(.template)
+          .accessibilityLabel(Text("끼니 말씀 일정표"))
+          .foregroundColor(Color(UIColor.label))
+      }
+      .sheet(isPresented: $isPresented,
+             onDismiss: didDismiss) {
+        MealPlanList(planList: $viewModel.planList)
+      }
+    }
+    .padding(.top, 10)
+  }
+
+  var headerDetailView: some View {
+    //today meal description
+    VStack {
+      HStack {
+        Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
+          .foregroundColor(Color(UIColor.label))
+          .font(.custom("NanumMyeongjoOTFBold", size: 20))
+      }
+
+      Divider()
+        .foregroundColor(Color(UIColor.label))
+        .padding([.leading, .trailing], 20)
+        .padding(.bottom, 10)
+    }
+  }
+
+  var footerView: some View {
+    Color.clear
+      .frame(width: .infinity, height: 10, alignment: .center)
+  }
+
+  var todayWordsView: some View {
+    ScrollView {
+      LazyVStack(alignment: .leading) {
+        ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+
+          HStack(alignment: .top) {
+            //verse number
+            if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
+              Text("\(index + viewModel.todayPlan.fVer)")
+                .foregroundColor(.gray)
+            } else {
+              if let planBook = BibleStore.books.filter { $0.abbrev == viewModel.todayPlan.book }.first {
+                let verseIndex = index + viewModel.todayPlan.fVer
+
+                let fChapterCount = planBook.chapters[viewModel.todayPlan.fChap - 1].count
+
+                Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
+                  .foregroundColor(.gray)
+              }
+            }
+
+            //verse text
+            Text(viewModel.todayPlanData.verses[index])
+              .foregroundColor(.mealTheme)
+              .font(.custom("NanumMyeongjoOTF", size: 20))
+              .padding(.top, 4)
+              .id(index)
+          }
+          .padding([.leading, .trailing], 20)
+          .padding(.bottom, 10)
+          .id(index)
+        }
+        .redacted(reason: viewModel.loading ? .placeholder : [])
+      }
+    }
+    .listVerticalShadow()
   }
 }
