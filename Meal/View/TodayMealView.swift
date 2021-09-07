@@ -94,15 +94,9 @@ extension TodayMealView {
 
           HStack(alignment: .top) {
             //verse number
-
             VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
-
             //verse text
-            Text(viewModel.todayPlanData.verses[index])
-              .foregroundColor(.mealTheme)
-              .font(.custom("NanumMyeongjoOTF", size: 20))
-              .padding(.top, 4)
-              .id(index)
+            VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
           }
           .padding([.leading, .trailing], 20)
           .padding(.bottom, 10)
