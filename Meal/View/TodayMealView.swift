@@ -15,7 +15,7 @@ struct TodayMealView: View {
 
   var body: some View {
     TodayWordsBgView {
-      self.mainView
+      self.contentView
     }
     .onAppear {
       viewModel.fetchPlanData()
@@ -90,14 +90,12 @@ extension TodayMealView {
   var todayWordsView: some View {
     TodayVersesList {
       ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-        HStack(alignment: .top) {
+        TodayVersesListCell {
           //verse number
           VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
           //verse text
           VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
         }
-        .padding([.leading, .trailing], 20)
-        .padding(.bottom, 10)
         .id(index)
       }
       .redacted(reason: viewModel.loading ? .placeholder : [])
@@ -121,7 +119,7 @@ extension TodayMealView {
     }
   }
 
-  var mainView: some View {
+  var contentView: some View {
     VStack {
       //header view
       self.headerView
