@@ -16,24 +16,11 @@ struct ContentView: View {
   var body: some View {
     TodayWordsBgView {
       //header view
-      headerTitleView
-      headerDetailView
-
-      //today words
-      todayWordsView
-
-      //footer view
-      footerView
-
-      alertView
+      self.mainView
     }
     .onAppear {
       viewModel.fetchPlanData()
     }
-  }
-
-  func didDismiss() {
-    // Handle the dismissing action.
   }
 }
 
@@ -44,7 +31,6 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension ContentView {
-
   var headerTitleView: some View {
     HStack(alignment: .center) {
       MealTitleLabel(size: 80, textColor: Color(UIColor.label))
@@ -140,5 +126,24 @@ extension ContentView {
         Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
       }
     }
+  }
+
+  var mainView: some View {
+    VStack {
+      self.headerTitleView
+      self.headerDetailView
+
+      //today words
+      self.todayWordsView
+
+      //footer view
+      self.footerView
+
+      self.alertView
+    }
+  }
+    
+  func didDismiss() {
+    // Handle the dismissing action.
   }
 }
