@@ -98,13 +98,13 @@ extension TodayMealView {
         }
         .id(index)
       }
-      .redacted(reason: viewModel.loading ? .placeholder : [])
+      .redacted(reason: viewModel.isLoading ? .placeholder : [])
     }
   }
 
   var alertView: some View {
     Group {
-      if viewModel.loading && networkReachability.reachable {
+      if viewModel.isLoading && networkReachability.reachable {
         ActivityIndicator()
       }
 

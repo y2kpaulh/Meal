@@ -24,7 +24,7 @@ class MealPlanViewModel: ObservableObject {
   @Published var planList: [Plan] = []
   @Published var todayPlan: Plan = Plan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
   @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
-  @Published var loading = false
+  @Published var isLoading = false
   @Published var planDataError: Bool = false
   var widgetPlans: [NotiPlan] = []
 
@@ -33,7 +33,17 @@ class MealPlanViewModel: ObservableObject {
   var cancelBag = Set<AnyCancellable>()
 
   init() {
+    isLoadingPublisher
+      .receive(on: RunLoop.main)
+      .assign(to: \.isLoading, on: self)
+      .store(in: &cancelBag)
+  }
 
+  private var isLoadingPublisher: AnyPublisher<Bool, Never> {
+    self.$isLoading
+      .receive(on: RunLoop.main)
+      .map { $0 }
+      .eraseToAnyPublisher()
   }
 
   func writeNotiPlan() {
@@ -53,7 +63,7 @@ class MealPlanViewModel: ObservableObject {
 
 extension MealPlanViewModel {
   func fetchPlanData() {
-    self.loading = true
+    self.isLoading = true
 
     PlanService.requestPlan(.planList)
       //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
@@ -61,19 +71,16 @@ extension MealPlanViewModel {
       //            }
       .mapError({ (error) -> Error in
         print(error)
-        DispatchQueue.main.async {
-          self.loading = false
-        }
+        self.isLoading = false
         return error
       })
       .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
-
         if case .failure(let err) = completion {
           print("Retrieving data failed with error \(err)")
 
           self.planDataError = true
-          self.loading = false
+          self.isLoading = false
         }
       },
       receiveValue: { [weak self] in
@@ -84,7 +91,7 @@ extension MealPlanViewModel {
         self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
         self.todayPlanDate = PlanStore().convertDateToStr()
 
-        self.loading = false
+        self.isLoading = false
 
         // 앱 시작시 위젯 업데이트 루틴
         //        DispatchQueue.main.async {
