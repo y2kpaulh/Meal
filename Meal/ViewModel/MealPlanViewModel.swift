@@ -30,13 +30,14 @@ class MealPlanViewModel: ObservableObject {
 
   @Published var todayPlanDate: String = ""
 
-  var cancelBag = Set<AnyCancellable>()
+  var cacellables = Set<AnyCancellable>()
 
   init() {
     isLoadingPublisher
       .receive(on: RunLoop.main)
+      .print()
       .assign(to: \.isLoading, on: self)
-      .store(in: &cancelBag)
+      .store(in: &cacellables)
   }
 
   private var isLoadingPublisher: AnyPublisher<Bool, Never> {
@@ -111,6 +112,6 @@ extension MealPlanViewModel {
 
         //print($0)
       })
-      .store(in: &cancelBag)
+      .store(in: &cacellables)
   }
 }
