@@ -94,6 +94,7 @@ struct ContentView: View {
                 }
                 .padding([.leading, .trailing], 20)
                 .padding(.bottom, 10)
+                .id(index)
               }
               .redacted(reason: viewModel.loading ? .placeholder : [])
             }
