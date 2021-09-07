@@ -30,12 +30,14 @@ struct TodayMealView_Previews: PreviewProvider {
 }
 
 extension TodayMealView {
+  var titleLabelView: some View {
+    MealTitleLabel(size: 80, textColor: Color(UIColor.label))
+  }
+
   var headerTitleView: some View {
     HStack(alignment: .center) {
-      MealTitleLabel(size: 80, textColor: Color(UIColor.label))
-
+      self.titleLabelView
       self.todayMealDateView
-
       self.planListButton
     }
     .padding(.top, 10)
