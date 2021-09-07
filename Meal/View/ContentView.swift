@@ -46,7 +46,6 @@ extension ContentView {
   }
 
   var headerDetailView: some View {
-    //today meal description
     VStack {
       HStack {
         Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
