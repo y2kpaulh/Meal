@@ -66,26 +66,25 @@ extension MealPlanViewModel {
         }
         return error
       })
-      .sink(receiveCompletion: { completion in
+      .sink(receiveCompletion: { [weak self] completion in
+        guard let self = self else { return }
+
         if case .failure(let err) = completion {
           print("Retrieving data failed with error \(err)")
 
           self.planDataError = true
-
-          DispatchQueue.main.async {
-            self.loading = false
-          }
+          self.loading = false
         }
       },
-      receiveValue: {
+      receiveValue: { [weak self] in
+        guard let self = self else { return }
+
         self.planList = $0
         self.todayPlan = $0.filter { $0.day == PlanStore().getDateStr() }[0]
         self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
         self.todayPlanDate = PlanStore().convertDateToStr()
 
-        DispatchQueue.main.async {
-          self.loading = false
-        }
+        self.loading = false
 
         // 앱 시작시 위젯 업데이트 루틴
         //        DispatchQueue.main.async {
