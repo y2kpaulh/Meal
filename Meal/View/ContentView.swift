@@ -15,18 +15,11 @@ struct ContentView: View {
 
   var body: some View {
     TodayWordsBgView {
-      //header view
       self.mainView
     }
     .onAppear {
       viewModel.fetchPlanData()
     }
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
   }
 }
 
@@ -142,8 +135,14 @@ extension ContentView {
       self.alertView
     }
   }
-    
+
   func didDismiss() {
     // Handle the dismissing action.
+  }
+}
+
+struct ContentView_Previews: PreviewProvider {
+  static var previews: some View {
+    ContentView()
   }
 }
