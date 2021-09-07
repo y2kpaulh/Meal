@@ -22,7 +22,7 @@ struct ContentView: View {
     ZStack {
       //Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
 
-      GeometryReader { _ in
+      GeometryReader { proxy in
         RoundedRectangle(cornerRadius: 24, style: .continuous)
           .fill(Color(UIColor.systemBackground))
           .shadow(color: .mealTheme, radius: 10)
@@ -47,6 +47,7 @@ struct ContentView: View {
           }
           .padding(.top, 10)
 
+          //today meal description
           VStack {
             HStack {
               Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
@@ -63,10 +64,13 @@ struct ContentView: View {
             .padding([.leading, .trailing], 20)
             .padding(.bottom, 10)
 
+          // words list
           ScrollView {
             LazyVStack(alignment: .leading) {
-              ForEach(Array(viewModel.todayPlanData.verses.enumerated()), id: \.1) { index, verse in
+              ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+
                 HStack(alignment: .top) {
+                  //verse number
                   if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
                     Text("\(index + viewModel.todayPlan.fVer)")
                       .foregroundColor(.gray)
@@ -81,27 +85,24 @@ struct ContentView: View {
                     }
                   }
 
-                  Text(verse)
+                  //verse text
+                  Text(viewModel.todayPlanData.verses[index])
                     .foregroundColor(.mealTheme)
                     .font(.custom("NanumMyeongjoOTF", size: 20))
                     .padding(.top, 4)
+                    .id(index)
                 }
                 .padding([.leading, .trailing], 20)
                 .padding(.bottom, 10)
               }
               .redacted(reason: viewModel.loading ? .placeholder : [])
             }
-            .onAppear {
-              viewModel.fetchPlanData()
-            }
           }
           .listVerticalShadow()
 
           Color.clear
-            .frame(width: .infinity, height: 40, alignment: .center)
-        }
-
-        //.padding(.all, proxy.size.width * 0.05 / 2)
+            .frame(width: .infinity, height: 10, alignment: .center)
+        }.padding(.all, proxy.size.width * 0.05 / 2)
       }
       .padding()
 
@@ -117,6 +118,9 @@ struct ContentView: View {
       } else if viewModel.planDataError {
         Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
       }
+    }
+    .onAppear {
+      viewModel.fetchPlanData()
     }
   }
 
