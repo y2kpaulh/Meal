@@ -69,13 +69,13 @@ extension MealPlanViewModel {
       //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
       //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
       //            }
-      .mapError { [weak self] (error) -> Error in
-        guard let self = self else { return  error}
+      .mapError({ [weak self] (error) -> Error in
+        guard let self = self else { return  error }
         print(error)
         self.isLoading = false
         return error
-      }
-      .sink(receiveCompletion::  [weak self] completion in
+      })
+      .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
         if case .failure(let err) = completion {
           print("Retrieving data failed with error \(err)")
@@ -84,12 +84,12 @@ extension MealPlanViewModel {
           self.isLoading = false
         }
       },
-      receiveValue::  [weak self] in
+      receiveValue: { [weak self] in
         guard let self = self else { return }
 
         self.planList = $0
         self.todayPlan = $0.filter { $0.day == PlanStore().getDateStr() }[0]
-        self.todayPlanData = PlanStore().getPlanData(plan:: elf.todayPlan)
+        self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
         self.todayPlanDate = PlanStore().convertDateToStr()
 
         self.isLoading = false
@@ -111,6 +111,6 @@ extension MealPlanViewModel {
 
         //print($0)
       })
-      .store(in:: cancelBag)
+      .store(in: &cancelBag)
   }
 }
