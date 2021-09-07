@@ -42,7 +42,6 @@
 		2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235ED26BD366100808E85 /* Assets.xcassets */; };
 		2E4235F126BD366100808E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235F026BD366100808E85 /* Preview Assets.xcassets */; };
 		2E4235F626BD366100808E85 /* MealWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2E4235D526BD365E00808E85 /* MealWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2E45499D26E74D8F00E23740 /* TodayMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E45499C26E74D8F00E23740 /* TodayMealView.swift */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -196,7 +195,6 @@
 		2E4235F026BD366100808E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E4235F226BD366100808E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4235F326BD366100808E85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		2E45499C26E74D8F00E23740 /* TodayMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMealView.swift; sourceTree = "<group>"; };
 		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
 		2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVerticalShadow.swift; sourceTree = "<group>"; };
 		2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeaderView.swift; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 			isa = PBXGroup;
 			children = (
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
-				2E45499C26E74D8F00E23740 /* TodayMealView.swift */,
 				2EABCDD826C35FC400107840 /* MealIconView.swift */,
 				2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */,
 				2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */,
@@ -854,7 +851,6 @@
 				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
 				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
 				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
-				2E45499D26E74D8F00E23740 /* TodayMealView.swift in Sources */,
 				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
