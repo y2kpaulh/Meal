@@ -14,36 +14,19 @@ struct ContentView: View {
   @State private var isPresented = false
 
   var body: some View {
-    ZStack {
-      //bgView
-      roundedCornerBgView
+    TodayWordsBgView {
+      //header view
+      headerTitleView
+      headerDetailView
 
-      VStack {
-        //header view
-        headerTitleView
-        headerDetailView
+      //today words
+      todayWordsView
 
-        //today words
-        todayWordsView
+      //footer view
+      footerView
 
-        //footer view
-        footerView
-      }
-
-      if viewModel.loading && networkReachability.reachable {
-        ActivityIndicator()
-      }
-
-      if !networkReachability.reachable {
-        Text("서버 연결 오류가 발생했습니다.\n네트워크 연결 상태를 확인해주세요.")
-          .multilineTextAlignment(.center)
-          .foregroundColor(.gray)
-          .padding()
-      } else if viewModel.planDataError {
-        Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
-      }
+      alertView
     }
-    .padding()
     .onAppear {
       viewModel.fetchPlanData()
     }
@@ -61,11 +44,6 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension ContentView {
-  var roundedCornerBgView: some View {
-    RoundedRectangle(cornerRadius: 24, style: .continuous)
-      .fill(Color(UIColor.systemBackground))
-      .shadow(color: .mealTheme, radius: 10)
-  }
 
   var headerTitleView: some View {
     HStack(alignment: .center) {
@@ -145,5 +123,22 @@ extension ContentView {
       }
     }
     .listVerticalShadow()
+  }
+
+  var alertView: some View {
+    Group {
+      if viewModel.loading && networkReachability.reachable {
+        ActivityIndicator()
+      }
+
+      if !networkReachability.reachable {
+        Text("서버 연결 오류가 발생했습니다.\n네트워크 연결 상태를 확인해주세요.")
+          .multilineTextAlignment(.center)
+          .foregroundColor(.gray)
+          .padding()
+      } else if viewModel.planDataError {
+        Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다.")
+      }
+    }
   }
 }
