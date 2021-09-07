@@ -60,6 +60,13 @@ extension ContentView {
     }
   }
 
+  var headerView: some View {
+    VStack {
+      self.headerTitleView
+      self.headerDetailView
+    }
+  }
+
   var footerView: some View {
     Color.clear
       .frame(width: .infinity, height: 10, alignment: .center)
@@ -122,8 +129,8 @@ extension ContentView {
 
   var mainView: some View {
     VStack {
-      self.headerTitleView
-      self.headerDetailView
+      //header view
+      self.headerView
 
       //today words
       self.todayWordsView
@@ -131,6 +138,7 @@ extension ContentView {
       //footer view
       self.footerView
 
+      //alert routine
       self.alertView
     }
   }
