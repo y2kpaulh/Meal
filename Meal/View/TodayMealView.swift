@@ -95,6 +95,7 @@ extension TodayMealView {
           VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
           //verse text
           VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
+          //.print($viewModel.todayPlanData.verses.wrappedValue[index])
         }
         .id(index)
       }
