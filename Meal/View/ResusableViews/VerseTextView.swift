@@ -13,6 +13,7 @@ struct VerseTextView: View {
 
   var body: some View {
     Text(todayPlanData.verses[index])
+      .lineSpacing(6)
       .foregroundColor(.mealTheme)
       .font(.custom("NanumMyeongjoOTF", size: 20))
       .padding(.top, 4)

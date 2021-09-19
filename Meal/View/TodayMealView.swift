@@ -91,7 +91,6 @@ extension TodayMealView {
     ScrollView {
       LazyVStack(alignment: .leading) {
         ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-
           HStack(alignment: .top) {
             //verse number
             VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
