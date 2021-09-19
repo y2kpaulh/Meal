@@ -15,7 +15,7 @@ struct TodayMealView: View {
 
   var body: some View {
     TodayWordsBgView {
-      self.contentView
+      self.mainView
     }
     .onAppear {
       viewModel.fetchPlanData()
@@ -88,24 +88,28 @@ extension TodayMealView {
   }
 
   var todayWordsView: some View {
-    TodayVersesList {
-      ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-        TodayVersesListCell {
-          //verse number
-          VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
-          //verse text
-          VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
-          //.print($viewModel.todayPlanData.verses.wrappedValue[index])
+    ScrollView {
+      LazyVStack(alignment: .leading) {
+        ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+          HStack(alignment: .top) {
+            //verse number
+            VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+            //verse text
+            VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
+          }
+          .padding([.leading, .trailing], 20)
+          .padding(.bottom, 10)
+          .id(index)
         }
-        .id(index)
+        .redacted(reason: viewModel.loading ? .placeholder : [])
       }
-      .redacted(reason: viewModel.isLoading ? .placeholder : [])
     }
+    .listVerticalShadow()
   }
 
   var alertView: some View {
     Group {
-      if viewModel.isLoading && networkReachability.reachable {
+      if viewModel.loading && networkReachability.reachable {
         ActivityIndicator()
       }
 
@@ -120,7 +124,7 @@ extension TodayMealView {
     }
   }
 
-  var contentView: some View {
+  var mainView: some View {
     VStack {
       //header view
       self.headerView
