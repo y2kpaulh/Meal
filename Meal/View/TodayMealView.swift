@@ -101,7 +101,7 @@ extension TodayMealView {
           .padding(.bottom, 10)
           .id(index)
         }
-        .redacted(reason: viewModel.loading ? .placeholder : [])
+        .redacted(reason: viewModel.isLoading ? .placeholder : [])
       }
     }
     .listVerticalShadow()
@@ -109,7 +109,7 @@ extension TodayMealView {
 
   var alertView: some View {
     Group {
-      if viewModel.loading && networkReachability.reachable {
+      if viewModel.isLoading && networkReachability.reachable {
         ActivityIndicator()
       }
 
