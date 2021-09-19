@@ -35,7 +35,7 @@ class MealPlanViewModel: ObservableObject {
   init() {
     isLoadingPublisher
       .receive(on: RunLoop.main)
-      .print()
+      //.print()
       .assign(to: \.isLoading, on: self)
       .store(in: &cacellables)
   }
