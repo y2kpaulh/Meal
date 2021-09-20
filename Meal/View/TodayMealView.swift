@@ -9,7 +9,8 @@ import SwiftUI
 import Combine
 
 struct TodayMealView: View {
-  @EnvironmentObject var viewModel: MealPlanViewModel
+  @StateObject var viewModel = MealPlanViewModel()
+
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
 

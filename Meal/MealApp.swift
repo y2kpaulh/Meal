@@ -14,12 +14,11 @@ struct MealApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   #endif
   @Environment(\.scenePhase) private var scenePhase
-  @StateObject var viewModel = MealPlanViewModel()
 
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(viewModel)
+        //.environmentObject(viewModel)
         .onAppear {
           PlanStore().registDailyPush()
           //          print(FileManager.documentURL ?? "")
