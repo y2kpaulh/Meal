@@ -125,6 +125,7 @@ struct MealWidgetEntryView: View {
           Text(PlanStore().getBibleSummary(verses: entry.plan.verses))
             .font(.custom("NanumMyeongjoOTF", size: 16))
             .lineLimit(3)
+            .lineSpacing(6.0)
             //.font(.footnote)
             .foregroundColor(Color(UIColor.label))
             .padding([.top, .bottom], 20)

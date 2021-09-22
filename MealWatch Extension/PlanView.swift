@@ -40,6 +40,7 @@ struct PlanView: View {
         Text(PlanStore().getBibleSummary(verses: planData.verses))
           .font(.custom("NanumMyeongjoOTF", size: 14))
           .lineLimit(3)
+          .lineSpacing(6.0)
           .font(.footnote)
           .foregroundColor(.white)
           .padding([.top, .bottom], 20)
