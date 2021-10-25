@@ -85,6 +85,7 @@
 		2E972C1826C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
 		2E972C1926C4DCCE000D6902 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E972C1626C4DCCE000D6902 /* ModelData.swift */; };
 		2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
+		2E9D530C2726E7BF003B40FD /* RNKSV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D530B2726E7BF003B40FD /* RNKSV.json */; };
 		2E9D9D6326C4C81100195A22 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
 		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
@@ -227,6 +228,7 @@
 		2E7CA8FE26BBABD3008B6255 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		2E7CA90026BBAEE3008B6255 /* MealButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealButtonIcon.swift; sourceTree = "<group>"; };
 		2E972C1626C4DCCE000D6902 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		2E9D530B2726E7BF003B40FD /* RNKSV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RNKSV.json; sourceTree = "<group>"; };
 		2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBrush.otf; sourceTree = "<group>"; };
 		2EABCDC826C252FE00107840 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewModel.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				2EED48C0269826700069DD16 /* biblebook-ko.json */,
 				2EED48BE2697EE600069DD16 /* mealPlan.json */,
 				2E679EE6269F12B300CB470A /* NKRV.json */,
+				2E9D530B2726E7BF003B40FD /* RNKSV.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,
 				2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */,
 				2E2B7CC326BCBC8B00DAC920 /* NanumMyeongjo.otf in Resources */,
+				2E9D530C2726E7BF003B40FD /* RNKSV.json in Resources */,
 				2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */,
 				2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */,
 				2E2B7CC126BCBC8B00DAC920 /* NanumMyeongjoExtraBold.otf in Resources */,
