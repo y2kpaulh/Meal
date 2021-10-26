@@ -13,9 +13,14 @@ struct MealTitleLabel: View {
   var textColor: Color
 
   var body: some View {
-    Text("끼니")
+    //    Text("끼니")
+    //      .foregroundColor(textColor)
+    //      .font(.custom("NanumBrushOTF", size: size))
+    Image(uiImage: UIImage(named: "meal")!)
+      .resizable()
+      .renderingMode(.template)
       .foregroundColor(textColor)
-      .font(.custom("NanumBrushOTF", size: size))
+      .frame(width: 60, height: 80)
   }
 }
 
