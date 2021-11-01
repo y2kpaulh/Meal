@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 struct BibleStore {
-  static let books: [BibleBook] = load("RNKSV.json") //load("NKRV.json")
+  static let books: [BibleBook] = load("NKRV.json") //load("RNKSV.json")
   static let titles: [String] = load("biblebook-ko.json")
 }
