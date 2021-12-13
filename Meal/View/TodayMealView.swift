@@ -96,7 +96,7 @@ extension TodayMealView {
             //verse number
             VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
             //verse text
-            VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
+            VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index).padding(.top, -3)
           }
           .padding([.leading, .trailing], 20)
           .padding(.bottom, 10)
