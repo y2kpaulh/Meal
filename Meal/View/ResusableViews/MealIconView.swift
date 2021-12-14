@@ -11,12 +11,12 @@ import Foundation
 
 struct MealIconView: View {
   var body: some View {
-    Image(uiImage: UIImage(named: "riceBowlIcon")!)
+    Image(uiImage: UIImage(named: "riceBowl")!)
       .resizable()
       .renderingMode(.template)
       .frame(width: 40, height: 40)
       .foregroundColor(Color(UIColor.label))
-      .padding([.leading, .trailing], 20)
+      .padding([.leading, .trailing], 10)
       .unredacted()
   }
 }

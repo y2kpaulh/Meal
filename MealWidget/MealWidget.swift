@@ -92,8 +92,8 @@ struct MealWidgetEntryView: View {
   var body: some View {
     ZStack {
       Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
-      VStack(alignment: .leading, spacing: -12) {
-        HStack(alignment: .center, spacing: -14) {
+      VStack(alignment: .leading, spacing: -4) {
+        HStack(alignment: .center, spacing: -4) {
 
           if family != .systemSmall {
             MealIconView()
@@ -115,9 +115,9 @@ struct MealWidgetEntryView: View {
               }
 
               NotiPlanLabelView(entry: entry, plan: entry.plan)
+                .padding(.top, -4)
             }
           }
-          .padding(.horizontal)
           .foregroundColor(Color(UIColor.systemGray))
         }
 
@@ -128,7 +128,8 @@ struct MealWidgetEntryView: View {
             .lineSpacing(6.0)
             //.font(.footnote)
             .foregroundColor(Color(UIColor.label))
-            .padding([.top, .bottom], 20)
+            .padding(.top, 14)
+            .padding(.bottom, 10)
             .padding([.leading, .trailing], 10)
         }
       }
