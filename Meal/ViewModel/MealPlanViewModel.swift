@@ -95,6 +95,8 @@ extension MealPlanViewModel {
 
         self.isLoading = false
 
+        PlanStore().registDailyPush()
+
         // 앱 시작시 위젯 업데이트 루틴
         //        DispatchQueue.main.async {
         //          self.widgetPlans = [NotiPlan(

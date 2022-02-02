@@ -27,7 +27,6 @@
 		2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 		2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
 		2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
-		2E32EF5B26BCD11700716A54 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
 		2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
 		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
@@ -60,7 +59,6 @@
 		2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
 		2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
-		2E6651A526C3A45100A083C6 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
 		2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
 		2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
 		2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */; };
@@ -109,7 +107,6 @@
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
-		2EED48BF2697EE600069DD16 /* mealPlan.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48BE2697EE600069DD16 /* mealPlan.json */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
 		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
 		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
@@ -246,7 +243,6 @@
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
-		2EED48BE2697EE600069DD16 /* mealPlan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mealPlan.json; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
 		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -447,7 +443,6 @@
 				2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */,
 				2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */,
 				2EED48C0269826700069DD16 /* biblebook-ko.json */,
-				2EED48BE2697EE600069DD16 /* mealPlan.json */,
 				2E679EE6269F12B300CB470A /* NKRV.json */,
 				2E9D530B2726E7BF003B40FD /* RNKSV.json */,
 			);
@@ -652,7 +647,6 @@
 				2E2B7CC726BCBC9800DAC920 /* NanumBrush.otf in Resources */,
 				2E2B7CB326BBF82C00DAC920 /* Assets.xcassets in Resources */,
 				2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */,
-				2E32EF5B26BCD11700716A54 /* mealPlan.json in Resources */,
 				2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */,
 				2E32EF5926BCCFF000716A54 /* Assets.xcassets in Resources */,
 				2E2B7CC626BCBC9500DAC920 /* NanumMyeongjo.otf in Resources */,
@@ -671,7 +665,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E6651A526C3A45100A083C6 /* mealPlan.json in Resources */,
 				2E6651A726C3A45100A083C6 /* biblebook-ko.json in Resources */,
 				2E6651A926C3A45100A083C6 /* NKRV.json in Resources */,
 				2E6651AA26C3A45100A083C6 /* NanumBrush.otf in Resources */,
@@ -687,7 +680,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EED48BF2697EE600069DD16 /* mealPlan.json in Resources */,
 				2E679EE7269F12B300CB470A /* NKRV.json in Resources */,
 				2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */,
 				2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */,

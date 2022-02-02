@@ -16,7 +16,7 @@ import UIKit
 public final class PlanStore: ObservableObject {
   let localNotiManager = LocalNotificationManager()
 
-  var planList: [Plan] = load("mealPlan.json")
+  var planList = [Plan]() // = load("mealPlan.json")
 
   var dateFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
@@ -128,7 +128,6 @@ extension PlanStore {
         return LocalPushPlan(title: "오늘의 끼니",
                              subTitle: PlanStore().getMealPlanStr(plan: plan),
                              body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan: plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
-
       }
 
     for plan in PlanStore.dailyPushList {

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-  @Published var planList: [Plan] = load("mealPlan.json")
+  @Published var planList = [Plan]()// = load("mealPlan.json")
 
   //    var features: [Landmark] {
   //        landmarks.filter { $0.isFeatured }
