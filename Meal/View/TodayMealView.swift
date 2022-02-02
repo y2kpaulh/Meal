@@ -126,16 +126,17 @@ extension TodayMealView {
   }
 
   var mainView: some View {
-    VStack {
-      //header view
-      self.headerView
+    ZStack {
+      VStack {
+        //header view
+        self.headerView
 
-      //today words
-      self.todayWordsView
+        //today words
+        self.todayWordsView
 
-      //footer view
-      self.footerView
-
+        //footer view
+        self.footerView
+      }
       //alert routine
       self.alertView
     }
