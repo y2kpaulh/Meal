@@ -66,54 +66,47 @@ extension MealPlanViewModel {
   func fetchPlanData() {
     self.isLoading = true
 
-    PlanService.requestPlan(.planList)
-      //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
-      //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
-      //            }
-      .mapError({ [weak self] (error) -> Error in
-        guard let self = self else { return  error }
-        print(error)
-        self.isLoading = false
-        return error
-      })
-      .sink(receiveCompletion: { [weak self] completion in
-        guard let self = self else { return }
-        if case .failure(let err) = completion {
-          print("Retrieving data failed with error \(err)")
-
-          self.planDataError = true
+    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"), mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+      self.savePlanData(mealPlan: mealPlan)
+    } else {
+      PlanService.requestPlan(.planList)
+        //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
+        //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
+        //            }
+        .mapError({ [weak self] (error) -> Error in
+          guard let self = self else { return  error }
+          print(error)
           self.isLoading = false
-        }
-      },
-      receiveValue: { [weak self] in
-        guard let self = self else { return }
+          return error
+        })
+        .sink(receiveCompletion: { [weak self] completion in
+          guard let self = self else { return }
+          if case .failure(let err) = completion {
+            print("Retrieving data failed with error \(err)")
 
-        self.planList = $0
-        self.todayPlan = $0.filter { $0.day == PlanStore().getDateStr() }[0]
-        self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
-        self.todayPlanDate = PlanStore().convertDateToStr()
+            self.planDataError = true
+            self.isLoading = false
+          }
+        },
+        receiveValue: { [weak self] in
+          guard let self = self else { return }
+          if (try? $0.saveToFile(fileName: "mealPlan")) != nil {
+            self.savePlanData(mealPlan: $0)
+          }
+        })
+        .store(in: &cacellables)
+    }
+  }
 
-        self.isLoading = false
+  func savePlanData(mealPlan: [Plan]) {
+    self.planList = mealPlan
 
-        PlanStore().registDailyPush()
+    self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
+    self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
+    self.todayPlanDate = PlanStore().convertDateToStr()
 
-        // 앱 시작시 위젯 업데이트 루틴
-        //        DispatchQueue.main.async {
-        //          self.widgetPlans = [NotiPlan(
-        //                                day: self.todayPlan.day,
-        //                                book: self.todayPlan.book,
-        //                                fChap: self.todayPlan.fChap,
-        //                                fVer: self.todayPlan.fVer,
-        //                                lChap: self.todayPlan.lChap,
-        //                                lVer: self.todayPlan.lVer,
-        //                                verses: self.todayPlanData.verses)]
-        //
-        //          self.writeNotiPlan()
-        //          WidgetCenter.shared.reloadTimelines(ofKind: "MealWidget")
-        //        }
+    self.isLoading = false
 
-        //print($0)
-      })
-      .store(in: &cacellables)
+    PlanStore().registDailyPush()
   }
 }

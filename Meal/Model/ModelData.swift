@@ -44,3 +44,35 @@ func load<T: Decodable>(_ filename: String) -> T {
     fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
   }
 }
+
+func readMealPlanFile(fileName: String) throws -> [Plan]? {
+  do {
+    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+      let url = dir.appendingPathComponent(fileName)
+      let data = try Data(contentsOf: url)
+      let decoded = try JSONDecoder().decode([Plan].self, from: data)
+
+      return decoded
+    } else {
+      return nil
+    }
+  } catch {
+    throw error
+  }
+}
+
+extension Array where Element: Encodable {
+  func saveToFile(fileName: String) throws {
+    do {
+      let data = try JSONEncoder().encode(self)
+      if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        let fileURL = dir.appendingPathComponent(fileName)
+        try data.write(to: fileURL)
+      } else {
+        //throw some error
+      }
+    } catch {
+      throw error
+    }
+  }
+}

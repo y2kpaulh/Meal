@@ -10,7 +10,6 @@ import Combine
 
 struct TodayMealView: View {
   @StateObject var viewModel = MealPlanViewModel()
-
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
 
@@ -138,7 +137,7 @@ extension TodayMealView {
         self.footerView
       }
       //alert routine
-      self.alertView
+      //self.alertView
     }
   }
 
