@@ -66,39 +66,40 @@ extension MealPlanViewModel {
   func fetchPlanData() {
     self.isLoading = true
 
-    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"), mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
-      self.savePlanData(mealPlan: mealPlan)
-    } else {
-      PlanService.requestPlan(.planList)
-        //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
-        //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
-        //            }
-        .mapError({ [weak self] (error) -> Error in
-          guard let self = self else { return  error }
-          print(error)
-          self.isLoading = false
-          return error
-        })
-        .sink(receiveCompletion: { [weak self] completion in
-          guard let self = self else { return }
-          if case .failure(let err) = completion {
-            print("Retrieving data failed with error \(err)")
-
-            self.planDataError = true
-            self.isLoading = false
-          }
-        },
-        receiveValue: { [weak self] in
-          guard let self = self else { return }
-          if (try? $0.saveToFile(fileName: "mealPlan")) != nil {
-            self.savePlanData(mealPlan: $0)
-          }
-        })
-        .store(in: &cacellables)
+    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
+       mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+      self.loadPlanData(mealPlan: mealPlan)
+      return
     }
+
+    PlanService.requestPlan(.planList)
+      //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
+      //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
+      //            }
+      .mapError({ [weak self] (error) -> Error in
+        guard let self = self else { return  error }
+        print(error)
+        self.isLoading = false
+        return error
+      })
+      .sink(receiveCompletion: { [weak self] completion in
+        guard let self = self else { return }
+        if case .failure(let err) = completion {
+          print("Retrieving data failed with error \(err)")
+          self.planDataError = true
+          self.isLoading = false
+        }
+      },
+      receiveValue: { [weak self] in
+        guard let self = self else { return }
+        if (try? $0.saveToFile(fileName: "mealPlan")) != nil {
+          self.loadPlanData(mealPlan: $0)
+        }
+      })
+      .store(in: &cacellables)
   }
 
-  func savePlanData(mealPlan: [Plan]) {
+  func loadPlanData(mealPlan: [Plan]) {
     self.planList = mealPlan
 
     self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
