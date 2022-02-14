@@ -45,7 +45,7 @@ extension TodayMealView {
 
   var planListButton: some View {
     Button(action: { isPresented.toggle() }) {
-      Image(systemName: "line.horizontal.3.decrease.circle")
+      Image(systemName: "ellipsis.circle")
         .renderingMode(.template)
         .accessibilityLabel(Text("끼니 말씀 일정표"))
         .foregroundColor(Color(UIColor.label))
@@ -59,7 +59,7 @@ extension TodayMealView {
   var headerDetailView: some View {
     VStack {
       HStack {
-        Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
+        Text(PlanStore().getMealPlanStr(viewModel.todayPlan))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
       }

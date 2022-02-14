@@ -52,7 +52,7 @@ struct Provider: TimelineProvider {
 
     planNotiService.fetchPlanList {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
-      let planData = PlanStore().getPlanData(plan: plan)
+      let planData = PlanStore().getPlanData(plan)
       let nextPlan = NotiPlan(day: plan.day,
                               book: plan.book,
                               fChap: plan.fChap,
@@ -156,7 +156,7 @@ struct NotiPlanLabelView: View {
   var plan: NotiPlan
 
   var body: some View {
-    Text(PlanStore().getMealPlanStr(plan: plan))
+    Text(PlanStore().getMealPlanStr(plan))
       .foregroundColor(Color(UIColor.label))
       .font(.custom("NanumMyeongjoOTFBold", size: 16))
       .bold()

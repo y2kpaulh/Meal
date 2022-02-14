@@ -101,7 +101,7 @@ extension MealPlanViewModel {
     self.planList = mealPlan
 
     self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.todayPlanData = PlanStore().getPlanData(plan: self.todayPlan)
+    self.todayPlanData = PlanStore().getPlanData(self.todayPlan)
     self.todayPlanDate = PlanStore().convertDateToStr()
 
     self.isLoading = false

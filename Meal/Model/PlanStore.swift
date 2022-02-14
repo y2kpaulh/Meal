@@ -26,7 +26,7 @@ public final class PlanStore: ObservableObject {
     return dateFormatter
   }
 
-  func getPlanData(plan: Plan) -> PlanData {
+  func getPlanData(_ plan: Plan) -> PlanData {
     let book = BibleStore.books.filter { $0.abbrev == plan.book }
 
     guard book.count > 0,
@@ -90,7 +90,7 @@ extension PlanStore {
     return verses[0...2].joined(separator: " ")
   }
 
-  func getMealPlanStr(plan: Planable) -> String {
+  func getMealPlanStr(_ plan: Planable) -> String {
     return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap > 0 ? "\(plan.fChap):" : "")\(plan.fVer > 0 ? "\(plan.fVer)-" : "")\(plan.fChap != plan.lChap ? "\(plan.lChap > 0 ? "\(plan.lChap)" : ""):" : "" )\(plan.lVer > 0 ? "\(plan.lVer)" : "")"
   }
 
@@ -125,8 +125,8 @@ extension PlanStore {
         let targetDay = plan.day.split(separator: "-")
 
         return LocalPushPlan(title: "오늘의 끼니",
-                             subTitle: PlanStore().getMealPlanStr(plan: plan),
-                             body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan: plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
+                             subTitle: PlanStore().getMealPlanStr(plan),
+                             body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
       }
 
     for plan in PlanStore.dailyPushList {
