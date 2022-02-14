@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import PartialSheet
 
 struct TodayMealView: View {
   @StateObject var viewModel = MealPlanViewModel()
