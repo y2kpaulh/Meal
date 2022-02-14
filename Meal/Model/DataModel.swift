@@ -27,6 +27,7 @@ protocol Planable {
   var lChap: Int { get }
   var lVer: Int { get }
 }
+
 // MARK: - Plan
 public struct Plan: Planable, Codable, Identifiable, Hashable {
   public var id: String { day }

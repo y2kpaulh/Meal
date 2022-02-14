@@ -62,7 +62,7 @@ func readMealPlanFile(fileName: String) throws -> [Plan]? {
 }
 
 extension Array where Element: Encodable {
-  func saveToFile(fileName: String) throws {
+  func saveToFile(_ fileName: String) throws {
     do {
       let data = try JSONEncoder().encode(self)
       if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
