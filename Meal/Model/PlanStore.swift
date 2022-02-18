@@ -16,7 +16,14 @@ import UIKit
 public final class PlanStore: ObservableObject {
   let localNotiManager = LocalNotificationManager()
 
-  var planList = [Plan]() // = load("mealPlan.json")
+  var planList: [Plan] {
+    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
+       mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+      return mealPlan
+    } else {
+      return []
+    }
+  }
 
   var dateFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
@@ -115,12 +122,7 @@ extension PlanStore {
       PlanStore.dailyPushList = []
     }
 
-    //guard !(PlanStore.dailyPushList.count > 0) else { return }
-
     PlanStore.dailyPushList = PlanStore().planList
-      //      .filter { plan in
-      //        PlanStore().dateFormatter.date(from: plan.day)! > Date()
-      //      }
       .map { plan in
         let targetDay = plan.day.split(separator: "-")
 

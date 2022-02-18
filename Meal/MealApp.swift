@@ -20,7 +20,6 @@ struct MealApp: App {
       ContentView()
         //.environmentObject(viewModel)
         .onAppear {
-          // PlanStore().registDailyPush()
           //          print(FileManager.documentURL ?? "")
           //          for fontFamily in UIFont.familyNames {
           //            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
