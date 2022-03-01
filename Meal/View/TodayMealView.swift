@@ -55,7 +55,9 @@ extension TodayMealView {
     //           onDismiss: didDismiss) {
     //      MealPlanList(planList: $viewModel.planList)
     //    }
-    .partialSheet(isPresented: $isPresented) {
+    .partialSheet(isPresented: $isPresented, type: .scrollView(height: 500, showsIndicators: false)
+                  //                  , iPhoneStyle: PSIphoneStyle(background: .blur(.regularMaterial), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.4)), cornerRadius: 10)
+    ) {
       MealPlanList(planList: $viewModel.planList)
     }
   }

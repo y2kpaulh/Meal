@@ -65,7 +65,7 @@ struct MealPlanList: View {
       }
       .listVerticalShadow()
     }
-    .frame(height: 400)
+    .frame(height: 500)
     .onAppear {
       UITableView.appearance().backgroundColor = .clear
       UITableViewCell.appearance().backgroundColor = .clear
