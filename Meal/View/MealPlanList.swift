@@ -21,9 +21,8 @@ struct MealPlanList: View {
 
     VStack {
       ZStack(alignment: .center) {
-        Text("끼니 일정표")
-          .font(.custom("NanumBrushOTF", size: 30))
-          .foregroundColor(Color(UIColor.label))
+        Text("끼니 일정")
+          .font(.system(size: 20, weight: .medium, design: .default))          .foregroundColor(Color(UIColor.label))
         //          .padding(.top, 20)
 
         //                      HStack {
