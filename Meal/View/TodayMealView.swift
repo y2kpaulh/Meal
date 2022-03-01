@@ -51,8 +51,11 @@ extension TodayMealView {
         .accessibilityLabel(Text("끼니 말씀 일정표"))
         .foregroundColor(Color(UIColor.label))
     }
-    .sheet(isPresented: $isPresented,
-           onDismiss: didDismiss) {
+    //    .sheet(isPresented: $isPresented,
+    //           onDismiss: didDismiss) {
+    //      MealPlanList(planList: $viewModel.planList)
+    //    }
+    .partialSheet(isPresented: $isPresented) {
       MealPlanList(planList: $viewModel.planList)
     }
   }

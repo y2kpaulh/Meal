@@ -52,9 +52,10 @@ struct ActivityIndicator: View {
           style: style)
         .frame(width: 100, height: 100, alignment: .center)
         .rotationEffect(Angle(degrees: animate ? 360 : 0))
-        .animation(
-          Animation.linear(duration: 0.7)
-            .repeatForever(autoreverses: false))
+        .animation(.linear, value: 0.7)
+      //        .animation(
+      //          Animation.linear(duration: 0.7)
+      //            .repeatForever(autoreverses: false))
     }
     .onAppear {
       animate.toggle()

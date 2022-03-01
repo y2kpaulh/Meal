@@ -96,6 +96,7 @@
 		2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
+		2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2EADCBA827CE1B780006748B /* PartialSheet */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -108,7 +109,6 @@
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
-		2EEE851E27BA97060087127D /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2EEE851D27BA97060087127D /* PartialSheet */; };
 		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
 		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
 		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
@@ -288,7 +288,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EEE851E27BA97060087127D /* PartialSheet in Frameworks */,
+				2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */,
 				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,7 +587,7 @@
 			);
 			name = Meal;
 			packageProductDependencies = (
-				2EEE851D27BA97060087127D /* PartialSheet */,
+				2EADCBA827CE1B780006748B /* PartialSheet */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -627,7 +627,7 @@
 			);
 			mainGroup = 2EBBD5DE268DBB5F00EA6BB2;
 			packageReferences = (
-				2EEE851C27BA97060087127D /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
@@ -1120,7 +1120,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1175,7 +1175,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1198,7 +1198,7 @@
 				DEVELOPMENT_TEAM = UV36497CVB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1223,7 +1223,7 @@
 				DEVELOPMENT_TEAM = UV36497CVB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1286,20 +1286,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2EEE851C27BA97060087127D /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+		2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2EEE851D27BA97060087127D /* PartialSheet */ = {
+		2EADCBA827CE1B780006748B /* PartialSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2EEE851C27BA97060087127D /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			package = 2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
