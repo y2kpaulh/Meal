@@ -48,7 +48,7 @@ extension TodayMealView {
     Button(action: { isPresented.toggle() }) {
       Image(systemName: "ellipsis.circle")
         .renderingMode(.template)
-        .accessibilityLabel(Text("끼니 말씀 일정표"))
+        .accessibilityLabel(Text("끼니 일정"))
         .foregroundColor(Color(UIColor.label))
     }
     //    .sheet(isPresented: $isPresented,
