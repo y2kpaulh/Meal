@@ -939,14 +939,14 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MealWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				INFOPLIST_FILE = MealWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.MealWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -962,14 +962,14 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MealWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				INFOPLIST_FILE = MealWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.MealWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.MealWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -985,10 +985,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				IBSC_MODULE = MealWatch_Extension;
 				INFOPLIST_FILE = MealWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1006,10 +1006,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				IBSC_MODULE = MealWatch_Extension;
 				INFOPLIST_FILE = MealWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1026,7 +1026,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1034,7 +1034,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1051,7 +1051,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MealWatch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MealWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1059,7 +1059,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1195,7 +1195,7 @@
 				CODE_SIGN_ENTITLEMENTS = Meal/Meal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"meal/Preview Content\"";
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1203,7 +1203,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1220,7 +1220,7 @@
 				CODE_SIGN_ENTITLEMENTS = Meal/Meal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"meal/Preview Content\"";
-				DEVELOPMENT_TEAM = UV36497CVB;
+				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1228,7 +1228,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.epiens.meal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

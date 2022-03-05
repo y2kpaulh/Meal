@@ -15,7 +15,7 @@ extension FileManager {
   static func sharedContainerURL() -> URL {
     return FileManager.default.containerURL(
       forSecurityApplicationGroupIdentifier:
-        "group.com.epiens.meal.plan"
+        "group.com.echadworks.meal.plan"
     )!
   }
 }

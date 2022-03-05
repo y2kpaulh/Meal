@@ -12,7 +12,7 @@ import SystemConfiguration
 
 class NetworkReachability: ObservableObject {
   @Published private(set) var reachable: Bool = false
-  private let reachability = SCNetworkReachabilityCreateWithName(nil, "com.epiens.meal")
+  private let reachability = SCNetworkReachabilityCreateWithName(nil, "com.echadworks.meal")
 
   init() {
     self.reachable = checkConnection()
