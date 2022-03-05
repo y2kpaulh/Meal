@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-  @EnvironmentObject var viewModel: MealPlanViewModel
-
+  @StateObject var viewModel = MealPlanViewModel()
+    
   var body: some View {
     NavigationView {
       VStack(spacing: -4) {
