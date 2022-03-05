@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MealPlanList: View {
-  @StateObject var viewModel = MealPlanViewModel()
+  @EnvironmentObject var viewModel: MealPlanViewModel
 
   var body: some View {
     ScrollViewReader { scrollView in
@@ -25,7 +25,6 @@ struct MealPlanList: View {
           }
         }
         .onAppear {
-          self.viewModel.fetchPlanData()
           withAnimation {
             let todayIndex = viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
             scrollView.scrollTo(todayIndex, anchor: .top)
