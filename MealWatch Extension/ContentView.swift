@@ -10,7 +10,7 @@ import Combine
 
 struct ContentView: View {
   @StateObject var viewModel = MealPlanViewModel()
-    
+
   var body: some View {
     NavigationView {
       VStack(spacing: -4) {
