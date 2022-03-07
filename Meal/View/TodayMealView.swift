@@ -24,12 +24,6 @@ struct TodayMealView: View {
   }
 }
 
-struct TodayMealView_Previews: PreviewProvider {
-  static var previews: some View {
-    TodayMealView()
-  }
-}
-
 extension TodayMealView {
   var titleLabelView: some View {
     MealTitleLabel(size: 80, textColor: Color(UIColor.label))
@@ -145,5 +139,11 @@ extension TodayMealView {
 
   func didDismiss() {
     // Handle the dismissing action.
+  }
+}
+
+struct TodayMealView_Previews: PreviewProvider {
+  static var previews: some View {
+    TodayMealView()
   }
 }

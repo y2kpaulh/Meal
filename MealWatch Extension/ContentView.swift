@@ -22,7 +22,7 @@ struct ContentView: View {
           }
 
           NavigationLink(destination: MealPlanList().environmentObject(viewModel)) {
-            Text("끼니 일정표")
+            Text("일정")
           }
         }
       }
