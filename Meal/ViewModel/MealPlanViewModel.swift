@@ -29,13 +29,13 @@ class MealPlanViewModel: ObservableObject {
   @Published var todayPlanDate: String = ""
   var widgetPlans: [NotiPlan] = []
 
-  var cacellables = Set<AnyCancellable>()
+  var cancelBag = Set<AnyCancellable>()
 
   init() {
     isLoadingPublisher
       .receive(on: RunLoop.main)
       .assign(to: \.isLoading, on: self)
-      .store(in: &cacellables)
+      .store(in: &cancelBag)
   }
 
   private var isLoadingPublisher: AnyPublisher<Bool, Never> {
@@ -91,7 +91,7 @@ extension MealPlanViewModel {
           self.loadPlanData($0)
         }
       })
-      .store(in: &cacellables)
+      .store(in: &cancelBag)
   }
 
   func loadPlanData(_ mealPlan: [Plan]) {
@@ -104,5 +104,16 @@ extension MealPlanViewModel {
     self.isLoading = false
 
     PlanStore().registDailyPush()
+  }
+
+  func changePlanIndex(index: Int) {
+    let indexPlan = self.planList[index]
+    let indexPlanData = PlanStore().getPlanData(indexPlan)
+    let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
+    let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
+
+    self.todayPlan = indexPlan
+    self.todayPlanData = indexPlanData
+    self.todayPlanDate = indexDateStr
   }
 }

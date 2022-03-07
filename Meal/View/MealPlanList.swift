@@ -14,26 +14,20 @@ struct MealPlanList: View {
 
   var body: some View {
     VStack {
+      Text("일정")
+        .foregroundColor(Color(UIColor.label))
+        .font(.custom("NanumBrushOTF", size: 30))
+
       ScrollViewReader { scrollView in
         ScrollView {
           LazyVStack {
             ForEach(0..<self.viewModel.planList.count, id: \.self) { index in
               PlanView(index: index, plan: self.viewModel.planList[index])
                 .id(index)
-                //.environmentObject(planStore)
                 .padding(10)
                 .onTapGesture {
-                  Swift.print("tap", index, self.viewModel.planList[index])
-
-                  let indexPlan = self.viewModel.planList[index]
-                  let indexPlanData = PlanStore().getPlanData(indexPlan)
-                  let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
-                  let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
-
-                  self.viewModel.todayPlan = indexPlan
-                  self.viewModel.todayPlanData = indexPlanData
-                  self.viewModel.todayPlanDate = indexDateStr
-
+                  Swift.print("tap index \(index)")
+                  self.viewModel.changePlanIndex(index: index)
                   self.isPresented = false
                 }
             }
@@ -58,7 +52,7 @@ struct MealPlanList: View {
   struct MealPlanList_Previews: PreviewProvider {
     static var previews: some View {
       MealPlanList(isPresented: .constant(false))
-        .environmentObject(PlanStore())
+        .environmentObject(MealPlanViewModel())
     }
   }
 }

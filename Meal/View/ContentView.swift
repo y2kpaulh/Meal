@@ -12,7 +12,6 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       TodayMealView()
-        //.navigationBarTitle("")
         .navigationBarHidden(true)
     }
     .navigationViewStyle(StackNavigationViewStyle())

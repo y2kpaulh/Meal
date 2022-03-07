@@ -48,7 +48,7 @@ extension TodayMealView {
     Button(action: { isPresented.toggle() }) {
       Image(systemName: "ellipsis.circle")
         .renderingMode(.template)
-        .accessibilityLabel(Text("끼니 일정"))
+        .accessibilityLabel(Text("일정"))
         .foregroundColor(Color(UIColor.label))
     }
     .partialSheet(isPresented: $isPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .blur(.regularMaterial), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.4)), cornerRadius: 10)

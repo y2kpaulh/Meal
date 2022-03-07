@@ -52,7 +52,6 @@
 		2E4549CD26E7751600E23740 /* VerseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CC26E7751600E23740 /* VerseTextView.swift */; };
 		2E4549CF26E77BEC00E23740 /* TodayVersesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */; };
 		2E4549D126E77CB700E23740 /* TodayVersesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549D026E77CB700E23740 /* TodayVersesListCell.swift */; };
-		2E56C7A527D391D3007D6287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4235D726BD366000808E85 /* Assets.xcassets */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -677,7 +676,6 @@
 				2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */,
 				2E6651A826C3A45100A083C6 /* NanumMyeongjoBold.otf in Resources */,
 				2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */,
-				2E56C7A527D391D3007D6287 /* Assets.xcassets in Resources */,
 				2E4235EE26BD366100808E85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
