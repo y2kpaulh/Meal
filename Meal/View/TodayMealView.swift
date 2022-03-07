@@ -51,13 +51,10 @@ extension TodayMealView {
         .accessibilityLabel(Text("끼니 일정"))
         .foregroundColor(Color(UIColor.label))
     }
-    //    .sheet(isPresented: $isPresented,
-    //           onDismiss: didDismiss) {
-    //      MealPlanList(planList: $viewModel.planList)
-    //    }
     .partialSheet(isPresented: $isPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .blur(.regularMaterial), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.4)), cornerRadius: 10)
     ) {
-      MealPlanList(planList: $viewModel.planList)
+      MealPlanList(isPresented: $isPresented)
+        .environmentObject(viewModel)
     }
   }
 

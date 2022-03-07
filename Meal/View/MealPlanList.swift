@@ -6,57 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MealPlanList: View {
-  @Binding var planList: [Plan]
-  //@Environment(\.presentationMode) var presentationMode
-  @State private var isPresented = false
-
-  //    init() {
-  //        UITableView.appearance().backgroundColor = .clear
-  //        UITableViewCell.appearance().backgroundColor = .clear
-  //    }
+  @EnvironmentObject var viewModel: MealPlanViewModel
+  @Binding var isPresented: Bool
 
   var body: some View {
-
     VStack {
-      ZStack(alignment: .center) {
-        Text("끼니 일정")
-          .font(.system(size: 20, weight: .medium, design: .default))          .foregroundColor(Color(UIColor.label))
-        //          .padding(.top, 20)
-
-        //                      HStack {
-        //                          Spacer()
-        //                          Button(
-        //                              action: {
-        //                                  //store.fetchContents()
-        //                                  presentationMode.wrappedValue.dismiss()
-        //                                  // swiftlint:disable:next multiple_closures_with_trailing_closure
-        //                              }) {
-        //                                  Image(systemName: "xmark")
-        //                                      .font(.title3)
-        //                                      .foregroundColor(Color(UIColor.label))
-        //                                      .padding()
-        //                                      .background(
-        //                                          Circle().fill((Color.closeBkgd))
-        //                                      )
-        //                              }
-        //                              .padding([.top, .trailing])
-        //                      }
-      }
       ScrollViewReader { scrollView in
         ScrollView {
           LazyVStack {
-            ForEach(0..<self.planList.count, id: \.self) { index in
-              PlanView(index: index, plan: self.planList[index])
+            ForEach(0..<self.viewModel.planList.count, id: \.self) { index in
+              PlanView(index: index, plan: self.viewModel.planList[index])
                 .id(index)
                 //.environmentObject(planStore)
                 .padding(10)
+                .onTapGesture {
+                  Swift.print("tap", index, self.viewModel.planList[index])
+                  let indexPlan = self.viewModel.planList[index]
+                  self.viewModel.fetchPlanData()
+                  self.isPresented = false
+                }
             }
           }
           .onAppear {
             withAnimation {
-              let todayIndex = self.planList.firstIndex { $0.day == PlanStore().getDateStr() }
+              let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
               scrollView.scrollTo(todayIndex, anchor: .top)
             }
           }
@@ -73,7 +49,7 @@ struct MealPlanList: View {
 
   struct MealPlanList_Previews: PreviewProvider {
     static var previews: some View {
-      MealPlanList(planList: .constant([Plan]()))
+      MealPlanList(isPresented: .constant(false))
         .environmentObject(PlanStore())
     }
   }
