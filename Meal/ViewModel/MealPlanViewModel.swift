@@ -71,9 +71,6 @@ extension MealPlanViewModel {
     }
 
     PlanService.requestPlan(.planList)
-      //            .map{  //리스트에서 바로 데이터 가지고 올때 사용
-      //                PlanStore().getPlanData(plan: $0.filter{ $0.day == PlanStore().getDateStr() }[0])
-      //            }
       .mapError({ [weak self] (error) -> Error in
         guard let self = self else { return  error }
         print(error)

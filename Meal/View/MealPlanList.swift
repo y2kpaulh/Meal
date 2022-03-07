@@ -24,8 +24,16 @@ struct MealPlanList: View {
                 .padding(10)
                 .onTapGesture {
                   Swift.print("tap", index, self.viewModel.planList[index])
+
                   let indexPlan = self.viewModel.planList[index]
-                  self.viewModel.fetchPlanData()
+                  let indexPlanData = PlanStore().getPlanData(indexPlan)
+                  let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
+                  let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
+
+                  self.viewModel.todayPlan = indexPlan
+                  self.viewModel.todayPlanData = indexPlanData
+                  self.viewModel.todayPlanDate = indexDateStr
+
                   self.isPresented = false
                 }
             }
