@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1518FA27E6F10900264936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1518F927E6F10900264936 /* SettingsView.swift */; };
+		2E1518FC27E6F7C600264936 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1518FB27E6F7C600264936 /* SettingsViewModel.swift */; };
 		2E2B7CAC26BBF82900DAC920 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */; };
 		2E2B7CAE26BBF82900DAC920 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */; };
 		2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2B7CB026BBF82900DAC920 /* MealWidget.swift */; };
@@ -51,7 +53,7 @@
 		2E4549CB26E772EE00E23740 /* VerseNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CA26E772EE00E23740 /* VerseNumberView.swift */; };
 		2E4549CD26E7751600E23740 /* VerseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CC26E7751600E23740 /* VerseTextView.swift */; };
 		2E4549CF26E77BEC00E23740 /* TodayVersesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */; };
-		2E4549D126E77CB700E23740 /* TodayVersesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549D026E77CB700E23740 /* TodayVersesListCell.swift */; };
+		2E4549D126E77CB700E23740 /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549D026E77CB700E23740 /* SettingsListCell.swift */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -75,6 +77,9 @@
 		2E742FBD26E8A72400734ACE /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742FBC26E8A72400734ACE /* DebugView.swift */; };
 		2E742FBE26E8A72400734ACE /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742FBC26E8A72400734ACE /* DebugView.swift */; };
 		2E742FBF26E8A72400734ACE /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742FBC26E8A72400734ACE /* DebugView.swift */; };
+		2E74786027EF107F00F1597D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74785F27EF107F00F1597D /* NotificationCenter.swift */; };
+		2E74786127EF1E2100F1597D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74785F27EF107F00F1597D /* NotificationCenter.swift */; };
+		2E74786227EF1E2300F1597D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74785F27EF107F00F1597D /* NotificationCenter.swift */; };
 		2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */; };
 		2E7CA8FD26BBA2A4008B6255 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
 		2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FE26BBABD3008B6255 /* PlanView.swift */; };
@@ -178,6 +183,8 @@
 /* Begin PBXFileReference section */
 		02BC46232B370B19A93510C4 /* Pods-MealWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		2D327C728BCA7630C05E3116 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
+		2E1518F927E6F10900264936 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2E1518FB27E6F7C600264936 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2E2B7CA926BBF82900DAC920 /* MealWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -210,7 +217,7 @@
 		2E4549CA26E772EE00E23740 /* VerseNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseNumberView.swift; sourceTree = "<group>"; };
 		2E4549CC26E7751600E23740 /* VerseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseTextView.swift; sourceTree = "<group>"; };
 		2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVersesList.swift; sourceTree = "<group>"; };
-		2E4549D026E77CB700E23740 /* TodayVersesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVersesListCell.swift; sourceTree = "<group>"; };
+		2E4549D026E77CB700E23740 /* SettingsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListCell.swift; sourceTree = "<group>"; };
 		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
 		2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVerticalShadow.swift; sourceTree = "<group>"; };
 		2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeaderView.swift; sourceTree = "<group>"; };
@@ -221,6 +228,7 @@
 		2E679EE6269F12B300CB470A /* NKRV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NKRV.json; sourceTree = "<group>"; };
 		2E68701526C0E892007AC732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E742FBC26E8A72400734ACE /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		2E74785F27EF107F00F1597D /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		2E7CA8FA26BB82A2008B6255 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		2E7CA8FE26BBABD3008B6255 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
@@ -370,7 +378,7 @@
 				2E4549CA26E772EE00E23740 /* VerseNumberView.swift */,
 				2E4549CC26E7751600E23740 /* VerseTextView.swift */,
 				2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */,
-				2E4549D026E77CB700E23740 /* TodayVersesListCell.swift */,
+				2E4549D026E77CB700E23740 /* SettingsListCell.swift */,
 			);
 			path = ResusableViews;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */,
+				2E1518FB27E6F7C600264936 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -459,6 +468,7 @@
 				2EED48BA2697E82E0069DD16 /* DataModel.swift */,
 				2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */,
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
+				2E74785F27EF107F00F1597D /* NotificationCenter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -481,6 +491,7 @@
 				2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */,
 				2E4549C026E76A5A00E23740 /* TodayMealView.swift */,
 				2E3F9C2C26A545020027BD75 /* MealPlanList.swift */,
+				2E1518F927E6F10900264936 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +832,7 @@
 				2E2B7CC826BCC58500DAC920 /* DataModel.swift in Sources */,
 				2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */,
 				2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */,
+				2E74786127EF1E2100F1597D /* NotificationCenter.swift in Sources */,
 				2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */,
 				2EABCDD026C35EAF00107840 /* MealPlanViewModel.swift in Sources */,
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
@@ -851,6 +863,7 @@
 				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
 				2E4549C726E76AE500E23740 /* ListVerticalShadow.swift in Sources */,
 				2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */,
+				2E74786227EF1E2300F1597D /* NotificationCenter.swift in Sources */,
 				2E6651C326C3D20200A083C6 /* PlanView.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
 				2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */,
@@ -879,8 +892,10 @@
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2E972C1726C4DCCE000D6902 /* ModelData.swift in Sources */,
 				2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */,
+				2E74786027EF107F00F1597D /* NotificationCenter.swift in Sources */,
 				2E4549C126E76A5A00E23740 /* TodayMealView.swift in Sources */,
 				2E45499F26E7571300E23740 /* TodayWordsBgView.swift in Sources */,
+				2E1518FC27E6F7C600264936 /* SettingsViewModel.swift in Sources */,
 				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
 				2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
@@ -888,13 +903,14 @@
 				2E4549CD26E7751600E23740 /* VerseTextView.swift in Sources */,
 				2E7CA8FB26BB82A2008B6255 /* ActivityIndicator.swift in Sources */,
 				2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */,
-				2E4549D126E77CB700E23740 /* TodayVersesListCell.swift in Sources */,
+				2E4549D126E77CB700E23740 /* SettingsListCell.swift in Sources */,
 				2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */,
 				2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */,
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
 				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
 				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
+				2E1518FA27E6F10900264936 /* SettingsView.swift in Sources */,
 				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

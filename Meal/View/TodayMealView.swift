@@ -13,12 +13,17 @@ struct TodayMealView: View {
   @StateObject var viewModel = MealPlanViewModel()
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
+  let fetchPlanDataEvent = NotificationCenter.default
+    .publisher(for: .fetchPlanDataEvent)
 
   var body: some View {
     TodayWordsBgView {
       self.mainView
     }
     .onAppear {
+      viewModel.fetchPlanData()
+    }
+    .onReceive(fetchPlanDataEvent) { _ in
       viewModel.fetchPlanData()
     }
   }

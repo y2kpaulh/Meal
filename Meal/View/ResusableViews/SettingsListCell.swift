@@ -1,5 +1,5 @@
 //
-//  TodayVersesListCell.swift
+//  SettingsListCell.swift
 //  Meal
 //
 //  Created by Inpyo Hong on 2021/09/07.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TodayVersesListCell<T: View>: View {
+struct SettingsListCell<T: View>: View {
   let content: T
 
   init(@ViewBuilder content: () -> T) {
