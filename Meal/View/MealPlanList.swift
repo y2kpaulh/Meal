@@ -14,9 +14,9 @@ struct MealPlanList: View {
 
   var body: some View {
     VStack {
-      Text("일정")
-        .foregroundColor(Color(UIColor.label))
-        .font(.custom("NanumBrushOTF", size: 30))
+      //      Text("일정")
+      //        .foregroundColor(Color(UIColor.labelBatonSos))
+      //        .font(.custom("NanumBrushOTF", size: 30))
 
       ScrollViewReader { scrollView in
         ScrollView {
@@ -41,6 +41,11 @@ struct MealPlanList: View {
         }
       }
       .listVerticalShadow()
+
+      //footer
+      Spacer()
+        .frame(height: 140)
+
     }
     .frame(height: 500)
     .onAppear {
