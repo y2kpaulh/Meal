@@ -8,5 +8,7 @@
 import Foundation
 
 extension NSNotification.Name {
-  static let fetchPlanDataEvent = NSNotification.Name("fetchPlanDataEvent")
+  static let activePhaseNotification = NSNotification.Name("activePhaseNotification")
+  static let inactivePhaseNotification = NSNotification.Name("inactivePhaseNotification")
+  static let backgroundPhaseNotification = NSNotification.Name("backgroundPhaseNotification")
 }

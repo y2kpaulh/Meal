@@ -36,7 +36,7 @@ struct MealApp: App {
           case .active:
             //changedToActive()
             print("active")
-            NotificationCenter.default.post(name: .fetchPlanDataEvent, object: nil)
+            NotificationCenter.default.post(name: .activePhaseNotification, object: nil)
 
           case .background:
             //changedToBackground()

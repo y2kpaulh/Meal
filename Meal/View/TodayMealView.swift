@@ -13,8 +13,8 @@ struct TodayMealView: View {
   @StateObject var viewModel = MealPlanViewModel()
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPresented = false
-  let fetchPlanDataEvent = NotificationCenter.default
-    .publisher(for: .fetchPlanDataEvent)
+  let activePhaseNotification = NotificationCenter.default
+    .publisher(for: .activePhaseNotification)
 
   var body: some View {
     TodayWordsBgView {
@@ -23,7 +23,7 @@ struct TodayMealView: View {
     .onAppear {
       viewModel.fetchPlanData()
     }
-    .onReceive(fetchPlanDataEvent) { _ in
+    .onReceive(activePhaseNotification) { _ in
       viewModel.fetchPlanData()
     }
   }
@@ -52,8 +52,9 @@ extension TodayMealView {
     }
     .partialSheet(isPresented: $isPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .blur(.regularMaterial), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.4)), cornerRadius: 10)
     ) {
-      MealPlanList(isPresented: $isPresented)
-        .environmentObject(viewModel)
+      //      MealPlanList(isPresented: $isPresented)
+      //        .environmentObject(viewModel)
+      SettingsView()
     }
   }
 
