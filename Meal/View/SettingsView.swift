@@ -13,30 +13,10 @@ struct SettingsView: View {
 
   var body: some View {
     VStack {
-      ScrollViewReader { _ in
-        ScrollView {
-          LazyVStack {
-            ForEach(0..<self.viewModel.settingsList.count, id: \.self) { index in
-              let setting = self.viewModel.settingsList[index]
-
-              SettingsListCell {
-                //   Text("\(setting.item)")
-
-              }
-              //              .id(index)
-              //              .padding(10)
-              //              .onTapGesture {
-              //                Swift.print("tap index \(index)")
-              //              }
-            }
-          }
-          .onAppear {
-          }
-        }
-      }
-      .listVerticalShadow()
+      Text("Value")
     }
-
+    .frame(width: UIScreen.main.bounds.width, height: 500)
+    .background(Color.red)
   }
 }
 struct SettingsView_Previews: PreviewProvider {
