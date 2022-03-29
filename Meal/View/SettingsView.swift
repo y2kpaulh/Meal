@@ -9,16 +9,42 @@ import SwiftUI
 import Combine
 
 struct SettingsView: View {
-  @StateObject var viewModel = SettingsViewModel()
+  var body: some View {
+    ScrollView {
+      LazyVStack {
+        ForEach(1...100, id: \.self, content: SampleRow.init)
+      }
+    }
+    .frame(height: 300)
+  }
+}
+
+struct SampleRow: View {
+  let id: Int
+
+  init(id: Int) {
+    self.id = id
+    print("Loading row \(id)")
+  }
 
   var body: some View {
     VStack {
-      Text("Value")
+      HStack(alignment: .center, spacing: 10) {
+        Spacer()
+          .frame(width: 1)
+        Text("Row \(id)")
+          .font(.system(size: 14, weight: .semibold, design: .default))
+        Spacer()
+
+      }
+      Divider()
     }
-    .frame(width: UIScreen.main.bounds.width, height: 500)
-    .background(Color.red)
+    .frame(width: UIScreen.main.bounds.width - 20, height: 40)
+
   }
+
 }
+
 struct SettingsView_Previews: PreviewProvider {
   static var previews: some View {
     SettingsView()
