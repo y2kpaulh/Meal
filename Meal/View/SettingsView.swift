@@ -11,11 +11,14 @@ import Combine
 struct SettingsView: View {
   var body: some View {
     ScrollView {
-      LazyVStack {
-        ForEach(1...100, id: \.self, content: SampleRow.init)
+      //      LazyVStack {
+      //        ForEach(1...100, id: \.self, content: SampleRow.init)
+      //      }
+      List {
+        Text("test")
       }
     }
-    .frame(height: 300)
+    .frame(height: 500)
   }
 }
 

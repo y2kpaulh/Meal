@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>MealWatch Extension</string>
+	<string>끼니</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -32,8 +32,6 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
-	<key>WKRunsIndependentlyOfCompanionApp</key>
-	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumBrush.otf</string>
@@ -41,5 +39,7 @@
 		<string>NanumMyeongjoBold.otf</string>
 		<string>NanumMyeongjoExtraBold.otf</string>
 	</array>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
+	<true/>
 </dict>
 </plist>
