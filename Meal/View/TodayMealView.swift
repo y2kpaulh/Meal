@@ -12,20 +12,25 @@ import PartialSheet
 struct TodayMealView: View {
   @StateObject var viewModel = MealPlanViewModel()
   @StateObject var networkReachability = NetworkReachability()
-  @State private var isPresented = false
+  @State private var isPlanViewPresented = false
+  @State private var isSettingsViewPresented = false
+
   let activePhaseNotification = NotificationCenter.default
     .publisher(for: .activePhaseNotification)
 
   var body: some View {
-    TodayWordsBgView {
-      self.mainView
+    VStack(spacing: -20) {
+      TodayWordsBgView {
+        self.mainView
+      }
+      .onAppear {
+        viewModel.fetchPlanData()
+      }
+      .onReceive(activePhaseNotification) { _ in
+        viewModel.fetchPlanData()
+      }
     }
-    .onAppear {
-      viewModel.fetchPlanData()
-    }
-    .onReceive(activePhaseNotification) { _ in
-      viewModel.fetchPlanData()
-    }
+
   }
 }
 
@@ -40,21 +45,21 @@ extension TodayMealView {
       self.todayMealDateView
       self.planListButton
     }
-    .padding(.top, 10)
+    .padding(.top, 30)
+
   }
 
   var planListButton: some View {
-    Button(action: { isPresented.toggle() }) {
-      Image(systemName: "ellipsis.circle")
+    Button(action: { isPlanViewPresented.toggle() }) {
+      Image(systemName: "calendar")
         .renderingMode(.template)
         .accessibilityLabel(Text("일정"))
         .foregroundColor(Color(UIColor.label))
     }
-    .partialSheet(isPresented: $isPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .blur(.regularMaterial), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.4)), cornerRadius: 10)
+    .partialSheet(isPresented: $isPlanViewPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
     ) {
-      //      MealPlanList(isPresented: $isPresented)
-      //        .environmentObject(viewModel)
-      SettingsView()
+      MealPlanList(isPresented: $isPlanViewPresented)
+        .environmentObject(viewModel)
     }
   }
 
@@ -74,9 +79,29 @@ extension TodayMealView {
   }
 
   var headerView: some View {
-    VStack {
-      self.headerTitleView
-      self.headerDetailView
+    VStack(spacing: -60) {
+      HStack {
+        Spacer()
+        self.settingsButton.padding()
+      }
+
+      VStack(spacing: -20) {
+        self.headerTitleView
+        self.headerDetailView
+      }
+    }
+  }
+
+  var settingsButton: some View {
+    Button(action: { isSettingsViewPresented.toggle() }) {
+      Image(systemName: "info.circle")
+        .renderingMode(.template)
+        .accessibilityLabel(Text("설정"))
+        .foregroundColor(Color(UIColor.label))
+    }
+    .partialSheet(isPresented: $isSettingsViewPresented, type: .dynamic, iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
+    ) {
+      SettingsView()
     }
   }
 
