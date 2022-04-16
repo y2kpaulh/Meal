@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "PartialSheet",
-        "repositoryURL": "https://github.com/AndreaMiotto/PartialSheet",
-        "state": {
-          "branch": "master",
-          "revision": "470569c1ae4e49e9dd8e0d0aa3e3422609d62b3d",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "partialsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndreaMiotto/PartialSheet",
+      "state" : {
+        "branch" : "master",
+        "revision" : "470569c1ae4e49e9dd8e0d0aa3e3422609d62b3d"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
