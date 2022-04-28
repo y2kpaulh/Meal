@@ -93,7 +93,8 @@ extension TodayMealView {
   }
 
   var settingsButton: some View {
-    Button(action: { isSettingsViewPresented.toggle() }) {
+    Button(action: {
+            isSettingsViewPresented.toggle() }) {
       Image(systemName: "info.circle")
         .renderingMode(.template)
         .accessibilityLabel(Text("설정"))

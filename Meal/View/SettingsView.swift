@@ -24,16 +24,16 @@ struct SettingsView: View {
         }
       })
 
-      Section(header: Text("알림 설정")) {
-        Toggle("사용", isOn: $isToggleOn)
-
-        if isToggleOn {
-          DatePicker("알림 시간",
-                     selection: $wakeUp,
-                     displayedComponents: .hourAndMinute)
-            .environment(\.locale, Locale(identifier: "ko"))
-        }
-      }
+      //      Section(header: Text("알림 설정")) {
+      //        Toggle("사용", isOn: $isToggleOn)
+      //
+      //        if isToggleOn {
+      //          DatePicker("알림 시간",
+      //                     selection: $wakeUp,
+      //                     displayedComponents: .hourAndMinute)
+      //            .environment(\.locale, Locale(identifier: "ko"))
+      //        }
+      //      }
 
       Section(header: Text("저작권"), content: {
         VStack(alignment: .leading) {

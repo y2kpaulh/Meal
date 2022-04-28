@@ -115,7 +115,6 @@ extension PlanStore {
   }
 
   func registDailyPush(clear: Bool = true) {
-    print(#function, "pending push count", PlanStore.dailyPushList.count)
 
     if clear {
       self.localNotiManager.removeSchedule()
