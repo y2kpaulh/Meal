@@ -16,7 +16,7 @@ struct MealApp: App {
   @Environment(\.scenePhase) private var scenePhase
 
   init() {
-    AppSettings.initSettings()
+    AppSettings.setDefaultValue()
   }
 
   var body: some Scene {

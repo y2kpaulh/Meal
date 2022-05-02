@@ -34,12 +34,8 @@ struct SettingsView: View {
           DatePicker("알림 시간",
                      selection: $dailyNotiTime,
                      displayedComponents: .hourAndMinute)
-            .onChange(of: dailyNotiTime, perform: { notiTime in
-              let date2 = AppSettingsManager.dailyNotiTimeFormatter.string(from: notiTime)
-              AppSettings[.dailyNotiTime] = date2
-              print(date2)
-              //      let date =
-
+            .onChange(of: dailyNotiTime, perform: { _ in
+              AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiTimeFormatter.string(from: dailyNotiTime)
             })
             .environment(\.locale, Locale(identifier: "ko"))
         }
@@ -49,10 +45,11 @@ struct SettingsView: View {
         VStack(alignment: .leading) {
           Text("개역개정판 성경 번역본은 대한성서공회의 허락을 받고 사용하였습니다")
         }
+        .frame(height: 80)
       })
 
     }
-    .frame(height: 500)
+    .frame(height: 400)
 
   }
 

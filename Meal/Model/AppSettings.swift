@@ -42,10 +42,16 @@ public enum AppSettings {
 }
 
 extension AppSettings {
-  public static func initSettings() {
+  public static func setDefaultValue() {
     AppSettings[.isLoggedIn] = AppSettings.valueExists(forKey: "isLoggedIn") ? AppSettings.boolValue(.isLoggedIn) : false
     AppSettings[.isDailyNoti] = AppSettings.valueExists(forKey: "isDailyNoti") ? AppSettings.boolValue(.isDailyNoti) : true
     AppSettings[.dailyNotiTime] = AppSettings.valueExists(forKey: "dailyNotiTime") ? AppSettings.stringValue(.dailyNotiTime) : "오전 06:00"
+  }
+
+  public static func reset() {
+    userDefaults.removeObject(forKey: "isLoggedIn")
+    userDefaults.removeObject(forKey: "isDailyNoti")
+    userDefaults.removeObject(forKey: "dailyNotiTime")
   }
 
   public static  func valueExists(forKey key: String) -> Bool {
