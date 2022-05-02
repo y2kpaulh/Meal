@@ -15,6 +15,10 @@ struct MealApp: App {
   #endif
   @Environment(\.scenePhase) private var scenePhase
 
+  init() {
+    AppSettings.initSettings()
+  }
+
   var body: some Scene {
     WindowGroup {
       ContentView()

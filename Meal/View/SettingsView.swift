@@ -12,28 +12,38 @@ struct SettingsView: View {
   let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
   @State private var isPresented = false
   @EnvironmentObject var viewModel: MealPlanViewModel
-  @State private var wakeUp = Date()
-  @State private var isToggleOn: Bool = false
+  @State private var dailyNotiTime: Date = AppSettingsManager.dailyNotiTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
+  @State private var isToggleOn: Bool = UserDefaults.standard.bool(forKey: "isDailyNoti")
 
   var body: some View {
     Form {
-
       Section(header: Text("버전 정보"), content: {
         VStack(alignment: .leading) {
           Text(version)
         }
       })
 
-      //      Section(header: Text("알림 설정")) {
-      //        Toggle("사용", isOn: $isToggleOn)
-      //
-      //        if isToggleOn {
-      //          DatePicker("알림 시간",
-      //                     selection: $wakeUp,
-      //                     displayedComponents: .hourAndMinute)
-      //            .environment(\.locale, Locale(identifier: "ko"))
-      //        }
-      //      }
+      Section(header: Text("알림 설정")) {
+        Toggle("사용", isOn: $isToggleOn)
+          .onChange(of: isToggleOn) { _ in
+            Swift.print("isToggleOn", isToggleOn)
+            AppSettings[.isDailyNoti] = isToggleOn
+            Swift.print("AppSettings.boolValue(.isDailyNoti)", AppSettings.boolValue(.isDailyNoti))
+          }
+        if isToggleOn {
+          DatePicker("알림 시간",
+                     selection: $dailyNotiTime,
+                     displayedComponents: .hourAndMinute)
+            .onChange(of: dailyNotiTime, perform: { notiTime in
+              let date2 = AppSettingsManager.dailyNotiTimeFormatter.string(from: notiTime)
+              AppSettings[.dailyNotiTime] = date2
+              print(date2)
+              //      let date =
+
+            })
+            .environment(\.locale, Locale(identifier: "ko"))
+        }
+      }
 
       Section(header: Text("저작권"), content: {
         VStack(alignment: .leading) {
