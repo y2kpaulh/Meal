@@ -12,7 +12,7 @@ struct SettingsView: View {
   let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
   @State private var isPresented = false
   @EnvironmentObject var viewModel: MealPlanViewModel
-  @State private var dailyNotiTime: Date = AppSettingsManager.dailyNotiTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
+  @State private var dailyNotiTime: Date = AppSettingsManager.dailyNotiSettingsTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
   @State private var isToggleOn: Bool = UserDefaults.standard.bool(forKey: "isDailyNoti")
 
   var body: some View {
@@ -24,18 +24,24 @@ struct SettingsView: View {
       })
 
       Section(header: Text("알림 설정")) {
+
         Toggle("사용", isOn: $isToggleOn)
           .onChange(of: isToggleOn) { _ in
             Swift.print("isToggleOn", isToggleOn)
             AppSettings[.isDailyNoti] = isToggleOn
             Swift.print("AppSettings.boolValue(.isDailyNoti)", AppSettings.boolValue(.isDailyNoti))
+
+            if !isToggleOn {
+              PlanStore().clearDailyPush()
+            }
           }
+
         if isToggleOn {
           DatePicker("알림 시간",
                      selection: $dailyNotiTime,
                      displayedComponents: .hourAndMinute)
             .onChange(of: dailyNotiTime, perform: { _ in
-              AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiTimeFormatter.string(from: dailyNotiTime)
+              AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiSettingsTimeFormatter.string(from: dailyNotiTime)
             })
             .environment(\.locale, Locale(identifier: "ko"))
         }

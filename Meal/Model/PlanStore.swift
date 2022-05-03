@@ -114,12 +114,12 @@ extension PlanStore {
     }
   }
 
-  func registDailyPush(clear: Bool = true) {
-
-    if clear {
-      self.localNotiManager.removeSchedule()
-      PlanStore.dailyPushList = []
-    }
+  func clearDailyPush() {
+    self.localNotiManager.removeSchedule()
+    PlanStore.dailyPushList = []
+  }
+  func registDailyPush() {
+    clearDailyPush()
 
     PlanStore.dailyPushList = PlanStore().planList
       .map { plan in

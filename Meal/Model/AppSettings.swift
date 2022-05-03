@@ -13,9 +13,17 @@ let userDefaults = UserDefaults.standard
 
 struct AppSettingsManager {
 
-  static var dailyNotiTimeFormatter: DateFormatter {
+  static var dailyNotiSettingsTimeFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "a hh:mm"
+    dateFormatter.locale = Locale(identifier: "ko")
+
+    return dateFormatter
+  }
+
+  static var dailyNotiScheduleTimeFormatter: DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
     dateFormatter.locale = Locale(identifier: "ko")
 
     return dateFormatter

@@ -114,6 +114,7 @@
 		2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */; };
 		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2EC6045728215CFF0080FF7B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC33E226A0208C00E5F25A /* InfoPlist.strings */; };
 		2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC33FE26A0375000E5F25A /* LaunchScreen.storyboard */; };
 		2EED48B92697DDD30069DD16 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */; };
@@ -867,6 +868,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E2B7CB126BBF82900DAC920 /* MealWidget.swift in Sources */,
+				2EC6045728215CFF0080FF7B /* AppSettings.swift in Sources */,
 				2E2B7CCE26BCC5EA00DAC920 /* FileManagerExtensions.swift in Sources */,
 				2E972C1826C4DCCE000D6902 /* ModelData.swift in Sources */,
 				2E4549C426E76AAF00E23740 /* MealTitleLabel.swift in Sources */,
