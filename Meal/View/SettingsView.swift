@@ -13,8 +13,18 @@ struct SettingsView: View {
   @State private var isPresented = false
   @EnvironmentObject var viewModel: MealPlanViewModel
   @State private var dailyNotiTime: Date = AppSettingsManager.dailyNotiSettingsTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
-  @State private var isToggleOn: Bool = UserDefaults.standard.bool(forKey: "isDailyNoti")
-
+  @State private var isToggleOn: Bool = UIApplication.shared.isRegisteredForRemoteNotifications//UserDefaults.standard.bool(forKey: "isDailyNoti")
+    
+    init() {
+        let isPushOn = UIApplication.shared.isRegisteredForRemoteNotifications
+        
+        if isPushOn {
+            print("push on")
+        } else {
+            print("push off")
+        }
+    }
+    
   var body: some View {
     Form {
       Section(header: Text("버전 정보"), content: {
@@ -32,9 +42,12 @@ struct SettingsView: View {
             Swift.print("AppSettings.boolValue(.isDailyNoti)", AppSettings.boolValue(.isDailyNoti))
 
             if isToggleOn {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                UIApplication.shared.registerForRemoteNotifications()
                 AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiSettingsTimeFormatter.string(from: dailyNotiTime)
                 PlanStore().registDailyPush()
             } else {
+                UIApplication.shared.unregisterForRemoteNotifications()
                 PlanStore().clearDailyPush()
             }
           }
@@ -60,7 +73,6 @@ struct SettingsView: View {
 
     }
     .frame(height: 400)
-
   }
 
   func didDismiss() {
