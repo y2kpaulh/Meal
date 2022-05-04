@@ -31,8 +31,11 @@ struct SettingsView: View {
             AppSettings[.isDailyNoti] = isToggleOn
             Swift.print("AppSettings.boolValue(.isDailyNoti)", AppSettings.boolValue(.isDailyNoti))
 
-            if !isToggleOn {
-              PlanStore().clearDailyPush()
+            if isToggleOn {
+                AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiSettingsTimeFormatter.string(from: dailyNotiTime)
+                PlanStore().registDailyPush()
+            } else {
+                PlanStore().clearDailyPush()
             }
           }
 
@@ -42,6 +45,7 @@ struct SettingsView: View {
                      displayedComponents: .hourAndMinute)
             .onChange(of: dailyNotiTime, perform: { _ in
               AppSettings[.dailyNotiTime] = AppSettingsManager.dailyNotiSettingsTimeFormatter.string(from: dailyNotiTime)
+              PlanStore().registDailyPush()
             })
             .environment(\.locale, Locale(identifier: "ko"))
         }

@@ -118,6 +118,7 @@ extension PlanStore {
     self.localNotiManager.removeSchedule()
     PlanStore.dailyPushList = []
   }
+    
   func registDailyPush() {
     clearDailyPush()
 

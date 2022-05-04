@@ -102,8 +102,6 @@ extension MealPlanViewModel {
     self.todayPlanDate = PlanStore().convertDateToStr()
 
     self.isLoading = false
-
-    PlanStore().registDailyPush()
   }
 
   func changePlanIndex(index: Int) {

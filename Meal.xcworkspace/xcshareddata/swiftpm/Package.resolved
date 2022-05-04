@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "eca9404a18f53727e4698211aaf2615eb93b962a",
-        "version" : "1.7.1"
+        "revision" : "4e9bbf2808b8fee444e84a48f5f3c12641987d3e",
+        "version" : "1.7.2"
       }
     },
     {
@@ -96,7 +96,7 @@
       "location" : "https://github.com/AndreaMiotto/PartialSheet",
       "state" : {
         "branch" : "master",
-        "revision" : "470569c1ae4e49e9dd8e0d0aa3e3422609d62b3d"
+        "revision" : "415fafa8ed719613b3abc787d52a8aa32a4998b9"
       }
     },
     {
