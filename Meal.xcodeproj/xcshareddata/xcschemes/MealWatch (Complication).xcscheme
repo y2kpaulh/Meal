@@ -55,8 +55,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/&#x1101;&#x1175;&#x1102;&#x1175;">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E4235D426BD365E00808E85"
@@ -64,7 +66,7 @@
             BlueprintName = "MealWatch"
             ReferencedContainer = "container:Meal.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,8 +75,10 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/&#x1101;&#x1175;&#x1102;&#x1175;">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E4235D426BD365E00808E85"
@@ -82,7 +86,16 @@
             BlueprintName = "MealWatch"
             ReferencedContainer = "container:Meal.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2E4235D426BD365E00808E85"
+            BuildableName = "MealWatch.app"
+            BlueprintName = "MealWatch"
+            ReferencedContainer = "container:Meal.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
