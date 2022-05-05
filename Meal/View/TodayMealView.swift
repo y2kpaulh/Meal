@@ -8,8 +8,18 @@
 import SwiftUI
 import Combine
 import PartialSheet
+import UIKit
 
 struct TodayMealView: View {
+  @Environment(\.verticalSizeClass) var
+    verticalSizeClass: UserInterfaceSizeClass?
+  @Environment(\.horizontalSizeClass) var
+    horizontalSizeClass: UserInterfaceSizeClass?
+  var isIPad: Bool {
+    horizontalSizeClass == .regular &&
+      verticalSizeClass == .regular
+  }
+
   @StateObject var viewModel = MealPlanViewModel()
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPlanViewPresented = false
@@ -56,11 +66,15 @@ extension TodayMealView {
         .accessibilityLabel(Text("일정"))
         .foregroundColor(Color(UIColor.label))
     }
-    .partialSheet(isPresented: $isPlanViewPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
-    ) {
+    .sheet(isPresented: $isPlanViewPresented) {
       MealPlanList(isPresented: $isPlanViewPresented)
         .environmentObject(viewModel)
     }
+    //    .partialSheet(isPresented: $isPlanViewPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
+    //    ) {
+    //      MealPlanList(isPresented: $isPlanViewPresented)
+    //        .environmentObject(viewModel)
+    //    }
   }
 
   var headerDetailView: some View {
@@ -82,7 +96,11 @@ extension TodayMealView {
     VStack(spacing: -60) {
       HStack {
         Spacer()
-        self.settingsButton.padding()
+        if isIPad {
+          self.ipadSettingsButton.padding()
+        } else {
+          self.settingsButton.padding()
+        }
       }
 
       VStack(spacing: -20) {
@@ -101,6 +119,20 @@ extension TodayMealView {
         .foregroundColor(Color(UIColor.label))
     }
     .partialSheet(isPresented: $isSettingsViewPresented, type: .dynamic, iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
+    ) {
+      SettingsView()
+    }
+  }
+
+  var ipadSettingsButton: some View {
+    Button(action: {
+            isSettingsViewPresented.toggle() }) {
+      Image(systemName: "info.circle")
+        .renderingMode(.template)
+        .accessibilityLabel(Text("설정"))
+        .foregroundColor(Color(UIColor.label))
+    }
+    .partialSheet(isPresented: $isSettingsViewPresented, type: .dynamic, iPadMacStyle: PSIpadMacStyle(backgroundColor: Color(UIColor.systemBackground), closeButtonStyle: PSIpadMacStyle.PSIpadMacCloseButtonStyle.none)
     ) {
       SettingsView()
     }

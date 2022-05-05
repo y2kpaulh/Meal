@@ -11,12 +11,25 @@ import Combine
 struct MealPlanList: View {
   @EnvironmentObject var viewModel: MealPlanViewModel
   @Binding var isPresented: Bool
-
+  @Environment(\.dismiss) var dismiss
   var body: some View {
     VStack {
-      //      Text("일정")
-      //        .foregroundColor(Color(UIColor.labelBatonSos))
-      //        .font(.custom("NanumBrushOTF", size: 30))
+      Spacer()
+        .frame(height: 10, alignment: .center)
+
+      ZStack {
+        HStack {
+          Spacer()
+          Button(action: {
+            dismiss()
+          }) {
+            Image(systemName: "xmark.circle.fill")
+              .foregroundColor(.gray)
+          }
+          Spacer().frame(width: 20)
+        }
+
+      }
 
       ScrollViewReader { scrollView in
         ScrollView {
@@ -42,7 +55,7 @@ struct MealPlanList: View {
       }
       .listVerticalShadow()
     }
-    .frame(height: 500)
+    //    .frame(height: 500)
     .onAppear {
       UITableView.appearance().backgroundColor = .clear
       UITableViewCell.appearance().backgroundColor = .clear
