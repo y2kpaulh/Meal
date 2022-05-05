@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 
 struct SettingsView: View {
+  let mailtoString = "mailto:echadworks@gmail.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
   let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
   @State private var isPresented = false
   @EnvironmentObject var viewModel: MealPlanViewModel
@@ -51,6 +53,17 @@ struct SettingsView: View {
         }
       }
 
+      Section(header: Text("피드백"), content: {
+        VStack(alignment: .leading) {
+          Button("echadworks@gmail.com") {
+            let mailtoUrl = URL(string: mailtoString!)!
+            if UIApplication.shared.canOpenURL(mailtoUrl) {
+              UIApplication.shared.open(mailtoUrl, options: [:])
+            }
+          }
+        }
+      })
+
       Section(header: Text("저작권"), content: {
         VStack(alignment: .leading) {
           Text("개역개정판 성경 번역본은 대한성서공회의 허락을 받고 사용하였습니다")
@@ -59,6 +72,7 @@ struct SettingsView: View {
       })
 
     }
+    .background(Color(UIColor.systemBackground))
     .frame(height: 400)
   }
 
