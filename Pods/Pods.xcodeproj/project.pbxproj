@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = "SwiftLint-iOS14.0";
+			productName = "SwiftLint-iOS14.0";
 		};
 		AB27B1DC9612766243E31ACCE3EC1DE3 /* SwiftLint-iOS14.5 */ = {
 			isa = PBXAggregateTarget;
@@ -24,6 +25,7 @@
 			dependencies = (
 			);
 			name = "SwiftLint-iOS14.5";
+			productName = "SwiftLint-iOS14.5";
 		};
 /* End PBXAggregateTarget section */
 
@@ -70,13 +72,13 @@
 		1BAB1D540996D115F517FC489FB5DCF7 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB3872C0CFB086B6DE796015C80BA11 /* Pods-Meal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meal-acknowledgements.plist"; sourceTree = "<group>"; };
 		1EA5D11F39F30980F16F452CA74E2911 /* Pods-Meal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Meal-acknowledgements.markdown"; sourceTree = "<group>"; };
-		33C61CA34D8A8741D595D948D7A2AE39 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWidgetExtension.framework; path = "Pods-MealWidgetExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C61CA34D8A8741D595D948D7A2AE39 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E97123B7EDFF1EB4824A67154B3A334 /* Pods-MealWidgetExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWidgetExtension-Info.plist"; sourceTree = "<group>"; };
 		40D2DA799012E34C9B69C183D3BC5FAC /* Pods-MealWatch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWatch-umbrella.h"; sourceTree = "<group>"; };
 		4226ED1A49D01F858EEB2F140C8674F1 /* Pods-MealWatch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch-Info.plist"; sourceTree = "<group>"; };
 		4897509AB46C5143011F2704FD0F4DA5 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		5201DC01131FABFCD0C471491C692468 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
-		528F8BBB6A961198B4454647B08B4ED0 /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWatch.framework; path = "Pods-MealWatch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		528F8BBB6A961198B4454647B08B4ED0 /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58325167C5ACB507009FA03F592ABA38 /* Pods-MealWidgetExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWidgetExtension-umbrella.h"; sourceTree = "<group>"; };
 		591048496B6E804ACB256A06A57D4243 /* Pods-MealWidgetExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWidgetExtension-dummy.m"; sourceTree = "<group>"; };
 		5CB6A388A54419AE15904573050FA2EA /* Pods-Meal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Meal-dummy.m"; sourceTree = "<group>"; };
@@ -84,14 +86,14 @@
 		61DA56E6B97E381993EAFD781ADE3E81 /* Pods-MealWatch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWatch.modulemap"; sourceTree = "<group>"; };
 		67A5D8576E0C778D86635C8AC1AE0219 /* Pods-MealWatch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWatch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		682AC2505AE1F746068AA5E4EA25FB1E /* Pods-MealWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MealWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		6B6CE0501DAD33BF782C5992AB54220A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MealWatch_Extension.framework; path = "Pods-MealWatch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B6CE0501DAD33BF782C5992AB54220A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		719CABEC76A9DAE67A0B27F2C1E5953A /* Pods-MealWatch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch-acknowledgements.plist"; sourceTree = "<group>"; };
 		724B07B7CBFE268A96124F6930C2C673 /* SwiftLint-iOS14.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-iOS14.0.debug.xcconfig"; sourceTree = "<group>"; };
 		76EFCF079F568AA84587B1D81029E574 /* Pods-MealWidgetExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWidgetExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7CF4E781A29F9DDF59DCA0FB5B5AD907 /* Pods-MealWatch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MealWatch-dummy.m"; sourceTree = "<group>"; };
-		8644A8FC5FCFCDC3E1CF34FAF6117383 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Meal.framework; path = "Pods-Meal.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8644A8FC5FCFCDC3E1CF34FAF6117383 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		884C8D433EE4752DD31BA1CA58FA4D9C /* Pods-MealWatch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MealWatch-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B4BC8163551C3A3C1065AA275ECE2DAD /* Pods-MealWatch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MealWatch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		C9EE9125B28168907BE1C37FCA44C365 /* Pods-MealWatch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MealWatch Extension-umbrella.h"; sourceTree = "<group>"; };
 		CA92DF2E209DD7515C1FBC42F3423477 /* Pods-MealWidgetExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MealWidgetExtension.modulemap"; sourceTree = "<group>"; };
@@ -170,7 +172,6 @@
 			children = (
 				412DE1F8C9BF1D7A895164F312800661 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -411,7 +412,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1250;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -524,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -874,7 +875,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -890,7 +891,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

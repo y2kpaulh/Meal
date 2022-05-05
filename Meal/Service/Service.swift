@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 enum PlanService {
-  static let isOffLineMode = true
+  static let isOffLineMode = false
   static let apiClient = APIClient()
-  static let baseUrl = URL(string: "https://api.jsonbin.io")!
+  static let baseUrl = URL(string: "https://todaymealplan.herokuapp.com")!
 
   enum APIPath: String {
-    case planList = "/b/6113a4a9d5667e403a3fcb69"
+    case planList = "/mealPlan"
   }
 }
 
@@ -28,8 +28,6 @@ extension PlanService {
 
     guard let components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
     else { fatalError("Couldn't create URLComponents") }
-    //        components.queryItems = [URLQueryItem(name: "api_key", value: "dcecee71c76cbecc1c254aae96bea9a4")] // 4
-
     let request = URLRequest(url: components.url!)
 
     return apiClient.run(request)

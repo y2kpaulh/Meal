@@ -57,6 +57,15 @@ class LocalNotificationManager {
   }
 
   func scheduleNotifications() {
+    let scheduleDate = AppSettingsManager.dailyNotiSettingsTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
+    let scheduleDateStr =  AppSettingsManager.dailyNotiScheduleTimeFormatter.string(from: scheduleDate)
+
+    let timeInfo = scheduleDateStr.split(separator: ":")
+    let hour: Int = Int(timeInfo[0])!
+    let minute: Int = Int(timeInfo[1])!
+
+    print(#function, hour, minute)
+
     for notification in notifications {
       let content = UNMutableNotificationContent()
       content.title = notification.title
@@ -67,8 +76,8 @@ class LocalNotificationManager {
       var date = DateComponents()
       date.month = notification.month
       date.day = notification.day
-      date.hour = 6
-      date.minute = 0
+      date.hour = hour
+      date.minute = minute
 
       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
       let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)

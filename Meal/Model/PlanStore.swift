@@ -16,7 +16,14 @@ import UIKit
 public final class PlanStore: ObservableObject {
   let localNotiManager = LocalNotificationManager()
 
-  var planList: [Plan] = load("mealPlan.json")
+  var planList: [Plan] {
+    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
+       mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+      return mealPlan
+    } else {
+      return []
+    }
+  }
 
   var dateFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
@@ -26,7 +33,7 @@ public final class PlanStore: ObservableObject {
     return dateFormatter
   }
 
-  func getPlanData(plan: Plan) -> PlanData {
+  func getPlanData(_ plan: Plan) -> PlanData {
     let book = BibleStore.books.filter { $0.abbrev == plan.book }
 
     guard book.count > 0,
@@ -90,7 +97,7 @@ extension PlanStore {
     return verses[0...2].joined(separator: " ")
   }
 
-  func getMealPlanStr(plan: Planable) -> String {
+  func getMealPlanStr(_ plan: Planable) -> String {
     return "\(self.getBookTitle(book: plan.book) ?? plan.book) \(plan.fChap > 0 ? "\(plan.fChap):" : "")\(plan.fVer > 0 ? "\(plan.fVer)-" : "")\(plan.fChap != plan.lChap ? "\(plan.lChap > 0 ? "\(plan.lChap)" : ""):" : "" )\(plan.lVer > 0 ? "\(plan.lVer)" : "")"
   }
 
@@ -107,28 +114,21 @@ extension PlanStore {
     }
   }
 
-  func registDailyPush(clear: Bool = true) {
-    print(#function, "pending push count", PlanStore.dailyPushList.count)
+  func clearDailyPush() {
+    self.localNotiManager.removeSchedule()
+    PlanStore.dailyPushList = []
+  }
 
-    if clear {
-      self.localNotiManager.removeSchedule()
-      PlanStore.dailyPushList = []
-    }
-
-    //guard !(PlanStore.dailyPushList.count > 0) else { return }
+  func registDailyPush() {
+    clearDailyPush()
 
     PlanStore.dailyPushList = PlanStore().planList
-      //      .filter { plan in
-      //        PlanStore().dateFormatter.date(from: plan.day)! > Date()
-      //      }
       .map { plan in
         let targetDay = plan.day.split(separator: "-")
-        //        print(targetDay)
 
         return LocalPushPlan(title: "오늘의 끼니",
-                             subTitle: PlanStore().getMealPlanStr(plan: plan),
-                             body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan: plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
-
+                             subTitle: PlanStore().getMealPlanStr(plan),
+                             body: PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
       }
 
     for plan in PlanStore.dailyPushList {

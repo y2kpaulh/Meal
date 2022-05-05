@@ -16,7 +16,7 @@ struct MealButtonIcon: View {
             startPoint: .leading,
             endPoint: .trailing))
         .frame(width: width, height: height)
-      Image(uiImage: UIImage(named: "riceBowlIcon")!)
+      Image(uiImage: UIImage(named: "riceBowl")!)
         .font(.title)
         .colorInvert()
     }

@@ -14,14 +14,16 @@ struct MealApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   #endif
   @Environment(\.scenePhase) private var scenePhase
-  @StateObject var viewModel = MealPlanViewModel()
+
+  init() {
+    AppSettings.setDefaultValue()
+  }
 
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(viewModel)
+        //.environmentObject(viewModel)
         .onAppear {
-          PlanStore().registDailyPush()
           //          print(FileManager.documentURL ?? "")
           //          for fontFamily in UIFont.familyNames {
           //            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
@@ -38,6 +40,7 @@ struct MealApp: App {
           case .active:
             //changedToActive()
             print("active")
+            NotificationCenter.default.post(name: .activePhaseNotification, object: nil)
 
           case .background:
             //changedToBackground()

@@ -7,25 +7,30 @@
 
 import SwiftUI
 import Combine
+import PartialSheet
 
 struct TodayMealView: View {
-  @EnvironmentObject var viewModel: MealPlanViewModel
+  @StateObject var viewModel = MealPlanViewModel()
   @StateObject var networkReachability = NetworkReachability()
-  @State private var isPresented = false
+  @State private var isPlanViewPresented = false
+  @State private var isSettingsViewPresented = false
+
+  let activePhaseNotification = NotificationCenter.default
+    .publisher(for: .activePhaseNotification)
 
   var body: some View {
-    TodayWordsBgView {
-      self.mainView
+    VStack(spacing: -20) {
+      TodayWordsBgView {
+        self.mainView
+      }
+      .onAppear {
+        viewModel.fetchPlanData()
+      }
+      .onReceive(activePhaseNotification) { _ in
+        viewModel.fetchPlanData()
+      }
     }
-    .onAppear {
-      viewModel.fetchPlanData()
-    }
-  }
-}
 
-struct TodayMealView_Previews: PreviewProvider {
-  static var previews: some View {
-    TodayMealView()
   }
 }
 
@@ -40,26 +45,28 @@ extension TodayMealView {
       self.todayMealDateView
       self.planListButton
     }
-    .padding(.top, 10)
+    .padding(.top, 30)
+
   }
 
   var planListButton: some View {
-    Button(action: { isPresented.toggle() }) {
-      Image(systemName: "line.horizontal.3.decrease.circle")
+    Button(action: { isPlanViewPresented.toggle() }) {
+      Image(systemName: "calendar")
         .renderingMode(.template)
-        .accessibilityLabel(Text("끼니 말씀 일정표"))
+        .accessibilityLabel(Text("일정"))
         .foregroundColor(Color(UIColor.label))
     }
-    .sheet(isPresented: $isPresented,
-           onDismiss: didDismiss) {
-      MealPlanList(planList: $viewModel.planList)
+    .partialSheet(isPresented: $isPlanViewPresented, type: .scrollView(height: 500, showsIndicators: false), iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
+    ) {
+      MealPlanList(isPresented: $isPlanViewPresented)
+        .environmentObject(viewModel)
     }
   }
 
   var headerDetailView: some View {
     VStack {
       HStack {
-        Text(PlanStore().getMealPlanStr(plan: viewModel.todayPlan))
+        Text(PlanStore().getMealPlanStr(viewModel.todayPlan))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
       }
@@ -72,9 +79,30 @@ extension TodayMealView {
   }
 
   var headerView: some View {
-    VStack {
-      self.headerTitleView
-      self.headerDetailView
+    VStack(spacing: -60) {
+      HStack {
+        Spacer()
+        self.settingsButton.padding()
+      }
+
+      VStack(spacing: -20) {
+        self.headerTitleView
+        self.headerDetailView
+      }
+    }
+  }
+
+  var settingsButton: some View {
+    Button(action: {
+            isSettingsViewPresented.toggle() }) {
+      Image(systemName: "info.circle")
+        .renderingMode(.template)
+        .accessibilityLabel(Text("설정"))
+        .foregroundColor(Color(UIColor.label))
+    }
+    .partialSheet(isPresented: $isSettingsViewPresented, type: .dynamic, iPhoneStyle: PSIphoneStyle(background: .solid(Color(UIColor.systemBackground)), handleBarStyle: .solid(.gray), cover: .enabled( Color.black.opacity(0.2)), cornerRadius: 10)
+    ) {
+      SettingsView()
     }
   }
 
@@ -91,7 +119,7 @@ extension TodayMealView {
     ScrollView {
       LazyVStack(alignment: .leading) {
         ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-          HStack(alignment: .top) {
+          HStack(alignment: .firstTextBaseline) {
             //verse number
             VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
             //verse text
@@ -101,7 +129,7 @@ extension TodayMealView {
           .padding(.bottom, 10)
           .id(index)
         }
-        .redacted(reason: viewModel.loading ? .placeholder : [])
+        .redacted(reason: viewModel.isLoading ? .placeholder : [])
       }
     }
     .listVerticalShadow()
@@ -109,7 +137,7 @@ extension TodayMealView {
 
   var alertView: some View {
     Group {
-      if viewModel.loading && networkReachability.reachable {
+      if viewModel.isLoading && networkReachability.reachable {
         ActivityIndicator()
       }
 
@@ -125,22 +153,29 @@ extension TodayMealView {
   }
 
   var mainView: some View {
-    VStack {
-      //header view
-      self.headerView
+    ZStack {
+      VStack {
+        //header view
+        self.headerView
 
-      //today words
-      self.todayWordsView
+        //today words
+        self.todayWordsView
 
-      //footer view
-      self.footerView
-
+        //footer view
+        self.footerView
+      }
       //alert routine
-      self.alertView
+      //self.alertView
     }
   }
 
   func didDismiss() {
     // Handle the dismissing action.
+  }
+}
+
+struct TodayMealView_Previews: PreviewProvider {
+  static var previews: some View {
+    TodayMealView()
   }
 }

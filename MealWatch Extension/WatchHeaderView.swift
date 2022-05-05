@@ -19,7 +19,7 @@ struct WatchHeaderView: View {
           .foregroundColor(.gray)
       }
 
-      Text(PlanStore().getMealPlanStr(plan: todayPlan))
+      Text(PlanStore().getMealPlanStr(todayPlan))
         .font(.custom("NanumMyeongjoOTFBold", size: 16))
     }
   }

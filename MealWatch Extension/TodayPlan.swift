@@ -46,7 +46,7 @@ struct TodayPlan: View {
             .padding(.bottom, 10)
             .id(index)
           }
-          .redacted(reason: viewModel.loading ? .placeholder : [])
+          .redacted(reason: viewModel.isLoading ? .placeholder : [])
         }
         .onAppear {
           viewModel.fetchPlanData()

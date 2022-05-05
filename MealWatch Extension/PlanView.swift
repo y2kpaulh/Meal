@@ -26,7 +26,7 @@ struct PlanView: View {
               .bold()
           }
 
-          Text(PlanStore().getMealPlanStr(plan: plan))
+          Text(PlanStore().getMealPlanStr(plan))
             .foregroundColor(.white)
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()
@@ -36,10 +36,11 @@ struct PlanView: View {
         .foregroundColor(Color.gray)
       }
 
-      if let planData = PlanStore().getPlanData(plan: plan) {
+      if let planData = PlanStore().getPlanData(plan) {
         Text(PlanStore().getBibleSummary(verses: planData.verses))
           .font(.custom("NanumMyeongjoOTF", size: 14))
           .lineLimit(3)
+          .lineSpacing(6.0)
           .font(.footnote)
           .foregroundColor(.white)
           .padding([.top, .bottom], 20)

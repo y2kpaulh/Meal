@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct ContentView: View {
   var body: some View {
-    TodayMealView()
+    NavigationView {
+      TodayMealView()
+        .navigationBarHidden(true)
+    }
+    .navigationViewStyle(StackNavigationViewStyle())
+    .attachPartialSheetToRoot()
   }
 }
 

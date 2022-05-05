@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-  @EnvironmentObject var viewModel: MealPlanViewModel
+  @StateObject var viewModel = MealPlanViewModel()
 
   var body: some View {
     NavigationView {
@@ -22,7 +22,7 @@ struct ContentView: View {
           }
 
           NavigationLink(destination: MealPlanList().environmentObject(viewModel)) {
-            Text("끼니 일정표")
+            Text("일정")
           }
         }
       }
@@ -31,12 +31,11 @@ struct ContentView: View {
       }
     }
     .navigationViewStyle(StackNavigationViewStyle())
-
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView().environmentObject(MealPlanViewModel())
+    ContentView()
   }
 }

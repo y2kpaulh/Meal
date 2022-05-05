@@ -30,3 +30,11 @@ struct TodayWordsBgView<T: View>: View {
     .padding()
   }
 }
+
+struct TodayWordsBgView_Preview: PreviewProvider {
+  static var previews: some View {
+    TodayWordsBgView {
+      Text("text")
+    }
+  }
+}

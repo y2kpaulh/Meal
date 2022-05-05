@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-  @Published var planList: [Plan] = load("mealPlan.json")
+  @Published var planList = [Plan]()// = load("mealPlan.json")
 
   //    var features: [Landmark] {
   //        landmarks.filter { $0.isFeatured }
@@ -42,5 +42,37 @@ func load<T: Decodable>(_ filename: String) -> T {
     return try decoder.decode(T.self, from: data)
   } catch {
     fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+  }
+}
+
+func readMealPlanFile(fileName: String) throws -> [Plan]? {
+  do {
+    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+      let url = dir.appendingPathComponent(fileName)
+      let data = try Data(contentsOf: url)
+      let decoded = try JSONDecoder().decode([Plan].self, from: data)
+
+      return decoded
+    } else {
+      return nil
+    }
+  } catch {
+    throw error
+  }
+}
+
+extension Array where Element: Encodable {
+  func saveToFile(_ fileName: String) throws {
+    do {
+      let data = try JSONEncoder().encode(self)
+      if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        let fileURL = dir.appendingPathComponent(fileName)
+        try data.write(to: fileURL)
+      } else {
+        //throw some error
+      }
+    } catch {
+      throw error
+    }
   }
 }

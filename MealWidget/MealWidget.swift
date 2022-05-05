@@ -52,7 +52,7 @@ struct Provider: TimelineProvider {
 
     planNotiService.fetchPlanList {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
-      let planData = PlanStore().getPlanData(plan: plan)
+      let planData = PlanStore().getPlanData(plan)
       let nextPlan = NotiPlan(day: plan.day,
                               book: plan.book,
                               fChap: plan.fChap,
@@ -92,8 +92,8 @@ struct MealWidgetEntryView: View {
   var body: some View {
     ZStack {
       Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
-      VStack(alignment: .leading, spacing: -12) {
-        HStack(alignment: .center, spacing: -14) {
+      VStack(alignment: .leading, spacing: -4) {
+        HStack(alignment: .center, spacing: -4) {
 
           if family != .systemSmall {
             MealIconView()
@@ -115,9 +115,9 @@ struct MealWidgetEntryView: View {
               }
 
               NotiPlanLabelView(entry: entry, plan: entry.plan)
+                .padding(.top, -4)
             }
           }
-          .padding(.horizontal)
           .foregroundColor(Color(UIColor.systemGray))
         }
 
@@ -125,9 +125,11 @@ struct MealWidgetEntryView: View {
           Text(PlanStore().getBibleSummary(verses: entry.plan.verses))
             .font(.custom("NanumMyeongjoOTF", size: 16))
             .lineLimit(3)
+            .lineSpacing(6.0)
             //.font(.footnote)
             .foregroundColor(Color(UIColor.label))
-            .padding([.top, .bottom], 20)
+            .padding(.top, 14)
+            .padding(.bottom, 10)
             .padding([.leading, .trailing], 10)
         }
       }
@@ -154,7 +156,7 @@ struct NotiPlanLabelView: View {
   var plan: NotiPlan
 
   var body: some View {
-    Text(PlanStore().getMealPlanStr(plan: plan))
+    Text(PlanStore().getMealPlanStr(plan))
       .foregroundColor(Color(UIColor.label))
       .font(.custom("NanumMyeongjoOTFBold", size: 16))
       .bold()
