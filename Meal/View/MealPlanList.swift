@@ -41,11 +41,6 @@ struct MealPlanList: View {
         }
       }
       .listVerticalShadow()
-
-      //footer
-      Spacer()
-        .frame(height: 140)
-
     }
     .frame(height: 500)
     .onAppear {
