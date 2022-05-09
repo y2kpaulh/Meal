@@ -34,6 +34,7 @@ public enum AppSettings {
 
   // New enum with the Keys, add all settings key here
   public enum key: String {
+    case userId = "userId"
     case isLoggedIn = "isLoggedIn"
     case isDailyNoti = "isDailyNoti"
     case dailyNotiTime = "dailyNotiTime"
@@ -51,6 +52,7 @@ public enum AppSettings {
 
 extension AppSettings {
   public static func setDefaultValue() {
+    AppSettings[.userId] = AppSettings.valueExists(forKey: "userId") ? AppSettings.stringValue(.userId) : ""
     AppSettings[.isLoggedIn] = AppSettings.valueExists(forKey: "isLoggedIn") ? AppSettings.boolValue(.isLoggedIn) : false
     AppSettings[.isDailyNoti] = AppSettings.valueExists(forKey: "isDailyNoti") ? AppSettings.boolValue(.isDailyNoti) : true
     AppSettings[.dailyNotiTime] = AppSettings.valueExists(forKey: "dailyNotiTime") ? AppSettings.stringValue(.dailyNotiTime) : "오전 06:00"
