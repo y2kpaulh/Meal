@@ -114,6 +114,7 @@
 		2EBBD5F2268DBB6000EA6BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5F1268DBB6000EA6BB2 /* Preview Assets.xcassets */; };
 		2EBBD5FF268DBD3400EA6BB2 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EBBD603268DBF7E00EA6BB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD602268DBF7E00EA6BB2 /* Service.swift */; };
+		2EC4B580282AA14E00DE7E37 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4B57F282AA14E00DE7E37 /* Array+Extensions.swift */; };
 		2EC6045728215CFF0080FF7B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2ECC33E026A0208C00E5F25A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC33E226A0208C00E5F25A /* InfoPlist.strings */; };
 		2ECC33FF26A0375000E5F25A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC33FE26A0375000E5F25A /* LaunchScreen.storyboard */; };
@@ -257,6 +258,7 @@
 		2EBBD5F3268DBB6000EA6BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleStore.swift; sourceTree = "<group>"; };
 		2EBBD602268DBF7E00EA6BB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2EC4B57F282AA14E00DE7E37 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		2ECC33E126A0208C00E5F25A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2ECC33FE26A0375000E5F25A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				2EED48BC2697EA120069DD16 /* PlanStore.swift */,
 				2E74785F27EF107F00F1597D /* NotificationCenter.swift */,
 				2E4F36ED281EB28A002FC262 /* AppSettings.swift */,
+				2EC4B57F282AA14E00DE7E37 /* Array+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -954,6 +957,7 @@
 				2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */,
 				2E7CA8FF26BBABD3008B6255 /* PlanView.swift in Sources */,
 				2E7CA90126BBAEE3008B6255 /* MealButtonIcon.swift in Sources */,
+				2EC4B580282AA14E00DE7E37 /* Array+Extensions.swift in Sources */,
 				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
 				2E1518FA27E6F10900264936 /* SettingsView.swift in Sources */,
 				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,

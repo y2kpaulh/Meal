@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct VerseTextView: View {
-  @Binding var todayPlanData: PlanData
-  var index: Int
+  var verse: String
 
   var body: some View {
-    Text(todayPlanData.verses[index])
+    Text(verse)
       .lineSpacing(6)
       .multilineTextAlignment(.leading)
       .foregroundColor(.mealTheme)
@@ -23,6 +22,6 @@ struct VerseTextView: View {
 
 struct VerseTextView_Previews: PreviewProvider {
   static var previews: some View {
-    VerseTextView(todayPlanData: .constant(PlanData(book: "마", verses: [""])), index: 0)
+    VerseTextView(verse: "test verse")
   }
 }
