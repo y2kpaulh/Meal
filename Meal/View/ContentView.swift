@@ -8,6 +8,8 @@
 import SwiftUI
 import PartialSheet
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 struct ContentView: View {
 
@@ -18,11 +20,29 @@ struct ContentView: View {
     //      // ...
     //    }
 
+    //    if Auth.auth().currentUser != nil {
+    //      let user = Auth.auth().currentUser
+    //      if let user = user {
+    //        // The user's ID, unique to the Firebase project.
+    //        // Do NOT use this value to authenticate with your backend server,
+    //        // if you have one. Use getTokenWithCompletion:completion: instead.
+    //        let uid = user.uid
+    //        let email = user.email
+    //        let displayName = user.displayName
+    //        let photoURL = user.photoURL
+    //        Swift.print(uid, email, displayName, photoURL)
+    //      }
+    //    }
+
   }
+
   var body: some View {
     NavigationView {
 
-      SignUpView()
+      TodayMealView()
+        .navigationBarHidden(true)
+
+      //      SignUpView()
       //      if Auth.auth().currentUser != nil {
       //        let user = Auth.auth().currentUser
       //        if let user = user {
@@ -34,13 +54,6 @@ struct ContentView: View {
       //          let displayName = user.displayName
       //
       //          let photoURL = user.photoURL
-      //          //            var multiFactorString = "MultiFactor: "
-      //          //            for info in user.multiFactor.enrolledFactors {
-      //          //              multiFactorString += info.displayName ?? "[DispayName]"
-      //          //              multiFactorString += " "
-      //          //            }
-      //          //            // ...
-      //
       //        }
       //
       //        TodayMealView()
