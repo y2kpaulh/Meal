@@ -66,7 +66,7 @@ struct SettingsView: View {
 
       Section(header: Text("저작권"), content: {
         VStack(alignment: .leading) {
-          Text("개역개정판 성경 번역본은 대한성서공회의 허락을 받고 사용하였습니다")
+          Text("개역개정판 성경 번역본은 대한성서공회의 허락을 받고 사용하였습니다.")
         }
         .frame(height: 80)
       })

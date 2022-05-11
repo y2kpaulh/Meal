@@ -37,7 +37,7 @@ struct TodayMealView: View {
         viewModel.fetchPlanData()
       }
       .onReceive(activePhaseNotification) { _ in
-        viewModel.fetchPlanData()
+        //viewModel.fetchPlanData()
       }
     }
 
@@ -155,7 +155,11 @@ extension TodayMealView {
             //verse number
             VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
             //verse text
-            VerseTextView(todayPlanData: $viewModel.todayPlanData, index: index)
+            if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
+              VerseTextView(verse: viewModel.todayPlanData.verses[index])
+            } else {
+              VerseTextView(verse: "")
+            }
           }
           .padding([.leading, .trailing], 20)
           .padding(.bottom, 10)
