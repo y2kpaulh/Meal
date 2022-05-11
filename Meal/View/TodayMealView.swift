@@ -37,7 +37,7 @@ struct TodayMealView: View {
         viewModel.fetchPlanData()
       }
       .onReceive(activePhaseNotification) { _ in
-        viewModel.fetchPlanData()
+        //viewModel.fetchPlanData()
       }
     }
 
