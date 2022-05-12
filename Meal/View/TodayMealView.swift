@@ -27,7 +27,8 @@ struct TodayMealView: View {
 
   let activePhaseNotification = NotificationCenter.default
     .publisher(for: .activePhaseNotification)
-
+  let changedDayNotification = NotificationCenter.default
+    .publisher(for: .changedDayNotification)
   var body: some View {
     VStack(spacing: -20) {
       TodayWordsBgView {
@@ -148,27 +149,37 @@ extension TodayMealView {
   }
 
   var todayWordsView: some View {
-    ScrollView {
-      LazyVStack(alignment: .leading) {
-        ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-          HStack(alignment: .firstTextBaseline) {
-            //verse number
-            VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
-            //verse text
-            if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
-              VerseTextView(verse: viewModel.todayPlanData.verses[index])
-            } else {
-              VerseTextView(verse: "")
+    ScrollViewReader { scrollView in
+      ScrollView {
+        LazyVStack(alignment: .leading) {
+          ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+            HStack(alignment: .firstTextBaseline) {
+              //verse number
+              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              //verse text
+              if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.todayPlanData.verses[index])
+              } else {
+                VerseTextView(verse: "")
+              }
             }
+            .padding([.leading, .trailing], 20)
+            .padding(.bottom, 10)
+            .id(index)
           }
-          .padding([.leading, .trailing], 20)
-          .padding(.bottom, 10)
-          .id(index)
+          .redacted(reason: viewModel.isLoading ? .placeholder : [])
         }
-        .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .onReceive(changedDayNotification) { _ in
+          scrollView.scrollTo(0, anchor: .top)
+        }
+        .onAppear {
+          withAnimation {
+            scrollView.scrollTo(0, anchor: .top)
+          }
+        }
       }
+      .listVerticalShadow()
     }
-    .listVerticalShadow()
   }
 
   var alertView: some View {
