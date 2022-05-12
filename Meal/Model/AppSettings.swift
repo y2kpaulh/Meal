@@ -12,6 +12,7 @@ import Foundation
 let userDefaults = UserDefaults.standard
 
 struct AppSettingsManager {
+  static let email = "echadworks@gmail.com"
 
   static var dailyNotiSettingsTimeFormatter: DateFormatter {
     let dateFormatter = DateFormatter()
@@ -62,7 +63,7 @@ extension AppSettings {
     userDefaults.removeObject(forKey: "dailyNotiTime")
   }
 
-  public static  func valueExists(forKey key: String) -> Bool {
+  public static func valueExists(forKey key: String) -> Bool {
     return userDefaults.object(forKey: key) != nil
   }
 
