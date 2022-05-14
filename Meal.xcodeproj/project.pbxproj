@@ -107,6 +107,7 @@
 		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
 		2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2EADCBA827CE1B780006748B /* PartialSheet */; };
+		2EB2D821282FE264009A071B /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB2D820282FE264009A071B /* PopupView */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -306,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EB2D821282FE264009A071B /* PopupView in Frameworks */,
 				2E39882C281ABA330002097B /* FirebaseMessaging in Frameworks */,
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
 				2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */,
@@ -619,6 +621,7 @@
 				2E398829281ABA330002097B /* FirebaseCrashlytics */,
 				2E39882B281ABA330002097B /* FirebaseMessaging */,
 				2E15C700281AC34D00D4FFC7 /* FirebaseAnalytics */,
+				2EB2D820282FE264009A071B /* PopupView */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -660,6 +663,7 @@
 			packageReferences = (
 				2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */,
 				2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
@@ -1385,6 +1389,14 @@
 				kind = branch;
 			};
 		};
+		2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1407,6 +1419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		2EB2D820282FE264009A071B /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
