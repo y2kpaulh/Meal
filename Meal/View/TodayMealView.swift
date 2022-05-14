@@ -145,7 +145,7 @@ extension TodayMealView {
 
   var footerView: some View {
     Color.clear
-      .frame(width: .infinity, height: 10, alignment: .center)
+      .frame(height: 10, alignment: .center)
   }
 
   var todayWordsView: some View {
