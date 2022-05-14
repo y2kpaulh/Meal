@@ -57,7 +57,7 @@ extension TodayMealView {
       self.planListButton
     }
     .padding(.top, 30)
-
+    .textSelection(.enabled)
   }
 
   var planListButton: some View {
@@ -84,6 +84,7 @@ extension TodayMealView {
         Text(PlanStore().getMealPlanStr(viewModel.todayPlan))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
+          .textSelection(.enabled)
       }
 
       Divider()
@@ -169,6 +170,7 @@ extension TodayMealView {
           }
           .redacted(reason: viewModel.isLoading ? .placeholder : [])
         }
+        .textSelection(.enabled)
         .onReceive(changedDayNotification) { _ in
           scrollView.scrollTo(0, anchor: .top)
         }
