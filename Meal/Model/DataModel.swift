@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct MealDateRecord: Codable, Identifiable, Hashable {
+  var id: String { day }
+  let day: String
+  var verseHighlights: [Int]
+  var memo: String
+}
+
 struct BibleBook: Codable, Identifiable {
   var id: String { abbrev }
   let abbrev, name: String
