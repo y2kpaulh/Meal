@@ -38,43 +38,38 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
-struct FloatTopFirst: View {
-  var body: some View {
-    ZStack {
-      RoundedRectangle(cornerRadius: 12)
-        .fill(Color(hex: "E0E3E8"))
 
-      HStack(spacing: 0) {
-        Image("avatar1")
-          .aspectRatio(1.0, contentMode: .fit)
-          .cornerRadius(16)
-          .padding(16.0)
+func createTopToast() -> some View {
 
-        VStack(alignment: .leading, spacing: 8) {
-          Group {
-            Text("Adam Jameson")
-              .bold()
-              .foregroundColor(.black) +
-              Text(" invites you to join his training")
-              .foregroundColor(.black.opacity(0.6))
-          }
+  VStack {
+    Spacer(minLength: 20)
+    HStack {
+      Image("shop_NA")
+        .resizable()
+        .aspectRatio(contentMode: .fill)
+        .frame(width: 50, height: 50)
+        .cornerRadius(25)
 
-          Button {
-            debugPrint("Accepted!")
-          } label: {
-            Text("Accept".uppercased())
-              .font(.system(size: 14, weight: .black))
-          }
-
+      VStack(alignment: .leading, spacing: 2) {
+        HStack {
+          Text("Nik")
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+          Spacer()
+          Text("11:30")
+            .font(.system(size: 12))
+            .foregroundColor(Color(red: 0.9, green: 0.9, blue: 0.9))
         }
 
-        Spacer()
       }
     }
-    .frame(height: 98)
-    .padding(.horizontal, 16)
+    indicator
+      .padding([.top, .bottom], 10)
   }
+  .frame(height: 130)
+  .background(Color.gray)
 }
+
 extension Color {
   init(hex: String) {
     let scanner = Scanner(string: hex)
