@@ -9,6 +9,17 @@ import SwiftUI
 import PartialSheet
 import PopupView
 
+var indicator: some View {
+  RoundedRectangle(cornerRadius: 16)
+    .fill(Color.secondary)
+    .frame(
+      width: 60,
+      height: 6
+    ).onTapGesture {
+      //            self.isOpen.toggle()
+    }
+}
+
 struct ContentView: View {
   @State private var selected = false
   @State private var verseIndex: VerseIndex?
@@ -23,10 +34,9 @@ struct ContentView: View {
             self.selected = true
           }
         }
-        .popup(isPresented: self.$selected, type: .floater(), position: .top, animation: .spring()) {
-          FloatTopSecond()
+        .popup(isPresented: $selected, type: .toast, position: .top) {
+          createTopToast()
         }
-
     }
     .navigationViewStyle(StackNavigationViewStyle())
     .attachPartialSheetToRoot()
@@ -81,30 +91,5 @@ extension Color {
     let b = rgbValue & 0xff
 
     self.init(red: Double(r) / 0xff, green: Double(g) / 0xff, blue: Double(b) / 0xff)
-  }
-}
-struct FloatTopSecond: View {
-  var body: some View {
-    HStack(spacing: 0) {
-      VStack(alignment: .leading, spacing: 2) {
-        Text("We give you a gift!")
-          .foregroundColor(.white)
-          .font(.system(size: 18))
-
-        Text("30% discount until the end of the month on all products of the company.")
-          .foregroundColor(.white)
-          .font(.system(size: 16))
-          .opacity(0.8)
-      }
-
-      Spacer()
-
-      Image("gift")
-        .aspectRatio(1.0, contentMode: .fit)
-    }
-    .padding(16)
-    .background(Color(hex: "9265F8").cornerRadius(12))
-    .shadow(color: Color(hex: "9265F8").opacity(0.5), radius: 40, x: 0, y: 12)
-    .padding(.horizontal, 16)
   }
 }
