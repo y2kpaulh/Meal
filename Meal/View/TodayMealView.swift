@@ -27,7 +27,8 @@ struct TodayMealView: View {
 
   let activePhaseNotification = NotificationCenter.default
     .publisher(for: .activePhaseNotification)
-
+  let changedDayNotification = NotificationCenter.default
+    .publisher(for: .changedDayNotification)
   var body: some View {
     VStack(spacing: -20) {
       TodayWordsBgView {
@@ -56,7 +57,7 @@ extension TodayMealView {
       self.planListButton
     }
     .padding(.top, 30)
-
+    .textSelection(.enabled)
   }
 
   var planListButton: some View {
@@ -83,6 +84,7 @@ extension TodayMealView {
         Text(PlanStore().getMealPlanStr(viewModel.todayPlan))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
+          .textSelection(.enabled)
       }
 
       Divider()
@@ -144,31 +146,42 @@ extension TodayMealView {
 
   var footerView: some View {
     Color.clear
-      .frame(width: .infinity, height: 10, alignment: .center)
+      .frame(height: 10, alignment: .center)
   }
 
   var todayWordsView: some View {
-    ScrollView {
-      LazyVStack(alignment: .leading) {
-        ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
-          HStack(alignment: .firstTextBaseline) {
-            //verse number
-            VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
-            //verse text
-            if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
-              VerseTextView(verse: viewModel.todayPlanData.verses[index])
-            } else {
-              VerseTextView(verse: "")
+    ScrollViewReader { scrollView in
+      ScrollView {
+        LazyVStack(alignment: .leading) {
+          ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+            HStack(alignment: .firstTextBaseline) {
+              //verse number
+              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              //verse text
+              if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.todayPlanData.verses[index])
+              } else {
+                VerseTextView(verse: "")
+              }
             }
+            .padding([.leading, .trailing], 20)
+            .padding(.bottom, 10)
+            .id(index)
           }
-          .padding([.leading, .trailing], 20)
-          .padding(.bottom, 10)
-          .id(index)
+          .redacted(reason: viewModel.isLoading ? .placeholder : [])
         }
-        .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .textSelection(.enabled)
+        .onReceive(changedDayNotification) { _ in
+          scrollView.scrollTo(0, anchor: .top)
+        }
+        .onAppear {
+          withAnimation {
+            scrollView.scrollTo(0, anchor: .top)
+          }
+        }
       }
+      .listVerticalShadow()
     }
-    .listVerticalShadow()
   }
 
   var alertView: some View {

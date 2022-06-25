@@ -42,6 +42,8 @@ struct MealPlanList: View {
                   Swift.print("tap index \(index)")
                   self.viewModel.changePlanIndex(index: index)
                   self.isPresented = false
+
+                  NotificationCenter.default.post(name: .changedDayNotification, object: nil)
                 }
             }
           }

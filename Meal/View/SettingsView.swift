@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct SettingsView: View {
-  let mailtoString = "mailto:echadworks@gmail.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+  let mailtoString = "mailto:\(AppSettingsManager.email)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 
   let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
   @State private var isPresented = false
@@ -55,7 +55,7 @@ struct SettingsView: View {
 
       Section(header: Text("피드백"), content: {
         VStack(alignment: .leading) {
-          Button("echadworks@gmail.com") {
+          Button(AppSettingsManager.email) {
             let mailtoUrl = URL(string: mailtoString!)!
             if UIApplication.shared.canOpenURL(mailtoUrl) {
               UIApplication.shared.open(mailtoUrl, options: [:])
