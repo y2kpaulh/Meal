@@ -12,4 +12,5 @@ extension NSNotification.Name {
   static let inactivePhaseNotification = NSNotification.Name("inactivePhaseNotification")
   static let backgroundPhaseNotification = NSNotification.Name("backgroundPhaseNotification")
   static let changedDayNotification = NSNotification.Name("changedDayNotification")
+  static let widgetDeepLinkNotification = NSNotification.Name("widgetDeepLinkNotification")
 }

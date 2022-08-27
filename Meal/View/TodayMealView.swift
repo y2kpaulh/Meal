@@ -25,10 +25,12 @@ struct TodayMealView: View {
   @State private var isPlanViewPresented = false
   @State private var isSettingsViewPresented = false
 
-  let activePhaseNotification = NotificationCenter.default
-    .publisher(for: .activePhaseNotification)
   let changedDayNotification = NotificationCenter.default
     .publisher(for: .changedDayNotification)
+
+  let widgetDeepLinkNotification = NotificationCenter.default
+    .publisher(for: .widgetDeepLinkNotification)
+
   var body: some View {
     VStack(spacing: -20) {
       TodayWordsBgView {
@@ -37,7 +39,7 @@ struct TodayMealView: View {
       .onAppear {
         viewModel.fetchPlanData()
       }
-      .onReceive(activePhaseNotification) { _ in
+      .onReceive(widgetDeepLinkNotification) { _ in
         viewModel.fetchPlanData()
       }
     }

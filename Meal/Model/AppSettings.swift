@@ -95,3 +95,6 @@ extension UserDefaults {
     return object(forKey: key) != nil
   }
 }
+extension AppSettings {
+  public static var widgetDeepLinkURL: URL = URL(string: "widget-deeplink://")!
+}
