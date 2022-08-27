@@ -31,8 +31,11 @@ struct MealApp: App {
           //            }
           //          }
         }
-        .onOpenURL { _ in // URL handling
-
+        .onOpenURL { url in // URL handling
+          print("open URL", url)
+          if url.absoluteString == AppSettings.widgetDeepLinkURL.absoluteString {
+            NotificationCenter.default.post(name: .widgetDeepLinkNotification, object: nil)
+          }
         }
         .onChange(of: scenePhase) { phase in
           // change in this app's phase - composite of all scenes
@@ -40,7 +43,6 @@ struct MealApp: App {
           case .active:
             //changedToActive()
             print("active")
-            NotificationCenter.default.post(name: .activePhaseNotification, object: nil)
 
           case .background:
             //changedToBackground()

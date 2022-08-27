@@ -133,6 +133,7 @@ struct MealWidgetEntryView: View {
             .padding([.leading, .trailing], 10)
         }
       }
+      .widgetURL(AppSettings.widgetDeepLinkURL)
       .padding(10)
       .background(Color.clear)
     }
