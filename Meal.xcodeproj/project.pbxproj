@@ -60,6 +60,8 @@
 		2E4549D126E77CB700E23740 /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549D026E77CB700E23740 /* SettingsListCell.swift */; };
 		2E4F36EE281EB28A002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2E4F36F1281EC04C002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
+		2E5AE97928BCFDF70055D09D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5AE97828BCFDF70055D09D /* FirebaseAuth */; };
+		2E5AE97B28BCFE700055D09D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5AE97A28BCFE700055D09D /* FirebaseFirestore */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -312,6 +314,8 @@
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
 				2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */,
 				2E15C701281AC34D00D4FFC7 /* FirebaseAnalytics in Frameworks */,
+				2E5AE97B28BCFE700055D09D /* FirebaseFirestore in Frameworks */,
+				2E5AE97928BCFDF70055D09D /* FirebaseAuth in Frameworks */,
 				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +626,8 @@
 				2E39882B281ABA330002097B /* FirebaseMessaging */,
 				2E15C700281AC34D00D4FFC7 /* FirebaseAnalytics */,
 				2EB2D820282FE264009A071B /* PopupView */,
+				2E5AE97828BCFDF70055D09D /* FirebaseAuth */,
+				2E5AE97A28BCFE700055D09D /* FirebaseFirestore */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -1414,6 +1420,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		2E5AE97828BCFDF70055D09D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2E5AE97A28BCFE700055D09D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		2EADCBA827CE1B780006748B /* PartialSheet */ = {
 			isa = XCSwiftPackageProductDependency;

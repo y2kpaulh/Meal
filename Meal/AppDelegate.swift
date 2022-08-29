@@ -11,6 +11,8 @@ import Firebase
 import FirebaseMessaging
 import UserNotifications
 import FirebaseCrashlytics
+import FirebaseAuth
+import FirebaseFirestore
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -42,6 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     application.registerForRemoteNotifications()
+
+    Auth.auth().signInAnonymously { authResult, error in
+      // ...
+      if error != nil {
+        print(error!.localizedDescription)
+        return
+      }
+
+      print("Login Success: \(authResult!.user.uid)")
+      guard let user = authResult?.user else { return }
+      let isAnonymous = user.isAnonymous  // true
+      let uid = user.uid
+      print("isAnonymous", isAnonymous, uid, uid)
+
+    }
 
     return true
   }
