@@ -170,11 +170,15 @@ extension TodayMealView {
             .padding(.bottom, 10)
             .id(index)
           }
-          .redacted(reason: viewModel.isLoading ? .placeholder : [])
         }
+        //.redacted(reason: viewModel.isLoading ? .placeholder : [])
         .textSelection(.enabled)
         .onReceive(changedDayNotification) { _ in
           scrollView.scrollTo(0, anchor: .top)
+        }
+        .alert(isPresented: $viewModel.showingServerErrorAlert) {
+          Alert(title: Text("알림"), message: Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다."),
+                dismissButton: .default(Text("확인")))
         }
         .onAppear {
           withAnimation {
@@ -188,9 +192,9 @@ extension TodayMealView {
 
   var alertView: some View {
     Group {
-      if viewModel.isLoading && networkReachability.reachable {
-        ActivityIndicator()
-      }
+      //      if viewModel.isLoading && networkReachability.reachable {
+      //        ActivityIndicator()
+      //      }
 
       if !networkReachability.reachable {
         Text("서버 연결 오류가 발생했습니다.\n네트워크 연결 상태를 확인해주세요.")
