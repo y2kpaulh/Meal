@@ -45,19 +45,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     application.registerForRemoteNotifications()
 
-    Auth.auth().signInAnonymously { authResult, error in
-      // ...
-      if error != nil {
-        print(error!.localizedDescription)
-        return
+    Auth.auth().signIn(withEmail: "y2kpaulh@gmail.com", password: "123456") { [weak self] authResult, _ in
+      guard let strongSelf = self else { return }
+      if let user = authResult?.user {
+        // The user's ID, unique to the Firebase project.
+        // Do NOT use this value to authenticate with your backend server,
+        // if you have one. Use getTokenWithCompletion:completion: instead.
+        let uid = user.uid
+        let email = user.email
+        let photoURL = user.photoURL
+        let displayName = user.displayName
+
+        var multiFactorString = "MultiFactor: "
+        for info in user.multiFactor.enrolledFactors {
+          multiFactorString += info.displayName ?? "[DispayName]"
+          multiFactorString += " "
+        }
+        // ...
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = "Inpyo Hong"
+        changeRequest?.commitChanges { _ in
+          // ...
+        }
       }
-
-      print("Login Success: \(authResult!.user.uid)")
-      guard let user = authResult?.user else { return }
-      let isAnonymous = user.isAnonymous  // true
-      let uid = user.uid
-      print("isAnonymous", isAnonymous, uid, uid)
-
     }
 
     return true
