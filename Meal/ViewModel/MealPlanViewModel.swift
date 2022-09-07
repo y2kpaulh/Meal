@@ -27,6 +27,8 @@ class MealPlanViewModel: ObservableObject {
   @Published var isLoading = false
   @Published var planDataError: Bool = false
   @Published var todayPlanDate: String = ""
+  @Published var showingServerErrorAlert = false
+
   var widgetPlans: [NotiPlan] = []
 
   var cancelBag = Set<AnyCancellable>()
@@ -62,7 +64,9 @@ class MealPlanViewModel: ObservableObject {
 
 extension MealPlanViewModel {
   func fetchPlanData() {
-    self.isLoading = true
+    DispatchQueue.main.async {
+      self.isLoading = true
+    }
 
     if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
        mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
@@ -74,21 +78,30 @@ extension MealPlanViewModel {
       .mapError({ [weak self] (error) -> Error in
         guard let self = self else { return  error }
         print(error)
-        self.isLoading = false
+        DispatchQueue.main.async {
+          self.isLoading = false
+          self.showingServerErrorAlert = true
+        }
         return error
       })
       .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
         if case .failure(let err) = completion {
           print("Retrieving data failed with error \(err)")
-          self.planDataError = true
-          self.isLoading = false
+          DispatchQueue.main.async {
+            self.planDataError = true
+            self.isLoading = false
+            self.showingServerErrorAlert = true
+          }
         }
       },
       receiveValue: { [weak self] in
         guard let self = self else { return }
         if (try? $0.saveToFile("mealPlan")) != nil {
           self.loadPlanData($0)
+          DispatchQueue.main.async() {
+            self.isLoading = false
+          }
         }
       })
       .store(in: &cancelBag)
@@ -100,8 +113,6 @@ extension MealPlanViewModel {
     self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
     self.todayPlanData = PlanStore().getPlanData(self.todayPlan)
     self.todayPlanDate = PlanStore().convertDateToStr()
-
-    self.isLoading = false
   }
 
   func changePlanIndex(index: Int) {
