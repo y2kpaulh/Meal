@@ -33,6 +33,8 @@
 		2E32EF5A26BCD11400716A54 /* NKRV.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E679EE6269F12B300CB470A /* NKRV.json */; };
 		2E32EF5C26BCD11E00716A54 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
 		2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A47E26BA694600DFCD92 /* ColorExtension.swift */; };
+		2E34A80A28CE189F00777FFD /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E34A80928CE189F00777FFD /* PopupView */; };
+		2E34A80C28CE1DA400777FFD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34A80B28CE1DA400777FFD /* View+Extension.swift */; };
 		2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2E398829281ABA330002097B /* FirebaseCrashlytics */; };
 		2E39882C281ABA330002097B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2E39882B281ABA330002097B /* FirebaseMessaging */; settings = {ATTRIBUTES = (Required, ); }; };
 		2E3F9C2D26A545020027BD75 /* MealPlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3F9C2C26A545020027BD75 /* MealPlanList.swift */; };
@@ -107,7 +109,6 @@
 		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
 		2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2EADCBA827CE1B780006748B /* PartialSheet */; };
-		2EB2D821282FE264009A071B /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB2D820282FE264009A071B /* PopupView */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -207,6 +208,7 @@
 		2E2B7CBF26BCBC8B00DAC920 /* NanumMyeongjoBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjoBold.otf; sourceTree = "<group>"; };
 		2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumMyeongjo.otf; sourceTree = "<group>"; };
 		2E34A47E26BA694600DFCD92 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2E34A80B28CE1DA400777FFD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2E3F9C2C26A545020027BD75 /* MealPlanList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlanList.swift; sourceTree = "<group>"; };
 		2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		2E4235D526BD365E00808E85 /* MealWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,7 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB2D821282FE264009A071B /* PopupView in Frameworks */,
+				2E34A80A28CE189F00777FFD /* PopupView in Frameworks */,
 				2E39882C281ABA330002097B /* FirebaseMessaging in Frameworks */,
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
 				2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */,
@@ -519,6 +521,7 @@
 			children = (
 				2E34A47E26BA694600DFCD92 /* ColorExtension.swift */,
 				2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */,
+				2E34A80B28CE1DA400777FFD /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,7 +624,7 @@
 				2E398829281ABA330002097B /* FirebaseCrashlytics */,
 				2E39882B281ABA330002097B /* FirebaseMessaging */,
 				2E15C700281AC34D00D4FFC7 /* FirebaseAnalytics */,
-				2EB2D820282FE264009A071B /* PopupView */,
+				2E34A80928CE189F00777FFD /* PopupView */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -663,7 +666,7 @@
 			packageReferences = (
 				2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */,
 				2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */,
+				2E34A80828CE189F00777FFD /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
@@ -960,6 +963,7 @@
 				2EC4B580282AA14E00DE7E37 /* Array+Extensions.swift in Sources */,
 				2E6651B426C3BB0F00A083C6 /* MealTitleLabel.swift in Sources */,
 				2E1518FA27E6F10900264936 /* SettingsView.swift in Sources */,
+				2E34A80C28CE1DA400777FFD /* View+Extension.swift in Sources */,
 				2E6651AC26C3B02400A083C6 /* ListVerticalShadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1373,6 +1377,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2E34A80828CE189F00777FFD /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1389,14 +1401,6 @@
 				kind = branch;
 			};
 		};
-		2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1404,6 +1408,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		2E34A80928CE189F00777FFD /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E34A80828CE189F00777FFD /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 		2E398829281ABA330002097B /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1419,11 +1428,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
-		};
-		2EB2D820282FE264009A071B /* PopupView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */;
-			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

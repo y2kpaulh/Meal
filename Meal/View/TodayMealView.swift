@@ -5,16 +5,19 @@
 //  Created by Inpyo Hong on 2021/09/07.
 //
 
+import UIKit
 import SwiftUI
 import Combine
 import PartialSheet
 import UIKit
+import PopupView
 
 struct TodayMealView: View {
   @Environment(\.verticalSizeClass) var
     verticalSizeClass: UserInterfaceSizeClass?
   @Environment(\.horizontalSizeClass) var
     horizontalSizeClass: UserInterfaceSizeClass?
+
   var isIPad: Bool {
     horizontalSizeClass == .regular &&
       verticalSizeClass == .regular
@@ -24,7 +27,7 @@ struct TodayMealView: View {
   @StateObject var networkReachability = NetworkReachability()
   @State private var isPlanViewPresented = false
   @State private var isSettingsViewPresented = false
-
+  @State private var isPopupPresented = false
   let changedDayNotification = NotificationCenter.default
     .publisher(for: .changedDayNotification)
 
@@ -38,15 +41,54 @@ struct TodayMealView: View {
       }
       .onAppear {
         viewModel.fetchPlanData()
+        isPopupPresented = true
       }
       .onReceive(widgetDeepLinkNotification) { _ in
         viewModel.fetchPlanData()
       }
     }
-
+    .popup(isPresented: $viewModel.showingSelectVerseAlert, type: .floater(), position: .top, animation: .spring()) {
+      FloatTopFirst()
+    }
   }
 }
+struct FloatTopFirst: View {
+  var body: some View {
+    ZStack {
+      RoundedRectangle(cornerRadius: 12)
+        .fill(Color(hex: "E0E3E8"))
 
+      HStack(spacing: 0) {
+        Image("avatar1")
+          .aspectRatio(1.0, contentMode: .fit)
+          .cornerRadius(16)
+          .padding(16.0)
+
+        VStack(alignment: .leading, spacing: 8) {
+          Group {
+            Text("Adam Jameson")
+              .bold()
+              .foregroundColor(.black) +
+              Text(" invites you to join his training")
+              .foregroundColor(.black.opacity(0.6))
+          }
+
+          Button {
+            debugPrint("Accepted!")
+          } label: {
+            Text("Accept".uppercased())
+              .font(.system(size: 14, weight: .black))
+          }
+          .customButtonStyle(foreground: Color(hex: "9265F8"), background: .clear)
+        }
+
+        Spacer()
+      }
+    }
+    .frame(height: 98)
+    .padding(.horizontal, 16)
+  }
+}
 extension TodayMealView {
   var titleLabelView: some View {
     MealTitleLabel(size: 80, textColor: Color(UIColor.label))
@@ -169,6 +211,11 @@ extension TodayMealView {
             .padding([.leading, .trailing], 20)
             .padding(.bottom, 10)
             .id(index)
+            .onTapGesture {
+              Swift.print("selected index", index)
+              viewModel.selectedVerseIndex = index
+              viewModel.showingSelectVerseAlert = true
+            }
           }
         }
         //.redacted(reason: viewModel.isLoading ? .placeholder : [])

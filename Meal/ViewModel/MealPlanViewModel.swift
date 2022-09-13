@@ -28,6 +28,8 @@ class MealPlanViewModel: ObservableObject {
   @Published var planDataError: Bool = false
   @Published var todayPlanDate: String = ""
   @Published var showingServerErrorAlert = false
+  @Published var showingSelectVerseAlert = false
+  @Published var selectedVerseIndex: Int = 0
 
   var widgetPlans: [NotiPlan] = []
 
