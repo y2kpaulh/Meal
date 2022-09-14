@@ -67,6 +67,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         changeRequest?.commitChanges { _ in
           // ...
         }
+
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(uid)
+
+        docRef.getDocument { (document, _) in
+          if let document = document, document.exists {
+            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+            print("Document data: \(dataDescription)")
+          } else {
+            print("Document does not exist")
+          }
+
+          if let memo = document?["memo"] as? String {
+            print("memo", memo)
+          }
+        }
       }
     }
 

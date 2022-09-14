@@ -22,6 +22,7 @@ struct MealApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(AuthenticationModel())
         //.environmentObject(viewModel)
         .onAppear {
           //          print(FileManager.documentURL ?? "")

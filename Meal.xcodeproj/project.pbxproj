@@ -66,7 +66,6 @@
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7CA8FC26BBA2A4008B6255 /* NetworkReachability.swift */; };
-		2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2E6651A226C3A0AA00A083C6 /* MealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */; };
 		2E6651A426C3A45100A083C6 /* NanumMyeongjoExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CBE26BCBC8A00DAC920 /* NanumMyeongjoExtraBold.otf */; };
 		2E6651A626C3A45100A083C6 /* NanumMyeongjo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2B7CC026BCBC8B00DAC920 /* NanumMyeongjo.otf */; };
@@ -124,6 +123,7 @@
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
+		2EF4C3A128D216AA004EABAC /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4C3A028D216AA004EABAC /* AuthenticationModel.swift */; };
 		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
 		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
 		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
@@ -266,6 +266,7 @@
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
+		2EF4C3A028D216AA004EABAC /* AuthenticationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				2EABCDCC26C25C5400107840 /* MealPlanViewModel.swift */,
+				2EF4C3A028D216AA004EABAC /* AuthenticationModel.swift */,
 				2E1518FB27E6F7C600264936 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -915,7 +917,6 @@
 				2EABCDD226C35EDA00107840 /* DataModel.swift in Sources */,
 				2E4F36F1281EC04C002FC262 /* AppSettings.swift in Sources */,
 				2E4549C726E76AE500E23740 /* ListVerticalShadow.swift in Sources */,
-				2E6651A126C39BD200A083C6 /* MealApp.swift in Sources */,
 				2E74786227EF1E2300F1597D /* NotificationCenter.swift in Sources */,
 				2E6651C326C3D20200A083C6 /* PlanView.swift in Sources */,
 				2E4235EA26BD366000808E85 /* NotificationView.swift in Sources */,
@@ -941,6 +942,7 @@
 				2E742FBD26E8A72400734ACE /* DebugView.swift in Sources */,
 				2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */,
 				2E4549CF26E77BEC00E23740 /* TodayVersesList.swift in Sources */,
+				2EF4C3A128D216AA004EABAC /* AuthenticationModel.swift in Sources */,
 				2E68701626C0E892007AC732 /* AppDelegate.swift in Sources */,
 				2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */,
 				2E972C1726C4DCCE000D6902 /* ModelData.swift in Sources */,
