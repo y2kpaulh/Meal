@@ -17,7 +17,7 @@ struct MealIconView: View {
       .frame(width: 40, height: 40)
       .foregroundColor(Color(UIColor.label))
       .padding([.leading, .trailing], 10)
-      .unredacted()
+    //.unredacted()
   }
 }
 
