@@ -58,6 +58,8 @@
 		2E4549CD26E7751600E23740 /* VerseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CC26E7751600E23740 /* VerseTextView.swift */; };
 		2E4549CF26E77BEC00E23740 /* TodayVersesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */; };
 		2E4549D126E77CB700E23740 /* SettingsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4549D026E77CB700E23740 /* SettingsListCell.swift */; };
+		2E4AA1BA28F19906006B1CBF /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4AA1B928F19906006B1CBF /* PopupView */; };
+		2E4AA1BD28F1993C006B1CBF /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4AA1BC28F1993C006B1CBF /* PartialSheet */; };
 		2E4F36EE281EB28A002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2E4F36F1281EC04C002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -106,8 +108,6 @@
 		2EABCDD526C35F3A00107840 /* BibleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5FE268DBD3400EA6BB2 /* BibleStore.swift */; };
 		2EABCDD726C35F9600107840 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EABCDD926C35FC400107840 /* MealIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDD826C35FC400107840 /* MealIconView.swift */; };
-		2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2EADCBA827CE1B780006748B /* PartialSheet */; };
-		2EB2D821282FE264009A071B /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB2D820282FE264009A071B /* PopupView */; };
 		2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EA268DBB5F00EA6BB2 /* MealApp.swift */; };
 		2EBBD5ED268DBB5F00EA6BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EC268DBB5F00EA6BB2 /* ContentView.swift */; };
 		2EBBD5EF268DBB6000EA6BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBBD5EE268DBB6000EA6BB2 /* Assets.xcassets */; };
@@ -307,10 +307,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB2D821282FE264009A071B /* PopupView in Frameworks */,
+				2E4AA1BD28F1993C006B1CBF /* PartialSheet in Frameworks */,
 				2E39882C281ABA330002097B /* FirebaseMessaging in Frameworks */,
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
-				2EADCBA927CE1B780006748B /* PartialSheet in Frameworks */,
+				2E4AA1BA28F19906006B1CBF /* PopupView in Frameworks */,
 				2E15C701281AC34D00D4FFC7 /* FirebaseAnalytics in Frameworks */,
 				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
@@ -617,11 +617,11 @@
 			);
 			name = Meal;
 			packageProductDependencies = (
-				2EADCBA827CE1B780006748B /* PartialSheet */,
 				2E398829281ABA330002097B /* FirebaseCrashlytics */,
 				2E39882B281ABA330002097B /* FirebaseMessaging */,
 				2E15C700281AC34D00D4FFC7 /* FirebaseAnalytics */,
-				2EB2D820282FE264009A071B /* PopupView */,
+				2E4AA1B928F19906006B1CBF /* PopupView */,
+				2E4AA1BC28F1993C006B1CBF /* PartialSheet */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -661,9 +661,9 @@
 			);
 			mainGroup = 2EBBD5DE268DBB5F00EA6BB2;
 			packageReferences = (
-				2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */,
 				2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */,
+				2E4AA1B828F19906006B1CBF /* XCRemoteSwiftPackageReference "PopupView" */,
+				2E4AA1BB28F1993C006B1CBF /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
@@ -1378,23 +1378,23 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 8.10.0;
 			};
 		};
-		2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+		2E4AA1B828F19906006B1CBF /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
+			repositoryURL = "https://github.com/exyte/PopupView.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */ = {
+		2E4AA1BB28F1993C006B1CBF /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView.git";
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1415,15 +1415,15 @@
 			package = 2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		2EADCBA827CE1B780006748B /* PartialSheet */ = {
+		2E4AA1B928F19906006B1CBF /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2EADCBA727CE1B780006748B /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
-		};
-		2EB2D820282FE264009A071B /* PopupView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2EB2D81F282FE264009A071B /* XCRemoteSwiftPackageReference "PopupView" */;
+			package = 2E4AA1B828F19906006B1CBF /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		2E4AA1BC28F1993C006B1CBF /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E4AA1BB28F1993C006B1CBF /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
