@@ -11,7 +11,7 @@ import Combine
 enum PlanService {
   static let isOffLineMode = false
   static let apiClient = APIClient()
-  static let baseUrl = URL(string: "https://todaymealplan.herokuapp.com")!
+  static let baseUrl = URL(string: "https://mealplan-y2kpaulh.koyeb.app")!
 
   enum APIPath: String {
     case planList = "/mealPlan"
