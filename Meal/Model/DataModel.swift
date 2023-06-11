@@ -7,16 +7,44 @@
 
 import Foundation
 
+// MARK: - ScheduleList
+struct ScheduleList: Codable {
+  let scheduleList: [Schedule]
+}
+
+// MARK: - Schedule
+struct Schedule: Codable, Identifiable, Hashable {
+  static func == (lhs: Schedule, rhs: Schedule) -> Bool {
+    return lhs.id == rhs.id
+  }
+
+  public var id: String { day }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
+  let day: String
+  let meal: BibleVerse
+  var readThrough: [BibleVerse]
+}
+
 struct BibleBook: Codable, Identifiable {
   var id: String { abbrev }
   let abbrev, name: String
   let chapters: [[String]]
 }
 
-// MARK: - Meal
-//struct Meal: Codable {
-//    let plan: [Plan]
-//}
+// MARK: - BibleVerse
+struct BibleVerse: Codable {
+  let book: String
+  let fChap, fVer, lChap: Int
+  var lVer: Int
+}
+
+protocol BiblePlanable {
+  var day: String { get }
+  var plan: [BibleVerse] { get }
+}
 
 protocol Planable {
   var day: String { get }
@@ -29,7 +57,7 @@ protocol Planable {
 }
 
 // MARK: - Plan
-public struct Plan: Planable, Codable, Identifiable, Hashable {
+public struct MealPlan: Planable, Codable, Identifiable, Hashable {
   public var id: String { day }
   let day: String
   let book: String
@@ -48,12 +76,11 @@ struct LocalPushPlan: Codable {
 struct NotiPlan: Planable, Codable {
   let day: String
   let book: String
-  //let book: Book
   let fChap, fVer, lChap, lVer: Int
   let verses: [String]
 }
 
-public struct PlanData: Codable {
+public struct BibleText: Codable {
   let book: String
   let verses: [String]
 }

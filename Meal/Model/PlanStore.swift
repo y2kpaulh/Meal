@@ -16,7 +16,7 @@ import UIKit
 public final class PlanStore: ObservableObject {
   let localNotiManager = LocalNotificationManager()
 
-  var planList: [Plan] {
+  var mealPlan: [MealPlan] {
     if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
        mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
       return mealPlan
@@ -33,13 +33,13 @@ public final class PlanStore: ObservableObject {
     return dateFormatter
   }
 
-  func getPlanData(_ plan: Plan) -> PlanData {
+  func getPlanData(_ plan: MealPlan) -> BibleText {
     let book = BibleStore.books.filter { $0.abbrev == plan.book }
 
     guard book.count > 0,
           let planBook = book.first,
           let index = BibleStore.books.firstIndex(where: { $0.abbrev == plan.book })
-    else { return PlanData(book: "", verses: []) }
+    else { return BibleText(book: "", verses: []) }
 
     let title = BibleStore.titles[index]
     var verse = [String]()
@@ -59,7 +59,65 @@ public final class PlanStore: ObservableObject {
       verse = Array(fVerseRange + lVerseRange)
     }
 
-    return PlanData(book: title, verses: verse)
+    return BibleText(book: title, verses: verse)
+  }
+
+  func getReadThroughVerses(_ biblePlan: [BibleVerse]) -> (planList: [BibleText], lVerArr: [Int]) {
+    var biblePlanList = [BibleText]()
+    var lVerArr = [Int]()
+
+    biblePlanList = biblePlan.enumerated().map { (index, element) in
+      let book = BibleStore.books.filter { $0.abbrev == element.book }
+
+      guard book.count > 0,
+            let planBook = book.first,
+            let index = BibleStore.books.firstIndex(where: { $0.abbrev == element.book })
+      else { return BibleText(book: "", verses: []) }
+
+      let title = BibleStore.titles[index]
+      var verse = [String]()
+
+      if element.fChap == element.lChap {
+        let chapter = planBook.chapters[element.fChap-1]
+
+        //임의로 마지막 인덱스를 100으로 설정
+        var lVer: Int = 0
+        if element.lVer == 100 {
+          lVer = chapter.count - 1
+        } else {
+          lVer = element.lVer
+        }
+
+        lVerArr.append(lVer+1)
+
+        let verseRange = chapter[element.fVer-1..<lVer]
+
+        verse = Array(verseRange)
+      } else {
+        let fChapter = planBook.chapters[element.fChap-1]
+        let lChapter = planBook.chapters[element.lChap-1]
+
+        let fVerseRange = fChapter[element.fVer-1..<fChapter.count]
+
+        //임의로 마지막 인덱스를 100으로 설정
+        var lVer: Int = 0
+
+        if element.lVer == 100 {
+          lVer = lChapter.count - 1
+        } else {
+          lVer = element.lVer
+        }
+
+        lVerArr.append(lVer+1)
+
+        let lVerseRange = lChapter[0..<lVer]
+
+        verse = Array(fVerseRange + lVerseRange)
+      }
+      return BibleText(book: title, verses: verse)
+    }
+
+    return (planList: biblePlanList, lVerArr: lVerArr)
   }
 
 }
@@ -122,7 +180,7 @@ extension PlanStore {
   func registDailyPush() {
     clearDailyPush()
 
-    PlanStore.dailyPushList = PlanStore().planList
+    PlanStore.dailyPushList = PlanStore().mealPlan
       .map { plan in
         let targetDay = plan.day.split(separator: "-")
 
@@ -140,5 +198,42 @@ extension PlanStore {
     }
 
     self.localNotiManager.schedule()
+  }
+
+  var testPlan: Data {
+    return Data(
+      """
+                       {
+                       "scheduleList":
+                           [
+                               {
+                                   "day": "2023-06-11",
+                                   "meal": {
+                                       "book": "왕하",
+                                       "fChap": 23,
+                                       "fVer": 1,
+                                       "lChap": 23,
+                                       "lVer": 20
+                                   },
+                                   "readThrough": [
+                                       {
+                                       "book": "왕상",
+                                       "fChap": 18,
+                                       "fVer": 1,
+                                       "lChap": 19,
+                                       "lVer": 100
+                                     },
+                                     {
+                                       "book": "시",
+                                       "fChap": 23,
+                                       "fVer": 1,
+                                       "lChap": 23,
+                                       "lVer": 100
+                                    }
+                                 ]
+                               }
+                           ]
+                       }
+      """.utf8)
   }
 }

@@ -122,10 +122,6 @@
 		2EED48BB2697E82E0069DD16 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BA2697E82E0069DD16 /* DataModel.swift */; };
 		2EED48BD2697EA120069DD16 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED48BC2697EA120069DD16 /* PlanStore.swift */; };
 		2EED48C1269826710069DD16 /* biblebook-ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EED48C0269826700069DD16 /* biblebook-ko.json */; };
-		5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */; };
-		BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */; };
-		D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */; };
-		D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,16 +260,12 @@
 		2EED48BA2697E82E0069DD16 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2EED48BC2697EA120069DD16 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		2EED48C0269826700069DD16 /* biblebook-ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "biblebook-ko.json"; sourceTree = "<group>"; };
-		5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B99E2F4C884D87EEA0706A4 /* Pods-MealWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.debug.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		80D50AAEA931B395997BFE08 /* Pods-MealWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		9356285EAC82B22D122B4E48 /* Pods-MealWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch.release.xcconfig"; path = "Target Support Files/Pods-MealWatch/Pods-MealWatch.release.xcconfig"; sourceTree = "<group>"; };
-		A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D142DD439025480692058257 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
-		E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F623B239784BBEF0A4B70A61 /* Pods-MealWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWatch Extension.release.xcconfig"; path = "Target Support Files/Pods-MealWatch Extension/Pods-MealWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		F9F43F0428F06FE43487A8B7 /* Pods-MealWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-MealWidgetExtension/Pods-MealWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +273,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6012A57320C1FA3E4EEA408 /* Pods_MealWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +282,6 @@
 			files = (
 				2E2B7CAE26BBF82900DAC920 /* SwiftUI.framework in Frameworks */,
 				2E2B7CAC26BBF82900DAC920 /* WidgetKit.framework in Frameworks */,
-				D4D988CEADB7D57B5BA2783A /* Pods_MealWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +289,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A32BEB35E085B6E4FCF7BF7 /* Pods_MealWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +301,6 @@
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
 				2E4AA1BA28F19906006B1CBF /* PopupView in Frameworks */,
 				2E15C701281AC34D00D4FFC7 /* FirebaseAnalytics in Frameworks */,
-				BE42BE9971C0AD653C6D9106 /* Pods_Meal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +312,6 @@
 			children = (
 				2E2B7CAB26BBF82900DAC920 /* WidgetKit.framework */,
 				2E2B7CAD26BBF82900DAC920 /* SwiftUI.framework */,
-				A32FCA8BC538DD6FB8C92D48 /* Pods_Meal.framework */,
-				FBE11FF4C3CC6991C9DAE18D /* Pods_MealWatch.framework */,
-				5E99B7D6F4CBD14F92474D4A /* Pods_MealWatch_Extension.framework */,
-				E86661E55F4F4DF8A894DB26 /* Pods_MealWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

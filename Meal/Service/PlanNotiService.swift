@@ -11,11 +11,11 @@ import WidgetKit
 #endif
 
 class PlanNotiService {
-  func fetchPlanList(completion: @escaping ([Plan]) -> Void) {
+  func fetchPlanList(completion: @escaping ([MealPlan]) -> Void) {
     guard !PlanService.isOffLineMode else {
-      return completion(PlanStore().planList)
+      return completion(PlanStore().mealPlan)
     }
-    guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.planList.rawValue), resolvingAgainstBaseURL: true)
+    guard let components = URLComponents(url: PlanService.baseUrl.appendingPathComponent(PlanService.APIPath.mealPlan.rawValue), resolvingAgainstBaseURL: true)
     else { fatalError("Couldn't create URLComponents") }
 
     let request = URLRequest(url: components.url!)
@@ -31,7 +31,7 @@ class PlanNotiService {
           return
         }
         do {
-          let plan = try JSONDecoder().decode([Plan].self, from: data)
+          let plan = try JSONDecoder().decode([MealPlan].self, from: data)
 
           DispatchQueue.main.async {
             #if !os(watchOS)

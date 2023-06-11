@@ -14,14 +14,14 @@ enum PlanService {
   static let baseUrl = URL(string: "https://mealplan-y2kpaulh.koyeb.app")!
 
   enum APIPath: String {
-    case planList = "/mealPlan"
+    case mealPlan = "/mealPlan"
   }
 }
 
 extension PlanService {
-  static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<[Plan], Error> {
+  static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<[MealPlan], Error> {
     guard !self.isOffLineMode else {
-      return Just(PlanStore().planList)
+      return Just(PlanStore().mealPlan)
         .setFailureType(to: Error.self)
         .eraseToAnyPublisher()
     }

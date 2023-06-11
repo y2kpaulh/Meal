@@ -8,21 +8,6 @@
 import Foundation
 import Combine
 
-final class ModelData: ObservableObject {
-  @Published var planList = [Plan]()// = load("mealPlan.json")
-
-  //    var features: [Landmark] {
-  //        landmarks.filter { $0.isFeatured }
-  //    }
-  //
-  //    var categories: [String: [Landmark]] {
-  //        Dictionary(
-  //            grouping: landmarks,
-  //            by: { $0.category.rawValue }
-  //        )
-  //    }
-}
-
 func load<T: Decodable>(_ filename: String) -> T {
   let data: Data
 
@@ -45,12 +30,12 @@ func load<T: Decodable>(_ filename: String) -> T {
   }
 }
 
-func readMealPlanFile(fileName: String) throws -> [Plan]? {
+func readMealPlanFile(fileName: String) throws -> [MealPlan]? {
   do {
     if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       let url = dir.appendingPathComponent(fileName)
       let data = try Data(contentsOf: url)
-      let decoded = try JSONDecoder().decode([Plan].self, from: data)
+      let decoded = try JSONDecoder().decode([MealPlan].self, from: data)
 
       return decoded
     } else {

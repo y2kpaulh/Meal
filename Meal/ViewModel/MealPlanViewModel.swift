@@ -21,9 +21,13 @@ extension FileManager {
 }
 
 class MealPlanViewModel: ObservableObject {
-  @Published var planList: [Plan] = []
-  @Published var todayPlan: Plan = Plan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
-  @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
+  @Published var mealPlan: [MealPlan] = []
+  @Published var scheduleList: [Schedule] = []
+
+  @Published var todayPlan: MealPlan = MealPlan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
+  @Published var todayPlanData: BibleText = BibleText(book: "", verses: [])
+  @Published var todaySchedule: [BibleVerse] = [BibleVerse]()
+
   @Published var isLoading = false
   @Published var planDataError: Bool = false
   @Published var todayPlanDate: String = ""
@@ -74,7 +78,7 @@ extension MealPlanViewModel {
       return
     }
 
-    PlanService.requestPlan(.planList)
+    PlanService.requestPlan(.mealPlan)
       .mapError({ [weak self] (error) -> Error in
         guard let self = self else { return  error }
         print(error)
@@ -107,8 +111,8 @@ extension MealPlanViewModel {
       .store(in: &cancelBag)
   }
 
-  func loadPlanData(_ mealPlan: [Plan]) {
-    self.planList = mealPlan
+  func loadPlanData(_ mealPlan: [MealPlan]) {
+    self.mealPlan = mealPlan
 
     self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
     self.todayPlanData = PlanStore().getPlanData(self.todayPlan)
@@ -116,7 +120,7 @@ extension MealPlanViewModel {
   }
 
   func changePlanIndex(index: Int) {
-    let indexPlan = self.planList[index]
+    let indexPlan = self.mealPlan[index]
     let indexPlanData = PlanStore().getPlanData(indexPlan)
     let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
     let indexDateStr = PlanStore().convertDateToStr(date: indexDate)

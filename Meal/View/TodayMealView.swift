@@ -38,6 +38,23 @@ struct TodayMealView: View {
       }
       .onAppear {
         viewModel.fetchPlanData()
+
+        if let result = try? JSONDecoder().decode(ScheduleList.self, from: PlanStore().testPlan) {
+          viewModel.scheduleList = result.scheduleList
+
+          let resultData = PlanStore().getReadThroughVerses(viewModel.scheduleList[0].readThrough)
+
+          let resultPlan = viewModel.scheduleList[0].readThrough.enumerated().map {  (index, element) in
+            var result = element
+            result.lVer = resultData.lVerArr[index]
+            return result
+          }
+
+          viewModel.scheduleList[0].readThrough = resultPlan
+          print(viewModel.scheduleList[0].readThrough)
+          print(resultData.planList)
+        }
+
       }
       .onReceive(widgetDeepLinkNotification) { _ in
         viewModel.fetchPlanData()
