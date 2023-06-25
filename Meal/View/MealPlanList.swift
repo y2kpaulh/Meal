@@ -32,32 +32,32 @@ struct MealPlanList: View {
       }
 
       ScrollViewReader { scrollView in
-        ScrollView {
-          LazyVStack {
-            ForEach(0..<self.viewModel.planList.count, id: \.self) { index in
-              PlanView(index: index, plan: self.viewModel.planList[index])
-                .id(index)
-                .padding(10)
-                .onTapGesture {
-                  Swift.print("tap index \(index)")
-                  self.viewModel.changePlanIndex(index: index)
-                  self.isPresented = false
-
-                  NotificationCenter.default.post(name: .changedDayNotification, object: nil)
+          ScrollView {
+              LazyVStack {
+                  ForEach(0..<self.viewModel.planList.count, id: \.self) { index in
+                    PlanView(index: index, plan: self.viewModel.planList[index])
+                      .id(index)
+                      .padding(10)
+                      .onTapGesture {
+                        Swift.print("tap index \(index)")
+                        self.viewModel.changePlanIndex(index: index)
+                        self.isPresented = false
+      
+                        NotificationCenter.default.post(name: .changedDayNotification, object: nil)
+                      }
+                  }
+              }
+              .onAppear {
+                withAnimation {
+                  let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
+                  scrollView.scrollTo(todayIndex, anchor: .top)
                 }
-            }
+              }
           }
-          .onAppear {
-            withAnimation {
-              let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
-              scrollView.scrollTo(todayIndex, anchor: .top)
-            }
-          }
-        }
       }
       .listVerticalShadow()
     }
-    //    .frame(height: 500)
+    .frame(height: UIScreen.main.bounds.size.height - 100)
     .onAppear {
       UITableView.appearance().backgroundColor = .clear
       UITableViewCell.appearance().backgroundColor = .clear

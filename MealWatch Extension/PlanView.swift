@@ -36,8 +36,7 @@ struct PlanView: View {
         .foregroundColor(Color.gray)
       }
 
-      if let planData = PlanStore().getPlanData(plan) {
-        Text(PlanStore().getBibleSummary(verses: planData.verses))
+        Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
           .font(.custom("NanumMyeongjoOTF", size: 14))
           .lineLimit(3)
           .lineSpacing(6.0)
@@ -45,7 +44,6 @@ struct PlanView: View {
           .foregroundColor(.white)
           .padding([.top, .bottom], 20)
           .padding([.leading, .trailing], 4)
-      }
 
     }
     .padding(10)

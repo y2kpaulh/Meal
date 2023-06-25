@@ -58,7 +58,7 @@ class LocalNotificationManager {
 
   func scheduleNotifications() {
     let scheduleDate = AppSettingsManager.dailyNotiSettingsTimeFormatter.date(from: AppSettings.stringValue(.dailyNotiTime)!)!
-    let scheduleDateStr =  AppSettingsManager.dailyNotiScheduleTimeFormatter.string(from: scheduleDate)
+    let scheduleDateStr = AppSettingsManager.dailyNotiScheduleTimeFormatter.string(from: scheduleDate)
 
     let timeInfo = scheduleDateStr.split(separator: ":")
     let hour: Int = Int(timeInfo[0])!
