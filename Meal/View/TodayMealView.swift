@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import PartialSheet
 import UIKit
+import Parchment
 
 struct TodayMealView: View {
   @Environment(\.verticalSizeClass) var
@@ -31,10 +32,19 @@ struct TodayMealView: View {
   let widgetDeepLinkNotification = NotificationCenter.default
     .publisher(for: .widgetDeepLinkNotification)
 
+  let items = [
+    PagingIndexItem(index: 0, title: "끼니"),
+    PagingIndexItem(index: 1, title: "통독")
+  ]
+
   var body: some View {
     VStack(spacing: -20) {
       TodayWordsBgView {
-        self.mainView
+        VStack(spacing: -20) {
+          self.headerView
+            .frame(height: 100)
+          self.mainView
+        }
       }
       .onAppear {
         viewModel.fetchPlanData()
@@ -109,7 +119,6 @@ extension TodayMealView {
 
       VStack(spacing: -20) {
         self.headerTitleView
-        self.headerDetailView
       }
     }
   }
@@ -208,19 +217,19 @@ extension TodayMealView {
   }
 
   var mainView: some View {
-    ZStack {
+    var option = PagingOptions()
+    option.menuItemSize = .sizeToFit(minWidth: 150, height: 40)
+    option.borderOptions = .hidden
+
+    return PageView(options: option, items: items) { _ in
       VStack {
-        //header view
-        self.headerView
+        self.headerDetailView
 
         //today words
         self.todayWordsView
-
         //footer view
         self.footerView
       }
-      //alert routine
-      //self.alertView
     }
   }
 
