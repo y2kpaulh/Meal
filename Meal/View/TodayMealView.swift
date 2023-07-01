@@ -176,7 +176,44 @@ extension TodayMealView {
     Color.clear
       .frame(height: 10, alignment: .center)
   }
-
+  var todayMealView: some View {
+    ScrollViewReader { scrollView in
+      ScrollView {
+        LazyVStack(alignment: .leading) {
+          ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+            HStack(alignment: .firstTextBaseline) {
+              //verse number
+              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              //verse text
+              if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.todayPlanData.verses[index])
+              } else {
+                VerseTextView(verse: "")
+              }
+            }
+            .padding([.leading, .trailing], 20)
+            .padding(.bottom, 10)
+            .id(index)
+          }
+        }
+        //.redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .textSelection(.enabled)
+        .onReceive(changedDayNotification) { _ in
+          scrollView.scrollTo(0, anchor: .top)
+        }
+        .alert(isPresented: $viewModel.showingServerErrorAlert) {
+          Alert(title: Text("알림"), message: Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다."),
+                dismissButton: .default(Text("확인")))
+        }
+        .onAppear {
+          withAnimation {
+            scrollView.scrollTo(0, anchor: .top)
+          }
+        }
+      }
+      .listVerticalShadow()
+    }
+  }
   var todayWordsView: some View {
     ScrollViewReader { scrollView in
       ScrollView {
@@ -238,15 +275,27 @@ extension TodayMealView {
     option.menuItemSize = .sizeToFit(minWidth: 150, height: 40)
     option.borderOptions = .hidden
 
-    return PageView(options: option, items: items) { _ in
-      VStack {
-        self.headerDetailView
+    return VStack {
+      PageView(options: option, items: items) { item in
+        VStack {
+          Text("\(item.index)" + item.title)
+          self.headerDetailView
 
-        //today words
-        self.todayWordsView
-        //footer view
-        self.footerView
+          if item.index == 0 {
+            //todayMealView
+            self.todayMealView
+          } else {
+            //today words
+            self.todayWordsView
+              .background(Color.red)
+          }
+
+          //footer view
+          self.footerView
+        }
       }
+      .padding([.horizontal], 2)
+      .padding([.bottom], 14)
     }
   }
 
