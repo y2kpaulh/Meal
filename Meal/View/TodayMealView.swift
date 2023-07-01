@@ -109,7 +109,7 @@ extension TodayMealView {
   var headerDetailView: some View {
     VStack {
       HStack {
-        Text(PlanStore().getMealPlanStr(viewModel.todayReadingPlan.meal))
+        Text(PlanStore().getMealPlanStr(viewModel.todayReading.meal))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
           .textSelection(.enabled)
@@ -182,7 +182,7 @@ extension TodayMealView {
           ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
-              VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
+              VerseNumberView(todayPlan: $viewModel.todayReading.meal, index: index)
               //verse text
               if viewModel.mealWord.verses.indexExists(index), viewModel.mealWord.verses[index].count > 0 {
                 VerseTextView(verse: viewModel.mealWord.verses[index])
@@ -220,7 +220,7 @@ extension TodayMealView {
           ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
-              VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
+              VerseNumberView(todayPlan: $viewModel.todayReading.meal, index: index)
               //verse text
               if viewModel.mealWord.verses.indexExists(index), viewModel.mealWord.verses[index].count > 0 {
                 VerseTextView(verse: viewModel.mealWord.verses[index])

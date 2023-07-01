@@ -12,7 +12,7 @@ struct TodayPlan: View {
 
   var body: some View {
     VStack {
-      WatchHeaderView(todayPlan: $viewModel.todayReadingPlan)
+      WatchHeaderView(todayPlan: $viewModel.todayReading)
 
       Divider()
         .foregroundColor(Color.white)
@@ -21,16 +21,16 @@ struct TodayPlan: View {
         LazyVStack(alignment: .leading) {
           ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .top) {
-              if viewModel.todayReadingPlan.meal.fChap == viewModel.todayReadingPlan.meal.lChap {
-                Text("\(index + viewModel.todayReadingPlan.meal.fVer)")
+              if viewModel.todayReading.meal.fChap == viewModel.todayReading.meal.lChap {
+                Text("\(index + viewModel.todayReading.meal.fVer)")
                   .foregroundColor(.gray)
                   .font(.footnote)
 
               } else {
-                if let planBook = BibleStore.books.filter { $0.abbrev == viewModel.todayReadingPlan.meal.book }.first {
-                  let verseIndex = index + viewModel.todayReadingPlan.meal.fVer
+                if let planBook = BibleStore.books.filter { $0.abbrev == viewModel.todayReading.meal.book }.first {
+                  let verseIndex = index + viewModel.todayReading.meal.fVer
 
-                  let fChapterCount = planBook.chapters[viewModel.todayReadingPlan.meal.fChap - 1].count
+                  let fChapterCount = planBook.chapters[viewModel.todayReading.meal.fChap - 1].count
 
                   Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
                     .foregroundColor(.gray)

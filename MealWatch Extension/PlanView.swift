@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlanView: View {
   let index: Int
-  let plan: DailyPlan
+  let plan: DailyReading
 
   var body: some View {
     VStack(alignment: .leading, spacing: -4) {

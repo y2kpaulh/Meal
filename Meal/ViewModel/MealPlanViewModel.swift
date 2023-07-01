@@ -21,9 +21,9 @@ extension FileManager {
 }
 
 class MealPlanViewModel: ObservableObject {
-  @Published var readingPlan: [DailyPlan] = []
+  @Published var readingPlan: [DailyReading] = []
 
-  @Published var todayReadingPlan: DailyPlan = DailyPlan(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])
+  @Published var todayReading: DailyReading = DailyReading(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])
 
   @Published var mealWord: Word = Word(book: "", verses: [])
 
@@ -111,18 +111,18 @@ extension MealPlanViewModel {
       .store(in: &cancelBag)
   }
 
-  func loadReadingPlanData(_ dailyPlan: [DailyPlan]) {
+  func loadReadingPlanData(_ dailyPlan: [DailyReading]) {
     self.readingPlan = dailyPlan
-    self.todayReadingPlan = self.readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.mealWord = PlanStore().getMealWord(self.todayReadingPlan.meal)
+    self.todayReading = self.readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
+    self.mealWord = PlanStore().getMealWord(self.todayReading.meal)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
-  func loadPlanData(_ readingPlan: [DailyPlan]) {
+  func loadPlanData(_ readingPlan: [DailyReading]) {
     self.readingPlan = readingPlan
 
-    self.todayReadingPlan = readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.mealWord = PlanStore().getMealWord(self.todayReadingPlan.meal)
+    self.todayReading = readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
+    self.mealWord = PlanStore().getMealWord(self.todayReading.meal)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
@@ -132,7 +132,7 @@ extension MealPlanViewModel {
     let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
     let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
 
-    self.todayReadingPlan = indexPlan
+    self.todayReading = indexPlan
     self.mealWord = indexPlanData
     self.todayPlanDate = indexDateStr
   }

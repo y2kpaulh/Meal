@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - ReadingPlan
 //struct ReadingPlan: Codable {
-//  let readingPlan: [DailyPlan]
+//  let readingPlan: [DailyReading]
 //}
-typealias ReadingPlan = [DailyPlan]
+typealias ReadingPlan = [DailyReading]
 
-// MARK: - DailyPlan
-struct DailyPlan: Codable, Identifiable, Hashable {
-  static func == (lhs: DailyPlan, rhs: DailyPlan) -> Bool {
+// MARK: - DailyReading
+struct DailyReading: Codable, Identifiable, Hashable {
+  static func == (lhs: DailyReading, rhs: DailyReading) -> Bool {
     return lhs.id == rhs.id
   }
 

@@ -11,7 +11,7 @@ import WidgetKit
 #endif
 
 class PlanNotiService {
-  func fetchPlanList(completion: @escaping ([DailyPlan]) -> Void) {
+  func fetchPlanList(completion: @escaping ([DailyReading]) -> Void) {
     guard !PlanService.isOffLineMode else {
       return completion(PlanStore().readingPlan)
     }
@@ -31,7 +31,7 @@ class PlanNotiService {
           return
         }
         do {
-          let plan = try JSONDecoder().decode([DailyPlan].self, from: data)
+          let plan = try JSONDecoder().decode([DailyReading].self, from: data)
 
           DispatchQueue.main.async {
             #if !os(watchOS)

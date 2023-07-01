@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlanView: View {
   let index: Int
-  let plan: DailyPlan
+  let plan: DailyReading
 
   @Environment(\.verticalSizeClass) var
     verticalSizeClass: UserInterfaceSizeClass?
