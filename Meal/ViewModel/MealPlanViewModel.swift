@@ -22,11 +22,11 @@ extension FileManager {
 
 class MealPlanViewModel: ObservableObject {
   @Published var mealPlan: [MealPlan] = []
-  @Published var scheduleList: [Schedule] = []
+  @Published var readingPlan: [DailyPlan] = []
 
   @Published var todayPlan: MealPlan = MealPlan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
-  @Published var todayPlanData: BibleText = BibleText(book: "", verses: [])
-  @Published var todaySchedule: [BibleVerse] = [BibleVerse]()
+  @Published var todayPlanData: Word = Word(book: "", verses: [])
+  @Published var todaySchedule: [Scripture] = [Scripture]()
 
   @Published var isLoading = false
   @Published var planDataError: Bool = false

@@ -39,19 +39,19 @@ struct TodayMealView: View {
       .onAppear {
         viewModel.fetchPlanData()
 
-        if let result = try? JSONDecoder().decode(ScheduleList.self, from: PlanStore().testPlan) {
-          viewModel.scheduleList = result.scheduleList
+        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
+          viewModel.readingPlan = result.readingPlan
 
-          let resultData = PlanStore().getReadThroughVerses(viewModel.scheduleList[0].readThrough)
+          let resultData = PlanStore().getReadThroughVerses(viewModel.readingPlan[0].readThrough)
 
-          let resultPlan = viewModel.scheduleList[0].readThrough.enumerated().map {  (index, element) in
+          let resultPlan = viewModel.readingPlan[0].readThrough.enumerated().map {  (index, element) in
             var result = element
             result.lVer = resultData.lVerArr[index]
             return result
           }
 
-          viewModel.scheduleList[0].readThrough = resultPlan
-          print(viewModel.scheduleList[0].readThrough)
+          viewModel.readingPlan[0].readThrough = resultPlan
+          print(viewModel.readingPlan[0].readThrough)
           print(resultData.planList)
         }
 

@@ -33,13 +33,13 @@ public final class PlanStore: ObservableObject {
     return dateFormatter
   }
 
-  func getPlanData(_ plan: MealPlan) -> BibleText {
+  func getPlanData(_ plan: MealPlan) -> Word {
     let book = BibleStore.books.filter { $0.abbrev == plan.book }
 
     guard book.count > 0,
           let planBook = book.first,
           let index = BibleStore.books.firstIndex(where: { $0.abbrev == plan.book })
-    else { return BibleText(book: "", verses: []) }
+    else { return Word(book: "", verses: []) }
 
     let title = BibleStore.titles[index]
     var verse = [String]()
@@ -59,11 +59,11 @@ public final class PlanStore: ObservableObject {
       verse = Array(fVerseRange + lVerseRange)
     }
 
-    return BibleText(book: title, verses: verse)
+    return Word(book: title, verses: verse)
   }
 
-  func getReadThroughVerses(_ biblePlan: [BibleVerse]) -> (planList: [BibleText], lVerArr: [Int]) {
-    var biblePlanList = [BibleText]()
+  func getReadThroughVerses(_ biblePlan: [Scripture]) -> (planList: [Word], lVerArr: [Int]) {
+    var biblePlanList = [Word]()
     var lVerArr = [Int]()
 
     biblePlanList = biblePlan.enumerated().map { (index, element) in
@@ -72,7 +72,7 @@ public final class PlanStore: ObservableObject {
       guard book.count > 0,
             let planBook = book.first,
             let index = BibleStore.books.firstIndex(where: { $0.abbrev == element.book })
-      else { return BibleText(book: "", verses: []) }
+      else { return Word(book: "", verses: []) }
 
       let title = BibleStore.titles[index]
       var verse = [String]()
@@ -114,7 +114,7 @@ public final class PlanStore: ObservableObject {
 
         verse = Array(fVerseRange + lVerseRange)
       }
-      return BibleText(book: title, verses: verse)
+      return Word(book: title, verses: verse)
     }
 
     return (planList: biblePlanList, lVerArr: lVerArr)
@@ -203,37 +203,148 @@ extension PlanStore {
   var testPlan: Data {
     return Data(
       """
-                       {
-                       "scheduleList":
-                           [
-                               {
-                                   "day": "2023-06-11",
-                                   "meal": {
-                                       "book": "왕하",
-                                       "fChap": 23,
-                                       "fVer": 1,
-                                       "lChap": 23,
-                                       "lVer": 20
-                                   },
-                                   "readThrough": [
-                                       {
-                                       "book": "왕상",
-                                       "fChap": 18,
-                                       "fVer": 1,
-                                       "lChap": 19,
-                                       "lVer": 100
-                                     },
-                                     {
-                                       "book": "시",
-                                       "fChap": 23,
-                                       "fVer": 1,
-                                       "lChap": 23,
-                                       "lVer": 100
-                                    }
-                                 ]
-                               }
-                           ]
-                       }
+      {
+          "readingPlan":
+      [
+              {
+                  "day": "2023-07-01",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 103,
+                      "fVer": 15,
+                      "lChap": 103,
+                      "lVer": 22
+                      },
+                  "readThrough": [
+                      {
+                          "book": "사",
+                          "fChap": 21,
+                          "fVer": 1,
+                          "lChap": 24,
+                          "lVer": 100
+                      }
+                  ]
+              },
+               {
+                  "day": "2023-07-02",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 104,
+                      "fVer": 1,
+                      "lChap": 104,
+                      "lVer": 18
+                      },
+                  "readThrough": [
+                      {
+                          "book": "사",
+                          "fChap": 25,
+                          "fVer": 1,
+                          "lChap": 29,
+                          "lVer": 100
+                      }
+                  ]
+              },
+               {
+                  "day": "2023-07-03",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 104,
+                      "fVer": 19,
+                      "lChap": 104,
+                      "lVer": 35
+                      },
+                  "readThrough": [
+                      {
+                          "book": "사",
+                          "fChap": 30,
+                          "fVer": 1,
+                          "lChap": 35,
+                          "lVer": 100
+                      }
+                  ]
+              },
+               {
+                  "day": "2023-07-04",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 105,
+                      "fVer": 1,
+                      "lChap": 105,
+                      "lVer": 11
+                      },
+                  "readThrough": [
+                      {
+                          "book": "왕하",
+                          "fChap": 18,
+                          "fVer": 13,
+                          "lChap": 18,
+                          "lVer": 37
+                      },
+                      {
+                          "book": "사",
+                          "fChap": 36,
+                          "fVer": 1,
+                          "lChap": 36,
+                          "lVer": 100
+                      }
+                  ]
+              },
+
+               {
+                  "day": "2023-07-05",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 105,
+                      "fVer": 12,
+                      "lChap": 105,
+                      "lVer": 23
+                      },
+                  "readThrough": [
+                      {
+                          "book": "왕하",
+                          "fChap": 19,
+                          "fVer": 1,
+                          "lChap": 19,
+                          "lVer": 100
+                      },
+                      {
+                          "book": "사",
+                          "fChap": 37,
+                          "fVer": 1,
+                          "lChap": 37,
+                          "lVer": 100
+                      }
+                  ]
+              },
+
+               {
+                  "day": "2023-07-06",
+                  "meal":{
+                      "book": "시",
+                      "fChap": 105,
+                      "fVer": 24,
+                      "lChap": 105,
+                      "lVer": 45
+                      },
+                  "readThrough": [
+                      {
+                          "book": "왕하",
+                          "fChap": 19,
+                          "fVer": 1,
+                          "lChap": 19,
+                          "lVer": 100
+                      },
+                      {
+                          "book": "사",
+                          "fChap": 37,
+                          "fVer": 1,
+                          "lChap": 37,
+                          "lVer": 100
+                      }
+                  ]
+              }
+          ]
+      }
       """.utf8)
   }
 }
