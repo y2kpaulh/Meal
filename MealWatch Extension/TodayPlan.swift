@@ -19,7 +19,7 @@ struct TodayPlan: View {
 
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.todayMealPlanData.verses.count, id: \.self) { index in
+          ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .top) {
               if viewModel.todayReadingPlan.meal.fChap == viewModel.todayReadingPlan.meal.lChap {
                 Text("\(index + viewModel.todayReadingPlan.meal.fVer)")
@@ -37,7 +37,7 @@ struct TodayPlan: View {
                 }
               }
 
-              Text(viewModel.todayMealPlanData.verses[index])
+              Text(viewModel.mealWord.verses[index])
                 .font(.custom("NanumMyeongjoOTF", size: 16))
                 .foregroundColor(.white)
                 .padding(.top, 4)

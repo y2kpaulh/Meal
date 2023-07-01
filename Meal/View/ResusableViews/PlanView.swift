@@ -45,7 +45,7 @@ struct PlanView: View {
         .foregroundColor(Color(UIColor.systemGray))
       }
 
-      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealPlanData(plan.meal).verses))
+      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealWord(plan.meal).verses))
         .font(.custom("NanumMyeongjoOTF", size: 12))
         .lineLimit(3)
         //.font(.footnote)

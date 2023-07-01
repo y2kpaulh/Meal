@@ -33,28 +33,28 @@ public final class PlanStore: ObservableObject {
     return dateFormatter
   }
 
-  func getMealPlanData(_ plan: Scripture) -> Word {
-    let book = BibleStore.books.filter { $0.abbrev == plan.book }
+  func getMealWord(_ scripture: Scripture) -> Word {
+    let book = BibleStore.books.filter { $0.abbrev == scripture.book }
 
     guard book.count > 0,
           let planBook = book.first,
-          let index = BibleStore.books.firstIndex(where: { $0.abbrev == plan.book })
+          let index = BibleStore.books.firstIndex(where: { $0.abbrev == scripture.book })
     else { return Word(book: "", verses: []) }
 
     let title = BibleStore.titles[index]
     var verse = [String]()
 
-    if plan.fChap == plan.lChap {
-      let chapter = planBook.chapters[plan.fChap-1]
-      let verseRange = chapter[plan.fVer-1..<plan.lVer]
+    if scripture.fChap == scripture.lChap {
+      let chapter = planBook.chapters[scripture.fChap-1]
+      let verseRange = chapter[scripture.fVer-1..<scripture.lVer]
 
       verse = Array(verseRange)
     } else {
-      let fChapter = planBook.chapters[plan.fChap-1]
-      let lChapter = planBook.chapters[plan.lChap-1]
+      let fChapter = planBook.chapters[scripture.fChap-1]
+      let lChapter = planBook.chapters[scripture.lChap-1]
 
-      let fVerseRange = fChapter[plan.fVer-1..<fChapter.count]
-      let lVerseRange = lChapter[0..<plan.lVer]
+      let fVerseRange = fChapter[scripture.fVer-1..<fChapter.count]
+      let lVerseRange = lChapter[0..<scripture.lVer]
 
       verse = Array(fVerseRange + lVerseRange)
     }
@@ -62,11 +62,11 @@ public final class PlanStore: ObservableObject {
     return Word(book: title, verses: verse)
   }
 
-  func getReadThroughVerses(_ biblePlan: [Scripture]) -> (planList: [Word], lVerArr: [Int]) {
+  func getReadThroughWord(_ scripture: [Scripture]) -> (planList: [Word], lVerArr: [Int]) {
     var biblePlanList = [Word]()
     var lVerArr = [Int]()
 
-    biblePlanList = biblePlan.enumerated().map { (index, element) in
+    biblePlanList = scripture.enumerated().map { (index, element) in
       let book = BibleStore.books.filter { $0.abbrev == element.book }
 
       guard book.count > 0,
@@ -186,7 +186,7 @@ extension PlanStore {
 
         return LocalPushPlan(title: "오늘의 끼니",
                              subTitle: PlanStore().getMealPlanStr(plan.meal),
-                             body: PlanStore().getBibleSummary(verses: PlanStore().getMealPlanData(plan.meal).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
+                             body: PlanStore().getBibleSummary(verses: PlanStore().getMealWord(plan.meal).verses), month: Int(targetDay[1]) ?? 0, day: Int(targetDay[2]) ?? 0)
       }
 
     for plan in PlanStore.dailyPushList {

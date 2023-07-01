@@ -49,21 +49,20 @@ struct TodayMealView: View {
       .onAppear {
         viewModel.fetchPlanData()
 
-        //        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
-        //          viewModel.readingPlan = result
-        //
-        //          let resultData = PlanStore().getReadThroughVerses(viewModel.readingPlan[0].readThrough)
-        //
-        //          let resultPlan = viewModel.readingPlan[0].readThrough.enumerated().map {  (index, element) in
-        //            var result = element
-        //            result.lVer = resultData.lVerArr[index]
-        //            return result
-        //          }
-        //
-        //          viewModel.readingPlan[0].readThrough = resultPlan
-        //          print(viewModel.readingPlan[0].readThrough)
-        //          print(resultData.planList)
-        //        }
+        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
+          viewModel.readingPlan = result
+
+          let resultData = PlanStore().getReadThroughWord(viewModel.readingPlan[3].readThrough)
+
+          let resultPlan = viewModel.readingPlan[3].readThrough.enumerated().map {  (index, element) in
+            var result = element
+            result.lVer = resultData.lVerArr[index]
+            return result
+          }
+
+          Swift.print(">>>>\n", resultData)
+          Swift.print("----\n", resultPlan)
+        }
 
       }
       .onReceive(widgetDeepLinkNotification) { _ in
@@ -180,13 +179,13 @@ extension TodayMealView {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.todayMealPlanData.verses.count, id: \.self) { index in
+          ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
               VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
               //verse text
-              if viewModel.todayMealPlanData.verses.indexExists(index), viewModel.todayMealPlanData.verses[index].count > 0 {
-                VerseTextView(verse: viewModel.todayMealPlanData.verses[index])
+              if viewModel.mealWord.verses.indexExists(index), viewModel.mealWord.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.mealWord.verses[index])
               } else {
                 VerseTextView(verse: "")
               }
@@ -218,13 +217,13 @@ extension TodayMealView {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.todayMealPlanData.verses.count, id: \.self) { index in
+          ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
               VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
               //verse text
-              if viewModel.todayMealPlanData.verses.indexExists(index), viewModel.todayMealPlanData.verses[index].count > 0 {
-                VerseTextView(verse: viewModel.todayMealPlanData.verses[index])
+              if viewModel.mealWord.verses.indexExists(index), viewModel.mealWord.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.mealWord.verses[index])
               } else {
                 VerseTextView(verse: "")
               }

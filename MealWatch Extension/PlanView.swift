@@ -36,7 +36,7 @@ struct PlanView: View {
         .foregroundColor(Color.gray)
       }
 
-      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealPlanData(plan.meal).verses))
+      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealWord(plan.meal).verses))
         .font(.custom("NanumMyeongjoOTF", size: 14))
         .lineLimit(3)
         .lineSpacing(6.0)

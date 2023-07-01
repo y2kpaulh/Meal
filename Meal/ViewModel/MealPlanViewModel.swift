@@ -25,7 +25,7 @@ class MealPlanViewModel: ObservableObject {
 
   @Published var todayReadingPlan: DailyPlan = DailyPlan(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])
 
-  @Published var todayMealPlanData: Word = Word(book: "", verses: [])
+  @Published var mealWord: Word = Word(book: "", verses: [])
 
   @Published var isLoading = false
   @Published var planDataError: Bool = false
@@ -114,7 +114,7 @@ extension MealPlanViewModel {
   func loadReadingPlanData(_ dailyPlan: [DailyPlan]) {
     self.readingPlan = dailyPlan
     self.todayReadingPlan = self.readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.todayMealPlanData = PlanStore().getMealPlanData(self.todayReadingPlan.meal)
+    self.mealWord = PlanStore().getMealWord(self.todayReadingPlan.meal)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
@@ -122,18 +122,18 @@ extension MealPlanViewModel {
     self.readingPlan = readingPlan
 
     self.todayReadingPlan = readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.todayMealPlanData = PlanStore().getMealPlanData(self.todayReadingPlan.meal)
+    self.mealWord = PlanStore().getMealWord(self.todayReadingPlan.meal)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
   func changePlanIndex(index: Int) {
     let indexPlan = self.readingPlan[index]
-    let indexPlanData = PlanStore().getMealPlanData(indexPlan.meal)
+    let indexPlanData = PlanStore().getMealWord(indexPlan.meal)
     let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
     let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
 
     self.todayReadingPlan = indexPlan
-    self.todayMealPlanData = indexPlanData
+    self.mealWord = indexPlanData
     self.todayPlanDate = indexDateStr
   }
 }

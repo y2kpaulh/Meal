@@ -57,7 +57,7 @@ struct Provider: TimelineProvider {
 
     planNotiService.fetchPlanList {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
-      let planData = PlanStore().getMealPlanData(plan.meal)
+      let planData = PlanStore().getMealWord(plan.meal)
       let nextPlan = NotiPlan(day: plan.day,
                               meal: plan.meal,
                               readThrough: plan.readThrough,
