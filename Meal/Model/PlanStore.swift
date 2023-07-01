@@ -65,8 +65,11 @@ public final class PlanStore: ObservableObject {
   func getReadThroughWord(_ scripture: [Scripture]) -> (planList: [Word], lVerArr: [Int]) {
     var biblePlanList = [Word]()
     var lVerArr = [Int]()
+    var resultVerses: [String] = [String]()
 
     biblePlanList = scripture.enumerated().map { (index, element) in
+
+      print("biblePlanList", index, element)
       let book = BibleStore.books.filter { $0.abbrev == element.book }
 
       guard book.count > 0,
@@ -75,7 +78,6 @@ public final class PlanStore: ObservableObject {
       else { return Word(book: "", verses: []) }
 
       let title = BibleStore.titles[index]
-      var verse = [String]()
 
       if element.fChap == element.lChap {
         let chapter = planBook.chapters[element.fChap-1]
@@ -92,29 +94,46 @@ public final class PlanStore: ObservableObject {
 
         let verseRange = chapter[element.fVer-1..<lVer]
 
-        verse = Array(verseRange)
+        resultVerses = Array(verseRange)
       } else {
         let fChapter = planBook.chapters[element.fChap-1]
         let lChapter = planBook.chapters[element.lChap-1]
 
-        let fVerseRange = fChapter[element.fVer-1..<fChapter.count]
+        print("element.fChap", element.fChap, "element.lChap", element.lChap)
 
-        //임의로 마지막 인덱스를 100으로 설정
-        var lVer: Int = 0
+        for chapterIndex  in element.fChap...element.lChap {
+          let chapter = planBook.chapters[chapterIndex-1]
 
-        if element.lVer == 100 {
-          lVer = lChapter.count
-        } else {
-          lVer = element.lVer
+          if chapterIndex == element.fChap {
+            let fVerseRange = chapter[element.fVer-1..<fChapter.count]
+
+            lVerArr.append(fChapter.count)
+
+            resultVerses.append(contentsOf: fVerseRange)
+          } else if chapterIndex < element.lChap {
+            let verseRange = chapter[0..<chapter.count]
+
+            lVerArr.append(chapter.count)
+            resultVerses.append(contentsOf: verseRange)
+          } else if chapterIndex == element.lChap {
+            //임의로 마지막 인덱스를 100으로 설정
+            var lVer: Int = 0
+
+            if element.lVer == 100 {
+              lVer = lChapter.count
+            } else {
+              lVer = element.lVer
+            }
+
+            lVerArr.append(lVer)
+
+            let lVerse = lChapter[0..<lVer]
+            resultVerses.append(contentsOf: lVerse)
+          }
         }
 
-        lVerArr.append(lVer)
-
-        let lVerseRange = lChapter[0..<lVer]
-
-        verse = Array(fVerseRange + lVerseRange)
       }
-      return Word(book: title, verses: verse)
+      return Word(book: title, verses: resultVerses)
     }
 
     return (planList: biblePlanList, lVerArr: lVerArr)

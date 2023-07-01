@@ -77,7 +77,7 @@ struct NotiPlan: Planable, Codable {
   let verses: [String]
 }
 
-public struct Word: Codable {
+public struct Word: Codable, Hashable {
   let book: String
   let verses: [String]
 }

@@ -48,22 +48,6 @@ struct TodayMealView: View {
       }
       .onAppear {
         viewModel.fetchPlanData()
-
-        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
-          viewModel.readingPlan = result
-
-          let resultData = PlanStore().getReadThroughWord(viewModel.readingPlan[3].readThrough)
-
-          let resultPlan = viewModel.readingPlan[3].readThrough.enumerated().map {  (index, element) in
-            var result = element
-            result.lVer = resultData.lVerArr[index]
-            return result
-          }
-
-          Swift.print(">>>>\n", resultData)
-          Swift.print("----\n", resultPlan)
-        }
-
       }
       .onReceive(widgetDeepLinkNotification) { _ in
         viewModel.fetchPlanData()
@@ -213,25 +197,30 @@ extension TodayMealView {
       .listVerticalShadow()
     }
   }
-  var todayWordsView: some View {
+
+  var todayReadThroughView: some View {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.mealWord.verses.count, id: \.self) { index in
-            HStack(alignment: .firstTextBaseline) {
-              //verse number
-              VerseNumberView(todayPlan: $viewModel.todayReading.meal, index: index)
-              //verse text
-              if viewModel.mealWord.verses.indexExists(index), viewModel.mealWord.verses[index].count > 0 {
-                VerseTextView(verse: viewModel.mealWord.verses[index])
-              } else {
-                VerseTextView(verse: "")
+
+          ForEach(Array(viewModel.readThroughWord.enumerated()), id: \.offset) { wordIndex, word in
+            ForEach(0..<word.verses.count, id: \.self) { index in
+              HStack(alignment: .firstTextBaseline) {
+                //verse number
+                VerseNumberView(todayPlan: $viewModel.todayReading.readThrough[wordIndex], index: index)
+                //verse text
+                if word.verses.indexExists(index), word.verses[index].count > 0 {
+                  VerseTextView(verse: word.verses[index])
+                } else {
+                  VerseTextView(verse: "")
+                }
               }
+              .padding([.leading, .trailing], 20)
+              .padding(.bottom, 10)
+              .id(index)
             }
-            .padding([.leading, .trailing], 20)
-            .padding(.bottom, 10)
-            .id(index)
           }
+
         }
         //.redacted(reason: viewModel.isLoading ? .placeholder : [])
         .textSelection(.enabled)
@@ -285,7 +274,7 @@ extension TodayMealView {
             self.todayMealView
           } else {
             //today words
-            self.todayWordsView
+            self.todayReadThroughView
               .background(Color.red)
           }
 

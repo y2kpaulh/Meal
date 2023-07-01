@@ -26,6 +26,7 @@ class MealPlanViewModel: ObservableObject {
   @Published var todayReading: DailyReading = DailyReading(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])
 
   @Published var mealWord: Word = Word(book: "", verses: [])
+  @Published var readThroughWord: [Word] = [Word]()
 
   @Published var isLoading = false
   @Published var planDataError: Bool = false
@@ -115,25 +116,29 @@ extension MealPlanViewModel {
     self.readingPlan = dailyPlan
     self.todayReading = self.readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
     self.mealWord = PlanStore().getMealWord(self.todayReading.meal)
-    self.todayPlanDate = PlanStore().convertDateToStr()
-  }
 
-  func loadPlanData(_ readingPlan: [DailyReading]) {
-    self.readingPlan = readingPlan
+    let resultData = PlanStore().getReadThroughWord(self.todayReading.readThrough)
 
-    self.todayReading = readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.mealWord = PlanStore().getMealWord(self.todayReading.meal)
+    self.readThroughWord = resultData.planList
+
+    let resultPlan = self.todayReading.readThrough.enumerated().map {  (index, element) in
+      var result = element
+      result.lVer = resultData.lVerArr[index]
+      return result
+    }
+    self.todayReading.readThrough = resultPlan
+    print("self.todayReading.readThrough", self.todayReading.readThrough)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
   func changePlanIndex(index: Int) {
-    let indexPlan = self.readingPlan[index]
-    let indexPlanData = PlanStore().getMealWord(indexPlan.meal)
-    let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
+    self.todayReading = self.readingPlan[index]
+    self.mealWord = PlanStore().getMealWord(self.todayReading.meal)
+    self.readThroughWord = PlanStore().getReadThroughWord(self.todayReading.readThrough).planList
+
+    let indexDate = PlanStore().dateFormatter.date(from: self.todayReading.day)!
     let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
 
-    self.todayReading = indexPlan
-    self.mealWord = indexPlanData
     self.todayPlanDate = indexDateStr
   }
 }
