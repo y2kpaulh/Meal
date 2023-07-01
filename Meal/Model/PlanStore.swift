@@ -83,12 +83,12 @@ public final class PlanStore: ObservableObject {
         //임의로 마지막 인덱스를 100으로 설정
         var lVer: Int = 0
         if element.lVer == 100 {
-          lVer = chapter.count - 1
+          lVer = chapter.count
         } else {
           lVer = element.lVer
         }
 
-        lVerArr.append(lVer+1)
+        lVerArr.append(lVer)
 
         let verseRange = chapter[element.fVer-1..<lVer]
 
@@ -103,12 +103,12 @@ public final class PlanStore: ObservableObject {
         var lVer: Int = 0
 
         if element.lVer == 100 {
-          lVer = lChapter.count - 1
+          lVer = lChapter.count
         } else {
           lVer = element.lVer
         }
 
-        lVerArr.append(lVer+1)
+        lVerArr.append(lVer)
 
         let lVerseRange = lChapter[0..<lVer]
 
@@ -282,7 +282,7 @@ extension PlanStore {
               "book": "사",
               "fChap": 36,
               "fVer": 1,
-              "lChap": 36,
+              "lChap": 37,
               "lVer": 100
             }
           ]
