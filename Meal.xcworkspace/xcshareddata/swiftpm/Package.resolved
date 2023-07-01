@@ -91,6 +91,15 @@
       }
     },
     {
+      "identity" : "parchment",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rechsteiner/Parchment",
+      "state" : {
+        "revision" : "852d321f93f12557be8cd80766de9732393ff5ef",
+        "version" : "3.2.1"
+      }
+    },
+    {
       "identity" : "partialsheet",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AndreaMiotto/PartialSheet",
