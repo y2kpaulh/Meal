@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlanView: View {
   let index: Int
-  let plan: MealPlan
+  let plan: DailyPlan
 
   @Environment(\.verticalSizeClass) var
     verticalSizeClass: UserInterfaceSizeClass?
@@ -36,7 +36,7 @@ struct PlanView: View {
               .bold()
           }
 
-          Text(PlanStore().getMealPlanStr(plan))
+          Text(PlanStore().getMealPlanStr(plan.meal))
             .foregroundColor(Color(UIColor.label))
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
           //.bold()
@@ -45,7 +45,7 @@ struct PlanView: View {
         .foregroundColor(Color(UIColor.systemGray))
       }
 
-      Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
+      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealPlanData(plan.meal).verses))
         .font(.custom("NanumMyeongjoOTF", size: 12))
         .lineLimit(3)
         //.font(.footnote)

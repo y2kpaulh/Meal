@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlanView: View {
   let index: Int
-  let plan: MealPlan
+  let plan: DailyPlan
 
   var body: some View {
     VStack(alignment: .leading, spacing: -4) {
@@ -26,7 +26,7 @@ struct PlanView: View {
               .bold()
           }
 
-          Text(PlanStore().getMealPlanStr(plan))
+          Text(PlanStore().getMealPlanStr(plan.meal))
             .foregroundColor(.white)
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()
@@ -36,7 +36,7 @@ struct PlanView: View {
         .foregroundColor(Color.gray)
       }
 
-      Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
+      Text(PlanStore().getBibleSummary(verses: PlanStore().getMealPlanData(plan.meal).verses))
         .font(.custom("NanumMyeongjoOTF", size: 14))
         .lineLimit(3)
         .lineSpacing(6.0)

@@ -14,8 +14,8 @@ struct MealPlanList: View {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack {
-          ForEach(0..<viewModel.mealPlan.count, id: \.self) { index in
-            PlanView(index: index, plan: viewModel.mealPlan[index])
+          ForEach(0..<viewModel.readingPlan.count, id: \.self) { index in
+            PlanView(index: index, plan: viewModel.readingPlan[index])
               .id(index)
               .padding([.leading, .trailing], 4)
               .padding([.bottom], -40)
@@ -26,7 +26,7 @@ struct MealPlanList: View {
         }
         .onAppear {
           withAnimation {
-            let todayIndex = viewModel.mealPlan.firstIndex { $0.day == PlanStore().getDateStr() }
+            let todayIndex = viewModel.readingPlan.firstIndex { $0.day == PlanStore().getDateStr() }
             scrollView.scrollTo(todayIndex, anchor: .top)
           }
         }

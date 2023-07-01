@@ -30,12 +30,12 @@ func load<T: Decodable>(_ filename: String) -> T {
   }
 }
 
-func readMealPlanFile(fileName: String) throws -> [MealPlan]? {
+func readReadingPlanFile(fileName: String) throws -> ReadingPlan? {
   do {
     if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       let url = dir.appendingPathComponent(fileName)
       let data = try Data(contentsOf: url)
-      let decoded = try JSONDecoder().decode([MealPlan].self, from: data)
+      let decoded = try JSONDecoder().decode(ReadingPlan.self, from: data)
 
       return decoded
     } else {

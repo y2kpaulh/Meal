@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WatchHeaderView: View {
-  @Binding var todayPlan: MealPlan
+  @Binding var todayPlan: DailyPlan
 
   var body: some View {
     VStack {
@@ -19,7 +19,7 @@ struct WatchHeaderView: View {
           .foregroundColor(.gray)
       }
 
-      Text(PlanStore().getMealPlanStr(todayPlan))
+      Text(PlanStore().getMealPlanStr(todayPlan.meal))
         .font(.custom("NanumMyeongjoOTFBold", size: 16))
     }
   }
@@ -27,6 +27,6 @@ struct WatchHeaderView: View {
 
 struct WatchHeaderView_Previews: PreviewProvider {
   static var previews: some View {
-    WatchHeaderView(todayPlan: .constant(MealPlan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)))
+    WatchHeaderView(todayPlan: .constant(DailyPlan(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])))
   }
 }

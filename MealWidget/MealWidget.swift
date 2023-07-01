@@ -13,11 +13,16 @@ struct Provider: TimelineProvider {
   var planNotiService = PlanNotiService()
 
   let samplePlan = NotiPlan(day: "2021-01-01",
-                            book: "창",
-                            fChap: 1,
-                            fVer: 1,
-                            lChap: 1,
-                            lVer: 5,
+                            meal: Scripture(book: "창",
+                                            fChap: 1,
+                                            fVer: 1,
+                                            lChap: 1,
+                                            lVer: 5),
+                            readThrough: [Scripture(book: "창",
+                                                    fChap: 1,
+                                                    fVer: 1,
+                                                    lChap: 1,
+                                                    lVer: 5)],
                             verses: ["태초에 하나님이 천지를 창조하시니라", "그 땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라", "하나님이 이르시되 빛이 있으라 하시니 빛이 있었고 ", "그 빛이 하나님이 보시기에 좋았더라 하나님이 빛과 어둠을 나누사", "하나님이 빛을 낮이라 부르시고 어둠을 밤이라 부르시니라 저녁이 되고 아침이 되니 이는 첫째 날이니라"])
 
   func readWidgtPlan() -> [NotiPlan] {
@@ -52,13 +57,10 @@ struct Provider: TimelineProvider {
 
     planNotiService.fetchPlanList {
       let plan = $0.filter { $0.day == PlanStore().getDateStr(date: Date()) }[0]
-      let planData = PlanStore().getPlanData(plan)
+      let planData = PlanStore().getMealPlanData(plan.meal)
       let nextPlan = NotiPlan(day: plan.day,
-                              book: plan.book,
-                              fChap: plan.fChap,
-                              fVer: plan.fVer,
-                              lChap: plan.lChap,
-                              lVer: plan.lVer,
+                              meal: plan.meal,
+                              readThrough: plan.readThrough,
                               verses: planData.verses)
 
       let nextUpdate = Calendar
@@ -157,7 +159,7 @@ struct NotiPlanLabelView: View {
   var plan: NotiPlan
 
   var body: some View {
-    Text(PlanStore().getMealPlanStr(plan))
+    Text(PlanStore().getMealPlanStr(plan.meal))
       .foregroundColor(Color(UIColor.label))
       .font(.custom("NanumMyeongjoOTFBold", size: 16))
       .bold()

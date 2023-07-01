@@ -49,21 +49,21 @@ struct TodayMealView: View {
       .onAppear {
         viewModel.fetchPlanData()
 
-        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
-          viewModel.readingPlan = result.readingPlan
-
-          let resultData = PlanStore().getReadThroughVerses(viewModel.readingPlan[0].readThrough)
-
-          let resultPlan = viewModel.readingPlan[0].readThrough.enumerated().map {  (index, element) in
-            var result = element
-            result.lVer = resultData.lVerArr[index]
-            return result
-          }
-
-          viewModel.readingPlan[0].readThrough = resultPlan
-          print(viewModel.readingPlan[0].readThrough)
-          print(resultData.planList)
-        }
+        //        if let result = try? JSONDecoder().decode(ReadingPlan.self, from: PlanStore().testPlan) {
+        //          viewModel.readingPlan = result
+        //
+        //          let resultData = PlanStore().getReadThroughVerses(viewModel.readingPlan[0].readThrough)
+        //
+        //          let resultPlan = viewModel.readingPlan[0].readThrough.enumerated().map {  (index, element) in
+        //            var result = element
+        //            result.lVer = resultData.lVerArr[index]
+        //            return result
+        //          }
+        //
+        //          viewModel.readingPlan[0].readThrough = resultPlan
+        //          print(viewModel.readingPlan[0].readThrough)
+        //          print(resultData.planList)
+        //        }
 
       }
       .onReceive(widgetDeepLinkNotification) { _ in
@@ -110,7 +110,7 @@ extension TodayMealView {
   var headerDetailView: some View {
     VStack {
       HStack {
-        Text(PlanStore().getMealPlanStr(viewModel.todayPlan))
+        Text(PlanStore().getMealPlanStr(viewModel.todayReadingPlan.meal))
           .foregroundColor(Color(UIColor.label))
           .font(.custom("NanumMyeongjoOTFBold", size: 20))
           .textSelection(.enabled)
@@ -180,13 +180,13 @@ extension TodayMealView {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+          ForEach(0..<viewModel.todayMealPlanData.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
-              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
               //verse text
-              if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
-                VerseTextView(verse: viewModel.todayPlanData.verses[index])
+              if viewModel.todayMealPlanData.verses.indexExists(index), viewModel.todayMealPlanData.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.todayMealPlanData.verses[index])
               } else {
                 VerseTextView(verse: "")
               }
@@ -218,13 +218,13 @@ extension TodayMealView {
     ScrollViewReader { scrollView in
       ScrollView {
         LazyVStack(alignment: .leading) {
-          ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
+          ForEach(0..<viewModel.todayMealPlanData.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
-              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              VerseNumberView(todayPlan: $viewModel.todayReadingPlan.meal, index: index)
               //verse text
-              if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
-                VerseTextView(verse: viewModel.todayPlanData.verses[index])
+              if viewModel.todayMealPlanData.verses.indexExists(index), viewModel.todayMealPlanData.verses[index].count > 0 {
+                VerseTextView(verse: viewModel.todayMealPlanData.verses[index])
               } else {
                 VerseTextView(verse: "")
               }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VerseNumberView: View {
-  @Binding var todayPlan: MealPlan
+  @Binding var todayPlan: Scripture
   var index: Int
 
   var body: some View {
@@ -32,6 +32,6 @@ struct VerseNumberView: View {
 
 struct VerseNumberView_Previews: PreviewProvider {
   static var previews: some View {
-    VerseNumberView(todayPlan: .constant(MealPlan(day: "2021-09-07", book: "창", fChap: 1, fVer: 1, lChap: 1, lVer: 10)), index: 0)
+    VerseNumberView(todayPlan: .constant(Scripture(book: "창", fChap: 1, fVer: 1, lChap: 1, lVer: 10)), index: 0)
   }
 }

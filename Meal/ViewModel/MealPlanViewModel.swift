@@ -21,12 +21,11 @@ extension FileManager {
 }
 
 class MealPlanViewModel: ObservableObject {
-  @Published var mealPlan: [MealPlan] = []
   @Published var readingPlan: [DailyPlan] = []
 
-  @Published var todayPlan: MealPlan = MealPlan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
-  @Published var todayPlanData: Word = Word(book: "", verses: [])
-  @Published var todaySchedule: [Scripture] = [Scripture]()
+  @Published var todayReadingPlan: DailyPlan = DailyPlan(day: "", meal: Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0), readThrough: [Scripture(book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)])
+
+  @Published var todayMealPlanData: Word = Word(book: "", verses: [])
 
   @Published var isLoading = false
   @Published var planDataError: Bool = false
@@ -72,13 +71,13 @@ extension MealPlanViewModel {
       self.isLoading = true
     }
 
-    if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
-       mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
-      self.loadPlanData(mealPlan)
+    if let readingPlan = try? readReadingPlanFile(fileName: "readingPlan"),
+       readingPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+      self.loadReadingPlanData(readingPlan)
       return
     }
 
-    PlanService.requestPlan(.mealPlan)
+    PlanService.requestPlan(.readingPlan)
       .mapError({ [weak self] (error) -> Error in
         guard let self = self else { return  error }
         print(error)
@@ -101,8 +100,9 @@ extension MealPlanViewModel {
       },
       receiveValue: { [weak self] in
         guard let self = self else { return }
-        if (try? $0.saveToFile("mealPlan")) != nil {
-          self.loadPlanData($0)
+
+        if (try? $0.saveToFile("readingPlan")) != nil {
+          self.loadReadingPlanData($0)
           DispatchQueue.main.async() {
             self.isLoading = false
           }
@@ -111,22 +111,29 @@ extension MealPlanViewModel {
       .store(in: &cancelBag)
   }
 
-  func loadPlanData(_ mealPlan: [MealPlan]) {
-    self.mealPlan = mealPlan
+  func loadReadingPlanData(_ dailyPlan: [DailyPlan]) {
+    self.readingPlan = dailyPlan
+    self.todayReadingPlan = self.readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
+    self.todayMealPlanData = PlanStore().getMealPlanData(self.todayReadingPlan.meal)
+    self.todayPlanDate = PlanStore().convertDateToStr()
+  }
 
-    self.todayPlan = mealPlan.filter { $0.day == PlanStore().getDateStr() }[0]
-    self.todayPlanData = PlanStore().getPlanData(self.todayPlan)
+  func loadPlanData(_ readingPlan: [DailyPlan]) {
+    self.readingPlan = readingPlan
+
+    self.todayReadingPlan = readingPlan.filter { $0.day == PlanStore().getDateStr() }[0]
+    self.todayMealPlanData = PlanStore().getMealPlanData(self.todayReadingPlan.meal)
     self.todayPlanDate = PlanStore().convertDateToStr()
   }
 
   func changePlanIndex(index: Int) {
-    let indexPlan = self.mealPlan[index]
-    let indexPlanData = PlanStore().getPlanData(indexPlan)
+    let indexPlan = self.readingPlan[index]
+    let indexPlanData = PlanStore().getMealPlanData(indexPlan.meal)
     let indexDate = PlanStore().dateFormatter.date(from: indexPlan.day)!
     let indexDateStr = PlanStore().convertDateToStr(date: indexDate)
 
-    self.todayPlan = indexPlan
-    self.todayPlanData = indexPlanData
+    self.todayReadingPlan = indexPlan
+    self.todayMealPlanData = indexPlanData
     self.todayPlanDate = indexDateStr
   }
 }

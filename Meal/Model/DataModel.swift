@@ -8,9 +8,10 @@
 import Foundation
 
 // MARK: - ReadingPlan
-struct ReadingPlan: Codable {
-  let readingPlan: [DailyPlan]
-}
+//struct ReadingPlan: Codable {
+//  let readingPlan: [DailyPlan]
+//}
+typealias ReadingPlan = [DailyPlan]
 
 // MARK: - DailyPlan
 struct DailyPlan: Codable, Identifiable, Hashable {
@@ -24,7 +25,7 @@ struct DailyPlan: Codable, Identifiable, Hashable {
     hasher.combine(id)
   }
   let day: String
-  let meal: Scripture
+  var meal: Scripture
   var readThrough: [Scripture]
 }
 
@@ -48,22 +49,18 @@ protocol BiblePlanable {
 
 protocol Planable {
   var day: String { get }
-  var book: String { get }
-  //let book: Book
-  var fChap: Int { get }
-  var fVer: Int { get }
-  var lChap: Int { get }
-  var lVer: Int { get }
+  var meal: Scripture { get }
+  var readThrough: [Scripture] { get }
 }
 
 // MARK: - Plan
-public struct MealPlan: Planable, Codable, Identifiable, Hashable {
-  public var id: String { day }
-  let day: String
-  let book: String
-  //let book: Book
-  let fChap, fVer, lChap, lVer: Int
-}
+//public struct Plan: Planable, Codable, Identifiable, Hashable {
+//  public var id: String { day }
+//  let day: String
+//  let book: String
+//  //let book: Book
+//  let fChap, fVer, lChap, lVer: Int
+//}
 
 struct LocalPushPlan: Codable {
   let title: String
@@ -75,8 +72,8 @@ struct LocalPushPlan: Codable {
 
 struct NotiPlan: Planable, Codable {
   let day: String
-  let book: String
-  let fChap, fVer, lChap, lVer: Int
+  var meal: Scripture
+  var readThrough: [Scripture]
   let verses: [String]
 }
 

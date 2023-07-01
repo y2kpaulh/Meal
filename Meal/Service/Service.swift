@@ -14,17 +14,19 @@ enum PlanService {
   static let baseUrl = URL(string: "https://mealplan-y2kpaulh.koyeb.app")!
 
   enum APIPath: String {
+    case readingPlan = "/readingPlan"
+
     case mealPlan = "/mealPlan"
   }
 }
 
 extension PlanService {
-  static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<[MealPlan], Error> {
-    guard !self.isOffLineMode else {
-      return Just(PlanStore().mealPlan)
-        .setFailureType(to: Error.self)
-        .eraseToAnyPublisher()
-    }
+  static func requestPlan(_ path: PlanService.APIPath) -> AnyPublisher<ReadingPlan, Error> {
+    //    guard !self.isOffLineMode else {
+    //      return Just(PlanStore().mealPlan)
+    //        .setFailureType(to: Error.self)
+    //        .eraseToAnyPublisher()
+    //    }
 
     guard let components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
     else { fatalError("Couldn't create URLComponents") }
