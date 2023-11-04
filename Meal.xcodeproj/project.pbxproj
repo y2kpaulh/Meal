@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -98,6 +98,7 @@
 		2E972C3526C4FA2F000D6902 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2E9D9D6326C4C81100195A22 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4235A326BD1B8700808E85 /* LocalNotificationManager.swift */; };
 		2EA14DC526A53D9100CAC9E1 /* NanumBrush.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA14DC426A53D9100CAC9E1 /* NanumBrush.otf */; };
+		2EA3E5FF2A49888000A1C0AE /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA3E5FE2A49888000A1C0AE /* Parchment */; };
 		2EABCDC926C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
 		2EABCDCA26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
 		2EABCDCB26C252FE00107840 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABCDC826C252FE00107840 /* APIClient.swift */; };
@@ -309,6 +310,7 @@
 			files = (
 				2E4AA1BD28F1993C006B1CBF /* PartialSheet in Frameworks */,
 				2E39882C281ABA330002097B /* FirebaseMessaging in Frameworks */,
+				2EA3E5FF2A49888000A1C0AE /* Parchment in Frameworks */,
 				2E39882A281ABA330002097B /* FirebaseCrashlytics in Frameworks */,
 				2E4AA1BA28F19906006B1CBF /* PopupView in Frameworks */,
 				2E15C701281AC34D00D4FFC7 /* FirebaseAnalytics in Frameworks */,
@@ -622,6 +624,7 @@
 				2E15C700281AC34D00D4FFC7 /* FirebaseAnalytics */,
 				2E4AA1B928F19906006B1CBF /* PopupView */,
 				2E4AA1BC28F1993C006B1CBF /* PartialSheet */,
+				2EA3E5FE2A49888000A1C0AE /* Parchment */,
 			);
 			productName = meal;
 			productReference = 2EBBD5E7268DBB5F00EA6BB2 /* Meal.app */;
@@ -664,6 +667,7 @@
 				2E398828281ABA330002097B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2E4AA1B828F19906006B1CBF /* XCRemoteSwiftPackageReference "PopupView" */,
 				2E4AA1BB28F1993C006B1CBF /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				2EA3E5FD2A49888000A1C0AE /* XCRemoteSwiftPackageReference "Parchment" */,
 			);
 			productRefGroup = 2EBBD5E8268DBB5F00EA6BB2 /* Products */;
 			projectDirPath = "";
@@ -1012,7 +1016,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1037,7 +1041,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.MealWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1058,7 +1062,7 @@
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				IBSC_MODULE = MealWatch_Extension;
 				INFOPLIST_FILE = MealWatch/Info.plist;
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1081,7 +1085,7 @@
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				IBSC_MODULE = MealWatch_Extension;
 				INFOPLIST_FILE = MealWatch/Info.plist;
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1108,7 +1112,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1135,7 +1139,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1284,7 +1288,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1313,7 +1317,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.echadworks.meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1397,6 +1401,14 @@
 				kind = branch;
 			};
 		};
+		2EA3E5FD2A49888000A1C0AE /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1424,6 +1436,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E4AA1BB28F1993C006B1CBF /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		2EA3E5FE2A49888000A1C0AE /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EA3E5FD2A49888000A1C0AE /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
