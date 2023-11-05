@@ -91,7 +91,6 @@ struct MealWidgetEntryView: View {
 
   var body: some View {
     ZStack {
-      Color(UIColor.systemBackground).edgesIgnoringSafeArea(.all)
       VStack(alignment: .leading, spacing: -4) {
         HStack(alignment: .center, spacing: -4) {
 
@@ -102,7 +101,7 @@ struct MealWidgetEntryView: View {
           VStack(alignment: .leading, spacing: -4) {
             if family == .systemSmall {
               VStack(alignment: .center, spacing: 10) {
-                VStack(spacing: 20) {
+                VStack(spacing: 10) {
                   MealIconView()
                   WidgetDateView(entry: entry, plan: entry.plan)
                 }
@@ -123,20 +122,19 @@ struct MealWidgetEntryView: View {
 
         if family != .systemSmall {
           Text(PlanStore().getBibleSummary(verses: entry.plan.verses))
-            .font(.custom("NanumMyeongjoOTF", size: 16))
-            .lineLimit(3)
+            .font(.custom("NanumMyeongjoOTF", size: 15))
+            .lineLimit(2)
             .lineSpacing(6.0)
-            //.font(.footnote)
+            .font(.footnote)
             .foregroundColor(Color(UIColor.label))
-            .padding(.top, 14)
-            .padding(.bottom, 10)
-            .padding([.leading, .trailing], 10)
+            .padding(.top, 10)
+            .padding(.bottom, 2)
         }
       }
       .widgetURL(AppSettings.widgetDeepLinkURL)
       .padding(10)
-      .background(Color.clear)
     }
+    .widgetBackground(backgroundView: Color(UIColor.systemBackground))
   }
 }
 
@@ -159,7 +157,7 @@ struct NotiPlanLabelView: View {
   var body: some View {
     Text(PlanStore().getMealPlanStr(plan))
       .foregroundColor(Color(UIColor.label))
-      .font(.custom("NanumMyeongjoOTFBold", size: 16))
+      .font(.custom("NanumMyeongjoOTFBold", size: 14))
       .bold()
   }
 }
@@ -178,6 +176,9 @@ struct MealWidget: Widget {
     .onBackgroundURLSessionEvents { identifier, completion in
       print("onBackgroundURLSessionEvents", identifier, completion)
     }
+    //.contentMarginsDisabled()
+    // Disable container background removal
+    //.containerBackgroundRemovable(false)
   }
 }
 

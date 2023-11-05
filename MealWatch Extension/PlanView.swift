@@ -36,14 +36,14 @@ struct PlanView: View {
         .foregroundColor(Color.gray)
       }
 
-        Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
-          .font(.custom("NanumMyeongjoOTF", size: 14))
-          .lineLimit(3)
-          .lineSpacing(6.0)
-          .font(.footnote)
-          .foregroundColor(.white)
-          .padding([.top, .bottom], 20)
-          .padding([.leading, .trailing], 4)
+      Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
+        .font(.custom("NanumMyeongjoOTF", size: 14))
+        .lineLimit(3)
+        .lineSpacing(6.0)
+        .font(.footnote)
+        .foregroundColor(.white)
+        .padding([.top, .bottom], 20)
+        .padding([.leading, .trailing], 4)
 
     }
     .padding(10)

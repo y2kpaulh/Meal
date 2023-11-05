@@ -62,6 +62,8 @@
 		2E4AA1BD28F1993C006B1CBF /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4AA1BC28F1993C006B1CBF /* PartialSheet */; };
 		2E4F36EE281EB28A002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
 		2E4F36F1281EC04C002FC262 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4F36ED281EB28A002FC262 /* AppSettings.swift */; };
+		2E5A7CFF2AF7599700BF1DF9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A7CFE2AF7599700BF1DF9 /* ViewExtension.swift */; };
+		2E5A7D002AF759AA00BF1DF9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A7CFE2AF7599700BF1DF9 /* ViewExtension.swift */; };
 		2E66519C26C38D9E00A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519D26C38DD500A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
 		2E66519E26C38DD600A083C6 /* PlanNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */; };
@@ -230,6 +232,7 @@
 		2E4549CE26E77BEC00E23740 /* TodayVersesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVersesList.swift; sourceTree = "<group>"; };
 		2E4549D026E77CB700E23740 /* SettingsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListCell.swift; sourceTree = "<group>"; };
 		2E4F36ED281EB28A002FC262 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		2E5A7CFE2AF7599700BF1DF9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		2E66519B26C38D9E00A083C6 /* PlanNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanNotiService.swift; sourceTree = "<group>"; };
 		2E6651AB26C3B02400A083C6 /* ListVerticalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVerticalShadow.swift; sourceTree = "<group>"; };
 		2E6651AE26C3B43300A083C6 /* WatchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHeaderView.swift; sourceTree = "<group>"; };
@@ -521,6 +524,7 @@
 			children = (
 				2E34A47E26BA694600DFCD92 /* ColorExtension.swift */,
 				2EED48B82697DDD30069DD16 /* FileManagerExtensions.swift */,
+				2E5A7CFE2AF7599700BF1DF9 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -888,6 +892,7 @@
 				2E2B7CCB26BCC59D00DAC920 /* Service.swift in Sources */,
 				2E66519F26C38E1D00A083C6 /* NetworkReachability.swift in Sources */,
 				2E4549C226E76A9B00E23740 /* MealIconView.swift in Sources */,
+				2E5A7D002AF759AA00BF1DF9 /* ViewExtension.swift in Sources */,
 				2E742FBE26E8A72400734ACE /* DebugView.swift in Sources */,
 				2E2B7CCD26BCC5E500DAC920 /* ColorExtension.swift in Sources */,
 				2E2B7CCA26BCC59200DAC920 /* PlanStore.swift in Sources */,
@@ -948,6 +953,7 @@
 				2E45499F26E7571300E23740 /* TodayWordsBgView.swift in Sources */,
 				2E1518FC27E6F7C600264936 /* SettingsViewModel.swift in Sources */,
 				2E34A47F26BA694600DFCD92 /* ColorExtension.swift in Sources */,
+				2E5A7CFF2AF7599700BF1DF9 /* ViewExtension.swift in Sources */,
 				2EABCDCD26C25C5400107840 /* MealPlanViewModel.swift in Sources */,
 				2EBBD5EB268DBB5F00EA6BB2 /* MealApp.swift in Sources */,
 				2E4F36EE281EB28A002FC262 /* AppSettings.swift in Sources */,
@@ -1011,6 +1017,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				INFOPLIST_FILE = MealWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1036,6 +1043,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				INFOPLIST_FILE = MealWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1069,7 +1077,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1092,7 +1100,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1119,7 +1127,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1146,7 +1154,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1202,13 +1210,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1258,13 +1267,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1283,7 +1293,7 @@
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1312,7 +1322,7 @@
 				DEVELOPMENT_TEAM = QVWMLRQC8D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
