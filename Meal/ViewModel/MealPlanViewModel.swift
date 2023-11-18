@@ -103,9 +103,19 @@ extension MealPlanViewModel {
         guard let self = self else { return }
 
         if (try? $0.saveToFile("readingPlan")) != nil {
-          self.loadReadingPlanData($0)
-          DispatchQueue.main.async() {
-            self.isLoading = false
+          if let readingPlan = try? readReadingPlanFile(fileName: "readingPlan"),
+             readingPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+            self.loadReadingPlanData(readingPlan)
+
+            DispatchQueue.main.async() {
+              self.isLoading = false
+            }
+          } else {
+            DispatchQueue.main.async {
+              self.planDataError = true
+              self.isLoading = false
+              self.showingServerErrorAlert = true
+            }
           }
         }
       })

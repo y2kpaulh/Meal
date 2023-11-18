@@ -49,6 +49,10 @@ struct TodayMealView: View {
       .onAppear {
         viewModel.fetchPlanData()
       }
+      .alert(isPresented: $viewModel.showingServerErrorAlert) {
+        Alert(title: Text("알림"), message: Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다."),
+              dismissButton: .default(Text("확인")))
+      }
       .onReceive(widgetDeepLinkNotification) { _ in
         viewModel.fetchPlanData()
       }
@@ -184,10 +188,6 @@ extension TodayMealView {
         .onReceive(changedDayNotification) { _ in
           scrollView.scrollTo(0, anchor: .top)
         }
-        .alert(isPresented: $viewModel.showingServerErrorAlert) {
-          Alert(title: Text("알림"), message: Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다."),
-                dismissButton: .default(Text("확인")))
-        }
         .onAppear {
           withAnimation {
             scrollView.scrollTo(0, anchor: .top)
@@ -226,10 +226,6 @@ extension TodayMealView {
         .textSelection(.enabled)
         .onReceive(changedDayNotification) { _ in
           scrollView.scrollTo(0, anchor: .top)
-        }
-        .alert(isPresented: $viewModel.showingServerErrorAlert) {
-          Alert(title: Text("알림"), message: Text("오늘 날짜의 끼니 말씀을 찾을수 없습니다."),
-                dismissButton: .default(Text("확인")))
         }
         .onAppear {
           withAnimation {
