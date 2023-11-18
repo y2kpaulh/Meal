@@ -98,9 +98,13 @@ extension MealPlanViewModel {
       receiveValue: { [weak self] in
         guard let self = self else { return }
         if (try? $0.saveToFile("mealPlan")) != nil {
-          self.loadPlanData($0)
           DispatchQueue.main.async() {
             self.isLoading = false
+          }
+          if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
+             mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+            self.loadPlanData(mealPlan)
+            return
           }
         }
       })
