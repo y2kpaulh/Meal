@@ -32,24 +32,24 @@ struct PlanView: View {
 
             Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
               .font(.footnote)
-              .foregroundColor(Color(.gray))
+              .foregroundStyle(Color(.gray))
               .bold()
           }
 
           Text(PlanStore().getMealPlanStr(plan))
-            .foregroundColor(Color(UIColor.label))
+            .foregroundStyle(Color(UIColor.label))
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
           //.bold()
         }
         .padding(.horizontal)
-        .foregroundColor(Color(UIColor.systemGray))
+        .foregroundStyle(Color(UIColor.systemGray))
       }
 
       Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
         .font(.custom("NanumMyeongjoOTF", size: 12))
         .lineLimit(3)
         //.font(.footnote)
-        .foregroundColor(Color(UIColor.label))
+        .foregroundStyle(Color(UIColor.label))
         .padding([.top, .bottom], 20)
         .padding([.leading, .trailing], 10)
     }
@@ -61,10 +61,10 @@ struct PlanView: View {
   }
 }
 
-//struct PlanView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlanView(index: 0, plan: Plan())
-//            .previewLayout(.sizeThatFits)
-//            .colorScheme(.dark)
-//    }
-//}
+struct PlanView_Previews: PreviewProvider {
+  static var previews: some View {
+    PlanView(index: 0, plan: Plan(day: "2023-11-19", book: "창", fChap: 1, fVer: 1, lChap: 1, lVer: 3))
+      .previewLayout(.sizeThatFits)
+      .colorScheme(.dark)
+  }
+}

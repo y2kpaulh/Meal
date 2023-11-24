@@ -22,18 +22,18 @@ struct PlanView: View {
 
             Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
               .font(.footnote)
-              .foregroundColor(Color(.gray))
+              .foregroundStyle(Color(.gray))
               .bold()
           }
 
           Text(PlanStore().getMealPlanStr(plan))
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             .font(.custom("NanumMyeongjoOTFBold", size: 16))
             .bold()
 
         }
         .padding(.horizontal)
-        .foregroundColor(Color.gray)
+        .foregroundStyle(Color.gray)
       }
 
       Text(PlanStore().getBibleSummary(verses: PlanStore().getPlanData(plan).verses))
@@ -41,7 +41,7 @@ struct PlanView: View {
         .lineLimit(3)
         .lineSpacing(6.0)
         .font(.footnote)
-        .foregroundColor(.white)
+        .foregroundStyle(.white)
         .padding([.top, .bottom], 20)
         .padding([.leading, .trailing], 4)
 

@@ -24,7 +24,7 @@ struct MealPlanList: View {
             dismiss()
           }) {
             Image(systemName: "xmark.circle.fill")
-              .foregroundColor(.gray)
+              .foregroundStyle(.gray)
           }
           Spacer().frame(width: 20)
         }

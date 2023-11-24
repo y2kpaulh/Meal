@@ -14,7 +14,7 @@ struct VerseTextView: View {
     Text(verse)
       .lineSpacing(6)
       .multilineTextAlignment(.leading)
-      .foregroundColor(.mealTheme)
+      .foregroundStyle(Color.mealTheme)
       .font(.custom("NanumMyeongjoOTF", size: 20))
       .padding(.top, 4)
   }

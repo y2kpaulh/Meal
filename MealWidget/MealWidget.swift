@@ -117,7 +117,7 @@ struct MealWidgetEntryView: View {
                 .padding(.top, -4)
             }
           }
-          .foregroundColor(Color(UIColor.systemGray))
+          .foregroundStyle(Color(UIColor.systemGray))
         }
 
         if family != .systemSmall {
@@ -126,7 +126,7 @@ struct MealWidgetEntryView: View {
             .lineLimit(2)
             .lineSpacing(6.0)
             .font(.footnote)
-            .foregroundColor(Color(UIColor.label))
+            .foregroundStyle(Color(UIColor.label))
             .padding(.top, 10)
             .padding(.bottom, 2)
         }
@@ -145,7 +145,7 @@ struct WidgetDateView: View {
   var body: some View {
     Text("\(PlanStore().convertDateToStr(date: PlanStore().dateFormatter.date(from: plan.day)!))")
       .font(.footnote)
-      .foregroundColor(Color(.gray))
+      .foregroundStyle(Color(.gray))
       .bold()
   }
 }
@@ -156,7 +156,7 @@ struct NotiPlanLabelView: View {
 
   var body: some View {
     Text(PlanStore().getMealPlanStr(plan))
-      .foregroundColor(Color(UIColor.label))
+      .foregroundStyle(Color(UIColor.label))
       .font(.custom("NanumMyeongjoOTFBold", size: 14))
       .bold()
   }

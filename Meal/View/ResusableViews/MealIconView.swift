@@ -15,7 +15,7 @@ struct MealIconView: View {
       .resizable()
       .renderingMode(.template)
       .frame(width: 40, height: 40)
-      .foregroundColor(Color(UIColor.label))
+      .foregroundStyle(Color(UIColor.label))
       .padding([.leading, .trailing], 10)
     //.unredacted()
   }

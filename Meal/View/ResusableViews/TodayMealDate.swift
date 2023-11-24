@@ -12,6 +12,6 @@ struct TodayMealDate: View {
 
   var body: some View {
     Text(date)
-      .foregroundColor(.gray)
+      .foregroundStyle(.gray)
   }
 }

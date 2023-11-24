@@ -18,7 +18,7 @@ struct NotificationView: View {
         HStack(alignment: .center) {
           MealTitleLabel(size: 34, textColor: Color.white)
           Text(message ?? "")
-            .foregroundColor(.gray)
+            .foregroundStyle(.gray)
         }
       }
 

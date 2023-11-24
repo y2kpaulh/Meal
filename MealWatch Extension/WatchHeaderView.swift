@@ -16,7 +16,7 @@ struct WatchHeaderView: View {
         MealTitleLabel(size: 34, textColor: Color.white)
 
         Text(PlanStore().convertDateToStr())
-          .foregroundColor(.gray)
+          .foregroundStyle(.gray)
       }
 
       Text(PlanStore().getMealPlanStr(todayPlan))

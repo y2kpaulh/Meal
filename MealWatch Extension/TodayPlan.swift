@@ -15,7 +15,7 @@ struct TodayPlan: View {
       WatchHeaderView(todayPlan: $viewModel.todayPlan)
 
       Divider()
-        .foregroundColor(Color.white)
+        .foregroundStyle(Color.white)
 
       ScrollView {
         LazyVStack(alignment: .leading) {
@@ -23,7 +23,7 @@ struct TodayPlan: View {
             HStack(alignment: .top) {
               if viewModel.todayPlan.fChap == viewModel.todayPlan.lChap {
                 Text("\(index + viewModel.todayPlan.fVer)")
-                  .foregroundColor(.gray)
+                  .foregroundStyle(.gray)
                   .font(.footnote)
 
               } else {
@@ -33,13 +33,13 @@ struct TodayPlan: View {
                   let fChapterCount = planBook.chapters[viewModel.todayPlan.fChap - 1].count
 
                   Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.gray)
                 }
               }
 
               Text(viewModel.todayPlanData.verses[index])
                 .font(.custom("NanumMyeongjoOTF", size: 16))
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .padding(.top, 4)
             }
             .padding([.leading, .trailing], 8)

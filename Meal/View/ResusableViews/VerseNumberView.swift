@@ -15,7 +15,7 @@ struct VerseNumberView: View {
     Group {
       if todayPlan.fChap == todayPlan.lChap {
         Text("\(index + todayPlan.fVer)")
-          .foregroundColor(.gray)
+          .foregroundStyle(.gray)
       } else {
         if let planBook = BibleStore.books.filter { $0.abbrev == todayPlan.book }.first {
           let verseIndex = index + todayPlan.fVer
@@ -23,7 +23,7 @@ struct VerseNumberView: View {
           let fChapterCount = planBook.chapters[todayPlan.fChap - 1].count
 
           Text("\(verseIndex > fChapterCount ? verseIndex - fChapterCount : verseIndex)")
-            .foregroundColor(.gray)
+            .foregroundStyle(.gray)
         }
       }
     }

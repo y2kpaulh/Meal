@@ -14,7 +14,7 @@ struct MealTitleLabel: View {
 
   var body: some View {
     Text("끼니")
-      .foregroundColor(textColor)
+      .foregroundStyle(textColor)
       .font(.custom("NanumBrushOTF", size: size))
   }
 }
