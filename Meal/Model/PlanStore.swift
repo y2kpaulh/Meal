@@ -39,27 +39,51 @@ public final class PlanStore: ObservableObject {
     guard book.count > 0,
           let planBook = book.first,
           let index = BibleStore.books.firstIndex(where: { $0.abbrev == plan.book })
-    else { return PlanData(book: "", verses: []) }
+    else { return PlanData(book: "", verses: [], verseNum: []) }
 
     let title = BibleStore.titles[index]
-    var verse = [String]()
+    var verses = [String]()
+    var verseNum: [Int] = []
 
     if plan.fChap == plan.lChap {
       let chapter = planBook.chapters[plan.fChap-1]
       let verseRange = chapter[plan.fVer-1..<plan.lVer]
 
-      verse = Array(verseRange)
+      verses = Array(verseRange)
     } else {
-      let fChapter = planBook.chapters[plan.fChap-1]
-      let lChapter = planBook.chapters[plan.lChap-1]
+      let startChapterIndex = plan.fChap
+      let startVerse = plan.fVer-1
 
-      let fVerseRange = fChapter[plan.fVer-1..<fChapter.count]
-      let lVerseRange = lChapter[0..<plan.lVer]
+      let endChapterIndex = plan.lChap
+      let endVerse = plan.lVer
 
-      verse = Array(fVerseRange + lVerseRange)
+      for chapterIndex in startChapterIndex-1..<endChapterIndex {
+        let chapter = planBook.chapters[chapterIndex]
+        var sliceStartIndex = 0, sliceEndIndex = 0
+
+        if chapterIndex == startChapterIndex-1 {
+          sliceStartIndex = startVerse
+          sliceEndIndex = chapter.count
+
+        } else if chapterIndex == endChapterIndex-1 {
+          sliceStartIndex = 0
+          sliceEndIndex = endVerse
+
+        } else {
+          sliceStartIndex = 0
+          sliceEndIndex = chapter.count
+
+        }
+
+        let verseText = chapter[sliceStartIndex..<sliceEndIndex]
+        let verNumber = Array(stride(from: sliceStartIndex+1, to: sliceEndIndex+1, by: 1))
+
+        verses += verseText
+        verseNum += verNumber
+      }
     }
 
-    return PlanData(book: title, verses: verse)
+    return PlanData(book: title, verses: verses, verseNum: verseNum)
   }
 
 }

@@ -23,7 +23,7 @@ extension FileManager {
 class MealPlanViewModel: ObservableObject {
   @Published var planList: [Plan] = []
   @Published var todayPlan: Plan = Plan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
-  @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
+  @Published var todayPlanData: PlanData = PlanData(book: "", verses: [], verseNum: [])
   @Published var isLoading = false
   @Published var planDataError: Bool = false
   @Published var todayPlanDate: String = ""
@@ -98,9 +98,13 @@ extension MealPlanViewModel {
       receiveValue: { [weak self] in
         guard let self = self else { return }
         if (try? $0.saveToFile("mealPlan")) != nil {
-          self.loadPlanData($0)
           DispatchQueue.main.async() {
             self.isLoading = false
+          }
+          if let mealPlan = try? readMealPlanFile(fileName: "mealPlan"),
+             mealPlan.filter({ $0.day == PlanStore().getDateStr() }).count > 0 {
+            self.loadPlanData(mealPlan)
+            return
           }
         }
       })
