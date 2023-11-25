@@ -158,7 +158,7 @@ extension TodayMealView {
           ForEach(0..<viewModel.todayPlanData.verses.count, id: \.self) { index in
             HStack(alignment: .firstTextBaseline) {
               //verse number
-              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index)
+              VerseNumberView(todayPlan: $viewModel.todayPlan, index: index, verseNumList: viewModel.todayPlanData.verseNum)
               //verse text
               if viewModel.todayPlanData.verses.indexExists(index), viewModel.todayPlanData.verses[index].count > 0 {
                 VerseTextView(verse: viewModel.todayPlanData.verses[index])

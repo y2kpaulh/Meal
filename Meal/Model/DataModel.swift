@@ -56,6 +56,7 @@ struct NotiPlan: Planable, Codable {
 public struct PlanData: Codable {
   let book: String
   let verses: [String]
+  let verseNum: [Int]
 }
 
 enum Book: String, Codable {

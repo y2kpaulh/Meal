@@ -23,7 +23,7 @@ extension FileManager {
 class MealPlanViewModel: ObservableObject {
   @Published var planList: [Plan] = []
   @Published var todayPlan: Plan = Plan(day: "", book: "", fChap: 0, fVer: 0, lChap: 0, lVer: 0)
-  @Published var todayPlanData: PlanData = PlanData(book: "", verses: [])
+  @Published var todayPlanData: PlanData = PlanData(book: "", verses: [], verseNum: [])
   @Published var isLoading = false
   @Published var planDataError: Bool = false
   @Published var todayPlanDate: String = ""
