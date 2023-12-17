@@ -47,7 +47,7 @@ struct MealPlanList: View {
                 }
             }
           }
-          .onAppear {
+          .task {
             withAnimation {
               let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
               scrollView.scrollTo(todayIndex, anchor: .top)
