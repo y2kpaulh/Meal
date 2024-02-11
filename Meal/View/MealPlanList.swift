@@ -12,6 +12,8 @@ struct MealPlanList: View {
   @EnvironmentObject var viewModel: MealPlanViewModel
   @Binding var isPresented: Bool
   @Environment(\.dismiss) var dismiss
+  @State private var scrollID: Int?
+
   var body: some View {
     VStack {
       Spacer()
@@ -31,7 +33,7 @@ struct MealPlanList: View {
 
       }
 
-      ScrollViewReader { scrollView in
+      ScrollViewReader { _ in
         ScrollView {
           LazyVStack {
             ForEach(0..<self.viewModel.planList.count, id: \.self) { index in
@@ -47,13 +49,9 @@ struct MealPlanList: View {
                 }
             }
           }
-          .onAppear {
-            withAnimation {
-              let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
-              scrollView.scrollTo(todayIndex, anchor: .top)
-            }
-          }
+          .scrollTargetLayout()
         }
+        .scrollPosition(id: $scrollID)
       }
       .listVerticalShadow()
     }
@@ -61,6 +59,8 @@ struct MealPlanList: View {
     .onAppear {
       UITableView.appearance().backgroundColor = .clear
       UITableViewCell.appearance().backgroundColor = .clear
+      let todayIndex = self.viewModel.planList.firstIndex { $0.day == PlanStore().getDateStr() }
+      scrollID = todayIndex
     }
   }
 
