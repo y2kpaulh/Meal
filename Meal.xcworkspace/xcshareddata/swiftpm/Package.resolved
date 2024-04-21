@@ -1,4 +1,5 @@
 {
+  "originHash" : "17b5bfbefd9bc3f8d4ee715fddd016330919653ffc11b7295c241bfb5a8a9596",
   "pins" : [
     {
       "identity" : "abseil-cpp-swiftpm",
@@ -41,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleDataTransport.git",
       "state" : {
-        "revision" : "7874c1b48cbffd086ce8a052c4be873a78613775",
-        "version" : "9.2.3"
+        "revision" : "a637d318ae7ae246b02d7305121275bc75ed5565",
+        "version" : "9.4.0"
       }
     },
     {
@@ -50,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "revision" : "68ea347bdb1a69e2d2ae2e25cd085b6ef92f64cb",
-        "version" : "7.9.0"
+        "revision" : "26c898aed8bed13b8a63057ee26500abbbcb8d55",
+        "version" : "7.13.1"
       }
     },
     {
@@ -77,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
       "state" : {
-        "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
-        "version" : "1.22.2"
+        "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
+        "version" : "1.22.5"
       }
     },
     {
@@ -95,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rechsteiner/Parchment",
       "state" : {
-        "revision" : "852d321f93f12557be8cd80766de9732393ff5ef",
-        "version" : "3.2.1"
+        "revision" : "b2348005a13c2f36015944cd205b1ba73488ab89",
+        "version" : "3.4.0"
       }
     },
     {
@@ -105,7 +106,7 @@
       "location" : "https://github.com/AndreaMiotto/PartialSheet",
       "state" : {
         "branch" : "master",
-        "revision" : "415fafa8ed719613b3abc787d52a8aa32a4998b9"
+        "revision" : "6c61890976181274ea7baf6a4c297418346db799"
       }
     },
     {
@@ -114,7 +115,7 @@
       "location" : "https://github.com/exyte/PopupView.git",
       "state" : {
         "branch" : "master",
-        "revision" : "3122129fba0f5501e1f59161db3210282efd2cea"
+        "revision" : "8c85ff09d474dd3cfb69aba33046395bcf365573"
       }
     },
     {
@@ -122,8 +123,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/promises.git",
       "state" : {
-        "revision" : "ec957ccddbcc710ccc64c9dcbd4c7006fcf8b73a",
-        "version" : "2.2.0"
+        "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
+        "version" : "2.4.0"
       }
     },
     {
@@ -131,10 +132,19 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "f25867a208f459d3c5a06935dceb9083b11cd539",
-        "version" : "1.22.0"
+        "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
+        "version" : "1.26.0"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/swiftui-introspect",
+      "state" : {
+        "revision" : "0cd2a5a5895306bc21d54a2254302d24a9a571e4",
+        "version" : "1.1.3"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
