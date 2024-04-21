@@ -1394,7 +1394,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.10.0;
+				minimumVersion = 10.22.1;
 			};
 		};
 		2E4AA1B828F19906006B1CBF /* XCRemoteSwiftPackageReference "PopupView" */ = {
