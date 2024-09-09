@@ -37,26 +37,6 @@ struct MealApp: App {
             NotificationCenter.default.post(name: .widgetDeepLinkNotification, object: nil)
           }
         }
-        .onChange(of: scenePhase, { _, phase in
-              // change in this app's phase - composite of all scenes
-              switch phase {
-              case .active:
-                //changedToActive()
-                print("active")
-
-              case .background:
-                //changedToBackground()
-                print("background")
-
-              case .inactive:
-                //changedToInactive()
-                print("inactive")
-
-              default:
-                break
-              }
-            
-        })
     }
 
     #if os(watchOS)
